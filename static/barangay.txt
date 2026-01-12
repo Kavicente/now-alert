@@ -1,0 +1,80 @@
+Atisan
+Bagong Bayan II-A
+Bagong Pook VI-C
+Barangay I-A
+Barangay I-B
+Barangay II-A
+Barangay II-B
+Barangay II-C
+Barangay II-D
+Barangay II-E
+Barangay II-F
+Barangay III-A
+Barangay III-B
+Barangay III-C
+Barangay III-D
+Barangay III-E
+Barangay III-F
+Barangay IV-A
+Barangay IV-B
+Barangay IV-C
+Barangay V-A
+Barangay V-B
+Barangay V-C
+Barangay V-D
+Barangay VI-A
+Barangay VI-B
+Barangay VI-D
+Barangay VI-E
+Barangay VII-A
+Barangay VII-B
+Barangay VII-C
+Barangay VII-D
+Barangay VII-E
+Bautista
+Concepcion
+Del Remedio
+Dolores
+San Antonio 1
+San Antonio 2
+San Bartolome
+San Buenaventura
+San Crispin
+San Cristobal
+San Diego
+San Francisco
+San Gabriel
+San Gregorio
+San Ignacio
+San Isidro
+San Joaquin
+San Jose
+San Juan
+San Lorenzo
+San Lucas 1
+San Lucas 2
+San Marcos
+San Mateo
+San Miguel
+San Nicolas
+San Pedro
+San Rafael
+San Roque
+San Vicente
+Santa Ana
+Santa Catalina
+Santa Cruz
+Santa Elena
+Santa Felomina
+Santa Isabel
+Santa Maria
+Santa Maria Magdalena
+Santa Monica
+Santa Veronica
+Santiago I
+Santiago II
+Santisimo Rosario
+Santo Angel
+Santo Cristo
+Santo Niño
+Soledad

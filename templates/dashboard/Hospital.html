@@ -1,0 +1,164 @@
+<script>
+        let menuData = {};
+        document.addEventListener('DOMContentLoaded', () => {
+            const lat = {{ lat_coord|default(14.0549) }};
+            const lon = {{ lon_coord|default(121.3013) }};
+            const mapboxToken = 'pk.eyJ1Ijoia3VtaXRva2lydSIsImEiOiJjbWNvZXpkdDQwNmdvMnNyMnNtNGw5NGI1In0.3Y9z5y4saOL76Eb5c-o0UQ';
+            const tileLayerUrl = `https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`;
+
+            const hospitalMap = L.map('map').setView([lat, lon], 16);
+
+            var satellite = L.tileLayer(tileLayerUrl, {
+                attribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                tileSize: 512,
+                zoomOffset: -1
+            });
+
+            var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            });
+
+            satellite.addTo(hospitalMap);
+
+            var baseLayers = {
+                "Satellite with Labels": satellite,
+                "OpenStreetMap": osm
+            };
+            L.control.layers(baseLayers).addTo(hospitalMap);
+
+            const socket = io('https://now-alert-vn0d.onrender.com', { transports: ['websocket'] });
+            const alertElements = new Map();
+
+            fetch('/static/menu.txt')
+                .then(response => response.text())
+                .then(text => {
+                    menuData = parseMenuText(text);
+                    console.log('Menu data loaded:', menuData);
+                })
+                .catch(error => console.error('Error loading menu.txt:', error));
+
+            socket.on('connect', () => {
+                console.log('Connected to server');
+                socket.emit('register_role', { role: 'hospital', municipality: '{{ municipality }}'.toLowerCase() });
+            });
+
+            socket.on('connect_error', (error) => {
+                console.error('Connection error:', error);
+            });
+
+            socket.on('update_map', (data) => {
+                console.log('Update map received:', data);
+                const lat = data.lat || {{ lat_coord|default(14.0549) }};
+                const lon = data.lon || {{ lon_coord|default(121.3013) }};
+                hospitalMap.setView([lat, lon], 16);
+                L.marker([lat, lon]).addTo(hospitalMap).bindPopup(
+                    `${`Alert: ${data.emergency_type || 'Health Emergency'} at ${data.barangay}`}`
+                ).openPopup();
+                document.getElementById('map-coordinates').textContent = `${lat}, ${lon}`;
+            });
+
+            socket.on('hospital_alert', (data) => {
+                console.log('Hospital alert received:', data);
+                updateUIWithAlert(data);
+                notifyAlert(data);
+
+                
+            });
+
+            function updateUIWithAlert(data) {
+                const alertContainer = document.getElementById('alert-container');
+                const alertItem = document.createElement('div');
+                alertItem.className = 'alert-item';
+                alertElements.set(data.alert_id, alertItem);
+
+                const statusDiv = document.createElement('div');
+                statusDiv.textContent = 'RESPONDED';
+                statusDiv.style.fontWeight = 'bold';
+                statusDiv.style.fontSize = '16px';
+                alertItem.appendChild(statusDiv);
+
+                const alertText = document.createElement('div');
+                alertText.textContent = `Health Emergency and On The Way To ${data.hospital_name}\nResident From ${data.resident_barangay || data.barangay}`;
+                alertText.style.fontSize = '16px';
+                alertItem.appendChild(alertText);
+
+                const timeDiv = document.createElement('div');
+                timeDiv.textContent = `Time: ${data.timestamp}`;
+                timeDiv.style.fontSize = '16px';
+                alertItem.appendChild(timeDiv);
+
+                const healthTypeDiv = document.createElement('div');
+                healthTypeDiv.textContent = `Health Type: ${data.health_type || 'N/A'}`;
+                healthTypeDiv.style.fontSize = '16px';
+                alertItem.appendChild(healthTypeDiv);
+
+                const healthCauseDiv = document.createElement('div');
+                healthCauseDiv.textContent = `Health Cause: ${data.health_cause || 'N/A'}`;
+                healthCauseDiv.style.fontSize = '16px';
+                alertItem.appendChild(healthCauseDiv);
+
+                const patientAgeDiv = document.createElement('div');
+                patientAgeDiv.textContent = `Patient Age: ${data.patient_age || 'N/A'}`;
+                patientAgeDiv.style.fontSize = '16px';
+                alertItem.appendChild(patientAgeDiv);
+
+                const patientGenderDiv = document.createElement('div');
+                patientGenderDiv.textContent = `Patient Gender: ${data.patient_gender || 'N/A'}`;
+                patientGenderDiv.style.fontSize = '16px';
+                alertItem.appendChild(patientGenderDiv);
+
+                let imageDiv = null;
+                if (data.image) {
+                    imageDiv = document.createElement('img');
+                    imageDiv.src = `data:image/jpeg;base64,${data.image}`;
+                    imageDiv.className = 'clickable-img';
+                    imageDiv.style.display = 'block';
+                    imageDiv.style.margin = '10px auto';
+                    imageDiv.style.maxWidth = '200px';
+                    imageDiv.style.borderRadius = '5px';
+                    imageDiv.style.cursor = 'pointer';
+                    imageDiv.addEventListener('click', () => {
+                        const modal = document.getElementById('image-modal');
+                        const modalImg = document.getElementById('modal-image');
+                        modalImg.src = imageDiv.src;
+                        modal.style.display = 'flex';
+                    });
+                }
+                if (imageDiv) alertItem.appendChild(imageDiv);
+
+                alertContainer.prepend(alertItem);
+
+                const modal = document.getElementById('image-modal');
+                const closeBtn = modal.querySelector('.close-btn');
+                closeBtn.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                });
+            }
+
+            function notifyAlert(data) {
+                const notificationDiv = document.getElementById('notification');
+                notificationDiv.innerHTML = `<p>New alert received for ${data.barangay}</p>`;
+                setTimeout(() => {
+                    notificationDiv.innerHTML = '';
+                }, 5000);
+            }
+
+            function parseMenuText(text) {
+                const menuData = {};
+                const sections = text.split('\n\n');
+                sections.forEach(section => {
+                    const lines = section.split('\n').filter(line => line.trim());
+                    if (lines.length === 0) return;
+                    const sectionName = lines[0].replace(/^# /, '').trim();
+                    const sectionData = {};
+                    lines.slice(1).forEach(line => {
+                        const [key, values] = line.split(':');
+                        sectionData[key.trim()] = values.split(',').map(v => v.trim());
+                    });
+                    menuData[sectionName] = sectionData;
+                });
+                return menuData;
+            }
+        });
+    </script>

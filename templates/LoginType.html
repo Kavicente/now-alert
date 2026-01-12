@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Choose Login Type</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo/alertnow.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/logtype.css') }}">
+</head>
+<body>
+    <div class="login-container">
+
+        <!-- LEFT: Background + Logo -->
+        <div class="login-left">
+            <img src="{{ url_for('static', filename='logo/alert_background.png') }}" alt="Alert Now Logo" class="logo">
+            
+        </div>
+
+        <!-- RIGHT: Login Options -->
+        <div class="login-right">
+            <h1>Select Login Type</h1>
+            <button class="login-btn" onclick="window.location.href='/go_to_login_page'">Barangay</button>
+            <button class="login-btn" onclick="window.location.href='/login_agency'">Agencies</button>
+            <div class="signup-text">Don't have an account?</div>
+            <button class="login-btn" onclick="window.location.href='/go_to_signup_type'">Sign Up</button>
+        </div>
+
+    </div>
+</body>
+</html>

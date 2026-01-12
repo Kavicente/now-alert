@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DILG Dashboard</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo/alertnow.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dilgdash.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">DILG Dashboard</div>
+        <ul>
+            <li class="active" data-section="home">Home</li>
+            <li data-section="manage-accounts">Manage Accounts</li>
+            <li data-section="barangay-reports">Barangay Reports</li>
+            <li data-section="cdrrmo-reports">CDRRMO Reports</li>
+            <li data-section="bfp-reports">BFP Reports</li>
+            <li data-section="health-reports">City Health Reports</li>
+            <li data-section="pnp-reports">PNP Reports</li>
+        </ul>
+        <div class="logout">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- HOME SECTION -->
+        <div id="home" class="section active">
+            <h1>DILG Citywide Overview</h1>
+
+            <!-- Heatmap -->
+            <div class="map-container">
+                <h3>Citywide Incident Heatmap</h3>
+                <div id="heatmap" style="height: 500px; border-radius: 12px;"></div>
+            </div>
+
+            <!-- Top Summary Charts -->
+            <div class="charts-horizontal">
+                <div class="chart-item"><h4>Alerts Received Per Barangay</h4><canvas id="alertsPerBarangay"></canvas></div>
+                <div class="chart-item"><h4>Alerts Received By CDRRMO</h4><canvas id="cdrrmoAlerts"></canvas></div>
+                <div class="chart-item"><h4>Alerts Received By BFP</h4><canvas id="bfpAlerts"></canvas></div>
+                <div class="chart-item"><h4>Alerts Received By City Health</h4><canvas id="healthAlerts"></canvas></div>
+                <div class="chart-item"><h4>Alerts Received By PNP</h4><canvas id="pnpAlerts"></canvas></div>
+            </div>
+
+            <!-- Barangay Filter -->
+            <div class="report-filter">
+                <label>Select Barangay: </label>
+                <select id="barangay-filter">
+                    <option value="">All Barangays (Citywide)</option>
+                </select>
+            </div>
+
+            <!-- Detailed Charts -->
+            <div class="charts-horizontal" id="detailed-charts-container">
+                <div class="chart-item"><h3>Road Accident Cause</h3><canvas id="roadCause"></canvas></div>
+                <div class="chart-item"><h3>Road Accident Type</h3><canvas id="roadType"></canvas></div>
+                <div class="chart-item"><h3>Vehicle Type</h3><canvas id="vehicleType"></canvas></div>
+                <div class="chart-item"><h3>Driver Age</h3><canvas id="driverAge"></canvas></div>
+                <div class="chart-item"><h3>Driver Gender</h3><canvas id="driverGender"></canvas></div>
+
+                <div class="chart-item"><h3>Fire Cause</h3><canvas id="fireCause"></canvas></div>
+                <div class="chart-item"><h3>Fire Type</h3><canvas id="fireType"></canvas></div>
+                <div class="chart-item"><h3>Weather During Fire</h3><canvas id="fireWeather"></canvas></div>
+                <div class="chart-item"><h3>Fire Severity</h3><canvas id="fireSeverity"></canvas></div>
+
+                <div class="chart-item"><h3>Health Emergency Type</h3><canvas id="healthType"></canvas></div>
+                <div class="chart-item"><h3>Health Cause</h3><canvas id="healthCause"></canvas></div>
+                <div class="chart-item"><h3>Weather (Health)</h3><canvas id="healthWeather"></canvas></div>
+                <div class="chart-item"><h3>Patient Age</h3><canvas id="patientAge"></canvas></div>
+                <div class="chart-item"><h3>Patient Gender</h3><canvas id="patientGender"></canvas></div>
+
+                <div class="chart-item"><h3>Crime Type</h3><canvas id="crimeType"></canvas></div>
+                <div class="chart-item"><h3>Crime Cause</h3><canvas id="crimeCause"></canvas></div>
+                <div class="chart-item"><h3>Crime Level</h3><canvas id="crimeLevel"></canvas></div>
+                <div class="chart-item"><h3>Suspect Gender</h3><canvas id="suspectGender"></canvas></div>
+                <div class="chart-item"><h3>Victim Gender</h3><canvas id="victimGender"></canvas></div>
+                <div class="chart-item"><h3>Suspect Age</h3><canvas id="suspectAge"></canvas></div>
+                <div class="chart-item"><h3>Victim Age</h3><canvas id="victimAge"></canvas></div>
+            </div>
+        </div>
+
+        <!-- MANAGE ACCOUNTS SECTION -->
+        <div id="manage-accounts" class="section">
+            <h1>Manage All Accounts</h1>
+            <div class="accounts-container">
+
+                <!-- Barangay Accounts -->
+                <div class="account-group">
+                    <h2>Barangay Accounts</h2>
+                    <div class="table-actions">
+                        <button onclick="deleteAllAccounts('barangay')" class="btn-danger">
+                            Delete All Barangay Accounts
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table id="barangay-table">
+                            <thead>
+                                <tr>
+                                    <th width="5%"><input type="checkbox" onclick="toggleAll(this, 'barangay-table')"></th>
+                                    <th width="35%">Barangay</th>
+                                    <th width="25%">Contact Number</th>
+                                    <th width="15%">Status</th>
+                                    <th width="20%">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Agency Accounts -->
+                <div class="account-group">
+                    <h2>Agency Accounts</h2>
+                    <div class="table-actions">
+                        <button onclick="deleteAllAccounts('agency')" class="btn-danger">
+                            Delete All Agency Accounts
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table id="agency-table">
+                            <thead>
+                                <tr>
+                                    <th width="5%"><input type="checkbox" onclick="toggleAll(this, 'agency-table')"></th>
+                                    <th width="25%">Role</th>
+                                    <th width="25%">Location</th>
+                                    <th width="20%">Contact Number</th>
+                                    <th width="15%">Status</th>
+                                    <th width="20%">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDIT MODAL -->
+            <div id="editModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeEditModal()">×</span>
+                    <h3>Edit Account</h3>
+                    <form onsubmit="event.preventDefault(); saveEdit();">
+                        <input type="hidden" id="edit-contact-old">
+                        <label>Account Type</label>
+                        <input type="text" id="edit-role" disabled style="background:#f1f5f9;">
+                        <label>New Contact Number</label>
+                        <input type="text" id="edit-contact" placeholder="e.g. 09123456789" required>
+                        <label>New Password <small>(leave blank to keep current)</small></label>
+                        <input type="password" id="edit-password" placeholder="••••••••">
+                        <button type="submit" style="margin-top:20px;">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- WARNING MODAL -->
+            <div id="warningModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeWarningModal()">×</span>
+                    <h3>Issue Warning</h3>
+                    <p style="margin:20px 0; line-height:1.6;">
+                        Select the offense level for this account:
+                    </p>
+                    <div style="display:flex; flex-direction:column; gap:12px;">
+                        <button onclick="applyWarning(1)" class="btn-warning" style="padding:14px; font-size:15px;">
+                            1st Offense – Lock Account for 1 Day
+                        </button>
+                        <button onclick="applyWarning(2)" class="btn-warning" style="padding:14px; font-size:15px; background:#ea580c;">
+                            2nd Offense – Lock Account for 1 Month
+                        </button>
+                        <button onclick="applyWarning(3)" style="padding:14px; font-size:15px; background:#dc2626;">
+                            3rd Offense – PERMANENTLY DELETE ACCOUNT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BARANGAY REPORTS SECTION -->
+        <div id="barangay-reports" class="section">
+            <h1>Barangay Reports</h1>
+
+            <div style="margin-bottom: 30px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; background: white; padding: 20px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <div>
+                    <label style="font-weight: bold; margin-right: 10px;">Select Barangay:</label>
+                    <select id="brgy-report-filter" style="min-width: 320px; padding: 14px; font-size: 16px; border-radius: 12px; border: 2px solid #cbd5e1;">
+                        <option value="">Loading barangays...</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn-small" style="background:#3b82f6; padding: 12px 18px;" onclick="setBrgyReportPeriod('today')">Today</button>
+                    <button class="btn-small" style="background:#10b981; padding: 12px 18px;" onclick="setBrgyReportPeriod('daily')">Daily</button>
+                    <button class="btn-small" style="background:#f59e0b; padding: 12px 18px;" onclick="setBrgyReportPeriod('weekly')">Weekly</button>
+                    <button class="btn-small" style="background:#8b5cf6; padding: 12px 18px;" onclick="setBrgyReportPeriod('monthly')">Monthly</button>
+                    <button class="btn-small" style="background:#ec4899; padding: 12px 18px;" onclick="setBrgyReportPeriod('yearly')">Yearly</button>
+                </div>
+            </div>
+
+            <div class="charts-horizontal" id="brgy-charts-container">
+                <!-- All Barangay-Specific Charts Load Here Dynamically -->
+            </div>
+        </div>
+
+        <!-- CDRRMO REPORTS SECTION -->
+        <div id="cdrrmo-reports" class="section">
+            <h1>CDRRMO Reports</h1>
+
+            <div style="margin-bottom: 30px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; background: white; padding: 20px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <div>
+                    <label style="font-weight: bold; margin-right: 10px;">Select Barangay:</label>
+                    <select id="cdrrmo-report-filter" style="min-width: 320px; padding: 14px; font-size: 16px; border-radius: 12px; border: 2px solid #cbd5e1;">
+                        <option value="">All Barangays</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn-small" style="background:#3b82f6; padding: 12px 18px;" onclick="setCdrrmoReportPeriod('today')">Today</button>
+                    <button class="btn-small" style="background:#10b981; padding: 12px 18px;" onclick="setCdrrmoReportPeriod('daily')">Daily</button>
+                    <button class="btn-small" style="background:#f59e0b; padding: 12px 18px;" onclick="setCdrrmoReportPeriod('weekly')">Weekly</button>
+                    <button class="btn-small" style="background:#8b5cf6; padding: 12px 18px;" onclick="setCdrrmoReportPeriod('monthly')">Monthly</button>
+                    <button class="btn-small" style="background:#ec4899; padding: 12px 18px;" onclick="setCdrrmoReportPeriod('yearly')">Yearly</button>
+                </div>
+            </div>
+
+            <div class="charts-horizontal" id="cdrrmo-charts-container">
+                <!-- Charts loaded here dynamically -->
+            </div>
+        </div>
+
+        <!-- BFP REPORTS SECTION -->
+        <div id="bfp-reports" class="section">
+            <h1>BFP Reports</h1>
+
+            <div style="margin-bottom: 30px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; background: white; padding: 20px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <div>
+                    <label style="font-weight: bold; margin-right: 10px;">Select Barangay:</label>
+                    <select id="bfp-report-filter" style="min-width: 320px; padding: 14px; font-size: 16px; border-radius: 12px; border: 2px solid #cbd5e1;">
+                        <option value="">All Barangays</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn-small" style="background:#3b82f6; padding: 12px 18px;" onclick="setBfpReportPeriod('today')">Today</button>
+                    <button class="btn-small" style="background:#10b981; padding: 12px 18px;" onclick="setBfpReportPeriod('daily')">Daily</button>
+                    <button class="btn-small" style="background:#f59e0b; padding: 12px 18px;" onclick="setBfpReportPeriod('weekly')">Weekly</button>
+                    <button class="btn-small" style="background:#8b5cf6; padding: 12px 18px;" onclick="setBfpReportPeriod('monthly')">Monthly</button>
+                    <button class="btn-small" style="background:#ec4899; padding: 12px 18px;" onclick="setBfpReportPeriod('yearly')">Yearly</button>
+                </div>
+            </div>
+
+            <div class="charts-horizontal" id="bfp-charts-container">
+                <!-- Fire charts will be loaded here -->
+            </div>
+        </div>
+
+        <div id="health-reports" class="section">
+            <h1>City Health Reports</h1>
+
+            <div style="margin-bottom: 30px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; background: white; padding: 20px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <div>
+                    <label style="font-weight: bold; margin-right: 10px;">Select Barangay:</label>
+                    <select id="health-report-filter" style="min-width: 320px; padding: 14px; font-size: 16px; border-radius: 12px; border: 2px solid #cbd5e1;">
+                        <option value="">All Barangays</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn-small" style="background:#3b82f6; padding: 12px 18px;" onclick="setHealthReportPeriod('today')">Today</button>
+                    <button class="btn-small" style="background:#10b981; padding: 12px 18px;" onclick="setHealthReportPeriod('daily')">Daily</button>
+                    <button class="btn-small" style="background:#f59e0b; padding: 12px 18px;" onclick="setHealthReportPeriod('weekly')">Weekly</button>
+                    <button class="btn-small" style="background:#8b5cf6; padding: 12px 18px;" onclick="setHealthReportPeriod('monthly')">Monthly</button>
+                    <button class="btn-small" style="background:#ec4899; padding: 12px 18px;" onclick="setHealthReportPeriod('yearly')">Yearly</button>
+                </div>
+            </div>
+
+            <div class="charts-horizontal" id="health-charts-container">
+                <!-- Health charts loaded dynamically -->
+            </div>
+        </div>
+
+                <!-- PNP REPORTS SECTION -->
+        <div id="pnp-reports" class="section">
+            <h1>PNP Detailed Reports</h1>
+
+            <div style="margin-bottom: 30px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; background: white; padding: 20px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <div>
+                    <label style="font-weight: bold; margin-right: 10px;">Select Barangay:</label>
+                    <select id="pnp-report-filter" style="min-width: 320px; padding: 14px; font-size: 16px; border-radius: 12px; border: 2px solid #cbd5e1;">
+                        <option value="">All Barangays</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn-small" style="background:#1e40af; padding: 12px 18px;" onclick="setPnpReportPeriod('today')">Today</button>
+                    <button class="btn-small" style="background:#3b82f6; padding: 12px 18px;" onclick="setPnpReportPeriod('daily')">Daily</button>
+                    <button class="btn-small" style="background:#6366f1; padding: 12px 18px;" onclick="setPnpReportPeriod('weekly')">Weekly</button>
+                    <button class="btn-small" style="background:#8b5cf6; padding: 12px 18px;" onclick="setPnpReportPeriod('monthly')">Monthly</button>
+                    <button class="btn-small" style="background:#a855f7; padding: 12px 18px;" onclick="setPnpReportPeriod('yearly')">Yearly</button>
+                </div>
+            </div>
+
+            <div class="charts-horizontal" id="pnp-charts-container">
+                <!-- All PNP charts will load here -->
+            </div>
+        </div>
+
+
+
+    </div>
+
+    {% include 'dashboard/DILGDash.html' %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+# Road Accident
+Road Accident Cause:Head-on Collision,Rear-end Collision,Side-impact Collision,Single Vehicle Accident,Pedestrian Accident
+Road Accident Type:Overspeeding,Distracted Driving,Drunk Driving,Reckless Driving,Fatigue,Inexperience,Mechanical Failure,Poor Maintenance,Overloading
+Weather Conditions:Sunny,Rainy,Foggy,Cloudy,Stormy
+Road Conditions:Dry,Wet,Icy,Potholes,Gravel
+Vehicle Types:Car,Motorcycle,Truck,Bus,Bicycle
+Driver Ages:0-17,18-25,26-35,36-45,46-60,61+
+Driver Gender:Male,Female
+
+# Fire Incident
+Fire Types:Residential Fire,Structural Fire,Commercial/Industrial Fire,Electrical Fire,Vehicular Fire (Car/Truck/Bus/Jeepney, etc.),Grass Fire,Forest/Wildfire,Rubbish/Garbage Fire,Kitchen/Grease Fire,Gas/LPG Fire,Explosion/Blast-related Fire,Post Fire
+Fire Cause:Unattended Cooking,Electrical Short Circuit,Candles Left Burning,Overloaded Extension Cords,Smoking Materials (Cigarettes, Lighters, Matches),LPG/Gas Leak,Faulty Wiring or Electrical Systems,Flammable Materials Stored Improperly,Welding or Construction Sparks,Arson,Machinery/Equipment Overheating,Chemical Reactions or Spills,Boiler or Furnace Failure,Improper Disposal of Flammable Waste,Exposed or Damaged Wiring,Lightning Strike,Engine Overheating,Fuel Leak
+Weather Conditions:Sunny,Rainy,Foggy,Cloudy,Stormy
+Fire Severity:Low,Medium,High,Minor Fire,Moderate Fire,Major Fire,Severe Fire,Catastrophic Fire
+Resident Age:0-17,18-25,26-35,36-45,46-60,61+
+Resident Gender:Male,Female
+
+# Crime Incident
+Crime Types:Theft,Assault,Burglary,Robbery,Vandalism,Harassment,Domestic Violence,Drug-Related,Fraud
+Crime Causes:Poverty,Unemployment,Alcohol,Drugs,Personal Dispute,Gang Activity,Opportunistic,Domestic Issue,Mental Health
+Levels:Low,Medium,High
+Suspect Gender:Male,Female
+Victim Gender:Male,Female
+Suspect Age:0-17,18-25,26-35,36-45,46-60,61+
+Victim Age:0-17,18-25,26-35,36-45,46-60,61+
+
+# Health Emergency
+Health Emergency Types:Heart Attack,Stroke,Fall,Breathing Difficulty,Giving Birth,Seizure,Burn,Poisoning,Allergic Reaction
+Health Causes:Pregnant,Chronic Illness,Accident,Allergy,Infection,Overdose,Heatstroke
+Patient Gender:Male,Female
+Patient Age:0-17,18-25,26-35,36-45,46-60,61+
+
+
+
+

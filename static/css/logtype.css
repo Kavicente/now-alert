@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #224380;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+   SIGN UP TYPE PAGE (FROM PREVIOUS)
+   ======================================== */
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: #224380;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+/* LEFT: Welcome + QR */
+.left-panel {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000;
+    background: #fff;
+}
+
+.left-panel h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.left-panel h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.qr-box {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.qr-box img {
+    width: 220px;
+    height: 220px;
+    border-radius: 10px;
+}
+
+/* RIGHT: Sign Up Panel */
+.right-panel {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #224380;
+    color: #fff;
+}
+
+.right-panel h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.signup-btn {
+    background-color: #66c2ff;
+    color: #000;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%;
+    max-width: 300px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.signup-btn:hover {
+    transform: scale(1.05);
+}
+
+.or-text {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #aaa;
+}
+
+/* ========================================
+   LOGIN TYPE PAGE (NEW)
+   ======================================== */
+.login-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* LEFT: Alert Background + Logo */
+.login-left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: url('../logo/alert_background.png') center/cover no-repeat;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+}
+
+.login-left::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #ffffff;
+    z-index: 1;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+}
+
+.login-left > * {
+    position: relative;
+    z-index: 2;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+}
+
+.login-left img.logo {
+    width: 110%;
+    height: 110%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+}
+
+.login-left h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+}
+
+
+/* RIGHT: Login Panel */
+.login-right {
+    flex: 1;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.login-right h1 {
+    font-size: 32px;
+    color: #224380;
+    margin-bottom: 40px;
+}
+
+.login-btn {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 20px;
+    width: 80%;
+    max-width: 300px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+}
+
+.signup-text {
+    margin: 30px 0 10px;
+    color: #224380;
+    font-size: 18px;
+}
+
+/* ========================================
+   RESPONSIVE: SIGN UP TYPE
+   ======================================== */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    .left-panel, .right-panel {
+        padding: 40px;
+        min-height: 50vh;
+    }
+    .left-panel {
+        order: 2;
+    }
+    .right-panel {
+        order: 1;
+    }
+}
+
+/* ========================================
+   RESPONSIVE: LOGIN TYPE
+   ======================================== */
+@media (max-width: 992px) {
+    .login-container {
+        flex-direction: column;
+    }
+    .login-left, .login-right {
+        min-height: 50vh;
+    }
+    .login-left {
+        order: 2;
+        padding: 40px 20px;
+    }
+    .login-right {
+        order: 1;
+        padding: 40px 20px;
+    }
+    .login-left img.logo {
+        width: 120px;
+    }
+    .login-left h1 {
+        font-size: 36px;
+    }
+}

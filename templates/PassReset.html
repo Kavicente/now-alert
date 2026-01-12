@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reset Your Password</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo/alertnow.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/passres.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="reset-card">
+            <a href="/choose_login_type">
+                <img src="{{ url_for('static', filename='logo/alertlogo.png') }}" 
+                    alt="Alert Now Logo" 
+                    class="logo" 
+                    >
+            </a>
+            <h1>Reset Your Password</h1>
+            <p>Enter Your Signed Up Contact Number to Proceed to Reset Your Password.</p>
+
+            <form id="reset-form" action="/pass_reset" method="post">
+                <label>Role:
+                    <select name="role" id="role" required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="barangay">Barangay</option>
+                        <option value="cdrrmo">CDRRMO</option>
+                        <option value="pnp">PNP</option>
+                        <option value="bfp">BFP</option>
+                        <option value="health">City Health</option>
+                        <option value="hospital">Hospital</option>
+                    </select>
+                </label>
+
+                <label>Contact Number:
+                    <input type="tel" name="contact_no" id="contact_no" placeholder="e.g. 09123456789" required>
+                </label>
+
+                <label>Password:
+                    <div class="password-wrapper">
+                        <input type="password" name="password" id="password" placeholder="Enter new password" required disabled>
+                        <span class="toggle-password" onclick="togglePassword()">Show</span>
+                    </div>
+                </label>
+
+                <button type="submit" id="save-btn" disabled>Save</button>
+            </form>
+
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+
+    <script>
+        const role = document.getElementById('role');
+        const contact = document.getElementById('contact_no');
+        const password = document.getElementById('password');
+        const saveBtn = document.getElementById('save-btn');
+
+        function checkForm() {
+            if (role.value && contact.value && contact.value.length >= 11) {
+                password.disabled = false;
+                saveBtn.disabled = false;
+            } else {
+                password.disabled = true;
+                saveBtn.disabled = true;
+            }
+        }
+
+        role.addEventListener('change', checkForm);
+        contact.addEventListener('input', checkForm);
+
+        function togglePassword() {
+            if (password.type === 'password') {
+                password.type = 'text';
+                this.textContent = 'Hide';
+            } else {
+                password.type = 'password';
+                this.textContent = 'Show';
+            }
+        }
+    </script>
+</body>
+</html>

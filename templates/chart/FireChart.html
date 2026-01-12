@@ -1,0 +1,74 @@
+<script>
+        const socket = io.connect('https://now-alert-vn0d.onrender.com');
+        let charts = {};
+        let currentSection = 'fire';
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('shifted');
+        }
+
+        function showSection(section) {
+            document.getElementById('fireSection').style.display = section === 'fire' ? 'block' : 'none';
+            currentSection = section;
+            filterData('today');
+        }
+
+        function jumpToBarangay() {
+            const dropdown = document.getElementById('barangayDropdown');
+            const barangayId = dropdown.value;
+            if (barangayId) {
+                const section = document.getElementById(`fire-barangay-${barangayId}`);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        function initFireCharts(barangay, data) {
+            const safeBarangay = barangay.replace(/\s+/g, '-');
+            charts[`${safeBarangay}-fireCauseChart`] = new Chart(document.getElementById(`fireCauseChart-${safeBarangay}`).getContext('2d'), { type: 'doughnut', data: data.cause, options: { responsive: true, plugins: { legend: { labels: { color: 'white' } }, title: { color: 'white' } } } });
+            charts[`${safeBarangay}-fireTypeChart`] = new Chart(document.getElementById(`fireTypeChart-${safeBarangay}`).getContext('2d'), { type: 'pie', data: data.type, options: { responsive: true, plugins: { legend: { labels: { color: 'white' } }, title: { color: 'white' } } } });
+            charts[`${safeBarangay}-fireWeatherChart`] = new Chart(document.getElementById(`fireWeatherChart-${safeBarangay}`).getContext('2d'), { type: 'doughnut', data: data.weather, options: { responsive: true, plugins: { legend: { labels: { color: 'white' } }, title: { color: 'white' } } } });
+            charts[`${safeBarangay}-fireSeverityChart`] = new Chart(document.getElementById(`fireSeverityChart-${safeBarangay}`).getContext('2d'), { type: 'pie', data: data.severity, options: { responsive: true, plugins: { legend: { labels: { color: 'white' } }, title: { color: 'white' } } } });
+        }
+
+        function updateFireCharts(barangay, data) {
+            const safeBarangay = barangay.replace(/\s+/g, '-');
+            charts[`${safeBarangay}-fireCauseChart`].data = data.cause;
+            charts[`${safeBarangay}-fireTypeChart`].data = data.type;
+            charts[`${safeBarangay}-fireWeatherChart`].data = data.weather;
+            charts[`${safeBarangay}-fireSeverityChart`].data = data.severity;
+            Object.keys(charts).filter(key => key.startsWith(`${safeBarangay}-fire`)).forEach(key => charts[key].update());
+        }
+
+        socket.on('bfp_charts_response_update', (data) => {
+            if (currentSection === 'fire' && document.querySelector('.tab.active').textContent.toLowerCase() === 'today') {
+                updateFireCharts(data.barangay, data);
+            }
+        });
+
+        function filterData(timeFilter) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`.tab[onclick="filterData('${timeFilter}')"]`).classList.add('active');
+            const barangay = document.getElementById('barangayDropdown').value.replace(/-/g, ' ') || '{{ barangays[0] }}';
+            fetch(`/bfp_charts_data?time_filter=${timeFilter}&barangay=${barangay}`)
+                .then(response => response.json())
+                .then(data => {
+                    Object.keys(charts).forEach(key => charts[key].destroy());
+                    charts = {};
+                    initFireCharts(barangay, data);
+                });
+        }
+
+        function initCharts(barangay, data) {
+            initFireCharts(barangay, data);
+        }
+
+        window.onload = () => {
+            showSection('fire');
+            filterData('today');
+        };
+    </script>

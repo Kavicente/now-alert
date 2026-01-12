@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNP Dashboard</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo/alertnow.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboards.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="https://unpkg.com/leaflet-heatmap@1.0.0/dist/leaflet-heatmap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <style>
+        .alert-item { 
+            font-size: 18px; margin-bottom: 6px; padding: 15px; border-radius: 10px; 
+            color: #000000; background-color: #ffffff; border: 1px solid #000000; 
+            width: 360px; border-left: 4px solid #e74c3c; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .notification { position: fixed; bottom: 10px; right: 10px; }
+        .response-form { margin-top: 10px; }
+        .response-form select, .response-form button { margin: 5px; padding: 5px; border-radius: 4px; }
+        .clickable-img { cursor: pointer; max-width: 100%; height: auto; border-radius: 5px; }
+        .prediction { margin-top: 10px; font-weight: bold; color: #000; display: none; }
+
+        .alert-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 360px);
+            grid-auto-rows: minmax(280px, auto);
+            gap: 30px;
+            padding: 20px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            width: 110%;
+            max-width: 150vw;
+        }
+        .alert-grid::-webkit-scrollbar { height: 10px; }
+        .alert-grid::-webkit-scrollbar-track { background: transparent; }
+        .alert-grid::-webkit-scrollbar-thumb { background: #e74c3c; border-radius: 10px; }
+
+        #live-alert-container, #recent-alert-container {
+            min-height: 680px;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-modal img { max-width: 90%; max-height: 90%; border-radius: 5px; }
+        .image-modal .close-btn {
+            position: absolute;
+            top: 20px; right: 20px;
+            color: #fff; font-size: 30px; cursor: pointer;
+        }
+
+        .alert-status {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .status-pending { color: #e74c3c; }
+        .status-responded { color: #27ae60; }
+        .status-expired { color: #27ae60; }
+
+        .alert-tabs {
+            display: flex;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            width: fit-content;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .alert-tab {
+            padding: 14px 32px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #333;
+            transition: all 0.3s;
+        }
+        .alert-tab:hover { background: #f0f0f0; }
+        .alert-tab.active { background: #e74c3c; color: white; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .date-filter-container {
+            margin: 15px 0;
+            text-align: right;
+        }
+        .date-filter-container input {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .prediction-charts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);  /* ← 3 charts per row */
+            gap: 40px;
+            margin: 60px auto;
+            max-width: 1800px;
+            padding: 0 30px;
+        }
+
+        .chart-box {
+            border-radius: 20px;
+            padding: 30px;
+            height: 480px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+            flex-grow: 1;
+        }
+
+        #yearlyPredictionChart,
+            #monthlyComparisonChart,
+            #julDecChart, 
+            #fireYearlyChart,
+            #fireMonthlyChart,
+            #fireJulDecChart {
+                width: 100% !important;
+                height: 100% !important;
+                flex-grow: 1;
+            }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <img src="{{ url_for('static', filename='logo/alertlogo.png') }}" alt="Alert Logo" class="alert-logo">
+                <li><a href="{{ url_for('pnp_dashboard') }}"><span>🏠</span> Dashboard</a></li>
+                <li><a href="#alerts"><span>🔔</span> Alerts</a></li>
+                <li><a href="#map"><span>📍</span> Map</a></li>
+                <li><a href="{{ url_for('pnp_charts') }}"><span>📊</span> Manage Reports</a></li>
+                <li><a href="#notifications"><span>📣</span> Notifications</a></li>
+                <li><a href="#settings"><span>⚙️</span> Settings</a></li>
+                <li><a href="{{ url_for('logout') }}"><span>🚪</span> Log Out</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="dashboard">
+        <header>
+            <div class="header-content">
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+                <h1>PNP {{ municipality }} Dashboard</h1>
+            </div>
+            <div class="filters"></div>
+        </header>
+    </div>
+
+    <main class="main-content" id="mainContent">
+        <h2 class="h2" style="position: relative; display: inline-block; margin: 0 auto;">PNP {{ municipality }} Map </h2>
+        <p class="p" style="position: relative; display: inline-block; margin: 0 auto;">
+            Coordinates: <span id="map-coordinates">{{ lat_coord|default(14.0549) }}, {{ lon_coord|default(121.3013) }}</span>
+        </p>
+
+        <div class="dashboard-container">
+            <div id="map"></div>
+            <section class="stats">
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <p class="p" style="position: relative; display: inline-block; margin: 0 auto;">
+                            Total Incidents: 
+                            <span id="total-incidents" class="incident-number">
+                                {{ stats.total() if stats else 0 }}
+                            </span>
+                        </p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="p" style="position: relative; display: inline-block; margin: 0 auto;">
+                            Responded: 
+                            <span id="responded-count" class="incident-number">
+                                {{ responded_count if responded_count else 0 }}
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h4>Alerts Received Per Month</h4>
+                    <canvas id="alertsPerMonthChart"></canvas>
+                </div>
+            </section>
+        </div>
+        <div class="prediction-charts-grid">
+            <div class="chart-box">
+                <div class="chart-title">Road Accident - 2023 Full Year Forecast</div>
+                <canvas id="yearlyPredictionChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <div class="chart-title">Road Accident - 2023 Monthly Forecast</div>
+                <canvas id="monthlyComparisonChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <div class="chart-title">Road Accident - July–December 2023 Forecast</div>
+                <canvas id="julDecChart"></canvas>
+            </div>
+        </div>
+
+        <!-- FIRE INCIDENT CHARTS (bottom row) -->
+        <div class="prediction-charts-grid" style="margin-top: 80px;">
+            <div class="chart-box">
+                <div class="chart-title">Fire Incident - 2023 Full Year Forecast</div>
+                <canvas id="fireYearlyChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <div class="chart-title">Fire Incident - 2023 Monthly Forecast</div>
+                <canvas id="fireMonthlyChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <div class="chart-title">Fire Incident - July–December 2023 Forecast</div>
+                <canvas id="fireJulDecChart"></canvas>
+            </div>
+        </div>
+
+        <section id="alerts" class="alerts">
+            <h2 class="h2">PNP Alerts</h2>
+
+            <div class="alert-tabs">
+                <div class="alert-tab active" data-tab="live">Live Alerts</div>
+                <div class="alert-tab" data-tab="recent">Recent Alerts</div>
+            </div>
+
+            <div id="live-alerts-tab" class="tab-content active">
+                <div id="live-alert-container" class="alert-grid"></div>
+            </div>
+
+            <div id="recent-alerts-tab" class="tab-content">
+                <div class="date-filter-container">
+                    <label for="recent-date-filter">Filter by Date: </label>
+                    <input type="date" id="recent-date-filter">
+                </div>
+                <div id="recent-alert-container" class="alert-grid"></div>
+            </div>
+        </section>
+
+        
+
+        <div id="notification"></div>
+        <div id="image-modal" class="image-modal">
+            <span class="close-btn">&times;</span>
+            <img id="modal-image" src="">
+        </div>
+    </main>
+
+    {% include 'dashboard/PNP.html' %}
+</body>
+</html>

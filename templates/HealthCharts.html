@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Charts - {{ barangay }}</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo/alertnow.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hcharts.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <header>
+        <h1>Health Charts</h1>
+        <p id="datetime">{{ current_datetime }}</p>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('health_dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('health_charts') }}">Charts</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main class="main-content" id="mainContent">
+        <div class="tabs">
+            <button class="tab active" onclick="filterData('today')">Today</button>
+            <button class="tab" onclick="filterData('daily')">Daily</button>
+            <button class="tab" onclick="filterData('weekly')">Weekly</button>
+            <button class="tab" onclick="filterData('monthly')">Monthly</button>
+            <button class="tab" onclick="filterData('yearly')">Yearly</button>
+        </div>
+
+        <div class="dropdown-container">
+            <label for="barangayDropdown">Select Barangay: </label>
+            <select id="barangayDropdown" onchange="jumpToBarangay()">
+                <option value="">Select a Barangay</option>
+                {% for barangay in barangays %}
+                <option value="{{ barangay | replace(' ', '-') }}">{{ barangay }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div id="chartSection" class="section">
+            {% for barangay in barangays %}
+            <div class="barangay-section" id="barangay-{{ barangay | replace(' ', '-') }}">
+                <h2>{{ barangay }} Emergency Health Reports</h2>
+                <div class="chart-grid">
+                    <div class="chart-container"><h2>Health Emergency Type Chart</h2><canvas id="healthTypeChart-{{ barangay | replace(' ', '-') }}"></canvas></div>
+                    <div class="chart-container"><h2>Health Emergency Cause Chart</h2><canvas id="healthCauseChart-{{ barangay | replace(' ', '-') }}"></canvas></div>
+                    <div class="chart-container"><h2>Weather Chart</h2><canvas id="weatherChart-{{ barangay | replace(' ', '-') }}"></canvas></div>
+                    <div class="chart-container"><h2>Patient Age Chart</h2><canvas id="patientAgeChart-{{ barangay | replace(' ', '-') }}"></canvas></div>
+                    <div class="chart-container"><h2>Patient Gender Chart</h2><canvas id="patientGenderChart-{{ barangay | replace(' ', '-') }}"></canvas></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    {% include 'chart/CityHealthChart.html' %}
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log In</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo/alertnow.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="left-panel">
+            <img src="{{ url_for('static', filename='logo/app_icon.png') }}" alt="Alert Logo" class="alert-logo">
+            <h3>Don't Have an Account?</h3>
+            <button type="button" onclick="window.location.href='/signup_na'">Sign Up</button>
+            <h3>Or</h3>
+            <button class="button2" onclick="window.location.href='/choose_login_type'">Choose Account</button>
+
+        </div>
+    
+    
+    
+        <div class="right-panel">
+        <form action="/login" method="post" class="signup-form">
+        <h1 class="h1">Log In</h1>
+
+        <label>Barangay: <input type="text" name="barangay" required></label><br>
+        <label>Contact Number: <input type="tel" name="contact_no" required></label><br>
+        <label class="password-label">
+                    Password: 
+                    <div class="password-wrapper">
+                        <input type="password" name="password" id="password" required>
+                        <span class="toggle-password" onclick="togglePassword()">Show</span>
+                    </div>
+                </label><br>
+        <a href="/pass_reset" class="forgot-link">Forgot Password? Click Here to Reset</a><br>
+        
+        <button class="button3" type="submit">Log In</button>
+            </form>
+            </div>
+        </div>
+    </form>
+    <script>
+            function togglePassword() {
+                const passwordInput = document.getElementById('password');
+                const toggleText = document.querySelector('.toggle-password');
+                
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    toggleText.textContent = 'Hide';
+                } else {
+                    passwordInput.type = 'password';
+                    toggleText.textContent = 'Show';
+                }
+            }
+    </script>
+    
+</body>
+</html>

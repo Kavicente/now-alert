@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Dashboard</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo/alertnow.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="https://unpkg.com/leaflet-heatmap@1.0.0/dist/leaflet-heatmap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/test_socket.js') }}"></script>
+    <style>
+        .alert-item { 
+            font-size: 18px; 
+            margin-bottom: 6px; 
+            padding: 15px; 
+            border-radius: 10px; 
+            color: #000000; 
+            background-color: #ffffff; 
+            border: 1px solid #000000; 
+            width: 360px;  
+            border-left: 4px solid #3498db;
+        }
+        .alert-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 360px);    /* Exactly 5 cards per row */
+            grid-auto-rows: minmax(280px, auto);
+            gap: 30px;
+            padding: 20px;
+            overflow-x: auto;         
+            margin-right: -250px;                  /* Horizontal scroll */
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            width: 110%;
+            max-width: 150vw;
+        }
+
+        .alert-grid::-webkit-scrollbar {
+            height: 10px;
+            display: none;  
+        }
+        .alert-grid::-webkit-scrollbar-track {
+            
+            display: none;  
+        }
+        .alert-grid::-webkit-scrollbar-thumb {
+            display: none;  
+        }
+
+        .alert-item {
+            scroll-snap-align: start;
+            min-width: 360px;
+            max-width: 360px;
+            height: fit-content;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .notification { 
+            position: fixed; 
+            width: 50px; 
+            bottom: 10px; 
+            right: 10px; 
+        }
+        .response-form { 
+            margin-top: 10px; 
+            display: none; 
+        }
+        .response-form select, 
+        .response-form button { 
+            margin: 5px; 
+            padding: 5px; 
+            border-radius: 4px; 
+        }
+        .clickable-img { 
+            cursor: pointer; 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 5px; 
+        }
+        .prediction { 
+            margin-top: 10px; 
+            font-weight: bold; 
+            color: #000; 
+            display: none; 
+        }
+        
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+        .image-modal .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Tabs Styling */
+        .alert-tabs {
+            display: flex;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            width: fit-content;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .alert-tab {
+            padding: 14px 32px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #333;
+            transition: all 0.3s;
+        }
+        .alert-tab:hover {
+            background: #f0f0f0;
+        }
+        .alert-tab.active {
+            background: #3498db;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .date-filter-container {
+            margin: 15px 0;
+            text-align: right;
+        }
+        .date-filter-container input {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        #live-alert-container,
+        #recent-alert-container {
+            min-height: 320px;
+            padding-bottom: 20px;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255,0,0,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+        }
+        .prediction-charts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);  /* ← 3 charts per row */
+            gap: 40px;
+            margin: 60px auto;
+            max-width: 1800px;
+            padding: 0 30px;
+        }
+
+        .chart-box {
+            border-radius: 20px;
+            padding: 30px;
+            height: 480px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+            flex-grow: 1;
+        }
+
+        @media (max-width: 1600px) {
+            .prediction-charts-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .prediction-charts-grid {
+                grid-template-columns: 1fr;
+            }
+            .chart-box {
+                height: 400px;
+            }
+        }
+        #alerts {
+            margin-top: 40px;  /* ← Was probably too large before */
+        }
+
+        /* If you have multiple prediction grids, reduce the bottom margin of the last one */
+        .prediction-charts-grid:last-of-type {
+            margin-bottom: 40px;  /* ← Smaller gap before alerts */
+        }
+
+        /* Optional: tighter spacing for the entire section */
+        .main-content > section#alerts {
+            margin-top: 30px;
+            padding-top: 0;
+        }
+
+        #yearlyPredictionChart,
+        #monthlyComparisonChart,
+        #julDecChart, 
+        #fireYearlyChart,
+        #fireMonthlyChart,
+        #fireJulDecChart{
+            width: 100% !important;
+            height: 100% !important;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <img src="{{ url_for('static', filename='logo/alertlogo.png') }}" alt="Alert Logo" class="alert-logo">
+                <li><a href="{{ url_for('barangay_dashboard') }}"><span>🏠</span> Dashboard</a></li>
+                <li><a href="#alerts"><span>🔔</span> Alerts</a></li>
+                <li><a href="#map"><span>📍</span> Map</a></li>
+                <li><a href="{{ url_for('barangay_charts') }}"><span>📊</span> Manage Reports</a></li>
+                <li><a href="#notifications"><span>📣</span> Notifications</a></li>
+                <li><a href="#settings"><span>⚙️</span> Settings</a></li>
+                <li><a href="{{ url_for('logout') }}"><span>🚪</span> Log Out</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="dashboard">
+        <header>
+            <div class="header-content">
+                <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+                <h1>Barangay {{ barangay }} Dashboard</h1>
+            </div>
+            <div class="filters"></div>
+        </header>
+    </div>
+
+    <main class="main-content" id="mainContent">
+        <h2 class="h2" style="position: relative; display: inline-block; margin: 0 auto;">Barangay {{ barangay }} Map </h2>
+        <p class="p" style="position: relative; display: inline-block; margin: 0 auto;">
+            Coordinates: <span id="map-coordinates">{{ lat_coord|default(14.0549) }}, {{ lon_coord|default(121.3013) }}</span> (Barangay: {{ barangay }})
+        </p>
+
+        <div class="dashboard-container">
+            <div id="map"></div>
+
+
+
+            
+            <section class="stats">
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <p class="p" style="position: relative; display: inline-block; margin: 0 auto;">
+                            Total Incidents: 
+                            <span id="total-incidents" class="incident-number">
+                                {{ stats.total() if stats else 0 }}
+                            </span>
+                        </p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="p" style="position: relative; display: inline-block; margin: 0 auto;">
+                            Responded: 
+                            <span id="responded-count" class="incident-number">
+                                {{ responded_count if responded_count else 0 }}
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h4>Emergency Types</h4>
+                    <canvas id="emergencyTypeChart"></canvas>
+                </div>
+            </section>
+
+            <!-- ROAD ACCIDENT CHARTS (top row) -->
+            <div class="prediction-charts-grid">
+                <div class="chart-box">
+                    <div class="chart-title">Road Accident - 2023 Full Year Forecast</div>
+                    <canvas id="yearlyPredictionChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <div class="chart-title">Road Accident - 2023 Monthly Forecast</div>
+                    <canvas id="monthlyComparisonChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <div class="chart-title">Road Accident - July–December 2023 Forecast</div>
+                    <canvas id="julDecChart"></canvas>
+                </div>
+            </div>
+
+            <!-- FIRE INCIDENT CHARTS (bottom row) -->
+            <div class="prediction-charts-grid" style="margin-top: 60px;">
+                <div class="chart-box">
+                    <div class="chart-title">Fire Incident - 2023 Full Year Forecast</div>
+                    <canvas id="fireYearlyChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <div class="chart-title">Fire Incident - 2023 Monthly Forecast</div>
+                    <canvas id="fireMonthlyChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <div class="chart-title">Fire Incident - July–December 2023 Forecast</div>
+                    <canvas id="fireJulDecChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- ALERTS SECTION WITH TABS -->
+        <section id="alerts" class="alerts">
+            <h2 class="h2">Live Alerts</h2>
+
+            <div class="alert-tabs">
+                <div class="alert-tab active" data-tab="live">Live Alerts</div>
+                <div class="alert-tab" data-tab="recent">Recent Alerts</div>
+            </div>
+
+            <!-- Live Alerts -->
+            <div id="live-alerts-tab" class="tab-content active">
+                <div id="live-alert-container" class="alert-grid"></div>
+            </div>
+
+            <!-- Recent Alerts -->
+            <div id="recent-alerts-tab" class="tab-content">
+                <div class="date-filter-container">
+                    <label for="recent-date-filter">Filter by Date: </label>
+                    <input type="date" id="recent-date-filter">
+                </div>
+                <div id="recent-alert-container" class="alert-grid"></div>
+            </div>
+        </section>
+
+        
+
+        <!-- Prediction Charts Section -->
+        
+
+        <div id="notification"></div>
+        <div id="image-modal" class="image-modal">
+            <span class="close-btn">&times;</span>
+            <img id="modal-image" src="">
+        </div>
+    </main>
+
+    {% include 'dashboard/Barangay.html' %}
+</body>
+</html>

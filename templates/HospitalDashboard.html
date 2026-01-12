@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashboard</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo/alertnow.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hdashboard.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="https://unpkg.com/leaflet-heatmap@1.0.0/dist/leaflet-heatmap.js"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <style>
+        .alert-item { font-size: 18px; margin-bottom: 6px; padding: 15px; border-radius: 10px; color: #000000; background-color: #ffffff; border: 1px solid #000000; width: 360px;  border-left: 4px solid #3498db;}
+        .notification { position: fixed; width: 50px; bottom: 10px; right: 10px; }
+        .response-form { margin-top: 10px; display: none; }
+        .response-form select, .response-form button { margin: 5px; padding: 5px; border-radius: 4px; }
+        .clickable-img { cursor: pointer; max-width: 200px; border-radius: 5px; }
+        .prediction { margin-top: 10px; font-weight: bold; color: #fff; display: none; }
+        .alert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            width: 93%;
+            margin-right: -160px;
+            color: #000000;
+            row-gap: 40px; /* Vertical spacing */
+            column-gap: 38px;
+        }
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+        .image-modal .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('hospital_dashboard') }}"><span>🏠</span> Dashboard</a></li>
+                <li><a href="#alerts"><span>🔔</span> Alerts</a></li>
+                <li><a href="#map"><span>📍</span> Map</a></li>
+                <li><a href="{{ url_for('hospital_charts') }}"><span>📊</span> Manage Reports</a></li>
+                <li><a href="#notifications"><span>📣</span> Notifications</a></li>
+                <li><a href="#settings"><span>⚙️</span> Settings</a></li>
+                <li><a href="{{ url_for('logout') }}"><span>🚪</span> Log Out</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="dashboard">
+        <header>
+            <h1>{{ assigned_hospital }} Dashboard</h1>
+            <div class="filters"></div>
+        </header>
+    </div>
+    <main class="main-content">
+        <h2 class="h2">{{ assigned_hospital }} Map</h2>
+        <p class="p">Coordinates: <span id="map-coordinates">{{ lat_coord|default(14.0549) }}, {{ lon_coord|default(121.3013) }}</span> (Hospital: {{ assigned_hospital }})</p>
+        <div id="map"></div>
+        <section class="stats">
+            <p class="p" style="position: relative; display: inline-block; margin: 0 auto;">
+                Total Incidents: 
+                <span id="total-incidents" class="incident-number">
+                    {{ stats.total() if stats else 0 }}
+                </span>
+            </p>
+        </section>
+        <section id="alerts">
+            <h2 class="h2">Live Alerts</h2>
+            <div id="alert-container" class="alert-grid"></div>
+        </section>
+        <div id="notification"></div>
+        <div id="image-modal" class="image-modal">
+            <span class="close-btn">&times;</span>
+            <img id="modal-image" src="">
+        </div>
+    </main>
+    {% include 'dashboard/Hospital.html' %}
+</body>
+</html>

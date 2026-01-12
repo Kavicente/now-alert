@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #224380;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* CONTAINER: FULL SCREEN */
+.container {
+    display: flex;
+    width: 100vw;           /* Full viewport width */
+    height: 100vh;          /* Full viewport height */
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: none;       /* Optional: remove shadow for full bleed */
+}
+
+/* LEFT: Welcome + QR */
+.left-panel {
+    flex: 2;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+}
+
+.left-panel h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.left-panel h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.qr-box {
+    background: #f0f0f0;
+    height: 220px;
+    width: 220px;
+    border-radius: 15px;
+    margin-top: 90px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.qr-box img {
+    width: 220px;
+    height: 220px;
+    
+    border-radius: 10px;
+}
+
+/* RIGHT: Sign Up Panel */
+.right-panel {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    color: #000000;
+}
+
+.right-panel h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #000000;
+}
+.alert-logo {
+    height: 300px; /* Adjust height as needed */
+    width: 230px; /* Maintain aspect ratio */
+    margin-left: 15px; /* Space between logo and text */
+    border-radius: 40px;
+}
+.signup-btn {
+    background-color: #5ebeff;
+    color: #000000;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 20px;
+    width: 80%;
+    max-width: 300px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.signup-btn:hover {
+    transform: scale(1.05);
+}
+
+.or-text {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #000000;
+}
+
+/* RESPONSIVE: Stack on mobile */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    .left-panel, .right-panel {
+        padding: 40px;
+        min-height: 50vh;
+    }
+    .left-panel {
+        order: 2;
+    }
+    .right-panel {
+        order: 1;
+    }
+}

@@ -1,0 +1,748 @@
+<script>
+        let dilgMap, markers = L.layerGroup();
+        let allBarangays = [], fullData = {}, allAccounts = [];
+        let currentBrgyPeriod = 'all';
+        let currentCdrrmoPeriod = 'all';
+        let currentBfpPeriod = 'all';
+        let currentHealthPeriod = 'all';
+        let currentPnpPeriod = 'all';
+
+        function initMap() {
+            dilgMap = L.map('heatmap').setView([14.0549, 121.3013], 13);
+            const token = 'pk.eyJ1Ijoia3VtaXRva2lydSIsImEiOiJjbWNvZXpkdDQwNmdvMnNyMnNtNGw5NGI1In0.3Y9z5y4saOL76Eb5c-o0UQ';
+            L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token=${token}`, {
+                maxZoom: 19, tileSize: 512, zoomOffset: -1
+            }).addTo(dilgMap);
+            markers.addTo(dilgMap);
+        }
+
+        function plotAlertMarkers(points) {
+            markers.clearLayers();
+            if (!points || points.length === 0) {
+                L.marker([14.0549, 121.3013]).addTo(markers).bindPopup("<b>No alerts recorded yet</b>").openPopup();
+                return;
+            }
+            points.forEach(p => {
+                const [lat, lon, count] = p;
+                if (!lat || !lon) return;
+                const icon = L.divIcon({
+                    html: `<div style="background:#d32f2f;color:white;padding:5px 9px;border-radius:50%;font-weight:bold;font-size:13px;border:3px solid white;box-shadow:0 3px 10px rgba(0,0,0,0.6);">${count > 1 ? count : ''}</div>`,
+                    iconSize: [30, 30], iconAnchor: [15, 15]
+                });
+                L.marker([lat, lon], {icon}).addTo(markers).bindPopup(`<b>Alert Location</b><br>Incidents: ${count}`);
+            });
+        }
+
+        function loadAllData() {
+            fetch('/dilg_data').then(r => r.json()).then(data => {
+                fullData = data;
+                allBarangays = data.all_barangays || [];
+                populateBarangayFilter();
+                plotAlertMarkers(data.heatmap);
+                renderMainCharts(data);
+                renderDetailedCharts();
+            });
+        }
+
+        function populateBarangayFilter() {
+            const select = document.getElementById('barangay-filter');
+            select.innerHTML = '<option value="">All Barangays (Citywide)</option>';
+            allBarangays.forEach(b => {
+                const opt = new Option(b, b);
+                select.appendChild(opt);
+            });
+            select.addEventListener('change', renderDetailedCharts);
+        }
+
+        function renderMainCharts(data) {
+            const labels = data.all_barangays || [];
+            const getData = obj => labels.map(b => (obj[b] || 0));
+
+            ['alertsPerBarangay', 'cdrrmoAlerts', 'bfpAlerts', 'healthAlerts', 'pnpAlerts'].forEach((id, i) => {
+                const keys = ['alerts_per_barangay', 'cdrrmo_alerts', 'bfp_alerts', 'health_alerts', 'pnp_alerts'];
+                new Chart(document.getElementById(id), {
+                    type: i % 2 === 0 ? 'doughnut' : 'pie',
+                    data: { labels, datasets: [{ data: getData(data[keys[i]] || {}), backgroundColor: getColors(labels.length) }] },
+                    options: { responsive: true, plugins: { title: { display: true, text: document.querySelector(`#${id}`).previousElementSibling.innerText } } }
+                });
+            });
+        }
+
+        function renderDetailedCharts() {
+            const selected = document.getElementById('barangay-filter').value;
+            const charts = [
+                {id:'roadCause',key:'road_cause',title:'Road Accident Cause',type:'doughnut'},{id:'roadType',key:'road_type',title:'Road Accident Type',type:'pie'},
+                {id:'vehicleType',key:'vehicle_type',title:'Vehicle Type',type:'doughnut'},{id:'driverAge',key:'driver_age',title:'Driver Age Group',type:'pie'},
+                {id:'driverGender',key:'driver_gender',title:'Driver Gender',type:'doughnut'},{id:'fireCause',key:'fire_cause',title:'Fire Cause',type:'doughnut'},
+                {id:'fireType',key:'fire_type',title:'Fire Type',type:'pie'},{id:'fireWeather',key:'fire_weather',title:'Weather During Fire',type:'doughnut'},
+                {id:'fireSeverity',key:'fire_severity',title:'Fire Severity',type:'pie'},{id:'healthType',key:'health_type',title:'Health Emergency Type',type:'doughnut'},
+                {id:'healthCause',key:'health_cause',title:'Health Cause',type:'pie'},{id:'healthWeather',key:'health_weather',title:'Weather During Health Emergency',type:'doughnut'},
+                {id:'patientAge',key:'patient_age',title:'Patient Age',type:'pie'},{id:'patientGender',key:'patient_gender',title:'Patient Gender',type:'doughnut'},
+                {id:'crimeType',key:'crime_type',title:'Crime Type',type:'doughnut'},{id:'crimeCause',key:'crime_cause',title:'Crime Cause',type:'pie'},
+                {id:'crimeLevel',key:'crime_level',title:'Crime Level',type:'doughnut'},{id:'suspectGender',key:'suspect_gender',title:'Suspect Gender',type:'pie'},
+                {id:'victimGender',key:'victim_gender',title:'Victim Gender',type:'doughnut'},{id:'suspectAge',key:'suspect_age',title:'Suspect Age',type:'pie'},
+                {id:'victimAge',key:'victim_age',title:'Victim Age',type:'doughnut'}
+            ];
+
+            charts.forEach(c => {
+                const canvas = document.getElementById(c.id);
+                if (canvas.chart) canvas.chart.destroy();
+                const stats = selected && fullData[c.key] ? (fullData[c.key][selected] || {}) : 
+                             (!selected && fullData[c.key] ? Object.values(fullData[c.key]).reduce((a,b)=> ({...a,...b}), {}) : {});
+                const labels = Object.keys(stats), values = Object.values(stats);
+                canvas.parentElement.style.display = labels.length ? 'block' : 'none';
+                if (!labels.length) return;
+
+                canvas.chart = new Chart(canvas, {
+                    type: c.type,
+                    data: { labels, datasets: [{ data: values, backgroundColor: getColors(labels.length) }] },
+                    options: { responsive: true, plugins: { title: { display: true, text: selected ? `${c.title} - ${selected}` : c.title }, legend: { position: 'bottom' } } }
+                });
+            });
+        }
+
+        function getColors(n) {
+            return Array.from({length: n}, (_, i) => `hsl(${(i * 360) / n}, 70%, 50%)`);
+        }
+
+        // === ACCOUNT MANAGEMENT ===
+        function toggleAll(master, tableId) {
+            document.querySelectorAll(`#${tableId} .select-account`).forEach(cb => cb.checked = master.checked);
+        }
+
+        function loadAccounts() {
+            document.querySelector('#barangay-table tbody').innerHTML = '<tr><td colspan="5" style="text-align:center;padding:50px;color:#666;">Loading Barangay Accounts...</td></tr>';
+            document.querySelector('#agency-table tbody').innerHTML = '<tr><td colspan="6" style="text-align:center;padding:50px;color:#666;">Loading Agency Accounts...</td></tr>';
+
+            fetch('/dilg_accounts')
+                .then(r => r.ok ? r.json() : Promise.reject('Server error'))
+                .then(users => {
+                    allAccounts = users || [];
+                    renderBarangayTable(users);
+                    renderAgencyTable(users);
+                })
+                .catch(() => {
+                    ['barangay-table', 'agency-table'].forEach(id =>
+                        document.querySelector(`#${id} tbody`).innerHTML = '<tr><td colspan="6" style="text-align:center;color:#e74c3c;padding:50px;">Failed to load data</td></tr>'
+                    );
+                });
+        }
+
+        function renderBarangayTable(users) {
+            const tbody = document.querySelector('#barangay-table tbody');
+            tbody.innerHTML = '';
+            const barangays = users.filter(u => u.role === 'barangay');
+            if (!barangays.length) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:#999;padding:50px;font-size:16px;">No Barangay Accounts Registered</td></tr>';
+                return;
+            }
+            barangays.forEach(u => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td><input type="checkbox" class="select-account" data-contact="${u.contact_no}"></td>
+                        <td><strong>${u.display_name || 'Unknown Barangay'}</strong></td>
+                        <td>${u.contact_no}</td>
+                        <td><span class="status-active">Active</span></td>
+                        <td>
+                            <button class="btn-edit btn-small" onclick="editAccount('${u.contact_no}', '${u.display_name}', '${u.contact_no}')">Edit</button>
+                            <button class="btn-delete btn-small" onclick="deleteAccount('${u.contact_no}')">Delete</button>
+                            <button class="btn-warning btn-small" onclick="warnAccount('${u.contact_no}')">Warning</button>
+                        </td>
+                    </tr>`;
+            });
+        }
+
+        function renderAgencyTable(users) {
+            const tbody = document.querySelector('#agency-table tbody');
+            tbody.innerHTML = '';
+            const agencies = users.filter(u => u.role !== 'barangay');
+            if (!agencies.length) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#999;padding:50px;font-size:16px;">No Agency Accounts Registered</td></tr>';
+                return;
+            }
+            agencies.forEach(u => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td><input type="checkbox" class="select-account" data-contact="${u.contact_no}"></td>
+                        <td><strong>${u.display_name}</strong></td>
+                        <td>${u.location}</td>
+                        <td>${u.contact_no}</td>
+                        <td><span class="status-active">Active</span></td>
+                        <td>
+                            <button class="btn-edit btn-small" onclick="editAccount('${u.contact_no}', '${u.display_name}', '${u.contact_no}')">Edit</button>
+                            <button class="btn-delete btn-small" onclick="deleteAccount('${u.contact_no}')">Delete</button>
+                            <button class="btn-warning btn-small" onclick="warnAccount('${u.contact_no}')">Warning</button>
+                        </td>
+                    </tr>`;
+            });
+        }
+
+        function editAccount(oldContact, name, currentContact) {
+            document.getElementById('edit-contact-old').value = oldContact;
+            document.getElementById('edit-role').value = name || 'Unknown';
+            document.getElementById('edit-contact').value = currentContact || '';
+            document.getElementById('editModal').style.display = 'flex';
+        }
+
+        function saveEdit() {
+            const old = document.getElementById('edit-contact-old').value;
+            const contact = document.getElementById('edit-contact').value.trim();
+            const password = document.getElementById('edit-password').value;
+            if (!contact) return alert("Contact number is required!");
+
+            fetch('/dilg_update_account', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({old_contact: old, contact, password: password || null})
+            })
+            .then(r => r.json())
+            .then(res => {
+                if (res.success) { closeEditModal(); loadAccounts(); }
+                else alert("Update failed: " + (res.error || "Unknown error"));
+            });
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = 'none';
+            document.getElementById('edit-password').value = '';
+        }
+
+        function deleteAccount(contact) {
+            if (confirm("PERMANENTLY DELETE this account?")) {
+                fetch(`/dilg_delete_account/${contact}`, {method: 'DELETE'}).then(() => loadAccounts());
+            }
+        }
+
+        function deleteAllAccounts(type) {
+            const msg = type === 'barangay' ? 'ALL BARANGAY ACCOUNTS' : 'ALL AGENCY ACCOUNTS';
+            if (confirm(`PERMANENTLY DELETE ${msg}?\n\nTHIS CANNOT BE UNDONE!`)) {
+                fetch(`/dilg_delete_all/${type}`, {method: 'DELETE'}).then(() => loadAccounts());
+            }
+        }
+
+        let currentWarningContact = '';
+        function warnAccount(contact) {
+            currentWarningContact = contact;
+            document.getElementById('warningModal').style.display = 'flex';
+        }
+
+        function applyWarning(level) {
+            closeWarningModal();
+            if (level === 3) {
+                if (confirm("3RD OFFENSE = PERMANENT ACCOUNT DELETION\n\nContinue?")) deleteAccount(currentWarningContact);
+            } else {
+                alert(`Warning Level ${level} issued!\nAccount will be locked for ${level === 1 ? '1 day' : '1 month'}`);
+            }
+        }
+
+        function closeWarningModal() { document.getElementById('warningModal').style.display = 'none'; }
+
+
+        function setBrgyReportPeriod(period) {
+            currentBrgyPeriod = period;
+            document.querySelectorAll('#brgy-charts-container ~ div button, .btn-small').forEach(b => b.style.opacity = '0.7');
+            event.target.style.opacity = '1';
+            loadBarangayReport();
+        }
+
+        function loadBarangayList() {
+            fetch('{{ url_for("static", filename="barangay.txt") }}')
+                .then(response => response.text())
+                .then(text => {
+                    // Split by line, trim whitespace, remove empty lines
+                    const barangays = text
+                        .split('\n')
+                        .map(line => line.trim())
+                        .filter(line => line.length > 0)
+                        .sort(); // Optional: alphabetical order
+
+                    const select = document.getElementById('brgy-report-filter');
+                    select.innerHTML = '<option value="">All Barangays (Citywide)</option>';
+
+                    barangays.forEach(barangay => {
+                        const option = new Option(barangay, barangay);
+                        select.appendChild(option);
+                    });
+
+                    // Optional: Auto-select first barangay or trigger load
+                    // select.value = barangays[0] || '';
+                    // loadBarangayReport();
+                })
+                .catch(err => {
+                    console.error("Failed to load barangay.txt:", err);
+                    const select = document.getElementById('brgy-report-filter');
+                    select.innerHTML = '<option value="">Error loading barangays</option>';
+                });
+        }
+
+        function loadBarangayReport() {
+            const barangay = document.getElementById('brgy-report-filter').value;
+            fetch(`/dilg_barangay_report?barangay=${encodeURIComponent(barangay)}&period=${currentBrgyPeriod}`)
+                .then(r => r.json())
+                .then(data => renderBarangayCharts(data));
+        }
+
+        function renderBarangayCharts(data) {
+            const container = document.getElementById('brgy-charts-container');
+            container.innerHTML = '';
+
+            const chartConfig = [
+                // === ROAD ACCIDENT REPORTS ===
+                { section: 'Road Accident Reports', isHeader: true },
+                { title: 'Road Accident Cause', key: 'road_accident_cause', table: 'barangay_response' },
+                { title: 'Road Accident Type', key: 'road_accident_type', table: 'barangay_response' },
+                { title: 'Vehicle Type', key: 'vehicle_type', table: 'barangay_response' },
+                { title: 'Driver Age', key: 'driver_age', table: 'barangay_response' },
+                { title: 'Driver Gender', key: 'driver_gender', table: 'barangay_response' },
+
+                // === FIRE INCIDENT REPORTS ===
+                { section: 'Fire Incident Reports', isHeader: true },
+                { title: 'Fire Cause', key: 'fire_cause', table: 'barangay_fire_response' },
+                { title: 'Fire Type', key: 'fire_type', table: 'barangay_fire_response' },
+                { title: 'Weather During Fire', key: 'weather', table: 'barangay_fire_response' },
+                { title: 'Fire Severity', key: 'fire_severity', table: 'barangay_fire_response' },
+
+                // === HEALTH EMERGENCY REPORTS ===
+                { section: 'Health Emergency Reports', isHeader: true },
+                { title: 'Health Emergency Type', key: 'health_type', table: 'barangay_health_response' },
+                { title: 'Health Cause', key: 'health_cause', table: 'barangay_health_response' },
+                { title: 'Weather (Health)', key: 'weather', table: 'barangay_health_response' },
+                { title: 'Patient Age', key: 'patient_age', table: 'barangay_health_response' },
+                { title: 'Patient Gender', key: 'patient_gender', table: 'barangay_health_response' },
+
+                // === CRIME INCIDENT REPORTS ===
+                { section: 'Crime Incident Reports', isHeader: true },
+                { title: 'Crime Type', key: 'crime_type', table: 'barangay_crime_response' },
+                { title: 'Crime Cause', key: 'crime_cause', table: 'barangay_crime_response' },
+                { title: 'Crime Level', key: 'level', table: 'barangay_crime_response' },
+                { title: 'Suspect Gender', key: 'suspect_gender', table: 'barangay_crime_response' },
+                { title: 'Victim Gender', key: 'victim_gender', table: 'barangay_crime_response' },
+                { title: 'Suspect Age', key: 'suspect_age', table: 'barangay_crime_response' },
+                { title: 'Victim Age', key: 'victim_age', table: 'barangay_crime_response' }
+            ];
+
+            chartConfig.forEach(c => {
+                const stats = data[c.table]?.[c.key] || {};
+                if (Object.keys(stats).length === 0) return;
+
+                const div = document.createElement('div');
+                div.className = 'chart-item';
+                div.innerHTML = `<h3>${c.title}</h3><canvas></canvas>`;
+                container.appendChild(div);
+
+                new Chart(div.querySelector('canvas'), {
+                    type: Math.random() > 0.5 ? 'doughnut' : 'pie',
+                    data: {
+                        labels: Object.keys(stats),
+                        datasets: [{ data: Object.values(stats), backgroundColor: getColors(Object.keys(stats).length) }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: { display: true, text: c.title },
+                            legend: { position: 'bottom' }
+                        }
+                    }
+                });
+            });
+
+            if (container.innerHTML === '') {
+                container.innerHTML = '<div style="width:100%; text-align:center; padding:60px; color:#666; font-size:18px;">No data available for selected filters.</div>';
+            }
+        }
+
+        function setCdrrmoReportPeriod(period) {
+            currentCdrrmoPeriod = period;
+            document.querySelectorAll('#cdrrmo-reports .btn-small').forEach(b => b.style.opacity = '0.7');
+            event.target.style.opacity = '1';
+            loadCdrrmoReport();
+        }
+
+        function loadCdrrmoBarangayList() {
+            fetch('{{ url_for("static", filename="barangay.txt") }}')
+                .then(r => r.text())
+                .then(text => {
+                    const barangays = text.split('\n').map(l => l.trim()).filter(l => l).sort();
+                    const select = document.getElementById('cdrrmo-report-filter');
+                    select.innerHTML = '<option value="">All Barangays</option>';
+                    barangays.forEach(b => select.appendChild(new Option(b, b)));
+                });
+        }
+
+        function loadCdrrmoReport() {
+            const barangay = document.getElementById('cdrrmo-report-filter').value;
+            fetch(`/dilg_cdrrmo_report?barangay=${encodeURIComponent(barangay)}&period=${currentCdrrmoPeriod}`)
+                .then(r => r.json())
+                .then(data => renderCdrrmoCharts(data));
+        }
+
+        function renderCdrrmoCharts(data) {
+            const container = document.getElementById('cdrrmo-charts-container');
+            container.innerHTML = '';
+
+            const chartConfig = [
+                { section: 'Road Accident Reports', isHeader: true },
+                { title: 'Road Accident Cause', key: 'road_accident_cause' },
+                { title: 'Road Accident Type', key: 'road_accident_type' },
+                { title: 'Vehicle Type', key: 'vehicle_type' },
+                { title: 'Driver Age', key: 'driver_age' },
+                { title: 'Driver Gender', key: 'driver_gender' }
+            ];
+
+            chartConfig.forEach(item => {
+                if (item.isHeader) {
+                    const header = document.createElement('div');
+                    header.style.cssText = `
+                        width: 100%; background: linear-gradient(135deg, #dc2626, #ef4444);
+                        color: white; padding: 20px 30px; border-radius: 16px;
+                        font-size: 24px; font-weight: bold; text-align: center;
+                        margin: 50px 0 25px 0; box-shadow: 0 10px 30px rgba(220,38,38,0.35);
+                        letter-spacing: 1.2px; text-transform: uppercase;
+                    `;
+                    header.textContent = item.section;
+                    container.appendChild(header);
+                    return;
+                }
+
+                const stats = data[item.key] || {};
+                if (Object.keys(stats).length === 0) return;
+
+                const div = document.createElement('div');
+                div.className = 'chart-item';
+                div.innerHTML = `<h3 style="color:#dc2626;">${item.title}</h3><canvas></canvas>`;
+                container.appendChild(div);
+
+                new Chart(div.querySelector('canvas'), {
+                    type: Math.random() > 0.5 ? 'doughnut' : 'pie',
+                    data: {
+                        labels: Object.keys(stats),
+                        datasets: [{
+                            data: Object.values(stats),
+                            backgroundColor: getColors(Object.keys(stats).length),
+                            borderWidth: 3,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'bottom' },
+                            title: { display: true, text: item.title, font: { size: 18 } }
+                        }
+                    }
+                });
+            });
+
+            if (container.innerHTML === '') {
+                container.innerHTML = '<div style="width:100%; text-align:center; padding:100px; color:#64748b; font-size:22px;">No CDRRMO road accident data available for selected filters.</div>';
+            }
+        }
+
+        function setBfpReportPeriod(period) {
+            currentBfpPeriod = period;
+            document.querySelectorAll('#bfp-reports .btn-small').forEach(b => b.style.opacity = '0.7');
+            event.target.style.opacity = '1';
+            loadBfpReport();
+        }
+
+        function loadBfpBarangayList() {
+            fetch('{{ url_for("static", filename="barangay.txt") }}')
+                .then(r => r.text())
+                .then(text => {
+                    const barangays = text.split('\n').map(l => l.trim()).filter(l => l).sort();
+                    const select = document.getElementById('bfp-report-filter');
+                    select.innerHTML = '<option value="">All Barangays</option>';
+                    barangays.forEach(b => select.appendChild(new Option(b, b)));
+                });
+        }
+
+        function loadBfpReport() {
+            const barangay = document.getElementById('bfp-report-filter').value;
+            fetch(`/dilg_bfp_report?barangay=${encodeURIComponent(barangay)}&period=${currentBfpPeriod}`)
+                .then(r => r.json())
+                .then(data => renderBfpCharts(data));
+        }
+
+        function renderBfpCharts(data) {
+            const container = document.getElementById('bfp-charts-container');
+            container.innerHTML = '';
+
+            const chartConfig = [
+                { section: 'Fire Incident Reports', isHeader: true },
+                { title: 'Fire Cause', key: 'fire_cause' },
+                { title: 'Fire Type', key: 'fire_type' },
+                { title: 'Weather During Fire', key: 'weather' },
+                { title: 'Fire Severity', key: 'fire_severity' }
+            ];
+
+            chartConfig.forEach(item => {
+                if (item.isHeader) {
+                    const header = document.createElement('div');
+                    header.style.cssText = `
+                        width: 100%; background: linear-gradient(135deg, #ea580c, #f97316);
+                        color: white; padding: 20px 30px; border-radius: 16px;
+                        font-size: 24px; font-weight: bold; text-align: center;
+                        margin: 50px 0 25px 0; box-shadow: 0 10px 30px rgba(249,115,22,0.4);
+                        letter-spacing: 1.2px; text-transform: uppercase;
+                    `;
+                    header.textContent = item.section;
+                    container.appendChild(header);
+                    return;
+                }
+
+                const stats = data[item.key] || {};
+                if (Object.keys(stats).length === 0) return;
+
+                const div = document.createElement('div');
+                div.className = 'chart-item';
+                div.innerHTML = `<h3 style="color:#ea580c; font-size:20px; margin-bottom:15px;">${item.title}</h3><canvas></canvas>`;
+                container.appendChild(div);
+
+                new Chart(div.querySelector('canvas'), {
+                    type: Math.random() > 0.5 ? 'doughnut' : 'pie',
+                    data: {
+                        labels: Object.keys(stats),
+                        datasets: [{
+                            data: Object.values(stats),
+                            backgroundColor: getColors(Object.keys(stats).length),
+                            borderWidth: 3,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { padding: 20 } },
+                            title: { display: true, text: item.title, font: { size: 18, weight: 'bold' } }
+                        },
+                        animation: { duration: 1200 }
+                    }
+                });
+            });
+
+            if (container.innerHTML === '') {
+                container.innerHTML = '<div style="width:100%; text-align:center; padding:100px; color:#64748b; font-size:22px; background:#fff8f0; border-radius:16px; margin:40px 0;">No fire incident data available for selected filters.</div>';
+            }
+        }
+
+        function setHealthReportPeriod(period) {
+            currentHealthPeriod = period;
+            document.querySelectorAll('#health-reports .btn-small').forEach(b => b.style.opacity = '0.7');
+            event.target.style.opacity = '1';
+            loadHealthReport();
+        }
+
+        function loadHealthBarangayList() {
+            fetch('{{ url_for("static", filename="barangay.txt") }}')
+                .then(r => r.text())
+                .then(text => {
+                    const barangays = text.split('\n').map(l => l.trim()).filter(l => l).sort();
+                    const select = document.getElementById('health-report-filter');
+                    select.innerHTML = '<option value="">All Barangays</option>';
+                    barangays.forEach(b => select.appendChild(new Option(b, b)));
+                });
+        }
+
+        function loadHealthReport() {
+            const barangay = document.getElementById('health-report-filter').value;
+            fetch(`/dilg_health_report?barangay=${encodeURIComponent(barangay)}&period=${currentHealthPeriod}`)
+                .then(r => r.json())
+                .then(data => renderHealthCharts(data));
+        }
+
+        function renderHealthCharts(data) {
+            const container = document.getElementById('health-charts-container');
+            container.innerHTML = '';
+
+            const chartConfig = [
+                { section: 'Health Emergency Reports', isHeader: true },
+                { title: 'Health Emergency Type', key: 'health_type' },
+                { title: 'Health Emergency Cause', key: 'health_cause' },
+                { title: 'Weather During Incident', key: 'weather' },
+                { title: 'Patient Age Group', key: 'patient_age' },
+                { title: 'Patient Gender', key: 'patient_gender' }
+            ];
+
+            chartConfig.forEach(item => {
+                if (item.isHeader) {
+                    const header = document.createElement('div');
+                    header.style.cssText = `
+                        width: 100%; background: linear-gradient(135deg, #16a34a, #22c55e);
+                        color: white; padding: 20px 30px; border-radius: 16px;
+                        font-size: 24px; font-weight: bold; text-align: center;
+                        margin: 50px 0 25px 0; box-shadow: 0 10px 30px rgba(34,197,94,0.4);
+                        letter-spacing: 1.2px; text-transform: uppercase;
+                    `;
+                    header.textContent = item.section;
+                    container.appendChild(header);
+                    return;
+                }
+
+                const stats = data[item.key] || {};
+                if (Object.keys(stats).length === 0) return;
+
+                const div = document.createElement('div');
+                div.className = 'chart-item';
+                div.innerHTML = `<h3 style="color:#16a34a; font-size:20px; margin-bottom:15px;">${item.title}</h3><canvas></canvas>`;
+                container.appendChild(div);
+
+                new Chart(div.querySelector('canvas'), {
+                    type: Math.random() > 0.5 ? 'doughnut' : 'pie',
+                    data: {
+                        labels: Object.keys(stats),
+                        datasets: [{
+                            data: Object.values(stats),
+                            backgroundColor: getColors(Object.keys(stats).length),
+                            borderWidth: 3,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { padding: 20 } },
+                            title: { display: true, text: item.title, font: { size: 18, weight: 'bold' } }
+                        },
+                        animation: { duration: 1200 }
+                    }
+                });
+            });
+
+            if (container.innerHTML === '') {
+                container.innerHTML = '<div style="width:100%; text-align:center; padding:100px; color:#64748b; font-size:22px; background:#f0fdf4; border-radius:16px; margin:40px 0;">No health emergency data available for selected filters.</div>';
+            }
+        }
+
+        function setPnpReportPeriod(period) {
+            currentPnpPeriod = period;
+            document.querySelectorAll('#pnp-reports .btn-small').forEach(b => b.style.opacity = '0.7');
+            event.target.style.opacity = '1';
+            loadPnpReport();
+        }
+
+        function loadPnpBarangayList() {
+            fetch('{{ url_for("static", filename="barangay.txt") }}')
+                .then(r => r.text())
+                .then(text => {
+                    const barangays = text.split('\n').map(l => l.trim()).filter(l => l).sort();
+                    const select = document.getElementById('pnp-report-filter');
+                    select.innerHTML = '<option value="">All Barangays</option>';
+                    barangays.forEach(b => select.appendChild(new Option(b, b)));
+                });
+        }
+
+        function loadPnpReport() {
+            const barangay = document.getElementById('pnp-report-filter').value;
+            fetch(`/dilg_pnp_report?barangay=${encodeURIComponent(barangay)}&period=${currentPnpPeriod}`)
+                .then(r => r.json())
+                .then(data => renderPnpCharts(data));
+        }
+
+        function renderPnpCharts(data) {
+            const container = document.getElementById('pnp-charts-container');
+            container.innerHTML = '';
+
+            const chartConfig = [
+                // ROAD ACCIDENTS
+                { section: 'Road Accident Reports', isHeader: true },
+                { title: 'Road Accident Cause', key: 'road_accident_cause' },
+                { title: 'Road Accident Type', key: 'road_accident_type' },
+                { title: 'Vehicle Type', key: 'vehicle_type' },
+                { title: 'Driver Age', key: 'driver_age' },
+                { title: 'Driver Gender', key: 'driver_gender' },
+
+                // FIRE INCIDENTS
+                { section: 'Fire Incident Reports', isHeader: true },
+                { title: 'Fire Cause', key: 'fire_cause' },
+                { title: 'Fire Type', key: 'fire_type' },
+                { title: 'Weather During Fire', key: 'weather' },
+                { title: 'Fire Severity', key: 'fire_severity' },
+
+                // CRIME INCIDENTS
+                { section: 'Crime Incident Reports', isHeader: true },
+                { title: 'Crime Type', key: 'crime_type' },
+                { title: 'Crime Cause', key: 'crime_cause' },
+                { title: 'Crime Level', key: 'level' },
+                { title: 'Suspect Gender', key: 'suspect_gender' },
+                { title: 'Victim Gender', key: 'victim_gender' },
+                { title: 'Suspect Age', key: 'suspect_age' },
+                { title: 'Victim Age', key: 'victim_age' }
+            ];
+
+            chartConfig.forEach(item => {
+                if (item.isHeader) {
+                    const header = document.createElement('div');
+                    header.style.cssText = `
+                        width: 100%; background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+                        color: white; padding: 20px 30px; border-radius: 16px;
+                        font-size: 24px; font-weight: bold; text-align: center;
+                        margin: 50px 0 25px 0; box-shadow: 0 10px 30px rgba(59,130,246,0.4);
+                        letter-spacing: 1.2px; text-transform: uppercase;
+                    `;
+                    header.textContent = item.section;
+                    container.appendChild(header);
+                    return;
+                }
+
+                const stats = data[item.key] || {};
+                if (Object.keys(stats).length === 0) return;
+
+                const div = document.createElement('div');
+                div.className = 'chart-item';
+                div.innerHTML = `<h3 style="color:#1e40af; font-size:20px; margin-bottom:15px;">${item.title}</h3><canvas></canvas>`;
+                container.appendChild(div);
+
+                new Chart(div.querySelector('canvas'), {
+                    type: Math.random() > 0.5 ? 'doughnut' : 'pie',
+                    data: {
+                        labels: Object.keys(stats),
+                        datasets: [{
+                            data: Object.values(stats),
+                            backgroundColor: getColors(Object.keys(stats).length),
+                            borderWidth: 3,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { padding: 20 } },
+                            title: { display: true, text: item.title, font: { size: 18, weight: 'bold' } }
+                        },
+                        animation: { duration: 1200 }
+                    }
+                });
+            });
+
+            if (container.innerHTML === '') {
+                container.innerHTML = '<div style="width:100%; text-align:center; padding:100px; color:#64748b; font-size:22px; background:#eff6ff; border-radius:16px; margin:40px 0;">No PNP incident data available for selected filters.</div>';
+            }
+        }
+
+        // Sidebar Navigation
+        document.querySelectorAll('.sidebar li').forEach(li => {
+            li.addEventListener('click', function () {
+                document.querySelectorAll('.sidebar li').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+                const sectionId = this.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+
+                if (sectionId === 'manage-accounts') loadAccounts();
+                if (sectionId === 'barangay-reports') { loadBarangayList(); loadBarangayReport(); }
+                if (sectionId === 'cdrrmo-reports') { loadCdrrmoBarangayList(); loadCdrrmoReport(); }
+                if (sectionId === 'bfp-reports') { loadBfpBarangayList(); loadBfpReport(); }
+                if (sectionId === 'health-reports') { loadHealthBarangayList(); loadHealthReport(); }
+                if (sectionId === 'pnp-reports') { loadPnpBarangayList(); loadPnpReport(); }
+            });
+        });
+
+        window.onload = () => {
+            initMap();
+            loadAllData();
+            setInterval(loadAllData, 30000);
+            loadBarangayList();
+            if (location.hash === '#manage-accounts')
+                document.querySelector('[data-section="manage-accounts"]').click();
+        };
+    </script>

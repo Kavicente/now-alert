@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CDRRMO Charts</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo/alertnow.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/charts.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <header>
+        <h1>CDRRMO Charts</h1>
+        <p id="datetime">{{ current_datetime }}</p>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('cdrrmo_dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('cdrrmo_charts') }}">Charts</a></li>
+                <li><a href="#" onclick="showSection('road')">Road Accident Reports</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main class="main-content" id="mainContent">
+        <div class="tabs">
+            <button class="tab active" onclick="filterData('today')">Today</button>
+            <button class="tab" onclick="filterData('daily')">Daily</button>
+            <button class="tab" onclick="filterData('weekly')">Weekly</button>
+            <button class="tab" onclick="filterData('monthly')">Monthly</button>
+            <button class="tab" onclick="filterData('yearly')">Yearly</button>
+        </div>
+        <div class="dropdown-container">
+            <label for="barangayDropdown">Select Barangay: </label>
+            <select id="barangayDropdown" onchange="jumpToBarangay()">
+                <option value="">Select a Barangay</option>
+                {% for barangay in barangays %}
+                <option value="{{ barangay | replace(' ', '-') }}">{{ barangay }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div id="roadSection" class="section" style="display: block;">
+            {% for barangay in barangays %}
+            <div class="barangay-section" id="road-barangay-{{ barangay | replace(' ', '-') }}">
+                <h2>{{ barangay }} Road Accident Reports</h2>
+                <div class="chart-grid">
+                    <div class="chart-container"><h2>Road Accident Cause Chart</h2><canvas id="roadCauseChart-{{ barangay | replace(' ', '-') }}"></canvas></div>
+                    <div class="chart-container"><h2>Road Accident Type Chart</h2><canvas id="roadTypeChart-{{ barangay | replace(' ', '-') }}"></canvas></div>
+                    <div class="chart-container"><h2>Driver Gender Chart</h2><canvas id="roadGenderChart-{{ barangay | replace(' ', '-') }}"></canvas></div>
+                    <div class="chart-container"><h2>Vehicle Type Chart</h2><canvas id="roadVehicleChart-{{ barangay | replace(' ', '-') }}"></canvas></div>
+                    <div class="chart-container"><h2>Driver Age Chart</h2><canvas id="roadAgeChart-{{ barangay | replace(' ', '-') }}"></canvas></div>
+                    <div class="chart-container"><h2>Road Condition Chart</h2><canvas id="roadConditionChart-{{ barangay | replace(' ', '-') }}"></canvas></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    {% include 'chart/CDRChart.html' %}
+</body>
+</html>

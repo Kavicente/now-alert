@@ -1,0 +1,1501 @@
+Date,Year,Time,Day_of_Week,Barangay,Latitude,Longitude,Weather,Health_Type,Health_Cause,Severity,Patient_Count,Response_Time,Treatment_Time
+23/11/2025,2025,13:14,Thursday,San Mateo (Imok),14.089903,121.333461,Foggy,Allergic Reaction,Infection,High,3,12,43
+07/05/2022,2022,13:58,Tuesday,V-C,14.106827,121.282542,Stormy,Fall,Chronic Illness,Low,3,12,39
+30/09/2024,2024,15:47,Monday,V-B,14.080581,121.274854,Rainy,Burn,Accident,Medium,2,20,28
+07/10/2021,2021,12:03,Sunday,San Gregorio,14.031415,121.299749,Sunny,Burn,Other,Medium,1,9,13
+11/10/2025,2025,20:19,Sunday,San Antonio 1 (Balanga),14.012716,121.34898,Sunny,Allergic Reaction,Allergy,High,1,14,27
+11/10/2020,2020,10:04,Friday,San Antonio 1 (Balanga),14.089549,121.362736,Sunny,Seizure,Heatstroke,High,2,14,31
+04/05/2022,2022,6:07,Sunday,III-B,14.078096,121.276799,Cloudy,Breathing Difficulty,Allergy,Low,3,10,33
+23/10/2025,2025,21:55,Saturday,San Lorenzo (Saluyan),14.092369,121.342964,Sunny,Allergic Reaction,Other,Low,2,20,47
+14/08/2025,2025,1:47,Friday,II-A (Triangulo/ Guadalupe 2),14.091343,121.369945,Stormy,Giving Birth,Pregnant,Medium,3,20,32
+27/12/2025,2025,13:24,Wednesday,VII-D,14.106911,121.366534,Rainy,Giving Birth,Pregnant,High,1,18,48
+24/08/2021,2021,4:06,Thursday,Santa Maria Magdalena (Boe / Kuba),14.090674,121.301829,Cloudy,Breathing Difficulty,Child,Low,3,13,21
+21/08/2024,2024,9:06,Saturday,V-C,14.041268,121.342468,Sunny,Fall,Infection,Low,1,12,20
+04/11/2024,2024,9:45,Saturday,Santiago II (Bulaho),14.048402,121.304544,Foggy,Poisoning,Pregnant,Low,3,8,45
+02/06/2020,2020,8:25,Thursday,San Miguel (Balatuin),14.034691,121.339239,Stormy,Poisoning,Infection,Medium,2,14,25
+18/05/2021,2021,11:14,Saturday,Santo Cristo,14.018045,121.350047,Foggy,Allergic Reaction,Chronic Illness,Low,1,16,41
+25/06/2024,2024,13:11,Saturday,Bautista,14.041271,121.307657,Sunny,Fall,Allergy,Medium,2,10,50
+30/08/2024,2024,19:06,Wednesday,III-A (Hermanos Belen),14.058055,121.3557,Cloudy,Stroke,Chronic Illness,High,1,20,26
+02/07/2022,2022,6:32,Wednesday,Dolores,14.103426,121.303876,Sunny,Heart Attack,Heatstroke,Medium,3,19,59
+25/01/2020,2020,8:32,Friday,II-A (Triangulo/ Guadalupe 2),14.085638,121.27643,Cloudy,Allergic Reaction,Elderly,Medium,1,12,41
+20/02/2024,2024,6:58,Wednesday,IV-A,14.105796,121.364779,Stormy,Seizure,Overdose,Low,1,16,55
+05/01/2023,2023,17:01,Tuesday,San Antonio 1 (Balanga),14.086968,121.338554,Foggy,Seizure,Child,High,3,6,52
+14/09/2024,2024,3:17,Wednesday,VII-E,14.047119,121.300033,Cloudy,Giving Birth,Heatstroke,Medium,2,15,26
+29/07/2021,2021,8:35,Monday,III-B,14.053405,121.296029,Stormy,Stroke,Allergy,Medium,3,20,26
+07/02/2020,2020,15:45,Thursday,San Antonio 1 (Balanga),14.093545,121.276274,Stormy,Heart Attack,Chronic Illness,Low,1,10,39
+22/04/2020,2020,16:22,Wednesday,San Bartolome (Matang-ag),14.103638,121.333107,Rainy,Other,Heatstroke,Low,2,15,25
+28/12/2021,2021,8:26,Monday,Santa Isabel,14.05985,121.273819,Foggy,Breathing Difficulty,Child,Medium,1,8,55
+24/08/2025,2025,3:42,Monday,Bautista,14.035067,121.342872,Sunny,Fall,Infection,Low,2,12,26
+11/05/2024,2024,8:33,Wednesday,San Vicente,14.109056,121.28269,Foggy,Other,Heatstroke,Low,1,17,38
+19/08/2025,2025,8:28,Wednesday,San Gregorio,14.053753,121.309146,Rainy,Fall,Accident,High,2,17,22
+09/02/2025,2025,13:02,Thursday,San Joaquin,14.058615,121.272918,Stormy,Heart Attack,Allergy,Medium,1,11,19
+04/06/2022,2022,11:02,Saturday,San Roque (Sambat),14.072734,121.310218,Rainy,Fall,Child,Low,2,13,17
+22/09/2024,2024,21:35,Monday,San Joaquin,14.046688,121.331808,Foggy,Breathing Difficulty,Allergy,High,3,13,51
+26/06/2022,2022,2:45,Saturday,San Ignacio,14.070214,121.337678,Sunny,Other,Infection,High,2,3,22
+08/07/2024,2024,0:46,Wednesday,San Roque (Sambat),14.035176,121.323529,Stormy,Poisoning,Overdose,Low,2,15,10
+19/02/2024,2024,5:45,Saturday,Santo Angel (Ilog),14.079851,121.306679,Foggy,Stroke,Chronic Illness,Low,3,17,31
+25/03/2025,2025,15:35,Thursday,San Isidro (Balagbag),14.082095,121.27445,Foggy,Poisoning,Infection,Low,2,12,26
+10/05/2020,2020,19:13,Tuesday,VI-E (YMCA),14.093059,121.324264,Sunny,Heart Attack,Chronic Illness,Low,3,14,14
+16/07/2023,2023,12:34,Tuesday,V-D,14.103694,121.318999,Foggy,Giving Birth,Pregnant,Medium,2,20,22
+01/10/2022,2022,10:10,Wednesday,San Marcos (Tikew),14.097651,121.281892,Foggy,Heart Attack,Overdose,High,1,19,48
+29/08/2021,2021,17:25,Wednesday,Santa Cruz (Putol),14.106034,121.276955,Foggy,Seizure,Accident,High,1,8,42
+18/01/2020,2020,12:42,Thursday,San Antonio 2 (Sapa),14.051946,121.334837,Sunny,Breathing Difficulty,Overdose,Medium,2,19,27
+05/01/2024,2024,21:57,Thursday,San Lucas 2 (Malinaw),14.019918,121.362713,Stormy,Heart Attack,Accident,High,3,8,53
+09/01/2023,2023,11:14,Sunday,II-E (San Anton),14.108086,121.308111,Stormy,Poisoning,Child,Medium,2,15,12
+31/01/2024,2024,16:42,Sunday,San Buenaventura (Palakpakin),14.084806,121.291156,Rainy,Poisoning,Pregnant,High,2,16,51
+02/08/2024,2024,17:40,Wednesday,San Marcos (Tikew),14.034901,121.365223,Stormy,Other,Infection,High,3,17,25
+09/11/2024,2024,18:51,Monday,II-D (Bulante),14.071064,121.273554,Rainy,Breathing Difficulty,Accident,Medium,1,20,52
+18/01/2021,2021,5:45,Wednesday,Santa Monica,14.061745,121.318289,Sunny,Seizure,Child,High,1,16,19
+24/07/2025,2025,1:41,Friday,V-A,14.026796,121.325118,Foggy,Allergic Reaction,Child,High,1,3,46
+11/03/2022,2022,19:29,Wednesday,III-B,14.034959,121.312298,Foggy,Other,Other,Low,3,18,34
+17/03/2024,2024,20:41,Wednesday,San Rafael (Buluburan),14.05513,121.361543,Cloudy,Breathing Difficulty,Heatstroke,Medium,1,15,38
+21/11/2020,2020,11:09,Saturday,VII-E,14.052886,121.315187,Stormy,Allergic Reaction,Allergy,Low,2,19,8
+06/06/2024,2024,16:58,Tuesday,San Roque (Sambat),14.011767,121.286954,Foggy,Allergic Reaction,Other,Low,3,15,8
+09/12/2025,2025,11:58,Wednesday,VI-B (Sabang Mabini),14.084916,121.2984,Stormy,Giving Birth,Chronic Illness,Low,3,18,33
+16/12/2021,2021,13:50,Wednesday,III-B,14.010919,121.290434,Sunny,Poisoning,Allergy,Low,1,12,15
+07/01/2023,2023,21:29,Wednesday,Concepcion (Bunot),14.102435,121.345533,Rainy,Breathing Difficulty,Infection,Medium,3,20,40
+09/02/2023,2023,8:59,Monday,Santo Niño (Arsum),14.062534,121.298671,Sunny,Other,Other,Low,3,15,30
+02/05/2024,2024,10:40,Wednesday,III-E,14.075479,121.352323,Stormy,Allergic Reaction,Chronic Illness,High,3,17,33
+29/05/2025,2025,8:39,Thursday,V-B,14.060194,121.331308,Cloudy,Heart Attack,Heatstroke,Medium,3,13,13
+12/03/2020,2020,11:05,Wednesday,San Lucas 2 (Malinaw),14.053676,121.306461,Foggy,Seizure,Chronic Illness,Medium,1,7,60
+28/12/2023,2023,20:51,Sunday,II-F (Villa Rey),14.090929,121.315578,Stormy,Heart Attack,Chronic Illness,Low,2,5,45
+26/03/2021,2021,17:16,Tuesday,Santa Monica,14.029018,121.28381,Cloudy,Poisoning,Other,High,3,9,5
+13/08/2023,2023,13:27,Monday,Santiago II (Bulaho),14.059252,121.27693,Cloudy,Fall,Other,Low,3,18,22
+13/02/2020,2020,23:29,Friday,Santa Isabel,14.03565,121.36834,Sunny,Poisoning,Accident,High,1,8,55
+29/04/2020,2020,0:01,Friday,San Lucas 2 (Malinaw),14.044021,121.276527,Sunny,Other,Other,Medium,2,17,56
+04/11/2020,2020,22:52,Friday,VI-B (Sabang Mabini),14.100288,121.297537,Foggy,Poisoning,Heatstroke,Low,3,16,17
+05/10/2021,2021,1:05,Friday,Concepcion (Bunot),14.041809,121.330585,Rainy,Allergic Reaction,Chronic Illness,Medium,3,13,55
+11/11/2023,2023,2:32,Wednesday,III-B,14.028395,121.279826,Foggy,Poisoning,Elderly,High,1,10,55
+13/05/2021,2021,18:43,Saturday,San Lorenzo (Saluyan),14.089514,121.292477,Cloudy,Heart Attack,Other,Medium,1,14,52
+28/05/2025,2025,8:01,Sunday,I-A (Sambat),14.108281,121.328519,Rainy,Other,Child,Medium,1,8,47
+13/04/2025,2025,23:46,Sunday,II-E (San Anton),14.061567,121.298653,Stormy,Burn,Infection,High,3,16,34
+14/10/2025,2025,23:45,Monday,VI-A (Mavenida),14.061765,121.303423,Cloudy,Seizure,Overdose,High,2,12,29
+03/09/2021,2021,6:14,Monday,VII-B,14.092423,121.334736,Foggy,Other,Child,Low,2,17,52
+05/03/2024,2024,18:20,Thursday,San Antonio 1 (Balanga),14.100876,121.285126,Sunny,Poisoning,Elderly,Low,2,18,18
+20/10/2022,2022,23:23,Wednesday,San Isidro (Balagbag),14.073251,121.326248,Rainy,Heart Attack,Pregnant,High,3,13,12
+07/07/2025,2025,9:24,Friday,San Mateo (Imok),14.055771,121.359278,Stormy,Other,Infection,Low,1,19,52
+10/11/2023,2023,5:09,Friday,San Roque (Sambat),14.099442,121.317869,Cloudy,Allergic Reaction,Infection,Medium,2,15,31
+10/08/2024,2024,17:59,Tuesday,Bautista,14.026393,121.333131,Foggy,Poisoning,Infection,High,2,11,9
+10/11/2022,2022,10:57,Sunday,II-B (Guadalupe 1),14.018593,121.335718,Foggy,Breathing Difficulty,Elderly,High,2,13,43
+26/05/2021,2021,9:22,Wednesday,Santa Catalina (Sandig),14.061094,121.355931,Stormy,Heart Attack,Infection,Low,2,19,45
+24/01/2021,2021,14:14,Saturday,IV-C,14.033022,121.341871,Rainy,Burn,Accident,Low,1,10,60
+03/12/2021,2021,13:06,Wednesday,IV-A,14.088162,121.305098,Sunny,Burn,Infection,Medium,3,5,14
+19/08/2022,2022,17:34,Sunday,Santa Elena,14.035819,121.297411,Rainy,Giving Birth,Pregnant,High,2,20,59
+05/03/2025,2025,6:07,Thursday,San Gabriel (Butucan),14.091178,121.279493,Rainy,Heart Attack,Infection,Medium,2,7,50
+31/10/2025,2025,15:02,Tuesday,V-D,14.036446,121.335715,Cloudy,Burn,Chronic Illness,Medium,3,15,23
+19/01/2023,2023,21:39,Saturday,IV-C,14.103652,121.32108,Stormy,Burn,Overdose,High,2,18,40
+03/11/2022,2022,15:55,Sunday,I-A (Sambat),14.025548,121.330933,Sunny,Breathing Difficulty,Elderly,Medium,3,10,10
+27/03/2025,2025,9:28,Saturday,VII-B,14.037389,121.302082,Stormy,Heart Attack,Infection,Low,2,14,50
+28/08/2024,2024,14:49,Friday,VI-C (Bagong Pook),14.036409,121.339605,Stormy,Breathing Difficulty,Child,Medium,1,8,28
+22/05/2024,2024,9:51,Wednesday,Bautista,14.011259,121.302827,Rainy,Seizure,Other,Medium,3,7,31
+02/11/2023,2023,14:02,Saturday,IV-B,14.017385,121.342003,Foggy,Fall,Accident,Low,3,18,13
+31/12/2024,2024,20:05,Saturday,II-B (Guadalupe 1),14.033676,121.362299,Rainy,Fall,Overdose,Medium,3,20,38
+06/11/2023,2023,12:45,Sunday,San Nicolas (Mag-ampon),14.076096,121.34102,Rainy,Giving Birth,Pregnant,High,3,12,59
+12/12/2023,2023,22:28,Tuesday,Santa Elena,14.073449,121.289378,Stormy,Giving Birth,Pregnant,Low,2,6,25
+17/09/2023,2023,3:48,Thursday,Dolores,14.011233,121.328284,Foggy,Seizure,Other,Low,1,5,7
+05/10/2023,2023,10:41,Thursday,IV-B,14.074422,121.314704,Cloudy,Giving Birth,Pregnant,Medium,2,10,18
+03/04/2022,2022,23:19,Saturday,II-B (Guadalupe 1),14.072622,121.349377,Stormy,Stroke,Elderly,High,3,19,28
+09/01/2020,2020,18:25,Friday,San Gabriel (Butucan),14.026479,121.307264,Stormy,Other,Pregnant,Low,3,3,30
+11/08/2023,2023,14:58,Tuesday,San Gregorio,14.058121,121.350501,Foggy,Poisoning,Allergy,High,1,15,24
+26/09/2025,2025,23:52,Wednesday,Santa Isabel,14.0201,121.344418,Cloudy,Stroke,Allergy,High,2,16,10
+28/03/2024,2024,8:45,Wednesday,II-F (Villa Rey),14.092295,121.317176,Stormy,Stroke,Child,Medium,2,11,36
+06/08/2022,2022,11:07,Wednesday,VII-D,14.102849,121.308863,Stormy,Fall,Pregnant,High,2,3,16
+30/07/2025,2025,10:05,Tuesday,II-B (Guadalupe 1),14.063778,121.313533,Cloudy,Breathing Difficulty,Heatstroke,High,2,7,7
+05/02/2020,2020,15:33,Wednesday,III-E,14.032141,121.305916,Rainy,Fall,Accident,Medium,1,17,35
+02/04/2020,2020,11:54,Monday,III-A (Hermanos Belen),14.055117,121.368498,Cloudy,Fall,Other,High,2,10,42
+05/08/2024,2024,1:44,Wednesday,III-E,14.013278,121.287116,Sunny,Seizure,Heatstroke,High,2,8,50
+03/09/2022,2022,21:13,Sunday,Santa Cruz (Putol),14.040843,121.313204,Cloudy,Heart Attack,Accident,Low,3,20,56
+13/06/2025,2025,22:59,Sunday,Santa Ana,14.09884,121.281961,Foggy,Poisoning,Overdose,High,3,19,19
+14/07/2022,2022,21:08,Monday,Santa Maria Magdalena (Boe / Kuba),14.067567,121.369173,Cloudy,Allergic Reaction,Allergy,High,2,13,21
+13/10/2021,2021,10:40,Monday,Santiago I (Bulaho),14.107333,121.325953,Sunny,Heart Attack,Other,High,3,11,32
+13/03/2021,2021,19:50,Wednesday,VII-C,14.01233,121.277322,Stormy,Burn,Child,Low,2,5,25
+18/03/2020,2020,18:34,Saturday,San Juan (Putol),14.095199,121.273732,Cloudy,Stroke,Chronic Illness,Low,2,11,15
+11/08/2024,2024,11:46,Wednesday,Santo Cristo,14.0641,121.335658,Foggy,Poisoning,Chronic Illness,Medium,3,8,6
+23/11/2023,2023,14:24,Sunday,Santa Maria,14.014082,121.313228,Foggy,Heart Attack,Allergy,High,1,5,53
+27/11/2020,2020,19:36,Thursday,III-A (Hermanos Belen),14.053409,121.340236,Cloudy,Seizure,Infection,Medium,3,13,47
+05/01/2021,2021,21:52,Sunday,Dolores,14.066933,121.3338,Foggy,Burn,Elderly,Low,1,10,9
+03/09/2022,2022,1:16,Wednesday,San Nicolas (Mag-ampon),14.087452,121.312078,Foggy,Other,Elderly,High,2,7,56
+01/09/2020,2020,5:41,Monday,III-D (Villongco),14.052007,121.360285,Stormy,Heart Attack,Pregnant,Low,2,16,18
+01/12/2022,2022,5:50,Monday,III-D (Villongco),14.064931,121.317051,Sunny,Allergic Reaction,Heatstroke,Low,3,12,34
+25/10/2020,2020,5:55,Thursday,Atisan,14.067938,121.293352,Cloudy,Giving Birth,Pregnant,Low,2,15,7
+13/06/2022,2022,22:26,Sunday,San Gabriel (Butucan),14.058212,121.347241,Foggy,Seizure,Accident,High,3,14,14
+02/03/2020,2020,19:55,Thursday,San Antonio 2 (Sapa),14.026146,121.309257,Stormy,Giving Birth,Chronic Illness,Medium,2,5,57
+13/08/2024,2024,23:09,Saturday,III-B,14.020374,121.337788,Foggy,Giving Birth,Pregnant,High,1,18,59
+04/06/2024,2024,0:24,Wednesday,I-C (Bagong Bayan),14.054293,121.327562,Stormy,Heart Attack,Chronic Illness,High,3,17,30
+13/12/2024,2024,3:43,Sunday,VI-C (Bagong Pook),14.045672,121.343039,Foggy,Other,Chronic Illness,Medium,1,6,18
+26/06/2024,2024,12:28,Monday,San Marcos (Tikew),14.09179,121.337217,Sunny,Stroke,Other,High,3,12,22
+04/02/2024,2024,6:14,Tuesday,San Lucas 1 (Malinaw),14.049344,121.294366,Stormy,Seizure,Allergy,High,1,15,45
+29/08/2024,2024,13:01,Tuesday,VI-E (YMCA),14.026958,121.308574,Cloudy,Stroke,Pregnant,Low,1,16,9
+13/10/2023,2023,14:01,Friday,III-E,14.016902,121.325722,Stormy,Fall,Elderly,Low,2,3,21
+24/04/2021,2021,2:34,Friday,Santa Ana,14.100677,121.307496,Foggy,Allergic Reaction,Child,High,1,4,30
+16/05/2022,2022,3:53,Wednesday,II-A (Triangulo/ Guadalupe 2),14.040664,121.325892,Rainy,Heart Attack,Allergy,Low,1,12,36
+18/06/2025,2025,3:09,Wednesday,San Antonio 1 (Balanga),14.039023,121.346101,Sunny,Allergic Reaction,Chronic Illness,Low,3,7,23
+17/01/2024,2024,4:30,Wednesday,VII-C,14.068473,121.309294,Cloudy,Poisoning,Chronic Illness,High,3,10,53
+31/05/2025,2025,7:17,Thursday,Santa Veronica (Bae),14.057499,121.36283,Cloudy,Stroke,Allergy,Medium,1,20,42
+26/08/2023,2023,22:57,Friday,Santa Filomena (Banlagin),14.034149,121.287892,Foggy,Other,Pregnant,Medium,3,13,30
+04/05/2021,2021,4:04,Tuesday,Soledad (Macopa),14.075444,121.337844,Cloudy,Burn,Child,High,2,10,13
+06/08/2024,2024,19:52,Wednesday,Soledad (Macopa),14.097681,121.298201,Rainy,Allergic Reaction,Chronic Illness,Low,1,13,51
+12/12/2020,2020,10:20,Wednesday,San Miguel (Balatuin),14.071687,121.296866,Rainy,Burn,Child,High,2,8,45
+07/05/2023,2023,1:29,Saturday,San Roque (Sambat),14.033364,121.278718,Foggy,Burn,Accident,Low,3,12,5
+10/12/2023,2023,0:04,Thursday,San Jose (Malamig),14.010304,121.287239,Sunny,Poisoning,Overdose,High,1,7,5
+27/07/2024,2024,9:26,Sunday,San Diego (Tiim),14.039621,121.299272,Sunny,Seizure,Heatstroke,Medium,3,17,11
+07/09/2021,2021,13:50,Wednesday,VII-A (P.Alcantara),14.041201,121.300483,Sunny,Fall,Elderly,High,1,9,7
+11/04/2025,2025,4:12,Friday,VI-B (Sabang Mabini),14.094042,121.286107,Foggy,Burn,Overdose,Medium,1,3,10
+03/07/2024,2024,15:20,Wednesday,San Antonio 2 (Sapa),14.029697,121.309392,Sunny,Poisoning,Chronic Illness,Low,2,10,54
+10/10/2025,2025,15:33,Tuesday,Bautista,14.029149,121.310557,Foggy,Stroke,Child,High,3,3,37
+23/11/2024,2024,0:22,Friday,Santa Filomena (Banlagin),14.092942,121.2788,Rainy,Burn,Heatstroke,Medium,1,8,10
+04/12/2020,2020,5:37,Thursday,San Lorenzo (Saluyan),14.052285,121.317236,Foggy,Giving Birth,Pregnant,Low,1,16,55
+06/07/2022,2022,18:29,Wednesday,VII-B,14.039623,121.329062,Cloudy,Stroke,Child,High,1,13,56
+21/10/2025,2025,9:10,Friday,San Nicolas (Mag-ampon),14.070386,121.34365,Stormy,Burn,Infection,Low,2,7,43
+27/02/2025,2025,18:22,Friday,San Nicolas (Mag-ampon),14.076789,121.305616,Foggy,Allergic Reaction,Allergy,High,1,9,9
+01/05/2023,2023,16:59,Sunday,Santa Catalina (Sandig),14.066295,121.29016,Foggy,Seizure,Elderly,Medium,2,19,40
+13/11/2023,2023,11:46,Friday,II-A (Triangulo/ Guadalupe 2),14.059928,121.322727,Cloudy,Giving Birth,Pregnant,High,3,5,49
+20/01/2025,2025,2:24,Monday,Soledad (Macopa),14.047747,121.325425,Cloudy,Stroke,Elderly,Medium,1,7,23
+15/11/2023,2023,18:51,Thursday,IV-B,14.061909,121.311522,Sunny,Giving Birth,Pregnant,Low,1,13,44
+17/03/2025,2025,23:39,Thursday,San Roque (Sambat),14.011139,121.308654,Stormy,Seizure,Elderly,High,2,9,22
+27/08/2021,2021,16:13,Saturday,Santa Cruz (Putol),14.053976,121.286906,Stormy,Heart Attack,Infection,Low,1,11,18
+26/03/2020,2020,9:24,Monday,Santa Filomena (Banlagin),14.040295,121.328925,Sunny,Allergic Reaction,Accident,High,1,6,30
+09/07/2023,2023,17:23,Wednesday,V-D,14.088342,121.34648,Sunny,Burn,Child,High,2,14,39
+04/08/2023,2023,7:35,Sunday,Santo Niño (Arsum),14.017896,121.295322,Foggy,Heart Attack,Chronic Illness,Medium,3,4,34
+15/03/2025,2025,3:52,Friday,VII-A (P.Alcantara),14.098345,121.350198,Rainy,Fall,Other,Low,3,8,16
+10/11/2022,2022,21:07,Monday,III-C (Labak/De Roma),14.050924,121.355254,Foggy,Fall,Other,Medium,2,17,21
+06/12/2025,2025,4:40,Wednesday,San Pedro,14.058352,121.332605,Foggy,Breathing Difficulty,Pregnant,Medium,1,12,26
+31/12/2024,2024,6:43,Friday,IV-B,14.098898,121.351129,Stormy,Poisoning,Heatstroke,Low,1,16,28
+27/08/2024,2024,5:39,Friday,IV-B,14.014955,121.306772,Sunny,Stroke,Other,Low,2,9,11
+02/01/2022,2022,5:56,Sunday,Santa Monica,14.064721,121.325976,Rainy,Giving Birth,Pregnant,Medium,3,14,5
+25/01/2023,2023,22:20,Friday,San Gregorio,14.09713,121.283448,Sunny,Heart Attack,Allergy,High,3,7,18
+12/02/2022,2022,0:47,Tuesday,II-C (Unson),14.016249,121.348497,Sunny,Burn,Chronic Illness,High,3,16,43
+01/07/2020,2020,14:06,Friday,II-E (San Anton),14.079131,121.343601,Sunny,Fall,Overdose,Low,2,9,15
+12/10/2023,2023,17:06,Friday,I-C (Bagong Bayan),14.10414,121.291658,Foggy,Poisoning,Chronic Illness,Medium,3,8,26
+21/02/2020,2020,15:15,Friday,San Rafael (Buluburan),14.050087,121.273881,Rainy,Allergic Reaction,Heatstroke,High,2,5,40
+01/10/2024,2024,9:06,Wednesday,III-A (Hermanos Belen),14.068975,121.354682,Stormy,Stroke,Pregnant,Medium,1,20,57
+27/10/2022,2022,12:37,Saturday,Concepcion (Bunot),14.076909,121.358108,Rainy,Burn,Pregnant,High,1,9,19
+14/12/2025,2025,6:11,Tuesday,San Bartolome (Matang-ag),14.065566,121.337165,Cloudy,Other,Chronic Illness,Medium,2,11,29
+03/12/2022,2022,18:45,Friday,Santa Isabel,14.035946,121.358715,Stormy,Other,Chronic Illness,Medium,3,17,9
+12/12/2024,2024,5:16,Sunday,VII-E,14.033476,121.2914,Rainy,Stroke,Elderly,Medium,1,19,56
+19/02/2021,2021,0:49,Sunday,Santa Cruz (Putol),14.012145,121.282377,Stormy,Heart Attack,Pregnant,High,2,4,32
+27/10/2020,2020,11:52,Sunday,II-F (Villa Rey),14.029568,121.285159,Sunny,Seizure,Allergy,Low,3,13,59
+13/06/2021,2021,2:48,Saturday,II-C (Unson),14.068616,121.33957,Sunny,Heart Attack,Accident,High,3,14,32
+12/08/2022,2022,18:25,Tuesday,III-C (Labak/De Roma),14.068689,121.341146,Foggy,Fall,Child,Medium,3,5,60
+19/05/2021,2021,0:30,Monday,III-E,14.09667,121.271851,Rainy,Allergic Reaction,Pregnant,High,3,9,37
+17/12/2023,2023,22:36,Saturday,I-B (City Sub Riverside),14.036294,121.335362,Stormy,Allergic Reaction,Overdose,High,2,13,16
+25/07/2023,2023,8:02,Thursday,VII-B,14.106247,121.358095,Rainy,Fall,Infection,Low,2,7,40
+05/11/2020,2020,12:49,Saturday,VII-A (P.Alcantara),14.069639,121.298315,Stormy,Heart Attack,Elderly,Low,3,5,34
+08/07/2021,2021,14:11,Sunday,San Roque (Sambat),14.053449,121.327435,Sunny,Other,Elderly,Low,1,3,31
+08/11/2025,2025,3:26,Tuesday,San Lucas 1 (Malinaw),14.069486,121.27316,Stormy,Poisoning,Elderly,High,2,17,23
+25/07/2024,2024,15:21,Saturday,VI-D (Lakeside),14.059795,121.369349,Foggy,Seizure,Accident,Low,2,13,25
+18/09/2021,2021,7:14,Monday,San Jose (Malamig),14.052511,121.29867,Rainy,Stroke,Heatstroke,High,1,19,11
+06/10/2024,2024,0:40,Sunday,Santiago II (Bulaho),14.010204,121.325553,Rainy,Allergic Reaction,Accident,High,1,7,17
+01/03/2021,2021,10:02,Friday,Concepcion (Bunot),14.055914,121.352327,Cloudy,Allergic Reaction,Infection,Low,1,6,7
+30/03/2020,2020,19:59,Sunday,Atisan,14.018677,121.345442,Sunny,Poisoning,Chronic Illness,Medium,3,13,46
+12/11/2022,2022,18:49,Wednesday,VI-B (Sabang Mabini),14.027534,121.350541,Rainy,Giving Birth,Pregnant,Low,3,3,42
+04/05/2021,2021,16:14,Wednesday,III-B,14.028953,121.322697,Rainy,Breathing Difficulty,Child,High,2,20,48
+17/07/2024,2024,10:21,Friday,III-E,14.093435,121.288931,Stormy,Burn,Heatstroke,High,3,13,16
+28/04/2025,2025,16:20,Thursday,III-A (Hermanos Belen),14.034286,121.296187,Sunny,Fall,Allergy,High,1,7,15
+18/01/2024,2024,23:53,Sunday,VI-D (Lakeside),14.065993,121.319048,Sunny,Fall,Overdose,High,2,19,34
+03/08/2025,2025,23:54,Saturday,V-D,14.100182,121.330732,Stormy,Stroke,Allergy,Low,3,14,49
+18/01/2023,2023,15:50,Friday,Santa Veronica (Bae),14.087744,121.364601,Rainy,Poisoning,Accident,Low,2,12,9
+11/10/2025,2025,3:10,Sunday,San Marcos (Tikew),14.093604,121.288114,Rainy,Other,Heatstroke,High,3,20,19
+08/11/2023,2023,10:09,Tuesday,San Gregorio,14.065621,121.366645,Cloudy,Burn,Infection,Low,2,4,32
+01/03/2023,2023,7:07,Friday,III-D (Villongco),14.053107,121.31417,Stormy,Poisoning,Infection,Low,2,20,40
+24/04/2024,2024,14:33,Saturday,V-D,14.094839,121.29086,Foggy,Seizure,Overdose,Low,2,10,35
+24/02/2021,2021,22:27,Wednesday,San Gabriel (Butucan),14.109878,121.359501,Stormy,Seizure,Other,High,2,20,32
+29/07/2022,2022,6:17,Wednesday,Santa Isabel,14.075085,121.282214,Cloudy,Poisoning,Chronic Illness,Medium,2,11,35
+22/09/2025,2025,2:55,Thursday,III-D (Villongco),14.01594,121.271152,Foggy,Giving Birth,Pregnant,Low,3,18,23
+26/06/2022,2022,7:53,Wednesday,VII-E,14.056864,121.362593,Rainy,Breathing Difficulty,Allergy,High,3,3,51
+25/03/2025,2025,23:24,Saturday,Santa Maria,14.061349,121.292204,Sunny,Breathing Difficulty,Pregnant,Low,3,15,35
+11/10/2025,2025,6:34,Sunday,II-F (Villa Rey),14.068263,121.36954,Stormy,Allergic Reaction,Infection,Medium,1,4,11
+27/08/2022,2022,10:32,Sunday,III-D (Villongco),14.072627,121.357875,Foggy,Poisoning,Heatstroke,Medium,3,13,25
+16/11/2025,2025,21:59,Thursday,Del Remedio (Wawa),14.108214,121.289592,Stormy,Other,Pregnant,High,3,12,16
+16/02/2022,2022,4:16,Wednesday,Concepcion (Bunot),14.04017,121.3678,Stormy,Heart Attack,Overdose,High,2,13,22
+06/09/2024,2024,11:14,Thursday,Santa Veronica (Bae),14.078092,121.369252,Rainy,Heart Attack,Heatstroke,Low,2,8,6
+11/03/2024,2024,23:06,Tuesday,San Gregorio,14.063123,121.302667,Stormy,Heart Attack,Allergy,High,2,13,31
+06/03/2021,2021,18:36,Wednesday,IV-B,14.075668,121.338321,Stormy,Burn,Elderly,High,2,6,29
+13/09/2020,2020,17:10,Friday,III-D (Villongco),14.058678,121.306779,Stormy,Burn,Other,Low,3,9,54
+08/09/2024,2024,7:27,Thursday,Santa Maria Magdalena (Boe / Kuba),14.044798,121.274315,Foggy,Allergic Reaction,Other,Medium,1,7,8
+07/12/2021,2021,10:38,Monday,III-D (Villongco),14.054486,121.277692,Stormy,Breathing Difficulty,Accident,Medium,2,19,20
+25/06/2025,2025,12:49,Wednesday,Dolores,14.031332,121.344408,Foggy,Allergic Reaction,Accident,High,3,9,55
+09/01/2025,2025,5:43,Tuesday,I-C (Bagong Bayan),14.016509,121.317856,Cloudy,Giving Birth,Pregnant,Medium,2,19,27
+21/12/2021,2021,1:41,Sunday,I-C (Bagong Bayan),14.108714,121.315543,Foggy,Stroke,Other,High,1,13,41
+27/02/2023,2023,9:48,Sunday,III-E,14.076474,121.327397,Foggy,Heart Attack,Other,High,1,13,10
+12/10/2022,2022,23:59,Thursday,IV-C,14.019401,121.276324,Sunny,Burn,Allergy,Medium,2,19,5
+03/06/2024,2024,13:01,Thursday,IV-C,14.019173,121.369971,Cloudy,Giving Birth,Chronic Illness,High,1,8,48
+23/02/2024,2024,15:15,Thursday,Santiago I (Bulaho),14.032189,121.36329,Foggy,Giving Birth,Pregnant,Medium,1,15,19
+23/09/2023,2023,21:14,Sunday,San Lorenzo (Saluyan),14.060277,121.341558,Rainy,Seizure,Infection,Medium,1,19,40
+02/03/2021,2021,6:35,Thursday,San Gregorio,14.05175,121.311138,Cloudy,Giving Birth,Pregnant,Low,2,20,23
+09/06/2022,2022,19:14,Sunday,San Gabriel (Butucan),14.084498,121.308907,Rainy,Poisoning,Chronic Illness,Medium,2,15,51
+22/03/2022,2022,19:25,Sunday,Soledad (Macopa),14.021849,121.339183,Sunny,Heart Attack,Accident,Low,3,3,19
+28/10/2023,2023,3:38,Monday,Santa Isabel,14.079525,121.363677,Stormy,Stroke,Heatstroke,High,1,6,8
+24/03/2023,2023,6:10,Thursday,San Gabriel (Butucan),14.03493,121.360531,Stormy,Fall,Chronic Illness,High,2,6,34
+13/02/2025,2025,4:24,Tuesday,VII-E,14.066602,121.348492,Stormy,Stroke,Infection,Medium,1,5,9
+29/04/2025,2025,4:23,Wednesday,San Juan (Putol),14.048533,121.36999,Sunny,Poisoning,Heatstroke,Medium,2,15,8
+19/04/2020,2020,18:54,Friday,Santa Ana,14.067296,121.357651,Rainy,Other,Child,Low,3,5,56
+10/07/2020,2020,10:05,Tuesday,Santa Maria,14.044701,121.299115,Sunny,Allergic Reaction,Chronic Illness,High,2,8,31
+12/09/2020,2020,21:58,Sunday,Santo Niño (Arsum),14.03748,121.323569,Sunny,Burn,Overdose,Low,3,8,22
+28/07/2020,2020,10:10,Thursday,Santa Filomena (Banlagin),14.048032,121.363358,Stormy,Burn,Overdose,Low,3,17,6
+22/05/2025,2025,0:13,Friday,V-B,14.020414,121.347648,Foggy,Other,Accident,High,1,3,5
+12/12/2022,2022,15:45,Tuesday,San Buenaventura (Palakpakin),14.063841,121.330234,Rainy,Fall,Heatstroke,High,2,8,11
+07/06/2023,2023,17:46,Monday,III-B,14.096794,121.343463,Sunny,Other,Allergy,Low,3,20,35
+24/09/2022,2022,18:52,Tuesday,V-C,14.020911,121.272475,Stormy,Heart Attack,Infection,Medium,1,20,12
+30/08/2020,2020,3:36,Wednesday,San Gabriel (Butucan),14.024741,121.305792,Stormy,Burn,Overdose,High,1,17,53
+31/12/2023,2023,15:35,Sunday,Santa Isabel,14.071941,121.278486,Rainy,Stroke,Chronic Illness,High,3,3,27
+04/11/2025,2025,20:30,Friday,Concepcion (Bunot),14.081104,121.302544,Rainy,Heart Attack,Other,Medium,2,9,47
+07/12/2020,2020,7:07,Saturday,San Lucas 1 (Malinaw),14.089935,121.286423,Sunny,Poisoning,Child,High,3,4,33
+22/12/2022,2022,10:24,Saturday,San Rafael (Buluburan),14.087464,121.303012,Foggy,Giving Birth,Pregnant,Medium,1,18,35
+02/09/2022,2022,11:15,Monday,San Rafael (Buluburan),14.079215,121.346371,Rainy,Poisoning,Pregnant,Low,3,19,21
+16/12/2023,2023,7:45,Tuesday,San Lucas 2 (Malinaw),14.091385,121.303983,Sunny,Other,Pregnant,High,2,17,11
+23/12/2024,2024,7:28,Sunday,San Gabriel (Butucan),14.051575,121.303986,Foggy,Giving Birth,Pregnant,Low,2,7,40
+30/08/2023,2023,13:13,Sunday,II-F (Villa Rey),14.109879,121.351029,Sunny,Other,Heatstroke,High,2,8,18
+12/01/2020,2020,13:57,Sunday,San Diego (Tiim),14.063943,121.288306,Cloudy,Poisoning,Overdose,Low,1,5,13
+07/02/2024,2024,18:33,Wednesday,III-B,14.064214,121.309433,Sunny,Breathing Difficulty,Child,High,3,20,10
+04/12/2020,2020,22:23,Wednesday,San Miguel (Balatuin),14.053589,121.36227,Sunny,Burn,Other,Low,2,19,33
+14/04/2021,2021,13:30,Thursday,I-B (City Sub Riverside),14.090507,121.309094,Cloudy,Burn,Elderly,Low,1,9,59
+23/07/2021,2021,18:01,Wednesday,Santa Catalina (Sandig),14.079092,121.290427,Stormy,Fall,Accident,Low,1,14,21
+03/01/2024,2024,15:32,Wednesday,San Cristobal,14.043996,121.361077,Cloudy,Other,Child,Medium,1,13,17
+25/12/2025,2025,23:22,Sunday,Santa Ana,14.027963,121.340195,Stormy,Seizure,Chronic Illness,High,1,17,28
+24/08/2020,2020,12:20,Tuesday,San Jose (Malamig),14.085639,121.367036,Stormy,Poisoning,Allergy,Medium,3,4,49
+27/08/2022,2022,11:37,Thursday,San Gabriel (Butucan),14.081438,121.343243,Rainy,Other,Pregnant,Medium,3,15,6
+08/04/2024,2024,19:20,Tuesday,Del Remedio (Wawa),14.078966,121.327033,Rainy,Poisoning,Elderly,Medium,3,5,43
+03/09/2021,2021,21:22,Thursday,Santa Monica,14.09877,121.295536,Cloudy,Giving Birth,Pregnant,Medium,1,7,17
+04/05/2024,2024,13:47,Thursday,Santo Niño (Arsum),14.012702,121.325396,Sunny,Fall,Allergy,Low,2,3,34
+25/04/2024,2024,2:32,Friday,San Joaquin,14.089161,121.300927,Stormy,Heart Attack,Chronic Illness,Low,1,10,41
+08/12/2023,2023,12:00,Monday,III-A (Hermanos Belen),14.039211,121.277322,Rainy,Heart Attack,Heatstroke,High,1,18,49
+27/11/2024,2024,11:23,Sunday,VI-B (Sabang Mabini),14.070488,121.330839,Stormy,Breathing Difficulty,Overdose,Medium,1,10,44
+28/02/2021,2021,0:18,Friday,San Roque (Sambat),14.043809,121.299814,Rainy,Other,Allergy,Low,2,9,27
+17/12/2025,2025,20:59,Friday,Santa Maria Magdalena (Boe / Kuba),14.045507,121.274967,Sunny,Seizure,Pregnant,High,2,9,23
+24/09/2023,2023,21:52,Tuesday,VI-C (Bagong Pook),14.022637,121.313681,Cloudy,Poisoning,Other,Medium,3,19,18
+21/02/2021,2021,15:37,Wednesday,San Cristobal,14.026358,121.29789,Stormy,Heart Attack,Chronic Illness,Low,2,10,32
+09/04/2020,2020,2:09,Wednesday,San Marcos (Tikew),14.088703,121.367012,Cloudy,Breathing Difficulty,Accident,Medium,3,16,54
+10/01/2022,2022,4:13,Thursday,Bautista,14.08443,121.304457,Cloudy,Stroke,Accident,Medium,3,15,39
+06/12/2023,2023,2:59,Thursday,VII-D,14.029623,121.29584,Sunny,Other,Child,High,2,17,27
+08/05/2022,2022,11:18,Monday,Santa Ana,14.085656,121.34059,Rainy,Burn,Child,High,1,9,32
+02/09/2025,2025,0:32,Tuesday,II-C (Unson),14.07311,121.329653,Stormy,Fall,Child,Low,1,20,54
+14/05/2025,2025,15:49,Sunday,San Vicente,14.088688,121.295853,Foggy,Allergic Reaction,Allergy,Low,3,15,6
+18/12/2020,2020,9:17,Thursday,VII-C,14.099378,121.361473,Stormy,Heart Attack,Pregnant,Low,2,15,50
+09/05/2025,2025,16:51,Wednesday,Dolores,14.050092,121.335213,Rainy,Stroke,Chronic Illness,High,2,3,16
+29/11/2020,2020,7:28,Thursday,San Cristobal,14.071902,121.271068,Stormy,Poisoning,Pregnant,High,1,14,23
+13/11/2020,2020,20:09,Wednesday,San Antonio 1 (Balanga),14.047833,121.284043,Stormy,Breathing Difficulty,Overdose,High,2,6,13
+11/12/2024,2024,14:36,Wednesday,V-C,14.091375,121.323399,Stormy,Seizure,Overdose,High,1,12,25
+07/08/2025,2025,20:53,Monday,San Roque (Sambat),14.053779,121.303527,Stormy,Other,Elderly,Medium,3,12,34
+19/05/2024,2024,11:44,Monday,III-A (Hermanos Belen),14.060721,121.301308,Sunny,Burn,Pregnant,Low,1,6,46
+07/09/2024,2024,15:56,Monday,San Jose (Malamig),14.023832,121.357229,Rainy,Allergic Reaction,Elderly,High,3,7,26
+11/04/2024,2024,20:49,Thursday,San Crispin (Lumbangan),14.100809,121.368282,Foggy,Fall,Heatstroke,Low,2,16,50
+22/07/2022,2022,4:21,Tuesday,Soledad (Macopa),14.026303,121.347299,Stormy,Stroke,Accident,High,1,6,17
+18/03/2025,2025,2:29,Thursday,III-A (Hermanos Belen),14.088603,121.332192,Cloudy,Seizure,Other,Medium,3,6,27
+30/07/2021,2021,17:46,Monday,Soledad (Macopa),14.102389,121.347275,Rainy,Stroke,Accident,High,3,3,16
+21/11/2021,2021,1:02,Wednesday,San Rafael (Buluburan),14.066246,121.283234,Stormy,Stroke,Heatstroke,High,2,14,52
+13/09/2020,2020,6:50,Wednesday,Santa Veronica (Bae),14.050963,121.308714,Sunny,Other,Chronic Illness,Medium,3,20,11
+07/08/2023,2023,22:16,Thursday,San Roque (Sambat),14.094889,121.310697,Stormy,Stroke,Elderly,Medium,3,7,49
+28/03/2020,2020,4:28,Tuesday,Santa Veronica (Bae),14.100767,121.272364,Sunny,Fall,Heatstroke,Medium,2,20,21
+13/05/2025,2025,2:49,Wednesday,Santo Niño (Arsum),14.055998,121.316936,Foggy,Poisoning,Heatstroke,High,2,7,51
+28/09/2025,2025,7:27,Thursday,Del Remedio (Wawa),14.046804,121.296585,Stormy,Burn,Other,High,1,3,16
+27/03/2025,2025,17:08,Saturday,V-B,14.07628,121.27293,Cloudy,Heart Attack,Heatstroke,Medium,1,16,18
+07/12/2020,2020,16:54,Wednesday,II-B (Guadalupe 1),14.078949,121.295137,Rainy,Burn,Pregnant,High,2,8,10
+05/05/2020,2020,19:41,Friday,San Vicente,14.091964,121.31702,Cloudy,Stroke,Infection,Medium,2,8,31
+13/11/2023,2023,13:55,Monday,San Nicolas (Mag-ampon),14.045354,121.30751,Sunny,Giving Birth,Pregnant,Medium,1,16,35
+17/08/2021,2021,5:00,Wednesday,III-D (Villongco),14.102719,121.359702,Sunny,Allergic Reaction,Overdose,Low,2,3,44
+31/08/2023,2023,20:34,Monday,Santa Maria Magdalena (Boe / Kuba),14.085219,121.325701,Stormy,Stroke,Pregnant,High,1,6,14
+14/12/2023,2023,15:55,Sunday,Santiago I (Bulaho),14.070283,121.298381,Foggy,Breathing Difficulty,Elderly,Low,3,5,38
+16/10/2020,2020,0:29,Friday,V-B,14.105032,121.273613,Sunny,Stroke,Other,Low,3,15,58
+08/03/2020,2020,21:37,Monday,San Pedro,14.076036,121.338493,Sunny,Other,Pregnant,Low,2,12,7
+20/07/2020,2020,15:51,Thursday,VI-B (Sabang Mabini),14.014365,121.307584,Rainy,Seizure,Chronic Illness,Medium,3,3,33
+10/08/2021,2021,21:24,Wednesday,San Rafael (Buluburan),14.068732,121.331178,Foggy,Other,Other,High,2,4,47
+28/06/2021,2021,5:47,Friday,Santa Filomena (Banlagin),14.048677,121.296363,Foggy,Stroke,Allergy,Low,1,10,51
+19/07/2022,2022,3:05,Tuesday,Atisan,14.026582,121.295655,Sunny,Breathing Difficulty,Infection,High,2,5,14
+11/05/2020,2020,19:19,Thursday,I-B (City Sub Riverside),14.097263,121.35093,Foggy,Allergic Reaction,Overdose,High,1,18,39
+11/12/2025,2025,6:26,Monday,V-C,14.090881,121.329363,Stormy,Other,Infection,High,1,15,38
+11/09/2024,2024,12:10,Wednesday,VII-E,14.031786,121.306748,Foggy,Seizure,Elderly,Medium,2,20,56
+23/07/2025,2025,5:05,Wednesday,Santo Niño (Arsum),14.089762,121.283632,Rainy,Stroke,Overdose,Low,1,6,37
+20/05/2025,2025,17:30,Friday,San Diego (Tiim),14.102155,121.273386,Sunny,Allergic Reaction,Chronic Illness,High,1,12,21
+21/03/2021,2021,15:57,Wednesday,San Vicente,14.040785,121.310917,Cloudy,Heart Attack,Allergy,Medium,3,11,49
+05/04/2022,2022,18:12,Friday,Concepcion (Bunot),14.056455,121.270796,Sunny,Other,Infection,High,3,7,12
+24/12/2021,2021,7:11,Saturday,IV-C,14.084343,121.283194,Cloudy,Giving Birth,Pregnant,High,2,19,27
+25/07/2021,2021,5:51,Thursday,III-C (Labak/De Roma),14.050333,121.298692,Rainy,Heart Attack,Child,Medium,2,17,55
+18/06/2020,2020,14:21,Thursday,I-A (Sambat),14.024483,121.355471,Foggy,Heart Attack,Allergy,Low,2,6,57
+16/06/2021,2021,21:34,Tuesday,II-B (Guadalupe 1),14.109998,121.275965,Cloudy,Burn,Other,Medium,1,17,44
+02/03/2025,2025,9:39,Thursday,VI-C (Bagong Pook),14.069776,121.349052,Stormy,Poisoning,Pregnant,High,1,19,23
+10/02/2020,2020,23:50,Thursday,San Joaquin,14.094628,121.293174,Foggy,Giving Birth,Pregnant,Medium,2,10,40
+07/04/2024,2024,22:33,Friday,II-E (San Anton),14.040888,121.366735,Stormy,Fall,Accident,Medium,1,20,43
+12/02/2021,2021,4:24,Thursday,VI-E (YMCA),14.061727,121.36996,Sunny,Stroke,Pregnant,Medium,2,3,48
+13/09/2022,2022,15:18,Wednesday,San Buenaventura (Palakpakin),14.086103,121.271144,Cloudy,Poisoning,Child,High,2,7,29
+27/01/2025,2025,12:12,Wednesday,Santo Cristo,14.048428,121.334458,Sunny,Breathing Difficulty,Elderly,Low,1,7,6
+12/11/2022,2022,13:30,Thursday,Dolores,14.032365,121.294808,Sunny,Giving Birth,Chronic Illness,Medium,1,16,22
+20/05/2024,2024,16:06,Saturday,Santa Cruz (Putol),14.086676,121.313433,Foggy,Poisoning,Elderly,Low,1,15,53
+12/05/2024,2024,2:26,Thursday,San Vicente,14.034254,121.338419,Sunny,Other,Accident,Medium,1,13,28
+27/08/2020,2020,6:21,Sunday,San Bartolome (Matang-ag),14.102472,121.28023,Rainy,Seizure,Heatstroke,Medium,1,18,40
+11/06/2024,2024,3:47,Friday,San Juan (Putol),14.08588,121.284249,Rainy,Allergic Reaction,Accident,Medium,3,10,8
+18/02/2021,2021,8:23,Thursday,San Mateo (Imok),14.108492,121.338767,Stormy,Heart Attack,Accident,High,3,4,47
+19/07/2021,2021,13:05,Wednesday,Atisan,14.036811,121.326625,Rainy,Stroke,Accident,Low,1,19,53
+03/05/2025,2025,5:41,Sunday,San Gabriel (Butucan),14.048023,121.354104,Sunny,Poisoning,Child,High,3,11,49
+30/11/2022,2022,6:13,Monday,III-D (Villongco),14.078759,121.272766,Foggy,Stroke,Pregnant,Medium,1,14,10
+15/06/2025,2025,2:38,Sunday,San Miguel (Balatuin),14.014231,121.36147,Sunny,Fall,Heatstroke,High,2,20,59
+18/05/2024,2024,10:08,Sunday,Bautista,14.055351,121.308474,Rainy,Fall,Other,Low,1,8,55
+20/05/2025,2025,5:34,Thursday,IV-C,14.104258,121.353304,Cloudy,Allergic Reaction,Child,High,2,20,54
+04/02/2023,2023,9:03,Monday,VI-D (Lakeside),14.070102,121.319728,Rainy,Allergic Reaction,Pregnant,Low,1,8,53
+17/01/2024,2024,19:55,Sunday,III-E,14.032989,121.274624,Cloudy,Allergic Reaction,Pregnant,Medium,3,7,13
+30/10/2021,2021,0:29,Saturday,San Lucas 1 (Malinaw),14.059899,121.277513,Sunny,Other,Pregnant,High,1,3,29
+06/03/2024,2024,10:24,Wednesday,II-C (Unson),14.028727,121.357594,Sunny,Allergic Reaction,Chronic Illness,Low,1,11,27
+02/12/2021,2021,10:38,Sunday,III-C (Labak/De Roma),14.099443,121.303763,Cloudy,Poisoning,Other,High,2,12,48
+02/08/2024,2024,13:16,Thursday,San Gregorio,14.065044,121.34127,Sunny,Poisoning,Accident,High,2,7,17
+03/11/2020,2020,21:49,Wednesday,Atisan,14.036602,121.336046,Foggy,Stroke,Elderly,Medium,3,14,50
+25/12/2020,2020,1:24,Sunday,VI-C (Bagong Pook),14.082215,121.312737,Rainy,Poisoning,Elderly,Low,3,4,46
+22/03/2020,2020,4:21,Tuesday,II-B (Guadalupe 1),14.05569,121.348951,Rainy,Fall,Elderly,Low,2,10,39
+28/05/2020,2020,1:18,Tuesday,San Lucas 2 (Malinaw),14.036282,121.325099,Stormy,Heart Attack,Accident,Low,3,11,7
+03/01/2025,2025,18:53,Wednesday,San Roque (Sambat),14.0503,121.358229,Cloudy,Breathing Difficulty,Overdose,Medium,2,10,19
+05/05/2023,2023,7:15,Wednesday,San Joaquin,14.057528,121.347683,Stormy,Fall,Infection,High,3,9,21
+20/02/2024,2024,20:56,Thursday,III-C (Labak/De Roma),14.051304,121.277682,Rainy,Breathing Difficulty,Chronic Illness,High,1,8,57
+13/08/2020,2020,6:16,Tuesday,San Lucas 1 (Malinaw),14.070776,121.362194,Foggy,Seizure,Pregnant,High,1,18,39
+10/03/2024,2024,1:07,Sunday,San Joaquin,14.013192,121.368795,Sunny,Other,Overdose,High,3,11,12
+30/06/2025,2025,6:04,Thursday,III-F (Balagtas),14.052623,121.29184,Stormy,Seizure,Child,Medium,1,6,41
+13/02/2020,2020,13:23,Monday,VII-B,14.068583,121.342428,Rainy,Fall,Overdose,High,3,16,30
+13/02/2024,2024,9:25,Wednesday,Concepcion (Bunot),14.092075,121.294002,Stormy,Burn,Infection,Low,3,12,8
+05/11/2022,2022,13:22,Monday,III-A (Hermanos Belen),14.059441,121.291331,Rainy,Fall,Chronic Illness,Low,3,13,35
+19/11/2020,2020,19:20,Friday,II-F (Villa Rey),14.081496,121.321511,Foggy,Breathing Difficulty,Overdose,Low,3,10,46
+23/09/2020,2020,0:23,Tuesday,San Rafael (Buluburan),14.047605,121.32183,Cloudy,Heart Attack,Heatstroke,Low,3,9,12
+12/09/2022,2022,23:29,Monday,San Ignacio,14.096453,121.36162,Cloudy,Fall,Allergy,Low,1,19,35
+03/11/2023,2023,16:24,Friday,San Gregorio,14.073268,121.356989,Stormy,Heart Attack,Infection,High,3,8,53
+08/07/2021,2021,4:47,Monday,III-E,14.044938,121.359008,Foggy,Heart Attack,Allergy,Medium,1,9,40
+07/01/2024,2024,14:14,Saturday,II-A (Triangulo/ Guadalupe 2),14.033664,121.309785,Foggy,Heart Attack,Accident,High,3,4,57
+28/03/2022,2022,7:00,Thursday,Atisan,14.05588,121.337452,Stormy,Fall,Allergy,Low,1,10,57
+02/05/2021,2021,0:57,Saturday,San Lorenzo (Saluyan),14.082092,121.342492,Foggy,Fall,Overdose,Low,1,15,42
+21/01/2024,2024,15:04,Monday,Atisan,14.048159,121.289868,Foggy,Giving Birth,Pregnant,Low,2,11,17
+11/07/2024,2024,5:16,Tuesday,Soledad (Macopa),14.062135,121.329965,Stormy,Allergic Reaction,Infection,Medium,2,20,14
+26/01/2022,2022,8:20,Tuesday,San Miguel (Balatuin),14.056707,121.358499,Foggy,Poisoning,Pregnant,Low,3,7,39
+04/06/2024,2024,1:43,Thursday,III-B,14.063891,121.318716,Foggy,Heart Attack,Child,Medium,2,18,28
+04/02/2025,2025,20:45,Friday,Santa Maria Magdalena (Boe / Kuba),14.046244,121.296915,Stormy,Stroke,Overdose,Low,2,17,43
+29/10/2022,2022,12:48,Monday,San Francisco (Calihan),14.04608,121.324039,Rainy,Heart Attack,Elderly,High,2,18,25
+20/10/2021,2021,6:49,Monday,IV-C,14.082139,121.284897,Stormy,Burn,Pregnant,High,3,13,10
+14/12/2021,2021,9:37,Thursday,Concepcion (Bunot),14.019024,121.304579,Cloudy,Burn,Heatstroke,Medium,2,20,25
+30/08/2022,2022,3:08,Friday,Santa Cruz (Putol),14.09371,121.349445,Stormy,Breathing Difficulty,Elderly,High,3,16,23
+23/06/2021,2021,22:42,Sunday,Santiago I (Bulaho),14.059907,121.367156,Cloudy,Breathing Difficulty,Elderly,Medium,3,5,20
+27/07/2021,2021,7:42,Wednesday,Santa Catalina (Sandig),14.108997,121.270305,Rainy,Fall,Overdose,Low,1,10,35
+09/04/2020,2020,12:56,Tuesday,Atisan,14.07155,121.317041,Sunny,Stroke,Child,Medium,3,12,12
+12/10/2025,2025,19:33,Friday,Santisimo Rosario (Balagbag),14.075046,121.302904,Cloudy,Seizure,Infection,High,3,17,44
+05/05/2021,2021,7:54,Thursday,VII-C,14.043894,121.350043,Stormy,Breathing Difficulty,Heatstroke,Medium,2,9,33
+31/01/2023,2023,18:47,Wednesday,San Mateo (Imok),14.01713,121.274755,Foggy,Burn,Overdose,Medium,1,16,45
+18/09/2020,2020,13:50,Sunday,San Lucas 2 (Malinaw),14.039555,121.31685,Rainy,Breathing Difficulty,Infection,Low,1,8,49
+18/07/2021,2021,23:26,Monday,Santo Cristo,14.05302,121.29338,Foggy,Stroke,Overdose,Medium,2,15,13
+06/01/2021,2021,18:51,Saturday,Bautista,14.0957,121.273764,Stormy,Giving Birth,Pregnant,Low,1,4,38
+26/03/2021,2021,11:11,Saturday,Santa Monica,14.101444,121.320344,Cloudy,Seizure,Elderly,High,1,7,43
+10/09/2025,2025,0:35,Thursday,Santa Maria,14.068015,121.299342,Rainy,Breathing Difficulty,Accident,Low,3,7,38
+15/03/2020,2020,13:00,Tuesday,Bautista,14.072711,121.331306,Cloudy,Stroke,Heatstroke,High,1,5,17
+25/01/2022,2022,22:41,Friday,Santa Monica,14.017119,121.341951,Stormy,Burn,Overdose,Low,2,6,9
+24/06/2020,2020,2:22,Wednesday,IV-C,14.020189,121.298517,Sunny,Fall,Allergy,High,1,17,34
+08/07/2022,2022,11:52,Thursday,San Antonio 1 (Balanga),14.097325,121.313731,Rainy,Seizure,Child,Low,3,7,5
+20/05/2024,2024,8:48,Thursday,Santa Filomena (Banlagin),14.026568,121.270142,Rainy,Poisoning,Pregnant,Low,2,10,16
+01/02/2024,2024,7:41,Monday,San Juan (Putol),14.09676,121.369905,Stormy,Stroke,Overdose,Low,1,8,47
+04/05/2023,2023,4:45,Thursday,VI-A (Mavenida),14.017871,121.31153,Rainy,Other,Overdose,High,1,7,38
+25/04/2024,2024,14:54,Tuesday,VI-E (YMCA),14.083777,121.273809,Cloudy,Poisoning,Elderly,High,3,7,41
+29/12/2020,2020,23:35,Tuesday,San Vicente,14.085406,121.286587,Foggy,Fall,Accident,Low,2,15,56
+27/05/2025,2025,5:47,Friday,Del Remedio (Wawa),14.094732,121.306474,Cloudy,Burn,Allergy,Medium,2,12,47
+27/06/2024,2024,19:04,Thursday,V-D,14.033459,121.305803,Stormy,Seizure,Accident,High,1,17,44
+29/05/2022,2022,1:38,Tuesday,V-D,14.106069,121.273545,Sunny,Stroke,Other,Low,1,16,36
+05/04/2023,2023,6:10,Saturday,San Miguel (Balatuin),14.051377,121.329347,Rainy,Poisoning,Infection,High,1,17,23
+26/01/2025,2025,14:56,Sunday,San Buenaventura (Palakpakin),14.087762,121.363185,Sunny,Poisoning,Chronic Illness,Low,2,14,31
+16/10/2020,2020,19:52,Tuesday,San Juan (Putol),14.100714,121.306932,Sunny,Poisoning,Heatstroke,Medium,1,8,25
+26/05/2025,2025,2:12,Thursday,San Gabriel (Butucan),14.087266,121.308884,Foggy,Other,Infection,Low,2,20,7
+16/08/2023,2023,5:27,Saturday,San Bartolome (Matang-ag),14.062724,121.300868,Stormy,Heart Attack,Overdose,High,2,17,54
+12/09/2021,2021,12:51,Wednesday,IV-B,14.100939,121.337166,Sunny,Burn,Infection,Medium,3,3,15
+21/05/2025,2025,13:08,Sunday,San Roque (Sambat),14.020173,121.276042,Rainy,Seizure,Infection,High,2,14,36
+02/03/2020,2020,23:52,Monday,San Gabriel (Butucan),14.06417,121.291115,Sunny,Breathing Difficulty,Accident,Medium,1,19,40
+07/11/2025,2025,18:04,Saturday,San Joaquin,14.022131,121.292563,Cloudy,Giving Birth,Overdose,Low,1,19,50
+18/12/2023,2023,11:18,Friday,Santa Isabel,14.021573,121.306878,Stormy,Seizure,Pregnant,Medium,2,19,7
+18/03/2025,2025,3:17,Saturday,Santa Maria,14.107566,121.34531,Sunny,Burn,Pregnant,High,2,13,41
+21/12/2022,2022,12:28,Monday,III-A (Hermanos Belen),14.044342,121.301712,Rainy,Stroke,Child,Medium,3,16,16
+19/03/2025,2025,9:04,Friday,Santa Isabel,14.104691,121.363187,Foggy,Stroke,Elderly,Medium,3,10,52
+25/10/2022,2022,0:49,Monday,VI-A (Mavenida),14.011328,121.275277,Rainy,Other,Heatstroke,High,2,4,33
+12/02/2025,2025,12:10,Saturday,San Mateo (Imok),14.074845,121.323865,Foggy,Breathing Difficulty,Pregnant,Medium,3,15,60
+24/09/2020,2020,4:26,Monday,II-A (Triangulo/ Guadalupe 2),14.039702,121.341256,Foggy,Giving Birth,Pregnant,Low,1,8,35
+25/06/2025,2025,0:12,Sunday,I-C (Bagong Bayan),14.10082,121.365328,Cloudy,Fall,Allergy,High,1,13,16
+13/03/2020,2020,3:54,Saturday,San Gabriel (Butucan),14.016455,121.353407,Foggy,Burn,Chronic Illness,High,1,7,12
+30/06/2021,2021,19:20,Sunday,V-D,14.048132,121.284555,Sunny,Other,Pregnant,Low,1,3,26
+09/08/2023,2023,15:19,Monday,V-C,14.013858,121.362377,Cloudy,Heart Attack,Infection,Medium,3,5,25
+15/11/2024,2024,20:17,Friday,Santa Monica,14.05614,121.321961,Stormy,Burn,Allergy,Low,3,15,35
+22/09/2022,2022,20:12,Wednesday,Bautista,14.052265,121.346255,Cloudy,Burn,Chronic Illness,Low,2,6,59
+26/07/2020,2020,10:31,Sunday,San Pedro,14.036892,121.311857,Rainy,Stroke,Accident,High,1,14,12
+23/03/2023,2023,23:49,Wednesday,Bautista,14.0172,121.275975,Stormy,Seizure,Accident,High,3,8,45
+11/05/2021,2021,8:31,Friday,Santisimo Rosario (Balagbag),14.090972,121.299539,Cloudy,Burn,Heatstroke,High,2,4,37
+24/07/2021,2021,16:22,Monday,Santa Catalina (Sandig),14.031181,121.364531,Sunny,Stroke,Pregnant,Low,1,19,42
+19/12/2020,2020,13:44,Wednesday,Soledad (Macopa),14.10772,121.343958,Sunny,Allergic Reaction,Infection,Low,2,19,27
+18/06/2025,2025,15:17,Saturday,VII-C,14.046576,121.27383,Foggy,Fall,Pregnant,High,1,19,40
+26/01/2022,2022,0:09,Friday,IV-C,14.01427,121.27564,Foggy,Burn,Chronic Illness,High,3,5,54
+01/10/2021,2021,20:34,Sunday,I-C (Bagong Bayan),14.100685,121.270234,Foggy,Allergic Reaction,Accident,Low,2,7,39
+05/06/2023,2023,19:37,Monday,Santisimo Rosario (Balagbag),14.045893,121.34436,Foggy,Heart Attack,Pregnant,Low,1,12,22
+22/10/2024,2024,21:41,Sunday,VI-D (Lakeside),14.026659,121.31863,Foggy,Other,Pregnant,Medium,2,9,28
+21/02/2020,2020,20:50,Tuesday,V-B,14.098368,121.348854,Foggy,Fall,Pregnant,Low,1,19,26
+18/05/2023,2023,10:26,Sunday,Santa Isabel,14.061641,121.364278,Cloudy,Fall,Other,High,3,17,36
+21/12/2024,2024,1:09,Wednesday,II-D (Bulante),14.012237,121.367503,Foggy,Poisoning,Allergy,High,1,5,18
+18/06/2024,2024,21:09,Monday,San Juan (Putol),14.02554,121.295106,Cloudy,Stroke,Pregnant,Medium,3,10,31
+11/06/2021,2021,4:26,Friday,San Mateo (Imok),14.07489,121.289199,Foggy,Fall,Heatstroke,Medium,2,15,5
+14/09/2022,2022,10:46,Sunday,Santisimo Rosario (Balagbag),14.078201,121.337919,Sunny,Heart Attack,Other,Medium,3,17,23
+22/08/2022,2022,10:13,Wednesday,VI-E (YMCA),14.105668,121.339605,Stormy,Seizure,Allergy,Medium,1,11,25
+09/01/2022,2022,20:56,Sunday,Santo Angel (Ilog),14.085545,121.307981,Rainy,Allergic Reaction,Allergy,High,3,12,5
+14/03/2021,2021,1:56,Thursday,IV-A,14.097836,121.316397,Rainy,Heart Attack,Overdose,Low,2,12,41
+12/06/2024,2024,13:41,Monday,II-F (Villa Rey),14.040883,121.304731,Sunny,Heart Attack,Allergy,Medium,3,17,29
+07/05/2023,2023,12:09,Sunday,I-A (Sambat),14.07546,121.293673,Stormy,Stroke,Heatstroke,High,2,20,17
+07/01/2025,2025,14:53,Saturday,San Buenaventura (Palakpakin),14.082036,121.341099,Rainy,Heart Attack,Chronic Illness,Medium,1,12,44
+04/03/2023,2023,13:41,Sunday,VI-C (Bagong Pook),14.101737,121.347482,Foggy,Fall,Pregnant,Low,3,19,13
+15/08/2021,2021,1:57,Sunday,San Marcos (Tikew),14.015795,121.283234,Foggy,Heart Attack,Pregnant,High,1,8,57
+20/09/2020,2020,5:05,Friday,San Juan (Putol),14.015999,121.272,Stormy,Seizure,Overdose,High,2,15,20
+01/09/2021,2021,13:12,Sunday,V-A,14.086907,121.287231,Foggy,Poisoning,Elderly,Medium,1,10,20
+16/12/2021,2021,20:12,Monday,San Lorenzo (Saluyan),14.045321,121.280602,Foggy,Stroke,Chronic Illness,High,3,13,10
+20/08/2021,2021,14:26,Tuesday,Santa Veronica (Bae),14.069067,121.272219,Stormy,Heart Attack,Allergy,Low,1,8,36
+15/03/2024,2024,5:47,Thursday,III-F (Balagtas),14.079274,121.326576,Sunny,Burn,Child,Low,2,9,49
+20/02/2022,2022,11:12,Wednesday,Santa Ana,14.035093,121.341231,Rainy,Breathing Difficulty,Elderly,Low,1,4,24
+29/01/2023,2023,17:17,Monday,IV-A,14.043757,121.282097,Stormy,Other,Child,Medium,1,9,60
+08/08/2023,2023,15:46,Monday,Santa Elena,14.02687,121.353803,Foggy,Stroke,Child,High,1,16,11
+24/08/2023,2023,11:27,Sunday,San Gabriel (Butucan),14.104423,121.27965,Foggy,Fall,Overdose,Medium,3,8,25
+29/11/2020,2020,18:29,Thursday,II-B (Guadalupe 1),14.084619,121.323567,Sunny,Poisoning,Child,High,2,4,53
+18/01/2024,2024,0:07,Sunday,V-B,14.01599,121.308967,Rainy,Breathing Difficulty,Overdose,High,3,5,41
+29/11/2023,2023,6:37,Sunday,Atisan,14.03896,121.298398,Rainy,Breathing Difficulty,Allergy,Medium,1,15,17
+04/08/2021,2021,16:59,Tuesday,V-D,14.083141,121.275517,Cloudy,Allergic Reaction,Allergy,Low,2,11,11
+24/01/2022,2022,19:31,Sunday,Santo Cristo,14.040253,121.300483,Cloudy,Heart Attack,Overdose,Low,2,11,56
+07/06/2020,2020,12:52,Sunday,San Nicolas (Mag-ampon),14.080377,121.31397,Cloudy,Stroke,Chronic Illness,Medium,2,18,28
+06/09/2021,2021,20:38,Sunday,San Ignacio,14.090669,121.306683,Cloudy,Poisoning,Overdose,High,2,12,42
+21/08/2025,2025,17:33,Wednesday,San Vicente,14.109944,121.321657,Foggy,Fall,Infection,Low,3,16,35
+23/01/2020,2020,16:52,Monday,Santa Cruz (Putol),14.041825,121.28065,Stormy,Other,Heatstroke,High,2,19,31
+28/07/2020,2020,13:16,Tuesday,San Rafael (Buluburan),14.062919,121.360971,Sunny,Breathing Difficulty,Infection,High,1,15,47
+26/06/2023,2023,9:25,Wednesday,Santisimo Rosario (Balagbag),14.098497,121.354243,Cloudy,Poisoning,Infection,Low,1,9,32
+20/09/2020,2020,14:30,Wednesday,II-A (Triangulo/ Guadalupe 2),14.014074,121.285293,Stormy,Other,Elderly,High,2,11,26
+19/10/2020,2020,2:39,Sunday,Santo Cristo,14.088962,121.313938,Foggy,Seizure,Elderly,Low,2,13,25
+18/12/2020,2020,20:30,Monday,Santa Isabel,14.108414,121.310006,Sunny,Seizure,Child,High,1,9,50
+19/12/2020,2020,8:21,Thursday,IV-A,14.073441,121.298359,Sunny,Other,Accident,Low,1,15,46
+22/12/2025,2025,7:03,Friday,Del Remedio (Wawa),14.057016,121.312321,Foggy,Burn,Child,Low,2,8,48
+04/05/2023,2023,6:49,Tuesday,VI-A (Mavenida),14.094266,121.316548,Rainy,Breathing Difficulty,Accident,Low,1,8,11
+01/04/2020,2020,4:27,Tuesday,Santa Filomena (Banlagin),14.081426,121.281722,Foggy,Stroke,Chronic Illness,High,1,6,19
+26/11/2024,2024,23:26,Tuesday,San Lucas 1 (Malinaw),14.05901,121.27823,Foggy,Stroke,Child,High,2,3,30
+23/07/2021,2021,15:23,Thursday,III-B,14.062288,121.280931,Rainy,Allergic Reaction,Overdose,Low,1,8,27
+18/11/2020,2020,23:59,Tuesday,VII-D,14.097925,121.367431,Sunny,Stroke,Elderly,Low,2,11,33
+13/08/2020,2020,8:05,Thursday,San Rafael (Buluburan),14.033044,121.286185,Stormy,Other,Chronic Illness,High,3,7,46
+20/05/2022,2022,8:59,Thursday,II-B (Guadalupe 1),14.037927,121.335578,Cloudy,Breathing Difficulty,Chronic Illness,Low,3,15,41
+30/05/2020,2020,15:17,Monday,Concepcion (Bunot),14.021157,121.320747,Sunny,Giving Birth,Overdose,High,1,5,21
+14/01/2023,2023,5:16,Wednesday,San Joaquin,14.107835,121.36002,Rainy,Poisoning,Elderly,Medium,1,8,55
+03/03/2023,2023,11:21,Monday,San Pedro,14.045161,121.338746,Foggy,Allergic Reaction,Elderly,Low,3,15,50
+17/03/2021,2021,23:41,Monday,San Gabriel (Butucan),14.019013,121.286247,Rainy,Allergic Reaction,Child,Low,2,13,47
+22/01/2020,2020,6:55,Monday,Santo Niño (Arsum),14.080754,121.320343,Rainy,Giving Birth,Pregnant,Medium,2,20,15
+02/03/2021,2021,20:30,Friday,San Miguel (Balatuin),14.02723,121.332763,Foggy,Burn,Other,Medium,3,3,7
+18/01/2024,2024,1:48,Saturday,III-F (Balagtas),14.103394,121.327314,Foggy,Burn,Heatstroke,Medium,1,3,49
+01/05/2022,2022,10:47,Monday,San Gabriel (Butucan),14.039697,121.306973,Sunny,Poisoning,Child,Medium,2,8,47
+03/01/2022,2022,8:18,Friday,VI-B (Sabang Mabini),14.037365,121.275989,Cloudy,Burn,Other,Medium,2,5,51
+14/04/2024,2024,20:43,Wednesday,Santiago I (Bulaho),14.089351,121.323385,Foggy,Burn,Accident,High,3,15,10
+09/12/2021,2021,11:33,Wednesday,Santo Niño (Arsum),14.014377,121.328621,Rainy,Heart Attack,Heatstroke,High,3,14,36
+20/10/2024,2024,20:19,Monday,Santisimo Rosario (Balagbag),14.021949,121.334602,Stormy,Poisoning,Chronic Illness,High,3,14,44
+19/09/2020,2020,0:12,Wednesday,II-D (Bulante),14.090189,121.299621,Sunny,Breathing Difficulty,Child,Low,1,14,18
+01/04/2022,2022,23:39,Wednesday,II-D (Bulante),14.090092,121.334604,Rainy,Seizure,Heatstroke,Medium,1,17,43
+20/10/2020,2020,3:26,Saturday,San Antonio 1 (Balanga),14.031286,121.350866,Rainy,Poisoning,Infection,Medium,2,7,43
+14/06/2020,2020,8:59,Wednesday,II-F (Villa Rey),14.042076,121.322804,Foggy,Giving Birth,Pregnant,Low,1,10,39
+17/04/2021,2021,17:19,Saturday,VII-A (P.Alcantara),14.023648,121.328362,Cloudy,Fall,Elderly,Low,2,14,59
+29/01/2025,2025,3:20,Friday,Atisan,14.105024,121.291954,Rainy,Giving Birth,Pregnant,Medium,2,19,41
+10/04/2021,2021,8:34,Tuesday,II-C (Unson),14.039845,121.346321,Foggy,Other,Overdose,Medium,3,4,47
+06/01/2023,2023,9:13,Monday,V-C,14.092177,121.309039,Stormy,Fall,Infection,Medium,2,12,45
+20/12/2020,2020,20:30,Friday,Atisan,14.063724,121.28668,Rainy,Burn,Other,High,2,15,60
+09/08/2022,2022,21:52,Wednesday,San Isidro (Balagbag),14.051401,121.288569,Rainy,Giving Birth,Pregnant,High,2,18,6
+02/06/2021,2021,23:07,Monday,San Antonio 1 (Balanga),14.055033,121.337444,Sunny,Stroke,Pregnant,High,3,11,39
+19/11/2022,2022,19:14,Sunday,San Diego (Tiim),14.035407,121.273874,Cloudy,Stroke,Pregnant,Medium,1,6,34
+10/10/2022,2022,10:59,Sunday,VI-E (YMCA),14.025167,121.351011,Cloudy,Burn,Child,Low,2,9,35
+22/07/2020,2020,9:18,Tuesday,San Juan (Putol),14.066168,121.331637,Rainy,Giving Birth,Pregnant,Medium,1,12,50
+29/06/2020,2020,18:49,Sunday,San Crispin (Lumbangan),14.020501,121.28533,Stormy,Stroke,Heatstroke,Medium,1,12,14
+12/11/2024,2024,0:28,Friday,San Juan (Putol),14.063486,121.345828,Stormy,Breathing Difficulty,Allergy,Low,3,11,32
+01/04/2021,2021,23:40,Sunday,I-A (Sambat),14.081305,121.275056,Foggy,Breathing Difficulty,Other,High,1,16,9
+08/05/2025,2025,4:26,Monday,VII-E,14.103633,121.357731,Stormy,Stroke,Other,Medium,3,9,41
+25/08/2021,2021,13:12,Wednesday,San Marcos (Tikew),14.027474,121.360094,Cloudy,Seizure,Allergy,Medium,2,10,57
+30/04/2022,2022,19:49,Saturday,VI-C (Bagong Pook),14.082401,121.299355,Foggy,Poisoning,Heatstroke,High,2,3,56
+16/05/2022,2022,12:04,Friday,Santo Niño (Arsum),14.06193,121.31102,Foggy,Poisoning,Infection,Low,2,3,55
+16/07/2022,2022,9:11,Thursday,San Roque (Sambat),14.013783,121.352052,Rainy,Breathing Difficulty,Other,Medium,1,3,16
+01/12/2024,2024,18:38,Monday,Concepcion (Bunot),14.092685,121.301639,Cloudy,Stroke,Accident,Medium,2,5,24
+14/02/2024,2024,21:01,Thursday,San Roque (Sambat),14.039938,121.322039,Stormy,Stroke,Heatstroke,High,3,13,27
+06/09/2024,2024,15:01,Thursday,IV-B,14.055008,121.369703,Rainy,Burn,Overdose,High,2,8,18
+21/04/2020,2020,19:52,Thursday,VII-E,14.074171,121.341387,Sunny,Seizure,Allergy,Medium,3,12,15
+20/06/2022,2022,23:38,Sunday,Soledad (Macopa),14.026381,121.344574,Rainy,Burn,Child,High,3,19,54
+07/04/2024,2024,10:51,Friday,Santo Angel (Ilog),14.047672,121.277281,Stormy,Giving Birth,Pregnant,High,3,3,58
+21/01/2023,2023,11:09,Wednesday,Santa Maria Magdalena (Boe / Kuba),14.013456,121.327998,Cloudy,Heart Attack,Overdose,Medium,2,7,60
+28/01/2024,2024,4:47,Thursday,Del Remedio (Wawa),14.028364,121.324099,Sunny,Burn,Overdose,Low,1,18,29
+12/07/2023,2023,16:34,Wednesday,VII-B,14.019686,121.368003,Stormy,Heart Attack,Chronic Illness,Medium,3,20,35
+03/01/2021,2021,20:49,Tuesday,Santo Cristo,14.066159,121.367145,Rainy,Giving Birth,Pregnant,Medium,2,16,54
+25/02/2022,2022,18:29,Sunday,Santa Isabel,14.09797,121.298741,Stormy,Other,Other,Low,3,14,9
+24/03/2024,2024,10:28,Friday,VI-E (YMCA),14.020267,121.277645,Foggy,Heart Attack,Heatstroke,Low,2,5,33
+29/12/2022,2022,12:11,Saturday,Santa Maria,14.024987,121.319742,Sunny,Breathing Difficulty,Heatstroke,Low,3,9,10
+17/05/2021,2021,22:03,Friday,II-B (Guadalupe 1),14.033768,121.335232,Cloudy,Heart Attack,Accident,High,3,17,21
+20/01/2022,2022,5:54,Wednesday,Atisan,14.087401,121.316271,Cloudy,Poisoning,Allergy,High,2,13,25
+14/07/2025,2025,21:10,Wednesday,Santa Isabel,14.07981,121.357828,Cloudy,Fall,Other,High,2,6,18
+23/01/2020,2020,12:05,Thursday,Del Remedio (Wawa),14.087263,121.303575,Cloudy,Other,Allergy,Medium,2,4,24
+10/02/2021,2021,10:12,Monday,Santiago II (Bulaho),14.030394,121.310175,Stormy,Burn,Chronic Illness,Low,3,17,32
+08/06/2020,2020,5:13,Thursday,Concepcion (Bunot),14.035516,121.273713,Rainy,Poisoning,Other,Medium,2,5,21
+04/11/2024,2024,10:44,Thursday,San Miguel (Balatuin),14.05538,121.293605,Stormy,Poisoning,Heatstroke,Low,2,11,50
+16/06/2021,2021,3:41,Wednesday,San Pedro,14.06513,121.338342,Rainy,Giving Birth,Pregnant,High,1,14,56
+22/07/2023,2023,17:28,Saturday,Santo Niño (Arsum),14.052719,121.322497,Foggy,Seizure,Pregnant,Low,1,7,48
+22/01/2021,2021,23:43,Saturday,II-E (San Anton),14.040877,121.292497,Cloudy,Fall,Child,Low,2,15,30
+17/11/2025,2025,23:09,Monday,III-D (Villongco),14.08858,121.313259,Stormy,Poisoning,Heatstroke,High,3,18,24
+16/04/2020,2020,8:01,Thursday,VII-C,14.109481,121.31924,Sunny,Other,Overdose,High,2,5,50
+07/02/2025,2025,12:57,Sunday,San Miguel (Balatuin),14.020471,121.281105,Sunny,Poisoning,Other,Low,3,14,35
+12/08/2024,2024,8:20,Friday,Soledad (Macopa),14.10732,121.318287,Cloudy,Fall,Other,Low,2,7,22
+02/11/2022,2022,14:00,Wednesday,Santo Niño (Arsum),14.023524,121.328189,Stormy,Allergic Reaction,Elderly,Low,2,4,20
+22/04/2020,2020,0:18,Wednesday,II-B (Guadalupe 1),14.077414,121.344805,Rainy,Heart Attack,Overdose,Low,3,17,57
+20/02/2023,2023,8:59,Monday,Santa Catalina (Sandig),14.085051,121.312293,Sunny,Heart Attack,Allergy,High,3,16,13
+01/01/2020,2020,6:49,Monday,Santa Filomena (Banlagin),14.06427,121.274061,Foggy,Stroke,Accident,Medium,2,19,21
+07/01/2025,2025,13:25,Monday,Bautista,14.032392,121.310523,Cloudy,Stroke,Pregnant,High,2,6,49
+20/06/2025,2025,9:23,Monday,Santo Angel (Ilog),14.05004,121.276419,Rainy,Burn,Overdose,Medium,2,9,30
+04/12/2021,2021,14:58,Friday,Del Remedio (Wawa),14.092729,121.282027,Sunny,Stroke,Allergy,Medium,2,15,57
+18/06/2020,2020,3:33,Tuesday,III-B,14.039378,121.27005,Rainy,Breathing Difficulty,Heatstroke,Medium,1,20,21
+20/07/2025,2025,5:50,Saturday,San Crispin (Lumbangan),14.08008,121.354499,Cloudy,Fall,Child,Medium,2,3,26
+17/04/2022,2022,14:47,Wednesday,San Nicolas (Mag-ampon),14.072878,121.340682,Rainy,Breathing Difficulty,Child,Medium,2,10,36
+08/03/2021,2021,18:36,Saturday,Santa Isabel,14.09735,121.328076,Cloudy,Other,Elderly,High,1,18,33
+21/12/2025,2025,13:54,Wednesday,VII-A (P.Alcantara),14.054708,121.301277,Rainy,Allergic Reaction,Heatstroke,High,2,3,36
+30/04/2020,2020,17:38,Sunday,San Francisco (Calihan),14.094389,121.289475,Foggy,Other,Accident,Medium,2,11,58
+05/09/2025,2025,14:16,Saturday,II-F (Villa Rey),14.093166,121.334895,Rainy,Breathing Difficulty,Child,Medium,1,9,41
+20/11/2024,2024,6:10,Monday,VII-C,14.028232,121.299452,Foggy,Fall,Accident,Low,1,20,49
+30/04/2023,2023,15:06,Thursday,San Francisco (Calihan),14.09543,121.331758,Stormy,Giving Birth,Pregnant,Low,2,12,58
+06/08/2020,2020,8:18,Tuesday,San Lucas 1 (Malinaw),14.017618,121.359588,Rainy,Other,Child,Low,3,20,27
+06/03/2025,2025,19:28,Friday,San Isidro (Balagbag),14.094768,121.318079,Stormy,Breathing Difficulty,Pregnant,High,2,14,31
+23/03/2024,2024,7:02,Sunday,I-A (Sambat),14.016294,121.345292,Stormy,Giving Birth,Pregnant,High,2,17,33
+20/06/2025,2025,8:49,Wednesday,Santa Filomena (Banlagin),14.050549,121.33384,Cloudy,Seizure,Other,Low,3,14,12
+26/03/2020,2020,4:59,Thursday,San Lorenzo (Saluyan),14.067932,121.307055,Cloudy,Seizure,Overdose,Medium,3,12,23
+19/10/2022,2022,5:33,Saturday,II-C (Unson),14.08567,121.300286,Cloudy,Heart Attack,Other,Medium,3,17,11
+20/09/2022,2022,21:53,Wednesday,Santo Cristo,14.066507,121.276466,Sunny,Poisoning,Pregnant,Low,1,11,19
+14/12/2020,2020,17:40,Sunday,Santa Monica,14.097554,121.340159,Stormy,Stroke,Pregnant,High,1,17,42
+16/07/2025,2025,8:26,Friday,VI-D (Lakeside),14.074629,121.294372,Stormy,Poisoning,Accident,Low,2,13,53
+20/04/2023,2023,21:23,Wednesday,San Juan (Putol),14.046691,121.296171,Stormy,Stroke,Pregnant,High,1,20,21
+15/04/2024,2024,16:52,Tuesday,San Crispin (Lumbangan),14.047298,121.368299,Stormy,Heart Attack,Allergy,High,2,14,15
+02/01/2020,2020,17:52,Saturday,III-A (Hermanos Belen),14.103353,121.281611,Foggy,Heart Attack,Heatstroke,High,2,20,48
+10/10/2025,2025,23:54,Sunday,San Isidro (Balagbag),14.058838,121.368453,Sunny,Poisoning,Child,High,1,7,20
+28/09/2022,2022,10:08,Thursday,San Francisco (Calihan),14.027198,121.323968,Foggy,Burn,Pregnant,High,1,13,43
+22/04/2021,2021,23:16,Tuesday,III-F (Balagtas),14.021101,121.32805,Foggy,Stroke,Other,High,3,16,57
+19/04/2023,2023,16:09,Saturday,Santa Isabel,14.079565,121.318103,Foggy,Poisoning,Allergy,Low,3,20,54
+09/01/2020,2020,23:56,Saturday,San Cristobal,14.083689,121.323513,Rainy,Allergic Reaction,Child,High,3,9,56
+20/05/2025,2025,23:32,Friday,San Pedro,14.066486,121.321517,Stormy,Poisoning,Infection,Medium,2,20,17
+20/05/2025,2025,1:49,Tuesday,San Lorenzo (Saluyan),14.077657,121.289118,Foggy,Breathing Difficulty,Heatstroke,Low,3,5,46
+27/05/2020,2020,2:02,Saturday,San Francisco (Calihan),14.084938,121.354503,Cloudy,Fall,Accident,Medium,1,18,7
+14/12/2024,2024,5:11,Tuesday,II-E (San Anton),14.07368,121.314927,Cloudy,Fall,Chronic Illness,High,1,15,35
+17/03/2025,2025,18:24,Thursday,Dolores,14.066183,121.369618,Stormy,Burn,Other,High,2,4,37
+19/06/2023,2023,22:57,Friday,III-D (Villongco),14.067548,121.366227,Foggy,Breathing Difficulty,Overdose,Low,1,16,57
+18/12/2022,2022,2:03,Tuesday,Santa Maria,14.077578,121.368717,Sunny,Breathing Difficulty,Accident,High,2,14,8
+26/10/2021,2021,21:04,Wednesday,Santo Cristo,14.053062,121.294815,Stormy,Burn,Child,High,3,14,32
+07/01/2021,2021,22:43,Thursday,San Cristobal,14.08888,121.363913,Foggy,Poisoning,Allergy,Low,3,7,31
+23/08/2023,2023,16:13,Wednesday,San Vicente,14.102769,121.301219,Rainy,Stroke,Other,High,1,11,44
+13/02/2021,2021,18:07,Saturday,Santa Veronica (Bae),14.100308,121.34844,Rainy,Poisoning,Overdose,High,1,12,11
+27/02/2020,2020,7:40,Tuesday,VII-E,14.072414,121.320147,Stormy,Burn,Allergy,Medium,3,18,14
+10/02/2021,2021,3:11,Tuesday,San Gabriel (Butucan),14.058175,121.312137,Stormy,Heart Attack,Heatstroke,Medium,3,6,24
+03/09/2021,2021,23:02,Friday,V-D,14.038362,121.332942,Sunny,Allergic Reaction,Pregnant,Low,3,6,34
+06/07/2024,2024,0:03,Sunday,Santo Cristo,14.020007,121.348955,Sunny,Fall,Accident,Medium,3,8,41
+09/05/2020,2020,11:58,Thursday,San Mateo (Imok),14.05573,121.276084,Sunny,Allergic Reaction,Pregnant,Low,2,17,28
+18/06/2021,2021,1:34,Sunday,II-F (Villa Rey),14.013271,121.346962,Rainy,Giving Birth,Pregnant,High,1,4,39
+10/10/2024,2024,10:52,Saturday,Santo Niño (Arsum),14.035912,121.274222,Cloudy,Allergic Reaction,Child,Low,3,15,39
+23/05/2025,2025,20:41,Friday,VI-B (Sabang Mabini),14.095079,121.302552,Foggy,Burn,Pregnant,High,2,14,40
+16/12/2023,2023,19:12,Friday,II-B (Guadalupe 1),14.059688,121.288551,Cloudy,Poisoning,Heatstroke,Medium,2,11,22
+14/07/2021,2021,5:35,Sunday,Santo Niño (Arsum),14.091563,121.359307,Stormy,Giving Birth,Pregnant,High,2,18,8
+15/06/2023,2023,21:26,Sunday,VI-C (Bagong Pook),14.065698,121.278222,Rainy,Burn,Overdose,High,3,15,37
+08/10/2022,2022,2:51,Monday,III-A (Hermanos Belen),14.025304,121.323479,Rainy,Giving Birth,Pregnant,Medium,3,16,56
+23/08/2022,2022,11:21,Thursday,II-A (Triangulo/ Guadalupe 2),14.016273,121.340468,Rainy,Poisoning,Infection,Medium,1,15,5
+26/11/2020,2020,12:32,Monday,Santo Cristo,14.041685,121.286091,Sunny,Other,Chronic Illness,Low,3,9,25
+07/07/2020,2020,6:27,Monday,II-B (Guadalupe 1),14.07407,121.276719,Stormy,Heart Attack,Chronic Illness,High,3,11,53
+03/10/2023,2023,12:41,Sunday,San Gregorio,14.099996,121.326976,Stormy,Giving Birth,Pregnant,Medium,1,12,37
+24/08/2025,2025,9:40,Monday,Santiago II (Bulaho),14.047826,121.369592,Rainy,Stroke,Overdose,Low,2,8,58
+07/06/2024,2024,7:22,Friday,San Lucas 2 (Malinaw),14.107701,121.289709,Cloudy,Seizure,Chronic Illness,High,1,3,10
+29/07/2020,2020,19:49,Friday,Del Remedio (Wawa),14.056763,121.366436,Rainy,Fall,Elderly,High,3,20,23
+03/10/2022,2022,9:41,Friday,III-C (Labak/De Roma),14.100311,121.313505,Foggy,Heart Attack,Heatstroke,High,2,8,59
+26/01/2021,2021,18:50,Saturday,San Gregorio,14.100163,121.334957,Stormy,Seizure,Chronic Illness,High,2,4,27
+27/03/2020,2020,15:26,Saturday,Santa Veronica (Bae),14.064637,121.338269,Cloudy,Allergic Reaction,Other,Medium,1,10,34
+26/12/2023,2023,14:48,Thursday,III-F (Balagtas),14.049329,121.287969,Stormy,Breathing Difficulty,Infection,Medium,2,16,49
+20/12/2023,2023,6:17,Saturday,VII-D,14.055293,121.303103,Foggy,Stroke,Child,Low,2,8,9
+12/03/2021,2021,6:01,Tuesday,San Mateo (Imok),14.015154,121.305847,Stormy,Giving Birth,Pregnant,Medium,2,11,43
+20/08/2024,2024,7:37,Tuesday,VII-D,14.012905,121.364157,Foggy,Fall,Accident,Medium,2,17,39
+23/06/2022,2022,18:13,Saturday,Santa Cruz (Putol),14.094666,121.31679,Sunny,Breathing Difficulty,Child,Medium,1,16,48
+25/01/2021,2021,18:28,Friday,VII-C,14.093942,121.285026,Foggy,Burn,Chronic Illness,Medium,3,11,46
+10/01/2022,2022,1:07,Sunday,III-A (Hermanos Belen),14.099552,121.354198,Sunny,Stroke,Child,Low,3,10,47
+21/02/2020,2020,10:31,Sunday,Santa Catalina (Sandig),14.071134,121.341481,Cloudy,Poisoning,Pregnant,Medium,3,11,60
+06/10/2020,2020,23:03,Thursday,Santa Filomena (Banlagin),14.035085,121.324778,Rainy,Burn,Child,High,2,14,55
+07/04/2021,2021,18:10,Saturday,I-A (Sambat),14.097782,121.275117,Stormy,Fall,Elderly,High,1,9,34
+08/10/2025,2025,4:03,Thursday,II-A (Triangulo/ Guadalupe 2),14.047815,121.343028,Sunny,Poisoning,Other,Low,1,7,25
+14/11/2025,2025,21:16,Sunday,Santiago I (Bulaho),14.045502,121.324568,Stormy,Fall,Elderly,Low,2,4,9
+25/02/2025,2025,21:36,Monday,I-C (Bagong Bayan),14.013201,121.320039,Rainy,Other,Heatstroke,Medium,2,5,30
+14/08/2021,2021,16:29,Sunday,VII-D,14.083876,121.314289,Sunny,Fall,Other,High,3,11,51
+14/10/2025,2025,21:43,Wednesday,Concepcion (Bunot),14.04421,121.347116,Stormy,Giving Birth,Pregnant,High,2,9,47
+05/03/2025,2025,12:25,Thursday,San Antonio 2 (Sapa),14.059799,121.312675,Rainy,Breathing Difficulty,Pregnant,Low,3,17,31
+27/04/2020,2020,11:19,Saturday,IV-C,14.041786,121.284553,Foggy,Breathing Difficulty,Allergy,Medium,3,16,20
+05/02/2024,2024,10:10,Thursday,VII-B,14.061488,121.288517,Rainy,Heart Attack,Child,High,2,19,28
+20/02/2021,2021,13:51,Sunday,VI-E (YMCA),14.107614,121.346412,Sunny,Breathing Difficulty,Overdose,Low,2,9,44
+04/06/2025,2025,20:24,Saturday,Santiago I (Bulaho),14.104223,121.369257,Cloudy,Breathing Difficulty,Infection,Medium,1,14,48
+14/11/2023,2023,13:17,Friday,III-F (Balagtas),14.023743,121.310635,Rainy,Allergic Reaction,Child,Low,2,4,23
+16/07/2025,2025,8:28,Saturday,V-D,14.03655,121.326285,Cloudy,Heart Attack,Pregnant,High,1,7,31
+19/07/2021,2021,14:23,Saturday,Santisimo Rosario (Balagbag),14.088948,121.323576,Foggy,Allergic Reaction,Chronic Illness,High,2,14,8
+07/01/2024,2024,11:17,Thursday,San Diego (Tiim),14.106893,121.277004,Cloudy,Breathing Difficulty,Allergy,Medium,1,13,59
+31/12/2024,2024,6:46,Sunday,III-C (Labak/De Roma),14.075019,121.342469,Cloudy,Allergic Reaction,Other,Medium,2,11,55
+14/10/2022,2022,3:45,Thursday,San Pedro,14.081127,121.322493,Cloudy,Breathing Difficulty,Heatstroke,Medium,1,10,57
+15/04/2025,2025,10:03,Thursday,VI-B (Sabang Mabini),14.057309,121.318475,Stormy,Other,Allergy,Medium,3,19,50
+08/11/2023,2023,21:21,Thursday,II-D (Bulante),14.055704,121.319471,Foggy,Poisoning,Allergy,High,3,18,34
+09/08/2025,2025,9:07,Friday,Santa Filomena (Banlagin),14.08768,121.291885,Foggy,Seizure,Heatstroke,Medium,2,20,7
+22/04/2022,2022,10:58,Wednesday,IV-C,14.101262,121.359171,Stormy,Giving Birth,Pregnant,Medium,2,14,20
+04/09/2020,2020,3:03,Tuesday,Del Remedio (Wawa),14.049955,121.368971,Sunny,Allergic Reaction,Pregnant,Medium,1,6,9
+02/10/2024,2024,18:43,Wednesday,II-F (Villa Rey),14.098582,121.340184,Sunny,Burn,Heatstroke,High,1,20,29
+10/11/2024,2024,15:12,Friday,San Buenaventura (Palakpakin),14.095989,121.326738,Stormy,Heart Attack,Other,Medium,1,14,11
+24/08/2024,2024,14:22,Thursday,IV-A,14.024717,121.290224,Cloudy,Fall,Pregnant,Medium,1,14,18
+01/10/2024,2024,9:44,Tuesday,Santa Maria Magdalena (Boe / Kuba),14.084513,121.299335,Stormy,Fall,Chronic Illness,High,3,6,37
+24/06/2020,2020,10:30,Tuesday,Bautista,14.08326,121.309053,Cloudy,Other,Accident,High,2,5,35
+28/12/2022,2022,22:04,Thursday,San Cristobal,14.012113,121.331247,Stormy,Burn,Allergy,Low,2,16,33
+04/02/2021,2021,16:16,Wednesday,San Antonio 1 (Balanga),14.10204,121.347489,Foggy,Giving Birth,Pregnant,Low,2,20,30
+17/01/2021,2021,18:30,Saturday,VII-A (P.Alcantara),14.019695,121.285425,Rainy,Heart Attack,Pregnant,Medium,1,11,26
+25/10/2021,2021,11:30,Thursday,I-A (Sambat),14.026984,121.329899,Rainy,Burn,Infection,Medium,1,8,58
+21/09/2021,2021,18:52,Wednesday,VI-C (Bagong Pook),14.061358,121.335159,Sunny,Heart Attack,Elderly,Low,2,9,29
+25/09/2020,2020,21:32,Friday,San Antonio 2 (Sapa),14.016876,121.32217,Cloudy,Heart Attack,Chronic Illness,Low,2,4,13
+12/04/2023,2023,13:25,Friday,Santa Isabel,14.01644,121.337728,Foggy,Fall,Other,Low,2,5,54
+07/11/2024,2024,9:58,Thursday,Santa Isabel,14.047964,121.30046,Sunny,Giving Birth,Pregnant,Low,2,17,5
+18/05/2024,2024,6:39,Wednesday,VII-B,14.046383,121.281787,Cloudy,Allergic Reaction,Other,High,2,4,17
+05/09/2022,2022,16:57,Monday,San Lucas 1 (Malinaw),14.09577,121.325097,Sunny,Burn,Other,Low,1,17,56
+17/04/2021,2021,19:37,Saturday,VI-C (Bagong Pook),14.081927,121.31032,Foggy,Allergic Reaction,Allergy,High,1,4,14
+18/08/2022,2022,19:12,Saturday,San Gregorio,14.095248,121.295755,Foggy,Stroke,Chronic Illness,High,1,18,22
+22/06/2024,2024,18:38,Tuesday,Atisan,14.048871,121.368945,Rainy,Other,Child,Low,3,7,35
+12/09/2020,2020,4:21,Thursday,Santa Cruz (Putol),14.023504,121.32817,Sunny,Seizure,Infection,Medium,1,7,40
+28/02/2022,2022,23:08,Friday,IV-A,14.046206,121.307893,Stormy,Fall,Heatstroke,Medium,3,15,11
+24/09/2025,2025,15:52,Sunday,Santiago I (Bulaho),14.056203,121.297059,Rainy,Fall,Heatstroke,Medium,1,12,34
+31/08/2022,2022,22:05,Saturday,III-B,14.056312,121.356797,Stormy,Fall,Allergy,Low,2,10,29
+07/02/2022,2022,10:20,Thursday,San Rafael (Buluburan),14.106414,121.295281,Sunny,Heart Attack,Elderly,Medium,1,11,32
+06/05/2021,2021,11:06,Sunday,VI-B (Sabang Mabini),14.065723,121.342918,Cloudy,Heart Attack,Pregnant,High,3,13,57
+20/03/2024,2024,20:01,Thursday,Santiago II (Bulaho),14.057949,121.361561,Stormy,Poisoning,Infection,Medium,1,15,58
+03/06/2020,2020,14:22,Friday,V-C,14.040679,121.276216,Cloudy,Allergic Reaction,Pregnant,Low,1,11,16
+01/07/2025,2025,19:51,Thursday,San Mateo (Imok),14.046964,121.33691,Stormy,Poisoning,Chronic Illness,High,1,14,36
+04/12/2023,2023,5:25,Sunday,VII-C,14.072105,121.308298,Foggy,Other,Overdose,Low,3,14,7
+25/02/2020,2020,11:14,Saturday,V-D,14.017559,121.328734,Sunny,Heart Attack,Other,High,3,3,60
+27/03/2023,2023,13:49,Monday,Santa Ana,14.032211,121.354017,Sunny,Burn,Overdose,High,3,13,44
+12/02/2020,2020,7:31,Sunday,San Gabriel (Butucan),14.072479,121.348988,Rainy,Burn,Pregnant,High,1,19,12
+22/12/2020,2020,3:38,Tuesday,III-D (Villongco),14.089075,121.322754,Cloudy,Giving Birth,Infection,Low,2,12,35
+20/02/2023,2023,5:16,Tuesday,San Mateo (Imok),14.029531,121.291344,Cloudy,Allergic Reaction,Chronic Illness,High,1,6,27
+16/01/2022,2022,2:48,Monday,San Lorenzo (Saluyan),14.070934,121.294961,Rainy,Seizure,Heatstroke,High,1,11,27
+08/11/2023,2023,22:27,Tuesday,Santiago II (Bulaho),14.059848,121.363508,Foggy,Heart Attack,Heatstroke,High,2,11,43
+10/08/2021,2021,4:45,Wednesday,III-F (Balagtas),14.072898,121.326924,Rainy,Allergic Reaction,Allergy,Low,2,10,23
+15/02/2022,2022,23:52,Tuesday,Atisan,14.062515,121.365021,Cloudy,Breathing Difficulty,Chronic Illness,Low,2,14,46
+16/05/2023,2023,9:12,Wednesday,San Diego (Tiim),14.094468,121.304168,Rainy,Seizure,Child,Medium,1,10,24
+04/08/2021,2021,20:39,Friday,Santa Filomena (Banlagin),14.054175,121.359275,Rainy,Poisoning,Allergy,Low,1,5,48
+06/05/2025,2025,21:22,Tuesday,Santa Monica,14.099203,121.27606,Cloudy,Burn,Heatstroke,High,1,14,22
+27/06/2020,2020,17:41,Tuesday,VII-E,14.071565,121.29216,Foggy,Poisoning,Other,High,2,18,52
+03/01/2022,2022,11:14,Tuesday,VII-E,14.083322,121.275812,Cloudy,Stroke,Allergy,High,1,9,28
+10/02/2024,2024,23:50,Tuesday,San Cristobal,14.074914,121.282453,Sunny,Allergic Reaction,Accident,High,3,10,26
+31/12/2020,2020,18:22,Saturday,V-D,14.052632,121.355545,Stormy,Heart Attack,Elderly,High,3,4,41
+04/04/2022,2022,16:52,Sunday,San Crispin (Lumbangan),14.049656,121.2971,Sunny,Burn,Overdose,Medium,1,12,54
+30/03/2025,2025,9:23,Sunday,San Diego (Tiim),14.07965,121.301867,Rainy,Stroke,Overdose,Low,1,13,33
+29/06/2025,2025,18:16,Monday,III-A (Hermanos Belen),14.087929,121.337081,Cloudy,Poisoning,Other,High,1,14,39
+18/02/2024,2024,9:49,Sunday,San Miguel (Balatuin),14.072539,121.302512,Stormy,Poisoning,Chronic Illness,High,2,8,10
+13/02/2022,2022,18:52,Tuesday,Santa Veronica (Bae),14.093284,121.305561,Rainy,Burn,Allergy,High,2,20,45
+24/07/2020,2020,6:04,Friday,San Diego (Tiim),14.039878,121.283947,Sunny,Poisoning,Pregnant,High,2,17,12
+25/03/2024,2024,11:45,Friday,Santa Veronica (Bae),14.030797,121.354595,Cloudy,Stroke,Other,Medium,1,7,12
+29/03/2021,2021,23:35,Tuesday,Santiago I (Bulaho),14.102516,121.271955,Sunny,Stroke,Other,High,2,3,12
+09/01/2024,2024,21:06,Thursday,San Diego (Tiim),14.070209,121.326327,Rainy,Breathing Difficulty,Child,High,1,7,39
+03/05/2024,2024,18:50,Sunday,San Nicolas (Mag-ampon),14.076563,121.300804,Foggy,Burn,Pregnant,Medium,2,3,13
+12/08/2023,2023,6:27,Friday,San Diego (Tiim),14.107804,121.314898,Rainy,Fall,Pregnant,Medium,2,7,49
+11/02/2025,2025,13:18,Thursday,VI-C (Bagong Pook),14.059134,121.317961,Rainy,Fall,Allergy,Medium,1,15,34
+30/11/2022,2022,22:38,Sunday,San Buenaventura (Palakpakin),14.069355,121.349676,Cloudy,Stroke,Accident,Medium,3,3,53
+13/10/2024,2024,7:17,Monday,IV-C,14.022025,121.35587,Rainy,Allergic Reaction,Child,High,1,9,36
+08/01/2020,2020,22:06,Monday,Santo Angel (Ilog),14.048448,121.280485,Stormy,Seizure,Infection,Low,3,20,23
+16/12/2022,2022,4:15,Wednesday,VII-B,14.073655,121.286584,Stormy,Poisoning,Chronic Illness,Low,3,20,59
+13/11/2022,2022,1:30,Wednesday,VI-A (Mavenida),14.014297,121.318089,Foggy,Breathing Difficulty,Allergy,Low,2,11,18
+02/10/2025,2025,16:29,Saturday,Santa Isabel,14.101519,121.3649,Rainy,Seizure,Other,Low,3,18,30
+24/05/2020,2020,7:39,Sunday,Bautista,14.088856,121.332507,Sunny,Allergic Reaction,Other,Medium,2,19,5
+21/07/2025,2025,17:41,Friday,San Antonio 2 (Sapa),14.0828,121.320261,Foggy,Giving Birth,Overdose,High,1,3,55
+26/04/2022,2022,13:41,Friday,III-B,14.059267,121.320678,Stormy,Poisoning,Other,Low,2,12,7
+13/06/2025,2025,21:37,Thursday,Dolores,14.102932,121.291847,Foggy,Allergic Reaction,Child,Low,2,4,35
+18/10/2021,2021,1:46,Tuesday,Santa Monica,14.029385,121.339266,Foggy,Poisoning,Infection,Medium,2,10,23
+11/02/2024,2024,6:03,Wednesday,Santa Maria,14.099455,121.345661,Sunny,Allergic Reaction,Child,Medium,1,12,18
+15/08/2023,2023,8:47,Saturday,VI-C (Bagong Pook),14.100994,121.292039,Foggy,Stroke,Child,Low,2,5,38
+14/10/2024,2024,20:07,Friday,III-A (Hermanos Belen),14.092641,121.359145,Sunny,Burn,Heatstroke,High,2,10,10
+07/02/2025,2025,12:02,Sunday,VII-A (P.Alcantara),14.05272,121.350944,Stormy,Fall,Allergy,High,3,11,58
+27/08/2023,2023,19:53,Sunday,San Roque (Sambat),14.029172,121.302672,Sunny,Stroke,Overdose,Medium,2,19,35
+21/03/2025,2025,10:43,Saturday,Santo Angel (Ilog),14.052721,121.310667,Sunny,Breathing Difficulty,Overdose,Medium,3,7,40
+13/10/2021,2021,8:54,Friday,VI-A (Mavenida),14.049305,121.319846,Rainy,Fall,Pregnant,Low,2,5,55
+13/10/2022,2022,9:52,Wednesday,San Nicolas (Mag-ampon),14.031594,121.334689,Rainy,Stroke,Accident,High,2,8,27
+08/01/2022,2022,13:20,Saturday,III-C (Labak/De Roma),14.043143,121.274679,Foggy,Giving Birth,Pregnant,Low,2,6,38
+25/03/2025,2025,16:43,Sunday,II-C (Unson),14.039202,121.308971,Rainy,Stroke,Child,Low,3,19,26
+04/07/2023,2023,9:13,Monday,San Juan (Putol),14.104362,121.353379,Sunny,Burn,Elderly,Low,2,11,59
+25/01/2025,2025,1:11,Friday,III-D (Villongco),14.102528,121.271786,Sunny,Stroke,Chronic Illness,Medium,1,11,7
+04/03/2023,2023,23:03,Wednesday,VII-B,14.018378,121.332217,Stormy,Other,Elderly,Medium,2,4,48
+15/06/2020,2020,1:44,Friday,San Mateo (Imok),14.096919,121.277632,Sunny,Other,Elderly,High,3,19,41
+21/12/2021,2021,16:04,Monday,San Jose (Malamig),14.082513,121.339678,Foggy,Giving Birth,Chronic Illness,Medium,1,19,45
+28/06/2024,2024,15:23,Friday,II-F (Villa Rey),14.095587,121.308946,Cloudy,Heart Attack,Pregnant,Medium,3,13,50
+14/07/2025,2025,16:36,Thursday,IV-C,14.040365,121.316462,Rainy,Other,Child,Medium,1,11,19
+27/05/2021,2021,17:02,Tuesday,San Vicente,14.100129,121.315669,Cloudy,Giving Birth,Pregnant,Low,2,12,24
+10/12/2025,2025,3:52,Wednesday,San Rafael (Buluburan),14.026356,121.277671,Stormy,Poisoning,Other,High,3,4,49
+21/05/2020,2020,15:00,Saturday,I-A (Sambat),14.104646,121.287067,Cloudy,Allergic Reaction,Allergy,Medium,3,19,11
+30/06/2022,2022,13:12,Saturday,V-D,14.076121,121.341752,Sunny,Other,Allergy,Low,3,9,22
+12/10/2020,2020,9:08,Tuesday,II-F (Villa Rey),14.040619,121.351757,Cloudy,Allergic Reaction,Infection,Medium,2,20,57
+24/02/2021,2021,11:03,Wednesday,III-D (Villongco),14.020995,121.333697,Stormy,Stroke,Child,Medium,2,10,39
+22/07/2023,2023,17:39,Thursday,VII-D,14.081467,121.329845,Stormy,Giving Birth,Pregnant,High,2,17,5
+16/07/2020,2020,0:45,Friday,V-A,14.080159,121.361318,Rainy,Breathing Difficulty,Other,High,2,20,19
+04/08/2025,2025,16:36,Wednesday,San Crispin (Lumbangan),14.049753,121.289659,Cloudy,Fall,Allergy,Medium,1,5,8
+04/09/2022,2022,5:43,Thursday,VII-E,14.071909,121.333648,Sunny,Allergic Reaction,Infection,High,1,10,47
+17/11/2023,2023,16:25,Tuesday,San Miguel (Balatuin),14.020875,121.345337,Stormy,Poisoning,Other,Low,1,17,5
+05/06/2023,2023,14:05,Saturday,VI-C (Bagong Pook),14.101746,121.355744,Sunny,Heart Attack,Other,Medium,3,18,58
+16/01/2022,2022,20:43,Saturday,San Gregorio,14.077261,121.273658,Foggy,Poisoning,Infection,Medium,3,3,41
+14/01/2021,2021,20:00,Monday,II-A (Triangulo/ Guadalupe 2),14.0693,121.270277,Cloudy,Poisoning,Other,Medium,3,14,37
+17/08/2022,2022,12:15,Tuesday,Del Remedio (Wawa),14.095404,121.322964,Stormy,Burn,Infection,High,1,7,53
+23/08/2020,2020,11:00,Sunday,VI-A (Mavenida),14.103614,121.316842,Stormy,Allergic Reaction,Accident,Medium,3,4,24
+05/06/2023,2023,5:02,Sunday,San Jose (Malamig),14.091251,121.325574,Cloudy,Stroke,Infection,High,1,12,16
+17/01/2020,2020,18:51,Monday,San Francisco (Calihan),14.011286,121.306141,Sunny,Other,Accident,High,1,15,45
+10/09/2024,2024,5:45,Friday,San Cristobal,14.052549,121.272583,Stormy,Poisoning,Elderly,Medium,2,18,30
+28/08/2021,2021,11:59,Tuesday,II-A (Triangulo/ Guadalupe 2),14.054642,121.330396,Rainy,Fall,Child,High,3,11,47
+06/12/2021,2021,14:23,Tuesday,San Jose (Malamig),14.078458,121.350866,Sunny,Fall,Chronic Illness,High,1,12,47
+23/09/2024,2024,3:37,Thursday,Santisimo Rosario (Balagbag),14.036913,121.330571,Stormy,Poisoning,Allergy,Low,2,4,51
+03/04/2021,2021,22:21,Saturday,III-F (Balagtas),14.055366,121.307066,Foggy,Heart Attack,Infection,High,3,10,48
+02/12/2020,2020,19:26,Saturday,VI-A (Mavenida),14.0517,121.317749,Rainy,Poisoning,Elderly,Low,3,7,60
+18/11/2023,2023,8:01,Monday,III-A (Hermanos Belen),14.065129,121.367529,Sunny,Allergic Reaction,Infection,Medium,2,12,15
+12/01/2024,2024,9:57,Thursday,Santiago II (Bulaho),14.03897,121.360981,Sunny,Seizure,Chronic Illness,Medium,2,12,47
+23/01/2025,2025,3:47,Tuesday,VII-E,14.071319,121.302662,Sunny,Seizure,Infection,Low,2,15,59
+02/09/2024,2024,10:52,Tuesday,San Gregorio,14.019415,121.326675,Cloudy,Other,Infection,High,1,12,30
+21/05/2024,2024,19:19,Tuesday,Santa Ana,14.062957,121.291815,Rainy,Other,Child,Low,1,10,46
+02/02/2025,2025,11:27,Monday,Santa Ana,14.012033,121.31895,Rainy,Breathing Difficulty,Heatstroke,Low,2,19,20
+06/01/2022,2022,23:16,Monday,San Lucas 2 (Malinaw),14.076573,121.290272,Sunny,Burn,Elderly,High,1,11,45
+03/04/2024,2024,18:14,Tuesday,VII-C,14.093776,121.308787,Cloudy,Allergic Reaction,Infection,High,2,4,57
+02/01/2020,2020,21:34,Saturday,Del Remedio (Wawa),14.025812,121.276802,Foggy,Breathing Difficulty,Accident,Medium,2,14,21
+08/10/2024,2024,6:35,Monday,VII-D,14.099038,121.330622,Rainy,Giving Birth,Pregnant,Medium,3,3,37
+23/10/2025,2025,21:16,Friday,VI-E (YMCA),14.094931,121.340088,Sunny,Breathing Difficulty,Allergy,Medium,2,17,7
+13/04/2025,2025,7:41,Wednesday,Atisan,14.066046,121.365515,Sunny,Burn,Other,High,1,16,7
+17/09/2023,2023,23:58,Thursday,San Roque (Sambat),14.015231,121.36438,Sunny,Fall,Heatstroke,High,3,5,51
+23/03/2021,2021,10:16,Saturday,San Lucas 1 (Malinaw),14.08281,121.343583,Cloudy,Allergic Reaction,Child,Low,2,4,44
+20/11/2025,2025,3:52,Tuesday,Santo Niño (Arsum),14.01478,121.346806,Stormy,Other,Overdose,Low,2,7,16
+26/10/2022,2022,10:57,Wednesday,III-B,14.076584,121.282342,Foggy,Seizure,Chronic Illness,High,2,10,34
+06/04/2024,2024,17:21,Monday,San Lucas 1 (Malinaw),14.031944,121.307655,Stormy,Heart Attack,Accident,Low,2,12,56
+07/10/2024,2024,15:59,Wednesday,San Gregorio,14.023299,121.339263,Rainy,Heart Attack,Other,Medium,2,5,35
+11/05/2020,2020,2:51,Friday,III-D (Villongco),14.029225,121.365968,Sunny,Poisoning,Pregnant,High,1,6,23
+21/09/2023,2023,15:01,Wednesday,San Joaquin,14.039126,121.30594,Rainy,Fall,Allergy,Low,2,9,11
+16/03/2022,2022,17:04,Sunday,San Nicolas (Mag-ampon),14.084723,121.325471,Foggy,Burn,Allergy,Medium,2,13,52
+30/03/2025,2025,8:46,Monday,San Isidro (Balagbag),14.065565,121.29192,Stormy,Seizure,Overdose,Medium,2,13,51
+27/07/2024,2024,4:58,Monday,Bautista,14.032502,121.324064,Foggy,Poisoning,Infection,Medium,1,7,26
+07/03/2021,2021,2:23,Saturday,I-C (Bagong Bayan),14.037829,121.361472,Stormy,Seizure,Pregnant,Medium,3,20,57
+06/10/2025,2025,14:27,Wednesday,San Buenaventura (Palakpakin),14.069091,121.355923,Cloudy,Heart Attack,Heatstroke,High,1,6,59
+15/05/2024,2024,15:29,Saturday,San Lucas 1 (Malinaw),14.016564,121.335197,Stormy,Poisoning,Pregnant,High,3,14,57
+02/04/2023,2023,15:29,Tuesday,San Rafael (Buluburan),14.044064,121.281711,Rainy,Seizure,Chronic Illness,Medium,2,12,44
+16/03/2023,2023,3:32,Monday,III-B,14.032323,121.351089,Sunny,Fall,Heatstroke,High,3,12,16
+29/05/2020,2020,22:06,Thursday,San Antonio 2 (Sapa),14.034533,121.294059,Sunny,Seizure,Elderly,Low,2,12,20
+09/11/2025,2025,1:00,Thursday,Santo Angel (Ilog),14.012494,121.345371,Stormy,Giving Birth,Pregnant,High,3,4,32
+04/02/2021,2021,3:11,Monday,Santo Angel (Ilog),14.101438,121.271334,Stormy,Other,Child,Medium,1,15,23
+29/11/2024,2024,8:26,Friday,San Cristobal,14.05601,121.368968,Foggy,Poisoning,Chronic Illness,Low,2,3,6
+29/06/2022,2022,1:32,Monday,Atisan,14.013563,121.30699,Foggy,Fall,Heatstroke,High,3,14,39
+20/01/2024,2024,2:30,Saturday,San Lucas 1 (Malinaw),14.081163,121.308335,Rainy,Burn,Infection,High,1,11,59
+18/08/2025,2025,18:14,Sunday,Del Remedio (Wawa),14.0465,121.278077,Sunny,Poisoning,Heatstroke,High,1,18,17
+12/11/2023,2023,2:35,Wednesday,Bautista,14.046775,121.294558,Sunny,Allergic Reaction,Child,Medium,2,17,53
+21/10/2021,2021,12:36,Sunday,VI-E (YMCA),14.05502,121.292475,Sunny,Stroke,Elderly,Low,1,17,41
+17/04/2025,2025,13:45,Saturday,Santa Elena,14.010112,121.333545,Cloudy,Poisoning,Chronic Illness,High,3,17,46
+17/04/2024,2024,4:56,Friday,Concepcion (Bunot),14.025437,121.274793,Foggy,Giving Birth,Pregnant,High,1,13,20
+08/09/2021,2021,9:12,Monday,Santa Maria Magdalena (Boe / Kuba),14.039679,121.300591,Rainy,Heart Attack,Allergy,Medium,2,16,32
+28/03/2021,2021,2:55,Tuesday,San Miguel (Balatuin),14.04939,121.307162,Foggy,Burn,Overdose,Medium,3,14,22
+17/08/2020,2020,22:48,Tuesday,II-B (Guadalupe 1),14.023301,121.30601,Foggy,Other,Elderly,High,1,16,5
+11/02/2024,2024,13:43,Tuesday,Santa Isabel,14.030285,121.346097,Foggy,Fall,Infection,Medium,3,5,6
+16/12/2024,2024,5:42,Wednesday,San Lucas 1 (Malinaw),14.062853,121.311268,Stormy,Poisoning,Heatstroke,Low,3,20,22
+13/10/2020,2020,18:18,Saturday,Atisan,14.055635,121.302343,Rainy,Poisoning,Infection,Medium,2,5,30
+31/12/2024,2024,10:00,Tuesday,Santiago I (Bulaho),14.096852,121.306436,Stormy,Allergic Reaction,Other,Low,1,20,34
+26/07/2023,2023,16:00,Saturday,San Ignacio,14.055665,121.332036,Foggy,Breathing Difficulty,Infection,High,3,19,16
+17/11/2021,2021,23:53,Sunday,Santo Cristo,14.071165,121.287318,Stormy,Seizure,Pregnant,Medium,2,17,53
+04/04/2024,2024,20:01,Wednesday,IV-C,14.015088,121.281953,Foggy,Burn,Elderly,High,3,15,29
+27/10/2022,2022,15:21,Saturday,San Miguel (Balatuin),14.027111,121.329221,Stormy,Fall,Accident,Medium,1,17,10
+13/03/2022,2022,17:34,Saturday,V-D,14.109541,121.284821,Foggy,Burn,Other,Medium,2,8,51
+18/09/2024,2024,9:48,Wednesday,San Pedro,14.05456,121.357532,Cloudy,Giving Birth,Elderly,Medium,2,13,12
+04/12/2024,2024,6:01,Thursday,Santa Elena,14.047783,121.279675,Rainy,Poisoning,Heatstroke,Low,2,12,32
+25/11/2020,2020,7:47,Monday,Santa Catalina (Sandig),14.093795,121.285157,Foggy,Giving Birth,Pregnant,Low,2,11,21
+19/02/2023,2023,16:08,Monday,Santa Monica,14.087183,121.358982,Rainy,Burn,Chronic Illness,Low,3,13,48
+19/03/2023,2023,21:11,Wednesday,San Marcos (Tikew),14.083678,121.319225,Sunny,Stroke,Infection,High,1,9,9
+13/03/2025,2025,13:28,Tuesday,V-D,14.086539,121.295053,Sunny,Burn,Other,High,2,10,38
+03/12/2021,2021,6:42,Sunday,III-E,14.015736,121.279018,Rainy,Fall,Pregnant,High,2,9,30
+20/11/2020,2020,22:51,Tuesday,IV-C,14.022534,121.2743,Cloudy,Burn,Child,High,2,10,22
+12/08/2024,2024,18:35,Wednesday,V-B,14.101505,121.282693,Stormy,Stroke,Pregnant,High,2,10,29
+24/04/2024,2024,5:57,Saturday,VII-B,14.017694,121.309061,Foggy,Heart Attack,Infection,High,2,8,46
+30/06/2025,2025,2:37,Thursday,Bautista,14.046944,121.303311,Cloudy,Other,Child,High,3,14,25
+07/08/2025,2025,17:55,Friday,San Roque (Sambat),14.050625,121.336684,Foggy,Breathing Difficulty,Child,Medium,3,11,38
+17/07/2020,2020,6:34,Saturday,III-D (Villongco),14.029677,121.301005,Cloudy,Other,Chronic Illness,Low,2,10,10
+15/01/2023,2023,5:32,Tuesday,Concepcion (Bunot),14.01053,121.279108,Cloudy,Breathing Difficulty,Child,Medium,2,12,8
+17/10/2021,2021,5:11,Saturday,VI-A (Mavenida),14.101584,121.350426,Sunny,Stroke,Pregnant,High,2,17,31
+21/08/2025,2025,18:46,Sunday,II-F (Villa Rey),14.011379,121.31201,Rainy,Allergic Reaction,Elderly,Medium,3,19,60
+01/08/2021,2021,20:48,Wednesday,Santa Isabel,14.049247,121.35597,Cloudy,Allergic Reaction,Other,Medium,3,10,38
+08/03/2021,2021,8:25,Monday,San Jose (Malamig),14.097634,121.289927,Cloudy,Burn,Overdose,High,2,14,30
+27/11/2025,2025,15:16,Monday,Santa Cruz (Putol),14.065881,121.335992,Stormy,Breathing Difficulty,Chronic Illness,High,1,17,26
+03/05/2023,2023,2:25,Tuesday,I-C (Bagong Bayan),14.036708,121.3255,Stormy,Seizure,Infection,High,1,6,53
+12/02/2024,2024,18:35,Sunday,San Diego (Tiim),14.087861,121.314799,Stormy,Heart Attack,Chronic Illness,Low,1,6,53
+18/03/2023,2023,21:53,Sunday,San Juan (Putol),14.012345,121.310659,Stormy,Allergic Reaction,Other,High,3,6,24
+16/01/2024,2024,12:42,Sunday,Santa Isabel,14.022822,121.318023,Rainy,Burn,Elderly,High,1,15,12
+30/06/2022,2022,2:29,Saturday,VII-E,14.061119,121.287172,Cloudy,Other,Overdose,High,3,11,54
+27/11/2021,2021,22:31,Saturday,VI-E (YMCA),14.015597,121.306862,Stormy,Stroke,Infection,Low,1,19,29
+23/03/2020,2020,2:11,Sunday,San Buenaventura (Palakpakin),14.033619,121.345066,Rainy,Burn,Accident,Low,1,9,18
+02/11/2023,2023,1:55,Monday,II-D (Bulante),14.069263,121.330266,Stormy,Poisoning,Other,Medium,3,14,60
+07/12/2020,2020,7:22,Tuesday,II-C (Unson),14.061001,121.359555,Cloudy,Poisoning,Allergy,High,1,6,55
+04/02/2021,2021,6:04,Wednesday,III-E,14.04478,121.287396,Cloudy,Allergic Reaction,Overdose,Medium,2,16,58
+15/12/2022,2022,14:06,Friday,San Pedro,14.020248,121.330753,Sunny,Other,Heatstroke,Low,3,14,48
+15/11/2023,2023,22:12,Sunday,San Bartolome (Matang-ag),14.050523,121.28788,Foggy,Heart Attack,Infection,Medium,1,19,56
+23/06/2021,2021,7:22,Thursday,Santiago I (Bulaho),14.022228,121.280409,Stormy,Poisoning,Allergy,Medium,2,13,42
+27/04/2025,2025,11:24,Wednesday,San Cristobal,14.049505,121.288772,Cloudy,Allergic Reaction,Other,High,1,7,28
+07/10/2025,2025,9:02,Wednesday,IV-C,14.094407,121.289313,Rainy,Burn,Child,Medium,2,7,11
+09/06/2022,2022,10:20,Sunday,San Joaquin,14.043581,121.337989,Rainy,Seizure,Overdose,Low,2,20,28
+07/09/2023,2023,16:08,Wednesday,V-A,14.017744,121.311989,Foggy,Stroke,Child,High,1,17,44
+10/04/2025,2025,16:00,Sunday,Bautista,14.043577,121.275288,Cloudy,Other,Other,Low,3,10,54
+22/11/2025,2025,19:24,Friday,San Lucas 1 (Malinaw),14.079445,121.367889,Foggy,Stroke,Infection,Medium,1,13,47
+03/12/2022,2022,1:16,Thursday,Santa Monica,14.050716,121.2758,Cloudy,Fall,Infection,High,1,3,35
+12/02/2023,2023,19:26,Thursday,I-B (City Sub Riverside),14.043115,121.28868,Sunny,Other,Infection,High,1,14,57
+16/05/2025,2025,21:51,Sunday,San Mateo (Imok),14.029547,121.35794,Stormy,Allergic Reaction,Allergy,Medium,3,20,7
+29/10/2020,2020,6:28,Sunday,VI-A (Mavenida),14.106248,121.276243,Rainy,Seizure,Overdose,Low,3,13,24
+27/09/2020,2020,9:15,Friday,II-A (Triangulo/ Guadalupe 2),14.052551,121.326901,Sunny,Poisoning,Elderly,Low,3,16,48
+01/03/2024,2024,10:20,Thursday,Santa Ana,14.054215,121.278675,Sunny,Burn,Elderly,Low,1,18,30
+28/08/2024,2024,20:27,Thursday,San Diego (Tiim),14.027499,121.353845,Sunny,Burn,Other,Low,2,20,16
+16/08/2020,2020,7:26,Monday,San Roque (Sambat),14.092315,121.304022,Sunny,Allergic Reaction,Infection,High,2,4,22
+12/06/2024,2024,1:31,Saturday,II-A (Triangulo/ Guadalupe 2),14.015473,121.294412,Rainy,Other,Heatstroke,High,2,20,11
+24/12/2021,2021,23:40,Tuesday,Soledad (Macopa),14.074012,121.339616,Sunny,Fall,Allergy,Medium,2,8,56
+20/01/2024,2024,8:29,Thursday,San Cristobal,14.05108,121.281518,Stormy,Other,Allergy,Low,1,12,12
+17/06/2021,2021,12:55,Sunday,San Francisco (Calihan),14.065529,121.3241,Stormy,Burn,Other,Low,2,3,15
+17/10/2022,2022,23:00,Tuesday,Dolores,14.044472,121.270115,Sunny,Stroke,Child,Low,3,4,19
+19/04/2020,2020,2:31,Saturday,V-B,14.012074,121.347599,Rainy,Burn,Other,Low,3,5,32
+18/11/2022,2022,22:44,Wednesday,V-C,14.058057,121.330947,Foggy,Giving Birth,Pregnant,High,3,7,60
+12/11/2021,2021,2:39,Wednesday,San Antonio 1 (Balanga),14.083656,121.300405,Stormy,Seizure,Elderly,Medium,1,13,35
+13/09/2023,2023,4:11,Wednesday,VI-C (Bagong Pook),14.038072,121.275609,Foggy,Seizure,Overdose,Low,1,3,19
+21/06/2024,2024,4:28,Saturday,I-A (Sambat),14.062748,121.329031,Sunny,Heart Attack,Pregnant,High,1,14,10
+31/05/2021,2021,0:05,Thursday,Santa Cruz (Putol),14.038575,121.329364,Sunny,Poisoning,Heatstroke,Medium,2,14,5
+05/02/2023,2023,13:50,Wednesday,San Marcos (Tikew),14.084953,121.325078,Rainy,Seizure,Chronic Illness,Medium,3,4,51
+29/04/2023,2023,17:14,Monday,San Lorenzo (Saluyan),14.071589,121.292573,Stormy,Allergic Reaction,Pregnant,Low,2,19,34
+12/07/2023,2023,22:03,Friday,San Marcos (Tikew),14.019545,121.277844,Sunny,Allergic Reaction,Allergy,Low,3,18,43
+27/02/2020,2020,20:52,Sunday,San Diego (Tiim),14.040083,121.352677,Rainy,Stroke,Pregnant,Low,1,9,43
+15/10/2022,2022,23:39,Friday,I-A (Sambat),14.022682,121.296637,Stormy,Breathing Difficulty,Overdose,Low,1,20,18
+11/09/2022,2022,8:18,Wednesday,V-A,14.100977,121.346195,Rainy,Giving Birth,Pregnant,High,2,11,43
+24/12/2020,2020,9:18,Sunday,VI-A (Mavenida),14.09617,121.307448,Cloudy,Allergic Reaction,Elderly,High,1,20,5
+30/01/2020,2020,10:06,Friday,II-B (Guadalupe 1),14.108932,121.338984,Sunny,Allergic Reaction,Infection,Medium,2,8,36
+19/06/2020,2020,4:54,Sunday,III-A (Hermanos Belen),14.074048,121.277726,Sunny,Burn,Elderly,High,3,12,48
+21/11/2022,2022,12:34,Monday,V-B,14.045635,121.327589,Stormy,Heart Attack,Other,Low,3,3,5
+11/11/2022,2022,16:38,Monday,Del Remedio (Wawa),14.063798,121.369116,Foggy,Stroke,Elderly,Medium,2,14,54
+20/08/2020,2020,4:00,Tuesday,V-A,14.073229,121.32472,Rainy,Poisoning,Pregnant,High,1,14,7
+24/01/2024,2024,0:02,Friday,Santa Monica,14.040234,121.30909,Foggy,Heart Attack,Elderly,High,3,7,29
+15/02/2021,2021,12:34,Saturday,San Lucas 2 (Malinaw),14.08174,121.341539,Cloudy,Fall,Other,Low,2,11,39
+03/02/2025,2025,1:27,Tuesday,I-C (Bagong Bayan),14.082513,121.369899,Sunny,Seizure,Chronic Illness,Low,3,18,25
+27/01/2025,2025,7:14,Thursday,San Diego (Tiim),14.100337,121.349414,Sunny,Giving Birth,Pregnant,High,2,3,20
+14/07/2022,2022,10:49,Friday,III-A (Hermanos Belen),14.101694,121.299395,Sunny,Seizure,Overdose,Low,2,17,16
+11/06/2023,2023,23:16,Wednesday,San Rafael (Buluburan),14.033681,121.347144,Sunny,Other,Chronic Illness,Low,3,7,19
+01/06/2022,2022,1:23,Monday,San Marcos (Tikew),14.022617,121.351299,Foggy,Poisoning,Accident,Low,3,8,60
+10/06/2023,2023,5:15,Wednesday,I-B (City Sub Riverside),14.01908,121.364472,Rainy,Poisoning,Other,Medium,3,12,14
+03/11/2024,2024,8:54,Friday,San Lorenzo (Saluyan),14.036285,121.327744,Foggy,Seizure,Infection,High,2,16,13
+21/12/2021,2021,3:00,Sunday,VII-C,14.076821,121.289556,Stormy,Heart Attack,Elderly,Medium,1,17,46
+30/08/2020,2020,9:56,Thursday,Del Remedio (Wawa),14.042602,121.348608,Cloudy,Fall,Heatstroke,High,1,20,22
+26/02/2022,2022,11:26,Tuesday,VII-B,14.03546,121.30914,Foggy,Seizure,Infection,Medium,2,3,42
+21/04/2025,2025,16:30,Tuesday,V-B,14.045927,121.349176,Cloudy,Giving Birth,Pregnant,Low,1,16,59
+24/04/2025,2025,15:01,Sunday,Santa Catalina (Sandig),14.061417,121.286068,Rainy,Breathing Difficulty,Chronic Illness,Low,2,9,8
+27/08/2024,2024,21:50,Thursday,Concepcion (Bunot),14.074616,121.272107,Rainy,Burn,Overdose,Low,1,18,38
+24/02/2020,2020,21:46,Saturday,San Crispin (Lumbangan),14.022772,121.369784,Rainy,Poisoning,Other,High,1,4,6
+11/03/2022,2022,5:51,Monday,Santisimo Rosario (Balagbag),14.04377,121.363454,Cloudy,Seizure,Overdose,High,3,12,60
+09/04/2024,2024,16:44,Friday,Santa Cruz (Putol),14.062157,121.329022,Foggy,Allergic Reaction,Heatstroke,Low,1,18,52
+13/03/2021,2021,20:21,Monday,San Marcos (Tikew),14.075075,121.354962,Stormy,Fall,Infection,Low,1,3,13
+21/09/2021,2021,23:05,Tuesday,IV-C,14.054722,121.298794,Rainy,Burn,Heatstroke,High,1,17,35
+23/11/2023,2023,21:19,Tuesday,San Gregorio,14.107915,121.301984,Rainy,Burn,Elderly,Low,3,16,32
+18/03/2025,2025,23:18,Monday,San Nicolas (Mag-ampon),14.085587,121.292247,Foggy,Poisoning,Child,High,3,17,58
+02/05/2022,2022,4:21,Tuesday,San Cristobal,14.046367,121.308806,Sunny,Stroke,Child,Medium,2,4,59
+18/11/2022,2022,2:00,Sunday,III-A (Hermanos Belen),14.07757,121.286423,Stormy,Heart Attack,Child,High,1,17,50
+27/02/2025,2025,14:38,Thursday,VII-E,14.027122,121.315394,Stormy,Giving Birth,Pregnant,Medium,3,5,10
+13/10/2024,2024,2:12,Sunday,V-B,14.013142,121.273253,Cloudy,Seizure,Heatstroke,High,2,7,57
+27/05/2021,2021,4:45,Sunday,Santa Maria,14.086787,121.36325,Stormy,Burn,Other,Medium,2,20,47
+24/01/2024,2024,7:30,Sunday,II-D (Bulante),14.026852,121.346613,Stormy,Stroke,Infection,Low,2,5,20
+01/03/2020,2020,18:19,Tuesday,San Cristobal,14.034601,121.304252,Foggy,Stroke,Overdose,Low,2,11,31
+21/05/2024,2024,11:39,Monday,II-F (Villa Rey),14.01314,121.316053,Foggy,Fall,Heatstroke,Low,2,12,48
+17/08/2025,2025,5:11,Saturday,Soledad (Macopa),14.040972,121.343225,Cloudy,Allergic Reaction,Heatstroke,Low,1,17,53
+17/01/2021,2021,1:22,Saturday,San Jose (Malamig),14.091952,121.279119,Cloudy,Allergic Reaction,Overdose,Low,1,8,12
+17/03/2025,2025,22:27,Wednesday,II-B (Guadalupe 1),14.096211,121.369713,Foggy,Fall,Allergy,High,2,9,42
+31/12/2022,2022,1:15,Saturday,San Vicente,14.03595,121.27833,Cloudy,Poisoning,Chronic Illness,High,1,9,47
+10/10/2023,2023,15:13,Thursday,San Ignacio,14.090506,121.354,Cloudy,Seizure,Elderly,Low,3,16,18
+21/08/2020,2020,13:27,Monday,San Gregorio,14.086718,121.316463,Cloudy,Other,Infection,Medium,1,17,31
+29/05/2024,2024,15:17,Thursday,II-A (Triangulo/ Guadalupe 2),14.085521,121.319077,Stormy,Stroke,Overdose,Medium,3,5,23
+06/10/2023,2023,18:05,Friday,San Rafael (Buluburan),14.015328,121.300163,Cloudy,Allergic Reaction,Child,Low,3,19,52
+10/10/2020,2020,11:47,Friday,Santa Isabel,14.081918,121.353825,Stormy,Seizure,Heatstroke,High,2,3,10
+24/02/2022,2022,19:16,Saturday,San Mateo (Imok),14.04129,121.282498,Rainy,Other,Chronic Illness,High,3,8,43
+01/08/2021,2021,7:19,Saturday,San Mateo (Imok),14.055037,121.308096,Cloudy,Heart Attack,Overdose,Low,1,5,49
+24/02/2021,2021,5:29,Saturday,San Lucas 2 (Malinaw),14.025756,121.275934,Cloudy,Giving Birth,Pregnant,High,3,13,30
+14/10/2025,2025,9:00,Saturday,San Crispin (Lumbangan),14.018956,121.340962,Stormy,Poisoning,Allergy,High,3,16,45
+31/07/2025,2025,2:25,Wednesday,San Mateo (Imok),14.054067,121.360853,Sunny,Other,Pregnant,Low,1,17,28
+31/08/2020,2020,9:06,Saturday,I-B (City Sub Riverside),14.093187,121.28738,Sunny,Poisoning,Chronic Illness,Medium,3,16,43
+01/09/2024,2024,20:38,Monday,VII-E,14.034739,121.280904,Cloudy,Heart Attack,Child,Low,1,20,44
+28/02/2024,2024,18:29,Saturday,Dolores,14.052045,121.280949,Sunny,Heart Attack,Allergy,Medium,3,17,50
+15/12/2020,2020,3:20,Friday,San Cristobal,14.014195,121.331987,Sunny,Fall,Pregnant,Medium,3,12,23
+11/04/2020,2020,21:13,Friday,III-E,14.092706,121.363486,Cloudy,Giving Birth,Pregnant,Medium,3,5,56
+12/11/2021,2021,13:44,Saturday,San Pedro,14.10938,121.285483,Rainy,Seizure,Allergy,Medium,3,19,11
+28/08/2021,2021,23:41,Thursday,San Antonio 2 (Sapa),14.091599,121.369479,Rainy,Seizure,Heatstroke,Low,1,9,26
+03/03/2022,2022,17:06,Saturday,VII-E,14.047897,121.288082,Cloudy,Fall,Overdose,Low,2,5,49
+03/04/2021,2021,3:25,Saturday,VII-C,14.054969,121.319134,Rainy,Other,Pregnant,High,1,12,55
+16/01/2022,2022,21:09,Thursday,Santa Filomena (Banlagin),14.098335,121.339363,Rainy,Breathing Difficulty,Allergy,Medium,1,7,16
+15/02/2021,2021,1:12,Wednesday,San Juan (Putol),14.099977,121.350308,Stormy,Allergic Reaction,Accident,Medium,3,14,35
+08/11/2023,2023,19:03,Thursday,San Isidro (Balagbag),14.011,121.353497,Rainy,Burn,Heatstroke,Low,1,20,8
+04/12/2021,2021,17:30,Wednesday,V-B,14.08932,121.367237,Sunny,Giving Birth,Pregnant,High,3,9,30
+10/12/2022,2022,21:52,Wednesday,VII-D,14.074601,121.299655,Cloudy,Heart Attack,Pregnant,High,3,7,60
+14/12/2020,2020,12:38,Sunday,Santa Cruz (Putol),14.059329,121.323356,Stormy,Burn,Elderly,Medium,3,8,6
+16/01/2023,2023,22:36,Thursday,Santa Catalina (Sandig),14.035458,121.298458,Foggy,Seizure,Child,Medium,1,20,50
+18/07/2022,2022,19:24,Wednesday,San Nicolas (Mag-ampon),14.035402,121.278242,Rainy,Fall,Allergy,Low,1,3,33
+15/07/2022,2022,0:13,Saturday,III-E,14.065108,121.302276,Cloudy,Giving Birth,Pregnant,High,1,14,27
+30/06/2024,2024,14:27,Friday,Concepcion (Bunot),14.093674,121.344968,Stormy,Other,Heatstroke,Medium,3,6,46
+15/07/2023,2023,20:24,Thursday,III-A (Hermanos Belen),14.057931,121.27819,Stormy,Breathing Difficulty,Pregnant,Medium,2,8,27
+30/10/2020,2020,22:57,Monday,San Lucas 1 (Malinaw),14.109345,121.282975,Stormy,Heart Attack,Chronic Illness,High,3,14,37
+02/02/2025,2025,17:49,Saturday,San Jose (Malamig),14.057831,121.363084,Cloudy,Other,Infection,Low,1,20,57
+21/05/2025,2025,5:19,Tuesday,V-B,14.100125,121.322034,Sunny,Heart Attack,Chronic Illness,Medium,2,3,5
+11/10/2025,2025,6:34,Thursday,VII-A (P.Alcantara),14.048446,121.342486,Sunny,Breathing Difficulty,Allergy,Medium,3,17,37
+23/12/2025,2025,2:24,Friday,II-C (Unson),14.075867,121.326037,Sunny,Poisoning,Allergy,Medium,3,4,58
+16/10/2020,2020,5:25,Friday,San Gregorio,14.082053,121.367979,Foggy,Burn,Heatstroke,Medium,3,11,37
+06/04/2021,2021,0:38,Friday,VI-B (Sabang Mabini),14.054399,121.307827,Foggy,Fall,Child,Low,3,9,15
+23/10/2021,2021,16:05,Wednesday,San Lucas 1 (Malinaw),14.039758,121.270896,Cloudy,Breathing Difficulty,Heatstroke,Low,3,20,14
+03/06/2020,2020,18:55,Tuesday,San Juan (Putol),14.010752,121.366661,Rainy,Fall,Pregnant,Medium,2,3,51
+14/07/2022,2022,21:26,Thursday,San Antonio 2 (Sapa),14.045146,121.331407,Sunny,Breathing Difficulty,Heatstroke,High,1,13,14
+11/11/2021,2021,4:13,Tuesday,VI-D (Lakeside),14.070438,121.350479,Foggy,Other,Accident,Medium,3,19,55
+13/01/2022,2022,23:18,Monday,San Rafael (Buluburan),14.083508,121.298879,Sunny,Other,Elderly,Medium,1,12,51
+30/07/2020,2020,22:10,Sunday,VII-C,14.058484,121.285565,Foggy,Burn,Infection,Medium,2,7,9
+28/08/2020,2020,3:50,Saturday,I-B (City Sub Riverside),14.053143,121.28475,Stormy,Stroke,Heatstroke,Medium,1,13,13
+10/12/2025,2025,16:35,Tuesday,Santa Monica,14.079894,121.332462,Cloudy,Breathing Difficulty,Child,Low,2,18,26
+07/08/2020,2020,6:10,Monday,Del Remedio (Wawa),14.010136,121.324381,Foggy,Allergic Reaction,Heatstroke,Medium,3,5,37
+31/07/2022,2022,8:11,Monday,San Roque (Sambat),14.030082,121.27272,Foggy,Other,Overdose,High,1,7,48
+19/03/2024,2024,4:38,Thursday,Dolores,14.09618,121.333716,Cloudy,Burn,Infection,High,2,5,30
+17/09/2024,2024,10:26,Saturday,Santisimo Rosario (Balagbag),14.046515,121.271305,Foggy,Poisoning,Allergy,High,2,7,49
+10/01/2020,2020,9:02,Wednesday,I-B (City Sub Riverside),14.097872,121.366346,Cloudy,Giving Birth,Pregnant,High,2,5,7
+25/10/2025,2025,2:38,Friday,IV-A,14.02229,121.28434,Cloudy,Heart Attack,Pregnant,High,2,5,45
+14/05/2024,2024,8:07,Saturday,Atisan,14.08121,121.364271,Sunny,Breathing Difficulty,Pregnant,High,1,13,25
+28/08/2022,2022,2:40,Saturday,IV-C,14.100242,121.280272,Cloudy,Poisoning,Child,Medium,3,5,25
+25/03/2022,2022,18:11,Wednesday,VII-B,14.065711,121.30961,Sunny,Heart Attack,Pregnant,High,3,17,25
+11/07/2025,2025,11:14,Sunday,Santiago I (Bulaho),14.089534,121.271883,Sunny,Breathing Difficulty,Chronic Illness,Low,2,17,58
+08/07/2025,2025,8:23,Sunday,San Joaquin,14.087836,121.310634,Sunny,Fall,Other,High,2,18,24
+12/08/2024,2024,21:29,Friday,VI-B (Sabang Mabini),14.084765,121.274182,Foggy,Allergic Reaction,Infection,Low,2,18,19
+05/06/2024,2024,18:55,Friday,II-D (Bulante),14.078341,121.283617,Stormy,Stroke,Allergy,Low,3,14,23
+24/11/2021,2021,6:43,Thursday,San Bartolome (Matang-ag),14.102247,121.297943,Foggy,Fall,Allergy,Low,2,14,39
+27/01/2022,2022,2:47,Thursday,III-F (Balagtas),14.02432,121.305084,Rainy,Stroke,Other,High,2,16,57
+11/05/2023,2023,22:54,Wednesday,III-B,14.102551,121.320706,Foggy,Other,Heatstroke,High,3,12,13
+12/05/2020,2020,21:09,Friday,San Mateo (Imok),14.090642,121.354602,Sunny,Burn,Accident,Low,1,11,6
+10/01/2024,2024,0:03,Thursday,San Lorenzo (Saluyan),14.030478,121.301072,Stormy,Seizure,Chronic Illness,Low,2,15,12
+03/08/2023,2023,2:35,Tuesday,Bautista,14.094001,121.315655,Rainy,Poisoning,Child,Medium,1,18,58
+10/06/2025,2025,17:36,Friday,Santiago II (Bulaho),14.089594,121.299507,Cloudy,Giving Birth,Pregnant,High,3,19,51
+08/09/2020,2020,12:36,Tuesday,V-A,14.098192,121.303151,Stormy,Heart Attack,Child,Low,2,20,11
+27/11/2023,2023,0:03,Saturday,Santo Angel (Ilog),14.065981,121.316289,Foggy,Breathing Difficulty,Allergy,Medium,2,9,53
+30/08/2023,2023,20:36,Monday,III-D (Villongco),14.02451,121.287438,Sunny,Heart Attack,Pregnant,High,1,8,23
+23/11/2024,2024,9:27,Sunday,Santiago I (Bulaho),14.081938,121.300269,Cloudy,Seizure,Other,Medium,3,10,38
+23/01/2024,2024,12:45,Wednesday,Santo Angel (Ilog),14.09926,121.352715,Rainy,Stroke,Other,High,1,9,12
+17/07/2020,2020,8:07,Saturday,Santa Monica,14.070838,121.287277,Stormy,Poisoning,Pregnant,High,1,20,12
+01/11/2024,2024,4:01,Sunday,Soledad (Macopa),14.100232,121.290778,Foggy,Heart Attack,Other,Low,2,13,56
+12/12/2022,2022,18:45,Friday,San Mateo (Imok),14.023265,121.287283,Rainy,Giving Birth,Pregnant,High,2,8,46
+06/01/2024,2024,0:58,Wednesday,V-D,14.068079,121.305191,Sunny,Burn,Allergy,Medium,2,15,25
+24/08/2023,2023,0:38,Thursday,III-F (Balagtas),14.038337,121.285202,Sunny,Burn,Accident,Low,2,10,42
+13/02/2024,2024,21:32,Wednesday,I-B (City Sub Riverside),14.015246,121.359554,Foggy,Seizure,Elderly,High,1,4,52
+27/08/2025,2025,11:54,Tuesday,VI-C (Bagong Pook),14.016918,121.298929,Stormy,Poisoning,Chronic Illness,High,2,19,34
+18/09/2020,2020,8:33,Tuesday,Santo Niño (Arsum),14.077465,121.367543,Stormy,Stroke,Heatstroke,Low,3,15,32
+26/01/2025,2025,11:19,Monday,San Vicente,14.035866,121.361669,Foggy,Other,Elderly,Medium,3,14,46
+08/12/2022,2022,7:23,Thursday,San Vicente,14.09078,121.293401,Foggy,Stroke,Other,Medium,2,6,5
+10/10/2025,2025,5:47,Sunday,Bautista,14.054339,121.303918,Sunny,Seizure,Heatstroke,High,3,14,17
+23/05/2021,2021,0:26,Monday,II-E (San Anton),14.102371,121.303336,Stormy,Seizure,Elderly,High,2,4,28
+19/08/2021,2021,1:44,Saturday,San Antonio 1 (Balanga),14.081088,121.361769,Foggy,Seizure,Child,Medium,2,9,58
+03/02/2020,2020,17:10,Friday,III-A (Hermanos Belen),14.109245,121.280419,Sunny,Allergic Reaction,Allergy,Low,2,9,47
+25/11/2025,2025,7:24,Wednesday,II-E (San Anton),14.065785,121.287821,Stormy,Fall,Chronic Illness,High,1,8,10
+15/06/2021,2021,16:06,Monday,III-B,14.100672,121.350404,Rainy,Other,Child,Low,2,17,23
+10/01/2022,2022,0:13,Wednesday,San Gabriel (Butucan),14.030589,121.282745,Cloudy,Heart Attack,Heatstroke,High,3,4,48
+19/08/2025,2025,19:48,Thursday,San Lorenzo (Saluyan),14.028502,121.356451,Cloudy,Poisoning,Overdose,High,3,9,60
+11/04/2024,2024,17:46,Wednesday,San Lorenzo (Saluyan),14.033355,121.348153,Cloudy,Other,Accident,High,2,6,49
+19/01/2022,2022,19:34,Thursday,San Francisco (Calihan),14.055285,121.362013,Stormy,Other,Elderly,High,3,8,13
+29/08/2021,2021,5:49,Tuesday,San Lucas 2 (Malinaw),14.091216,121.364584,Foggy,Other,Other,Medium,3,20,57
+01/09/2020,2020,7:23,Wednesday,VI-D (Lakeside),14.037078,121.284574,Cloudy,Fall,Infection,High,1,17,53
+08/09/2020,2020,19:06,Tuesday,IV-B,14.050271,121.294046,Cloudy,Allergic Reaction,Pregnant,Low,2,4,50
+20/01/2023,2023,7:44,Wednesday,Santisimo Rosario (Balagbag),14.063317,121.347676,Foggy,Breathing Difficulty,Child,Low,2,13,35
+15/10/2025,2025,3:27,Tuesday,San Miguel (Balatuin),14.05224,121.304315,Sunny,Other,Overdose,Medium,1,12,28
+09/05/2023,2023,8:28,Monday,IV-A,14.109105,121.334954,Stormy,Poisoning,Accident,High,3,4,26
+04/11/2024,2024,5:19,Thursday,Santa Maria Magdalena (Boe / Kuba),14.097064,121.359543,Rainy,Giving Birth,Heatstroke,Medium,2,7,57
+10/03/2020,2020,8:36,Monday,San Antonio 2 (Sapa),14.068505,121.306916,Rainy,Giving Birth,Pregnant,Low,1,18,52
+23/08/2020,2020,2:36,Thursday,VII-B,14.101023,121.336337,Stormy,Breathing Difficulty,Heatstroke,High,2,19,47
+16/03/2020,2020,23:10,Thursday,San Isidro (Balagbag),14.076001,121.330734,Stormy,Breathing Difficulty,Elderly,Low,1,19,25
+09/09/2025,2025,7:27,Thursday,San Cristobal,14.086992,121.311721,Stormy,Breathing Difficulty,Overdose,High,3,16,56
+23/02/2025,2025,17:29,Sunday,San Cristobal,14.097625,121.300252,Cloudy,Breathing Difficulty,Other,High,1,9,56
+05/12/2024,2024,16:20,Thursday,San Bartolome (Matang-ag),14.078542,121.326587,Sunny,Burn,Chronic Illness,Medium,3,17,34
+16/11/2023,2023,13:52,Tuesday,Santa Cruz (Putol),14.082392,121.348633,Stormy,Other,Pregnant,Medium,2,17,18
+13/03/2024,2024,9:17,Friday,II-F (Villa Rey),14.082094,121.350877,Cloudy,Burn,Other,High,3,12,48
+21/11/2021,2021,20:38,Tuesday,VI-E (YMCA),14.045835,121.336135,Rainy,Seizure,Allergy,Low,3,8,31
+14/02/2025,2025,10:30,Tuesday,III-B,14.059052,121.346261,Cloudy,Stroke,Overdose,Medium,2,8,25
+17/05/2024,2024,11:45,Wednesday,I-C (Bagong Bayan),14.103287,121.292143,Rainy,Giving Birth,Pregnant,Low,3,5,49
+19/09/2020,2020,5:36,Saturday,Santiago II (Bulaho),14.060012,121.271212,Foggy,Allergic Reaction,Infection,Low,2,14,51
+27/01/2022,2022,14:53,Wednesday,IV-C,14.100161,121.340865,Rainy,Heart Attack,Child,High,1,5,44
+09/10/2022,2022,17:20,Sunday,IV-B,14.021175,121.364817,Sunny,Breathing Difficulty,Overdose,High,3,12,22
+05/04/2024,2024,12:38,Monday,San Isidro (Balagbag),14.041882,121.294088,Rainy,Heart Attack,Chronic Illness,Low,3,10,5
+19/05/2020,2020,4:09,Tuesday,Santa Catalina (Sandig),14.0888,121.319457,Foggy,Stroke,Elderly,Low,1,3,40
+04/10/2024,2024,0:28,Sunday,Santa Filomena (Banlagin),14.096894,121.306966,Sunny,Fall,Elderly,Medium,2,7,57
+15/06/2022,2022,11:18,Wednesday,Santiago II (Bulaho),14.042363,121.366252,Stormy,Breathing Difficulty,Overdose,Medium,1,5,47
+20/11/2025,2025,20:54,Saturday,San Lorenzo (Saluyan),14.04443,121.365028,Foggy,Breathing Difficulty,Other,Medium,2,6,18
+16/12/2022,2022,8:09,Wednesday,San Francisco (Calihan),14.067343,121.314186,Stormy,Allergic Reaction,Elderly,Medium,1,10,49
+10/09/2020,2020,21:50,Friday,San Diego (Tiim),14.087726,121.325865,Stormy,Seizure,Pregnant,High,2,15,19
+26/09/2023,2023,5:07,Wednesday,Santa Filomena (Banlagin),14.030272,121.363885,Sunny,Breathing Difficulty,Infection,High,2,3,45
+29/12/2020,2020,4:25,Friday,V-D,14.085321,121.364691,Sunny,Allergic Reaction,Other,Medium,3,20,60
+04/09/2021,2021,13:35,Saturday,Concepcion (Bunot),14.033459,121.359534,Rainy,Giving Birth,Pregnant,Low,1,6,52
+27/07/2023,2023,20:19,Thursday,VII-C,14.061659,121.308175,Sunny,Other,Pregnant,Medium,2,14,20
+11/11/2022,2022,20:40,Thursday,San Juan (Putol),14.037797,121.284136,Rainy,Breathing Difficulty,Pregnant,High,3,12,9
+24/06/2022,2022,3:09,Saturday,San Mateo (Imok),14.046703,121.338345,Stormy,Poisoning,Other,High,2,12,38
+13/04/2023,2023,23:18,Monday,Atisan,14.022102,121.28334,Cloudy,Giving Birth,Pregnant,Low,1,8,18
+10/08/2023,2023,19:23,Monday,San Antonio 2 (Sapa),14.068214,121.295772,Foggy,Stroke,Heatstroke,High,2,4,26
+03/07/2023,2023,16:59,Sunday,San Crispin (Lumbangan),14.014581,121.369463,Rainy,Seizure,Child,Medium,2,4,34
+09/07/2025,2025,18:14,Sunday,Santa Isabel,14.024394,121.298234,Stormy,Allergic Reaction,Heatstroke,High,1,16,53
+09/04/2025,2025,7:43,Saturday,Dolores,14.080125,121.339595,Stormy,Fall,Pregnant,Medium,1,15,14
+13/10/2023,2023,19:48,Monday,Santa Filomena (Banlagin),14.056124,121.333067,Foggy,Allergic Reaction,Overdose,Medium,1,10,52
+22/04/2024,2024,14:41,Sunday,San Cristobal,14.038086,121.311388,Foggy,Heart Attack,Heatstroke,Medium,1,15,51
+01/07/2021,2021,9:44,Monday,San Marcos (Tikew),14.010715,121.288021,Sunny,Giving Birth,Pregnant,Medium,1,12,26
+10/01/2020,2020,2:19,Tuesday,Santa Veronica (Bae),14.066616,121.346153,Stormy,Heart Attack,Infection,High,2,18,40
+18/10/2024,2024,15:28,Wednesday,VII-C,14.029863,121.369189,Stormy,Poisoning,Heatstroke,Medium,1,13,40
+06/10/2025,2025,0:36,Saturday,I-A (Sambat),14.049417,121.36396,Cloudy,Seizure,Heatstroke,Medium,3,19,48
+13/09/2024,2024,12:52,Friday,San Lucas 1 (Malinaw),14.053244,121.317699,Sunny,Fall,Infection,Low,3,5,57
+31/10/2021,2021,0:44,Sunday,San Cristobal,14.021435,121.329127,Cloudy,Seizure,Child,High,3,11,46
+22/12/2025,2025,4:24,Friday,San Roque (Sambat),14.09373,121.286224,Rainy,Seizure,Pregnant,High,2,11,6
+23/04/2025,2025,17:55,Friday,V-A,14.093448,121.277026,Rainy,Heart Attack,Allergy,Medium,2,5,42
+17/11/2023,2023,21:04,Wednesday,VI-C (Bagong Pook),14.016097,121.277397,Foggy,Burn,Heatstroke,High,3,17,39
+17/08/2025,2025,10:04,Thursday,III-E,14.031631,121.296322,Foggy,Burn,Chronic Illness,Low,3,17,59
+20/11/2025,2025,20:42,Friday,San Lucas 1 (Malinaw),14.032149,121.36171,Rainy,Seizure,Allergy,Low,2,12,13
+20/07/2021,2021,22:52,Sunday,I-A (Sambat),14.059815,121.329568,Rainy,Heart Attack,Elderly,Medium,2,12,8
+29/06/2025,2025,13:57,Thursday,I-B (City Sub Riverside),14.030787,121.29953,Foggy,Giving Birth,Pregnant,Medium,1,11,48
+30/07/2020,2020,13:02,Friday,Atisan,14.10211,121.307471,Rainy,Other,Allergy,High,3,7,51
+06/08/2020,2020,17:22,Friday,San Gabriel (Butucan),14.075326,121.302325,Cloudy,Fall,Allergy,Low,2,14,33
+31/10/2021,2021,12:10,Tuesday,II-A (Triangulo/ Guadalupe 2),14.098647,121.330888,Rainy,Other,Heatstroke,Low,3,20,43
+12/01/2021,2021,9:00,Wednesday,I-A (Sambat),14.029597,121.337028,Sunny,Allergic Reaction,Chronic Illness,Medium,1,5,24
+11/11/2025,2025,8:05,Thursday,III-C (Labak/De Roma),14.066642,121.309389,Foggy,Breathing Difficulty,Pregnant,Low,1,10,24
+12/08/2023,2023,11:08,Friday,Santa Monica,14.085572,121.363679,Rainy,Seizure,Allergy,Low,2,8,37
+02/11/2023,2023,1:37,Monday,San Buenaventura (Palakpakin),14.073893,121.34748,Foggy,Poisoning,Pregnant,High,3,5,27
+12/07/2023,2023,2:30,Friday,Del Remedio (Wawa),14.038216,121.323281,Foggy,Allergic Reaction,Heatstroke,High,3,15,26
+22/09/2023,2023,6:01,Monday,San Buenaventura (Palakpakin),14.038139,121.348145,Stormy,Poisoning,Elderly,Medium,3,17,16
+17/10/2021,2021,9:28,Thursday,San Diego (Tiim),14.094449,121.273033,Sunny,Poisoning,Infection,Medium,1,6,27
+26/06/2021,2021,21:36,Saturday,VI-E (YMCA),14.026639,121.319542,Foggy,Breathing Difficulty,Allergy,Low,3,4,55
+10/11/2025,2025,21:50,Friday,V-C,14.011819,121.291506,Foggy,Other,Child,High,3,9,52
+22/09/2022,2022,20:17,Monday,I-B (City Sub Riverside),14.107983,121.278623,Stormy,Poisoning,Allergy,Medium,2,3,28
+05/04/2024,2024,15:52,Wednesday,III-A (Hermanos Belen),14.109903,121.311681,Cloudy,Giving Birth,Pregnant,High,3,16,53
+31/12/2020,2020,10:22,Sunday,III-C (Labak/De Roma),14.062242,121.29898,Rainy,Fall,Allergy,Low,3,4,5
+21/06/2022,2022,20:39,Sunday,I-A (Sambat),14.024212,121.342356,Foggy,Poisoning,Overdose,Low,1,5,58
+16/09/2024,2024,5:33,Thursday,Santa Catalina (Sandig),14.076599,121.279337,Stormy,Burn,Other,Medium,1,19,52
+08/09/2024,2024,0:02,Saturday,Santa Maria Magdalena (Boe / Kuba),14.021915,121.273665,Cloudy,Giving Birth,Pregnant,Low,2,11,21
+08/03/2024,2024,14:07,Tuesday,VII-D,14.037731,121.350299,Rainy,Allergic Reaction,Chronic Illness,Medium,2,9,23
+03/04/2020,2020,8:52,Friday,VI-C (Bagong Pook),14.052531,121.320875,Stormy,Giving Birth,Pregnant,Medium,2,3,10
+23/07/2020,2020,10:59,Friday,San Diego (Tiim),14.044579,121.331039,Sunny,Fall,Allergy,High,1,4,39
+20/03/2022,2022,14:14,Saturday,San Lorenzo (Saluyan),14.098432,121.277402,Sunny,Other,Heatstroke,Low,1,16,10
+26/09/2021,2021,20:54,Tuesday,II-F (Villa Rey),14.085746,121.349311,Stormy,Stroke,Allergy,Low,1,12,21
+06/02/2022,2022,19:18,Thursday,San Bartolome (Matang-ag),14.0894,121.301052,Foggy,Fall,Elderly,Low,2,10,25
+03/04/2020,2020,23:36,Wednesday,San Bartolome (Matang-ag),14.03081,121.284751,Stormy,Fall,Infection,High,1,18,21
+18/06/2022,2022,1:41,Thursday,San Marcos (Tikew),14.034429,121.337669,Cloudy,Breathing Difficulty,Allergy,Low,1,16,5
+11/01/2020,2020,1:23,Wednesday,San Antonio 2 (Sapa),14.027782,121.323836,Sunny,Burn,Chronic Illness,Medium,3,18,15
+07/12/2024,2024,10:09,Monday,II-E (San Anton),14.058204,121.318145,Rainy,Stroke,Child,Medium,2,17,20
+22/11/2022,2022,17:56,Tuesday,San Vicente,14.108572,121.299089,Cloudy,Seizure,Chronic Illness,High,1,15,37
+02/05/2024,2024,9:09,Wednesday,San Bartolome (Matang-ag),14.099912,121.3077,Foggy,Allergic Reaction,Elderly,High,1,4,37
+01/01/2025,2025,5:39,Saturday,San Diego (Tiim),14.024404,121.357365,Cloudy,Fall,Accident,Low,1,11,28
+16/10/2025,2025,5:18,Thursday,San Miguel (Balatuin),14.035226,121.308691,Rainy,Burn,Pregnant,Low,1,19,5
+23/04/2020,2020,0:54,Monday,VI-E (YMCA),14.094233,121.336344,Cloudy,Breathing Difficulty,Other,Medium,1,4,49
+06/05/2021,2021,13:31,Monday,I-A (Sambat),14.092527,121.30178,Foggy,Heart Attack,Elderly,Medium,2,19,56
+06/10/2020,2020,16:13,Wednesday,San Juan (Putol),14.081724,121.362443,Sunny,Poisoning,Pregnant,High,3,7,48
+27/08/2024,2024,18:11,Thursday,Soledad (Macopa),14.020539,121.353688,Foggy,Allergic Reaction,Accident,Medium,1,12,44
+28/10/2020,2020,12:04,Thursday,III-A (Hermanos Belen),14.086974,121.283037,Cloudy,Breathing Difficulty,Pregnant,Low,3,10,55
+09/09/2020,2020,17:53,Tuesday,III-C (Labak/De Roma),14.053013,121.322741,Foggy,Seizure,Child,High,3,10,18
+18/01/2025,2025,13:21,Monday,Soledad (Macopa),14.099686,121.298273,Cloudy,Heart Attack,Other,High,2,9,41
+08/08/2025,2025,12:13,Tuesday,III-D (Villongco),14.072375,121.316139,Stormy,Stroke,Accident,Low,2,11,58
+12/03/2023,2023,20:29,Thursday,III-A (Hermanos Belen),14.062102,121.344463,Stormy,Stroke,Overdose,Low,2,7,50
+14/12/2022,2022,7:15,Saturday,San Joaquin,14.080415,121.34252,Cloudy,Seizure,Infection,Low,1,10,14
+21/02/2025,2025,5:48,Sunday,III-C (Labak/De Roma),14.094659,121.296275,Stormy,Poisoning,Chronic Illness,Low,2,19,57
+12/10/2025,2025,14:06,Sunday,I-C (Bagong Bayan),14.098821,121.301558,Sunny,Burn,Other,High,1,17,26
+03/05/2023,2023,5:43,Tuesday,I-B (City Sub Riverside),14.039171,121.347412,Stormy,Giving Birth,Pregnant,Medium,3,12,48
+28/11/2020,2020,22:40,Wednesday,Santo Niño (Arsum),14.093875,121.34811,Stormy,Poisoning,Accident,Low,1,14,37
+09/03/2024,2024,7:33,Wednesday,III-B,14.034518,121.287358,Stormy,Allergic Reaction,Pregnant,High,2,7,11
+25/02/2023,2023,23:37,Tuesday,San Joaquin,14.070197,121.314806,Stormy,Poisoning,Allergy,High,2,9,30
+21/06/2021,2021,9:44,Thursday,VI-A (Mavenida),14.070508,121.314694,Rainy,Heart Attack,Allergy,Medium,3,8,49
+30/04/2023,2023,21:41,Tuesday,Santa Veronica (Bae),14.026734,121.353694,Cloudy,Allergic Reaction,Accident,Medium,3,13,31
+14/05/2022,2022,9:03,Wednesday,Santa Isabel,14.050782,121.284987,Cloudy,Other,Elderly,High,2,10,38
+21/10/2025,2025,16:43,Tuesday,VII-E,14.061786,121.31057,Stormy,Heart Attack,Infection,High,3,3,8
+08/08/2020,2020,3:27,Wednesday,San Juan (Putol),14.029923,121.293071,Sunny,Stroke,Other,High,3,20,60
+24/10/2024,2024,2:36,Tuesday,Santa Veronica (Bae),14.108623,121.358187,Rainy,Stroke,Pregnant,Medium,1,20,55
+15/04/2024,2024,13:31,Friday,San Lucas 1 (Malinaw),14.069576,121.308634,Rainy,Allergic Reaction,Heatstroke,Low,1,16,25
+08/05/2020,2020,15:16,Tuesday,Santa Filomena (Banlagin),14.046318,121.315518,Foggy,Breathing Difficulty,Heatstroke,High,1,7,21
+11/04/2023,2023,16:13,Thursday,Santiago I (Bulaho),14.076017,121.330438,Foggy,Heart Attack,Pregnant,Medium,2,7,8
+27/01/2020,2020,5:26,Sunday,Dolores,14.045873,121.310589,Stormy,Other,Chronic Illness,Medium,2,6,28
+28/09/2022,2022,6:50,Monday,II-E (San Anton),14.109126,121.345112,Foggy,Poisoning,Allergy,High,2,16,18
+19/05/2025,2025,11:10,Monday,Soledad (Macopa),14.050636,121.328171,Cloudy,Burn,Allergy,Medium,3,17,46
+22/09/2024,2024,6:17,Wednesday,San Antonio 1 (Balanga),14.038661,121.290406,Cloudy,Fall,Child,Medium,1,15,39
+16/05/2024,2024,9:00,Friday,San Joaquin,14.038013,121.308839,Foggy,Breathing Difficulty,Allergy,High,2,18,12
+04/06/2021,2021,12:56,Saturday,Santiago I (Bulaho),14.104902,121.325109,Foggy,Stroke,Allergy,Low,1,13,9
+06/07/2020,2020,5:10,Wednesday,VI-D (Lakeside),14.026093,121.280678,Foggy,Stroke,Other,Medium,2,14,42
+12/08/2022,2022,8:53,Friday,VI-D (Lakeside),14.027918,121.354671,Stormy,Burn,Allergy,High,3,11,45
+18/01/2020,2020,17:41,Tuesday,Santo Niño (Arsum),14.083223,121.313241,Stormy,Burn,Allergy,Medium,3,18,37
+27/03/2025,2025,1:06,Tuesday,V-D,14.102897,121.340619,Sunny,Breathing Difficulty,Infection,Low,2,12,20
+17/03/2025,2025,11:44,Thursday,Concepcion (Bunot),14.033355,121.344098,Foggy,Poisoning,Accident,High,2,18,60
+29/12/2025,2025,22:02,Friday,I-C (Bagong Bayan),14.070351,121.308375,Stormy,Stroke,Allergy,Medium,1,19,7
+28/12/2022,2022,21:40,Tuesday,Dolores,14.037813,121.31967,Cloudy,Stroke,Elderly,Low,2,11,48
+17/05/2021,2021,16:06,Friday,III-F (Balagtas),14.059071,121.364893,Cloudy,Seizure,Accident,Low,2,5,16
+29/03/2020,2020,9:59,Thursday,Atisan,14.093911,121.300723,Cloudy,Stroke,Heatstroke,High,1,15,9
+01/07/2023,2023,4:38,Wednesday,San Isidro (Balagbag),14.10307,121.353501,Sunny,Poisoning,Overdose,Low,3,4,28
+31/05/2021,2021,7:52,Tuesday,V-A,14.06949,121.344493,Cloudy,Breathing Difficulty,Chronic Illness,Low,3,14,9
+22/11/2023,2023,16:12,Friday,I-B (City Sub Riverside),14.056265,121.328067,Sunny,Seizure,Allergy,High,2,3,51
+14/05/2025,2025,11:49,Wednesday,San Miguel (Balatuin),14.069549,121.358751,Cloudy,Other,Chronic Illness,Low,1,8,17
+17/11/2023,2023,14:37,Monday,San Francisco (Calihan),14.080979,121.294534,Cloudy,Seizure,Overdose,Low,3,20,13
+20/10/2023,2023,9:27,Sunday,Dolores,14.033172,121.313944,Cloudy,Burn,Elderly,High,2,16,19
+16/09/2021,2021,17:58,Monday,VI-E (YMCA),14.061937,121.304275,Cloudy,Breathing Difficulty,Chronic Illness,Low,3,9,57
+03/10/2021,2021,8:15,Saturday,San Lucas 2 (Malinaw),14.022974,121.330228,Rainy,Giving Birth,Pregnant,Low,3,12,16
+15/12/2024,2024,4:47,Wednesday,Santa Catalina (Sandig),14.084723,121.295918,Sunny,Breathing Difficulty,Infection,Medium,3,17,15
+30/07/2021,2021,7:14,Saturday,Santo Angel (Ilog),14.05056,121.317401,Rainy,Stroke,Pregnant,Medium,3,16,7
+30/01/2025,2025,16:23,Thursday,Santa Ana,14.033635,121.302329,Sunny,Breathing Difficulty,Pregnant,High,1,9,6
+13/05/2025,2025,16:37,Tuesday,V-B,14.107964,121.298898,Foggy,Breathing Difficulty,Heatstroke,Medium,2,18,48
+16/09/2020,2020,19:54,Saturday,Santo Angel (Ilog),14.06276,121.270739,Stormy,Poisoning,Pregnant,High,1,3,6
+05/02/2020,2020,17:29,Tuesday,San Jose (Malamig),14.0227,121.330456,Stormy,Stroke,Heatstroke,Low,1,13,51
+26/01/2025,2025,19:13,Friday,Del Remedio (Wawa),14.060617,121.351597,Foggy,Giving Birth,Pregnant,Medium,1,10,14
+16/01/2023,2023,4:04,Saturday,San Francisco (Calihan),14.029218,121.275647,Stormy,Seizure,Pregnant,High,2,20,44
+15/04/2023,2023,23:46,Friday,I-A (Sambat),14.047158,121.310506,Foggy,Stroke,Chronic Illness,Low,2,17,39
+12/04/2020,2020,11:14,Friday,I-B (City Sub Riverside),14.061225,121.297774,Sunny,Heart Attack,Other,High,1,8,48
+23/06/2024,2024,21:14,Thursday,V-A,14.095923,121.321311,Sunny,Seizure,Elderly,Medium,1,18,59
+11/12/2024,2024,16:53,Friday,San Lucas 2 (Malinaw),14.015515,121.329848,Foggy,Giving Birth,Pregnant,High,1,4,44
+29/01/2021,2021,11:57,Tuesday,San Joaquin,14.025443,121.344744,Sunny,Burn,Accident,Medium,3,8,54
+17/07/2024,2024,13:18,Monday,San Buenaventura (Palakpakin),14.101124,121.272894,Foggy,Fall,Overdose,Medium,3,12,16
+02/11/2024,2024,13:44,Tuesday,San Rafael (Buluburan),14.026372,121.364304,Sunny,Allergic Reaction,Heatstroke,High,2,5,24
+19/09/2024,2024,8:08,Wednesday,I-C (Bagong Bayan),14.05658,121.368334,Sunny,Burn,Heatstroke,Medium,2,3,16
+30/06/2022,2022,23:37,Thursday,VI-B (Sabang Mabini),14.027365,121.367708,Rainy,Poisoning,Elderly,Low,3,20,51
+01/10/2023,2023,12:43,Monday,San Juan (Putol),14.017361,121.344006,Stormy,Allergic Reaction,Overdose,Low,2,15,9
+19/07/2021,2021,6:19,Saturday,San Gabriel (Butucan),14.038393,121.27416,Rainy,Poisoning,Chronic Illness,High,1,11,40
+03/07/2021,2021,10:19,Wednesday,VII-C,14.071424,121.297094,Rainy,Fall,Heatstroke,Low,3,19,51
+11/10/2022,2022,10:04,Friday,Concepcion (Bunot),14.079333,121.273034,Foggy,Stroke,Child,Low,1,5,37
+29/09/2024,2024,0:54,Sunday,II-C (Unson),14.03468,121.296123,Sunny,Breathing Difficulty,Accident,High,1,3,27
+28/12/2023,2023,5:42,Wednesday,San Nicolas (Mag-ampon),14.08478,121.345169,Stormy,Burn,Other,Medium,1,7,25
+26/02/2025,2025,13:13,Monday,III-B,14.091193,121.369704,Stormy,Allergic Reaction,Accident,Medium,1,13,22
+19/11/2021,2021,23:46,Tuesday,I-C (Bagong Bayan),14.105373,121.336984,Sunny,Seizure,Chronic Illness,High,1,10,20
+21/06/2024,2024,6:53,Sunday,Dolores,14.040545,121.272812,Rainy,Other,Other,High,1,10,52
+29/06/2022,2022,16:41,Tuesday,San Lucas 1 (Malinaw),14.071379,121.293937,Cloudy,Fall,Other,Medium,1,19,47
+25/07/2025,2025,2:35,Saturday,San Francisco (Calihan),14.024635,121.318309,Cloudy,Stroke,Overdose,Low,1,13,60
+07/04/2022,2022,23:26,Saturday,V-A,14.06139,121.32576,Stormy,Burn,Chronic Illness,High,1,7,24
+12/12/2024,2024,5:52,Sunday,San Marcos (Tikew),14.095446,121.289318,Sunny,Stroke,Infection,High,1,19,50
+01/09/2025,2025,0:24,Wednesday,Concepcion (Bunot),14.108957,121.274638,Foggy,Giving Birth,Pregnant,Medium,1,20,8
+14/02/2024,2024,6:20,Sunday,Santa Cruz (Putol),14.074474,121.293071,Foggy,Burn,Chronic Illness,Low,2,5,55
+18/04/2020,2020,5:51,Saturday,Concepcion (Bunot),14.041255,121.367223,Rainy,Burn,Elderly,Medium,2,8,39
+28/07/2020,2020,15:21,Thursday,Santa Ana,14.031518,121.349191,Foggy,Allergic Reaction,Elderly,Medium,1,18,36
+06/10/2020,2020,19:49,Sunday,IV-C,14.083284,121.344733,Stormy,Burn,Overdose,High,1,16,49
+17/03/2023,2023,16:47,Wednesday,San Lucas 1 (Malinaw),14.028371,121.285452,Cloudy,Stroke,Chronic Illness,Low,2,13,40
+07/11/2021,2021,1:37,Saturday,San Miguel (Balatuin),14.049522,121.278383,Foggy,Other,Accident,Low,3,6,37
+11/11/2024,2024,17:34,Monday,Santa Filomena (Banlagin),14.071218,121.295432,Sunny,Giving Birth,Pregnant,High,3,7,41
+19/10/2022,2022,9:23,Friday,San Isidro (Balagbag),14.073772,121.305081,Foggy,Breathing Difficulty,Chronic Illness,High,1,19,8
+27/09/2022,2022,12:23,Wednesday,VII-A (P.Alcantara),14.106999,121.331522,Cloudy,Poisoning,Elderly,Medium,1,13,53
+16/09/2024,2024,22:52,Wednesday,Santa Elena,14.079021,121.340443,Cloudy,Heart Attack,Heatstroke,High,3,7,45
+22/11/2023,2023,17:28,Wednesday,VII-A (P.Alcantara),14.036996,121.312875,Stormy,Seizure,Child,Medium,3,16,60
+15/07/2025,2025,20:22,Sunday,III-B,14.01178,121.323737,Foggy,Heart Attack,Other,High,3,7,6
+28/07/2023,2023,8:25,Tuesday,II-D (Bulante),14.097235,121.301549,Foggy,Other,Pregnant,High,1,8,8
+23/04/2025,2025,13:45,Sunday,San Cristobal,14.105503,121.369138,Cloudy,Allergic Reaction,Accident,High,1,6,17
+12/01/2022,2022,12:23,Wednesday,II-C (Unson),14.024175,121.328314,Sunny,Burn,Elderly,Medium,2,19,45
+08/08/2025,2025,7:31,Monday,II-E (San Anton),14.081986,121.345786,Cloudy,Seizure,Other,Medium,1,10,59
+11/04/2022,2022,2:18,Tuesday,IV-B,14.026471,121.347883,Stormy,Seizure,Infection,High,2,15,46
+13/02/2022,2022,2:24,Monday,Dolores,14.083215,121.312004,Sunny,Stroke,Chronic Illness,High,3,7,6
+06/05/2022,2022,22:09,Saturday,San Isidro (Balagbag),14.030961,121.323957,Cloudy,Giving Birth,Pregnant,High,1,14,58
+28/10/2020,2020,10:10,Monday,II-D (Bulante),14.106638,121.364074,Foggy,Fall,Allergy,Low,3,11,60
+19/06/2021,2021,22:40,Sunday,IV-B,14.10846,121.274798,Sunny,Heart Attack,Pregnant,Medium,3,19,24
+15/04/2020,2020,5:15,Wednesday,V-A,14.0488,121.300793,Rainy,Heart Attack,Elderly,High,1,14,28
+17/04/2024,2024,18:59,Sunday,III-A (Hermanos Belen),14.021662,121.362585,Stormy,Burn,Other,Medium,1,10,26
+11/06/2023,2023,8:48,Saturday,IV-C,14.034794,121.304956,Stormy,Giving Birth,Pregnant,Low,3,19,16
+04/09/2024,2024,7:38,Wednesday,Santo Cristo,14.035397,121.333595,Sunny,Allergic Reaction,Accident,Medium,1,11,9
+13/11/2022,2022,0:56,Thursday,Santa Elena,14.046218,121.365697,Cloudy,Stroke,Overdose,High,1,20,11
+30/12/2022,2022,5:48,Wednesday,III-E,14.106437,121.325719,Foggy,Allergic Reaction,Overdose,Low,2,5,15
+16/03/2023,2023,8:20,Friday,VI-E (YMCA),14.073227,121.358465,Foggy,Other,Other,Medium,3,19,13
+10/01/2022,2022,11:35,Sunday,San Ignacio,14.072903,121.324918,Rainy,Allergic Reaction,Heatstroke,High,1,16,56
+10/05/2023,2023,4:50,Sunday,VI-B (Sabang Mabini),14.032181,121.295837,Sunny,Poisoning,Pregnant,Low,3,16,36
+13/09/2022,2022,11:02,Tuesday,San Lucas 1 (Malinaw),14.060815,121.320138,Foggy,Stroke,Accident,Low,2,6,46
+25/08/2022,2022,13:40,Wednesday,III-F (Balagtas),14.062076,121.33448,Cloudy,Stroke,Allergy,Low,3,8,44
+09/07/2021,2021,9:04,Wednesday,II-D (Bulante),14.080838,121.310629,Sunny,Other,Other,Medium,3,14,25
+23/10/2020,2020,20:27,Tuesday,San Joaquin,14.022977,121.281071,Stormy,Giving Birth,Accident,High,3,6,14
+12/06/2021,2021,7:48,Sunday,I-C (Bagong Bayan),14.101667,121.301643,Foggy,Other,Overdose,Low,2,7,36
+16/05/2025,2025,8:37,Friday,San Buenaventura (Palakpakin),14.091083,121.366783,Foggy,Other,Heatstroke,High,2,4,14
+14/02/2022,2022,22:25,Thursday,San Marcos (Tikew),14.053953,121.323082,Rainy,Allergic Reaction,Chronic Illness,Medium,2,17,43
+30/01/2025,2025,8:16,Thursday,Atisan,14.107658,121.324971,Rainy,Heart Attack,Heatstroke,Medium,2,19,16
+09/03/2020,2020,13:37,Tuesday,VI-C (Bagong Pook),14.028526,121.352859,Cloudy,Poisoning,Elderly,High,2,19,43
+21/11/2025,2025,14:11,Tuesday,Del Remedio (Wawa),14.049512,121.320367,Sunny,Heart Attack,Elderly,Low,2,5,25
+25/01/2022,2022,23:44,Wednesday,San Isidro (Balagbag),14.076001,121.34899,Stormy,Heart Attack,Other,Low,1,14,21
+14/09/2024,2024,10:07,Saturday,Santisimo Rosario (Balagbag),14.071447,121.294311,Rainy,Other,Overdose,Medium,1,5,21
+09/01/2021,2021,19:45,Thursday,San Lucas 1 (Malinaw),14.093328,121.312012,Stormy,Fall,Other,Medium,1,4,15
+17/05/2025,2025,1:43,Monday,V-A,14.059531,121.281592,Foggy,Poisoning,Elderly,Low,1,10,24
+16/05/2023,2023,14:30,Saturday,VI-D (Lakeside),14.038931,121.287403,Rainy,Giving Birth,Elderly,Medium,1,15,32
+26/03/2022,2022,15:32,Sunday,VII-A (P.Alcantara),14.039525,121.295313,Foggy,Giving Birth,Pregnant,High,3,8,19
+09/10/2022,2022,19:13,Wednesday,VII-A (P.Alcantara),14.051856,121.336588,Cloudy,Other,Child,High,1,18,31
+21/11/2020,2020,1:31,Friday,III-B,14.077357,121.30575,Rainy,Stroke,Allergy,Low,3,19,14
+10/09/2024,2024,3:47,Tuesday,IV-A,14.032137,121.319403,Cloudy,Burn,Overdose,High,2,20,13
+29/06/2024,2024,12:09,Tuesday,III-A (Hermanos Belen),14.018243,121.284483,Cloudy,Poisoning,Accident,High,2,14,6
+24/02/2023,2023,23:19,Wednesday,San Miguel (Balatuin),14.071428,121.287421,Foggy,Poisoning,Infection,High,2,16,59
+28/11/2021,2021,14:47,Thursday,II-E (San Anton),14.103734,121.369865,Stormy,Heart Attack,Elderly,High,2,13,33
+24/10/2025,2025,16:55,Wednesday,VII-B,14.09287,121.303804,Foggy,Fall,Child,Low,1,5,9
+14/12/2021,2021,0:18,Thursday,Santo Niño (Arsum),14.037107,121.304857,Foggy,Giving Birth,Other,Medium,3,7,24
+20/10/2023,2023,18:08,Tuesday,I-C (Bagong Bayan),14.047339,121.298661,Sunny,Giving Birth,Pregnant,Low,1,13,26
+01/07/2025,2025,6:52,Thursday,Concepcion (Bunot),14.055326,121.291736,Rainy,Fall,Other,High,3,3,7
+21/02/2023,2023,3:29,Saturday,I-B (City Sub Riverside),14.032986,121.354532,Sunny,Poisoning,Infection,Medium,3,11,18
+24/01/2022,2022,7:32,Wednesday,Atisan,14.04161,121.331658,Foggy,Poisoning,Heatstroke,Medium,1,10,34
+11/06/2021,2021,23:33,Thursday,San Miguel (Balatuin),14.077431,121.313852,Sunny,Allergic Reaction,Other,Low,2,15,56
+24/01/2023,2023,2:02,Friday,San Gabriel (Butucan),14.067365,121.33548,Rainy,Stroke,Child,Low,3,18,35
+15/04/2020,2020,19:50,Saturday,San Buenaventura (Palakpakin),14.055552,121.298449,Cloudy,Allergic Reaction,Chronic Illness,Low,3,20,12
+10/09/2025,2025,17:24,Saturday,San Joaquin,14.05943,121.307652,Sunny,Fall,Infection,Medium,1,6,43
+23/08/2020,2020,17:59,Thursday,VI-A (Mavenida),14.041096,121.32876,Rainy,Giving Birth,Pregnant,High,2,12,40
+28/05/2021,2021,21:17,Thursday,Santisimo Rosario (Balagbag),14.055706,121.275154,Stormy,Seizure,Overdose,Low,1,7,45
+27/10/2024,2024,15:46,Tuesday,II-A (Triangulo/ Guadalupe 2),14.02443,121.355944,Rainy,Fall,Other,High,2,4,11
+26/10/2022,2022,22:40,Wednesday,V-C,14.074859,121.323455,Stormy,Other,Accident,Medium,2,4,57
+29/01/2022,2022,17:51,Saturday,San Crispin (Lumbangan),14.013452,121.337147,Foggy,Poisoning,Pregnant,Low,1,20,40
+08/03/2021,2021,14:23,Wednesday,II-B (Guadalupe 1),14.023074,121.3283,Rainy,Poisoning,Accident,High,3,16,34
+03/12/2022,2022,3:43,Friday,Bautista,14.083699,121.309233,Sunny,Giving Birth,Pregnant,Low,1,5,47
+01/02/2024,2024,18:03,Thursday,San Joaquin,14.041904,121.298263,Rainy,Breathing Difficulty,Other,Medium,1,11,41
+26/12/2020,2020,22:34,Wednesday,Santisimo Rosario (Balagbag),14.051131,121.283931,Sunny,Other,Chronic Illness,Medium,3,4,22
+13/05/2024,2024,15:24,Friday,VII-C,14.015216,121.294983,Foggy,Seizure,Pregnant,High,1,10,32
+19/10/2025,2025,10:11,Friday,San Mateo (Imok),14.06499,121.315629,Foggy,Giving Birth,Pregnant,Low,3,15,25
+11/12/2022,2022,10:45,Saturday,II-A (Triangulo/ Guadalupe 2),14.034964,121.285562,Sunny,Breathing Difficulty,Chronic Illness,High,2,12,20
+24/06/2024,2024,22:49,Sunday,IV-B,14.100488,121.357783,Stormy,Heart Attack,Accident,Low,3,5,29
+01/02/2025,2025,11:47,Saturday,VI-C (Bagong Pook),14.042323,121.298615,Cloudy,Giving Birth,Pregnant,Medium,2,4,5
+19/06/2025,2025,3:42,Sunday,V-A,14.042493,121.357291,Rainy,Stroke,Pregnant,Medium,2,19,47
+05/10/2022,2022,6:26,Tuesday,Bautista,14.036376,121.314376,Rainy,Breathing Difficulty,Elderly,High,3,16,54
+24/06/2022,2022,17:39,Friday,Santo Angel (Ilog),14.101936,121.351253,Cloudy,Other,Elderly,Medium,3,17,37
+23/07/2023,2023,3:36,Sunday,III-E,14.085517,121.30635,Foggy,Giving Birth,Accident,Medium,2,20,60
+10/03/2025,2025,17:54,Thursday,Santa Monica,14.076579,121.353279,Sunny,Fall,Child,Low,1,13,13
+18/09/2024,2024,17:58,Monday,Santa Elena,14.070644,121.303294,Foggy,Breathing Difficulty,Overdose,Medium,3,3,53
+06/09/2025,2025,2:24,Sunday,San Crispin (Lumbangan),14.04734,121.359172,Foggy,Stroke,Chronic Illness,Medium,2,12,38
+22/02/2020,2020,16:41,Friday,VII-E,14.089577,121.345625,Sunny,Poisoning,Child,Medium,1,19,30
+15/05/2024,2024,13:01,Thursday,V-C,14.055534,121.336843,Sunny,Allergic Reaction,Overdose,High,1,9,57
+05/07/2020,2020,21:30,Sunday,IV-B,14.060624,121.272415,Foggy,Breathing Difficulty,Infection,High,2,4,27
+18/09/2020,2020,16:31,Sunday,Santo Angel (Ilog),14.027833,121.359394,Sunny,Poisoning,Heatstroke,Low,1,12,32
+13/12/2023,2023,13:48,Thursday,San Bartolome (Matang-ag),14.108803,121.291999,Cloudy,Poisoning,Chronic Illness,High,3,18,38
+15/07/2022,2022,21:40,Tuesday,Santa Maria,14.029625,121.299597,Foggy,Burn,Chronic Illness,High,1,6,59
+20/01/2025,2025,23:11,Sunday,Santiago I (Bulaho),14.013759,121.297468,Rainy,Poisoning,Chronic Illness,Low,3,10,40
+28/06/2022,2022,4:04,Friday,III-B,14.06221,121.317626,Stormy,Stroke,Heatstroke,High,2,4,42
+18/04/2020,2020,7:14,Thursday,San Rafael (Buluburan),14.075279,121.340538,Foggy,Burn,Overdose,Medium,2,15,36
+08/12/2022,2022,10:15,Thursday,VII-E,14.041653,121.341418,Cloudy,Other,Pregnant,Low,2,5,54
+06/10/2024,2024,0:32,Saturday,III-C (Labak/De Roma),14.054985,121.298214,Rainy,Giving Birth,Pregnant,Low,3,17,26
+14/10/2023,2023,16:58,Saturday,Santa Veronica (Bae),14.023043,121.333278,Foggy,Allergic Reaction,Pregnant,Medium,1,12,10
+29/02/2020,2020,9:36,Friday,Santa Isabel,14.060147,121.360084,Stormy,Burn,Chronic Illness,Low,2,12,5
+08/09/2023,2023,5:55,Thursday,San Roque (Sambat),14.075214,121.358528,Rainy,Fall,Allergy,High,2,5,21
+13/09/2024,2024,0:39,Friday,San Pedro,14.015554,121.341336,Sunny,Poisoning,Allergy,Low,3,7,57
+12/09/2025,2025,19:09,Saturday,San Lucas 2 (Malinaw),14.027896,121.328894,Stormy,Stroke,Other,Medium,3,13,23
+17/10/2024,2024,22:01,Saturday,San Vicente,14.068747,121.297398,Cloudy,Stroke,Heatstroke,High,2,6,12
+19/06/2020,2020,13:20,Wednesday,II-D (Bulante),14.085728,121.278379,Rainy,Fall,Pregnant,Low,1,10,6
+16/05/2023,2023,16:35,Wednesday,III-F (Balagtas),14.100369,121.353183,Foggy,Poisoning,Elderly,High,3,4,24
+10/02/2020,2020,8:51,Thursday,IV-C,14.020068,121.282924,Sunny,Other,Heatstroke,Low,1,18,40
+14/09/2024,2024,18:36,Saturday,III-B,14.046553,121.271486,Stormy,Seizure,Chronic Illness,Low,2,3,23
+13/02/2024,2024,1:11,Monday,Concepcion (Bunot),14.081539,121.350316,Stormy,Seizure,Accident,High,3,4,50
+15/04/2025,2025,9:15,Wednesday,II-B (Guadalupe 1),14.026229,121.299215,Foggy,Fall,Chronic Illness,Medium,3,19,45
+19/07/2021,2021,10:29,Monday,Santa Ana,14.046323,121.352907,Foggy,Stroke,Child,High,2,10,56
+31/08/2021,2021,5:20,Friday,VI-A (Mavenida),14.019903,121.31825,Sunny,Breathing Difficulty,Heatstroke,Medium,3,16,51
+11/12/2022,2022,7:01,Sunday,VI-E (YMCA),14.052479,121.334061,Sunny,Breathing Difficulty,Infection,High,2,15,58
+18/03/2023,2023,11:36,Saturday,III-E,14.063059,121.356573,Cloudy,Giving Birth,Other,Low,1,15,19
+18/08/2025,2025,0:10,Friday,VII-D,14.057111,121.324125,Cloudy,Heart Attack,Allergy,Low,3,9,19
+09/12/2020,2020,8:19,Friday,San Nicolas (Mag-ampon),14.082278,121.34774,Stormy,Other,Heatstroke,High,2,19,6
+29/07/2020,2020,3:58,Monday,Santa Cruz (Putol),14.053952,121.343153,Foggy,Heart Attack,Child,High,3,13,38
+18/12/2020,2020,21:09,Sunday,San Vicente,14.047979,121.323261,Foggy,Seizure,Overdose,High,2,19,12
+23/12/2020,2020,9:58,Thursday,Santiago II (Bulaho),14.014604,121.286281,Rainy,Burn,Pregnant,Low,3,17,10
+20/01/2020,2020,10:28,Sunday,Santa Catalina (Sandig),14.056967,121.366802,Stormy,Burn,Overdose,Low,3,20,42
+04/03/2021,2021,3:51,Saturday,VI-E (YMCA),14.049407,121.33776,Rainy,Seizure,Other,High,1,10,10
+06/07/2025,2025,8:49,Sunday,San Nicolas (Mag-ampon),14.020089,121.310587,Sunny,Stroke,Child,High,1,7,15
+09/09/2022,2022,9:54,Wednesday,San Roque (Sambat),14.031131,121.341939,Sunny,Heart Attack,Other,High,3,16,58
+01/10/2020,2020,9:36,Sunday,Santa Maria Magdalena (Boe / Kuba),14.034127,121.291443,Foggy,Burn,Overdose,High,3,16,27
+22/03/2025,2025,22:58,Monday,San Lucas 1 (Malinaw),14.032288,121.305685,Sunny,Stroke,Infection,Low,1,3,9
+11/06/2020,2020,1:02,Monday,Bautista,14.017407,121.340593,Foggy,Stroke,Allergy,Low,2,16,51
+12/03/2023,2023,14:38,Sunday,Santisimo Rosario (Balagbag),14.086481,121.340406,Rainy,Other,Child,Low,3,13,43
+15/03/2025,2025,15:34,Thursday,San Ignacio,14.107283,121.320687,Foggy,Allergic Reaction,Infection,High,2,17,45
+15/07/2024,2024,15:19,Saturday,IV-B,14.026915,121.319594,Foggy,Fall,Accident,Low,2,3,28
+10/10/2023,2023,21:31,Saturday,II-C (Unson),14.047848,121.315985,Foggy,Poisoning,Chronic Illness,Medium,1,12,59
+29/05/2024,2024,23:42,Tuesday,Bautista,14.022382,121.352189,Sunny,Other,Other,Low,2,14,25
+26/04/2025,2025,19:29,Monday,San Pedro,14.095126,121.314171,Foggy,Breathing Difficulty,Chronic Illness,Low,3,19,43
+22/05/2023,2023,16:49,Friday,II-F (Villa Rey),14.050315,121.359877,Rainy,Giving Birth,Pregnant,High,2,18,5
+22/02/2022,2022,17:56,Saturday,Santa Veronica (Bae),14.081806,121.325638,Cloudy,Allergic Reaction,Chronic Illness,Low,2,5,36
+27/12/2025,2025,11:24,Tuesday,Bautista,14.090426,121.363602,Rainy,Other,Accident,Medium,3,8,17
+27/05/2025,2025,19:35,Tuesday,Atisan,14.027475,121.334946,Foggy,Fall,Overdose,High,1,12,22
+29/04/2025,2025,7:18,Sunday,V-D,14.075155,121.322017,Foggy,Breathing Difficulty,Elderly,High,1,7,57
+02/06/2024,2024,17:08,Thursday,II-A (Triangulo/ Guadalupe 2),14.011751,121.319037,Foggy,Stroke,Chronic Illness,High,1,18,20
+21/12/2025,2025,12:10,Sunday,Concepcion (Bunot),14.030315,121.310148,Stormy,Poisoning,Child,High,1,18,45
+06/04/2020,2020,23:00,Monday,III-F (Balagtas),14.028324,121.339874,Foggy,Seizure,Accident,Medium,1,3,57
+18/01/2024,2024,16:06,Monday,Atisan,14.017093,121.314929,Foggy,Fall,Accident,Low,2,4,47
+26/10/2022,2022,20:40,Monday,Santa Elena,14.037804,121.320847,Stormy,Burn,Chronic Illness,Medium,1,9,57
+05/08/2024,2024,19:28,Wednesday,V-A,14.103366,121.350632,Foggy,Fall,Overdose,High,2,7,10
+12/12/2020,2020,4:34,Wednesday,II-D (Bulante),14.017447,121.35205,Sunny,Stroke,Overdose,Low,1,5,10
+20/04/2024,2024,20:11,Monday,San Marcos (Tikew),14.085216,121.28585,Foggy,Stroke,Other,Low,3,17,30
+11/08/2021,2021,19:32,Friday,San Lucas 1 (Malinaw),14.075424,121.355239,Stormy,Poisoning,Allergy,High,3,18,18
+05/12/2022,2022,20:24,Tuesday,VII-D,14.048503,121.284094,Rainy,Giving Birth,Pregnant,High,3,12,26
+22/06/2020,2020,4:16,Saturday,San Antonio 1 (Balanga),14.016501,121.352267,Foggy,Heart Attack,Accident,Low,3,5,15
+05/02/2020,2020,13:31,Thursday,San Marcos (Tikew),14.055129,121.320916,Foggy,Fall,Other,Low,2,16,10
+07/09/2024,2024,4:06,Sunday,San Bartolome (Matang-ag),14.02093,121.338252,Foggy,Burn,Heatstroke,Low,1,15,36
+04/09/2023,2023,1:28,Saturday,Del Remedio (Wawa),14.02656,121.301344,Cloudy,Heart Attack,Heatstroke,Medium,2,11,50
+03/08/2023,2023,18:53,Tuesday,VI-C (Bagong Pook),14.06808,121.312431,Sunny,Stroke,Elderly,High,2,15,55
+03/01/2025,2025,23:08,Monday,VII-D,14.015286,121.294739,Cloudy,Burn,Chronic Illness,Low,1,4,40
+18/08/2023,2023,12:05,Friday,II-F (Villa Rey),14.044956,121.345098,Cloudy,Stroke,Elderly,High,3,16,38
+26/04/2023,2023,8:22,Wednesday,IV-C,14.016042,121.333769,Stormy,Poisoning,Pregnant,Medium,1,15,33
+04/12/2021,2021,12:26,Wednesday,II-C (Unson),14.085679,121.359269,Stormy,Breathing Difficulty,Elderly,Medium,3,4,47
+15/10/2021,2021,17:17,Sunday,San Roque (Sambat),14.03663,121.338812,Foggy,Breathing Difficulty,Allergy,Medium,1,5,33
+23/07/2023,2023,11:14,Monday,Santa Filomena (Banlagin),14.080867,121.362989,Sunny,Heart Attack,Overdose,High,3,5,8
+25/10/2020,2020,6:10,Tuesday,San Ignacio,14.067018,121.341983,Cloudy,Breathing Difficulty,Chronic Illness,High,1,17,12
+31/10/2020,2020,19:32,Wednesday,San Pedro,14.043475,121.273455,Cloudy,Breathing Difficulty,Elderly,Low,1,17,9
+17/11/2025,2025,5:37,Friday,San Joaquin,14.011421,121.274269,Stormy,Giving Birth,Pregnant,Low,2,17,5
+02/01/2024,2024,17:50,Saturday,San Lucas 1 (Malinaw),14.019962,121.306146,Cloudy,Giving Birth,Pregnant,Medium,1,16,37
+14/08/2024,2024,21:50,Saturday,San Bartolome (Matang-ag),14.063893,121.310395,Sunny,Poisoning,Allergy,High,3,7,33
+15/05/2022,2022,17:35,Saturday,III-D (Villongco),14.08207,121.345531,Stormy,Fall,Elderly,Medium,1,20,48
+10/04/2025,2025,21:46,Tuesday,I-B (City Sub Riverside),14.068066,121.293571,Rainy,Breathing Difficulty,Chronic Illness,High,2,12,36
+05/12/2023,2023,11:58,Thursday,Santiago I (Bulaho),14.024278,121.286644,Foggy,Heart Attack,Overdose,Low,1,14,6
+16/02/2023,2023,23:45,Wednesday,I-B (City Sub Riverside),14.070508,121.288254,Cloudy,Seizure,Accident,Low,3,4,32
+28/08/2020,2020,8:46,Thursday,III-B,14.010034,121.313869,Rainy,Stroke,Child,Medium,3,13,23
+24/09/2021,2021,22:05,Saturday,Santa Ana,14.017626,121.315831,Rainy,Allergic Reaction,Child,Medium,2,14,19
+03/02/2020,2020,2:17,Thursday,V-B,14.107547,121.369223,Foggy,Fall,Pregnant,Low,2,14,32
+07/01/2020,2020,4:06,Sunday,San Miguel (Balatuin),14.022703,121.301704,Sunny,Poisoning,Other,High,3,6,43
+25/08/2025,2025,22:36,Tuesday,Santiago I (Bulaho),14.099723,121.320176,Sunny,Seizure,Pregnant,Medium,2,16,24
+29/02/2020,2020,12:29,Tuesday,V-D,14.039706,121.29113,Foggy,Stroke,Child,Low,1,7,18
+10/11/2022,2022,21:51,Monday,San Diego (Tiim),14.014557,121.284955,Cloudy,Other,Overdose,Low,1,19,9
+04/11/2022,2022,1:36,Friday,VII-A (P.Alcantara),14.010149,121.317469,Stormy,Seizure,Other,High,3,13,47
+12/02/2021,2021,7:00,Friday,San Marcos (Tikew),14.076484,121.365725,Foggy,Fall,Allergy,Medium,2,4,26
+01/09/2020,2020,3:13,Sunday,III-A (Hermanos Belen),14.027017,121.358204,Rainy,Burn,Pregnant,High,3,6,27
+05/10/2021,2021,23:52,Thursday,VII-D,14.056186,121.327773,Stormy,Giving Birth,Allergy,Medium,2,16,36
+08/05/2024,2024,16:06,Tuesday,San Crispin (Lumbangan),14.0235,121.297766,Stormy,Other,Other,Medium,3,10,58
+31/10/2021,2021,17:00,Monday,II-D (Bulante),14.023936,121.276776,Sunny,Fall,Accident,Medium,1,10,50
+13/02/2024,2024,17:13,Monday,San Buenaventura (Palakpakin),14.025063,121.327554,Foggy,Allergic Reaction,Pregnant,Medium,2,20,32
+28/03/2022,2022,11:35,Tuesday,San Rafael (Buluburan),14.064791,121.313235,Cloudy,Poisoning,Accident,Low,2,15,47
+23/08/2020,2020,2:32,Tuesday,San Joaquin,14.072164,121.30784,Rainy,Fall,Pregnant,Medium,1,17,41
+16/02/2022,2022,6:34,Wednesday,San Ignacio,14.058803,121.359819,Rainy,Other,Allergy,Low,1,15,30
+18/08/2023,2023,12:01,Sunday,III-F (Balagtas),14.010698,121.325592,Cloudy,Burn,Overdose,High,3,6,16
+10/10/2021,2021,2:07,Friday,III-F (Balagtas),14.015419,121.275482,Cloudy,Stroke,Other,Low,1,7,51
+10/07/2023,2023,20:48,Sunday,San Vicente,14.051598,121.343442,Rainy,Burn,Heatstroke,Medium,1,8,39
+30/05/2021,2021,13:32,Monday,San Bartolome (Matang-ag),14.039639,121.341037,Sunny,Fall,Other,Low,1,19,22
+04/04/2020,2020,6:32,Wednesday,VII-D,14.109362,121.330619,Foggy,Stroke,Overdose,Low,3,4,53
+10/12/2020,2020,1:16,Tuesday,Santa Maria Magdalena (Boe / Kuba),14.055676,121.342033,Rainy,Heart Attack,Overdose,Low,2,3,47
+04/07/2025,2025,17:33,Thursday,Santa Cruz (Putol),14.024208,121.359885,Foggy,Stroke,Heatstroke,Medium,3,6,40
+25/01/2022,2022,15:33,Wednesday,San Lucas 2 (Malinaw),14.06493,121.291481,Cloudy,Fall,Allergy,Medium,2,6,31
+04/05/2025,2025,0:15,Tuesday,II-F (Villa Rey),14.101562,121.284509,Rainy,Allergic Reaction,Child,High,1,8,16
+29/11/2025,2025,8:36,Sunday,San Lucas 1 (Malinaw),14.0725,121.289007,Cloudy,Breathing Difficulty,Pregnant,High,1,5,6
+05/10/2021,2021,14:26,Saturday,VI-B (Sabang Mabini),14.044537,121.359281,Rainy,Stroke,Infection,Low,3,11,20
+07/05/2023,2023,5:18,Saturday,San Jose (Malamig),14.09366,121.344503,Cloudy,Other,Elderly,Medium,1,8,52
+29/04/2024,2024,18:08,Sunday,Soledad (Macopa),14.056774,121.358428,Rainy,Stroke,Heatstroke,High,1,9,58
+02/12/2022,2022,7:28,Friday,Santa Ana,14.042252,121.300593,Stormy,Fall,Allergy,Low,3,18,41
+09/01/2023,2023,23:58,Tuesday,San Joaquin,14.03025,121.272308,Foggy,Stroke,Infection,Low,1,16,38
+09/05/2020,2020,11:27,Tuesday,II-F (Villa Rey),14.022371,121.307694,Cloudy,Allergic Reaction,Elderly,High,2,16,22
+11/11/2024,2024,9:04,Wednesday,Bautista,14.033342,121.279407,Cloudy,Stroke,Pregnant,Medium,2,3,48
+01/08/2020,2020,1:14,Saturday,San Buenaventura (Palakpakin),14.027877,121.303459,Sunny,Allergic Reaction,Pregnant,High,3,12,37
+15/02/2024,2024,15:06,Monday,Santa Maria Magdalena (Boe / Kuba),14.021167,121.290474,Stormy,Fall,Child,Low,2,10,40
+19/12/2022,2022,20:28,Saturday,San Marcos (Tikew),14.107756,121.285242,Foggy,Heart Attack,Chronic Illness,High,2,3,9
+18/02/2024,2024,16:42,Wednesday,VII-A (P.Alcantara),14.106407,121.343396,Cloudy,Allergic Reaction,Chronic Illness,Medium,3,12,52
+24/05/2020,2020,13:14,Tuesday,VII-C,14.107249,121.282292,Cloudy,Fall,Accident,Medium,3,9,27
+24/12/2024,2024,20:21,Saturday,IV-A,14.084088,121.333541,Cloudy,Poisoning,Infection,Medium,2,3,11
+19/02/2025,2025,21:31,Tuesday,VII-E,14.072299,121.361363,Stormy,Giving Birth,Pregnant,Low,1,16,12
+28/10/2025,2025,5:46,Thursday,San Jose (Malamig),14.017244,121.274582,Sunny,Giving Birth,Pregnant,Medium,1,8,48
+17/05/2020,2020,16:58,Thursday,San Isidro (Balagbag),14.10887,121.28577,Rainy,Breathing Difficulty,Infection,Low,3,11,28
+20/05/2023,2023,2:10,Saturday,San Jose (Malamig),14.090994,121.360413,Sunny,Allergic Reaction,Infection,Medium,3,14,19
+14/11/2023,2023,17:48,Friday,Santa Isabel,14.044246,121.309211,Foggy,Heart Attack,Allergy,Low,2,8,57
+16/12/2021,2021,7:28,Sunday,Santo Angel (Ilog),14.012766,121.352489,Stormy,Stroke,Allergy,Medium,2,17,30
+15/01/2023,2023,17:58,Friday,Santa Monica,14.039931,121.345932,Rainy,Breathing Difficulty,Other,High,1,19,9
+30/01/2021,2021,5:57,Wednesday,VII-E,14.031234,121.281727,Sunny,Seizure,Allergy,Medium,3,11,13
+16/03/2020,2020,22:54,Monday,VI-C (Bagong Pook),14.100917,121.272042,Cloudy,Seizure,Accident,Low,2,17,48
+05/04/2025,2025,5:01,Wednesday,Santa Ana,14.10437,121.359376,Rainy,Poisoning,Pregnant,Low,1,19,11
+07/05/2023,2023,17:00,Monday,VII-B,14.037505,121.307757,Stormy,Stroke,Other,High,1,3,53
+25/08/2023,2023,16:09,Friday,III-C (Labak/De Roma),14.07274,121.338684,Foggy,Seizure,Infection,High,2,3,47
+15/12/2023,2023,22:51,Monday,VI-A (Mavenida),14.020422,121.286381,Rainy,Poisoning,Other,High,2,18,8
+24/12/2025,2025,21:03,Friday,VI-B (Sabang Mabini),14.100071,121.309145,Sunny,Heart Attack,Other,High,3,9,55
+13/06/2025,2025,16:15,Friday,Santa Maria Magdalena (Boe / Kuba),14.103666,121.297947,Stormy,Allergic Reaction,Elderly,Low,2,5,40
+01/08/2024,2024,10:12,Saturday,Soledad (Macopa),14.031273,121.342539,Rainy,Poisoning,Allergy,Medium,1,8,24
+28/07/2025,2025,18:39,Saturday,VI-E (YMCA),14.087251,121.290719,Cloudy,Fall,Child,Medium,2,16,18
+04/03/2020,2020,0:37,Saturday,VI-C (Bagong Pook),14.075853,121.349514,Foggy,Fall,Overdose,Medium,3,17,16
+01/10/2022,2022,12:05,Wednesday,III-B,14.020826,121.281216,Cloudy,Breathing Difficulty,Elderly,High,2,3,36
+27/10/2021,2021,2:02,Monday,VI-B (Sabang Mabini),14.089072,121.307488,Stormy,Giving Birth,Pregnant,Low,1,15,28
+05/11/2023,2023,15:19,Monday,VII-D,14.068333,121.32069,Rainy,Breathing Difficulty,Overdose,High,2,20,32
+06/01/2024,2024,13:20,Monday,Atisan,14.10189,121.296353,Stormy,Heart Attack,Allergy,Low,1,10,50
+26/07/2023,2023,15:17,Wednesday,Santa Maria,14.030444,121.315323,Rainy,Stroke,Pregnant,High,2,19,59
+05/12/2020,2020,11:15,Saturday,Santo Cristo,14.076301,121.367839,Stormy,Other,Heatstroke,High,3,7,43
+05/05/2024,2024,7:13,Saturday,VI-B (Sabang Mabini),14.046579,121.353454,Rainy,Fall,Child,High,3,18,22
+22/12/2021,2021,6:45,Thursday,Santo Cristo,14.04202,121.303079,Sunny,Poisoning,Overdose,Low,1,6,35
+07/02/2021,2021,9:33,Monday,Bautista,14.049016,121.339735,Sunny,Allergic Reaction,Child,Low,1,18,47
+21/05/2022,2022,7:43,Sunday,Santo Angel (Ilog),14.04953,121.291029,Rainy,Allergic Reaction,Child,Low,2,7,14
+04/09/2024,2024,4:25,Thursday,Santa Catalina (Sandig),14.025115,121.279718,Rainy,Fall,Heatstroke,Low,2,13,30
+31/12/2023,2023,3:10,Friday,V-D,14.109539,121.313568,Stormy,Stroke,Elderly,Medium,2,18,25
+21/04/2024,2024,14:41,Monday,II-E (San Anton),14.09755,121.341312,Foggy,Allergic Reaction,Overdose,Low,1,3,42
+26/08/2021,2021,18:53,Thursday,Santa Isabel,14.038624,121.278087,Sunny,Burn,Overdose,Medium,1,9,57
+20/04/2025,2025,23:56,Friday,III-A (Hermanos Belen),14.10654,121.369136,Stormy,Burn,Other,Low,1,5,9
+07/08/2020,2020,5:37,Wednesday,San Lucas 2 (Malinaw),14.081853,121.336366,Cloudy,Fall,Other,Low,1,20,8
+06/05/2022,2022,9:17,Tuesday,VI-E (YMCA),14.016607,121.277,Cloudy,Allergic Reaction,Accident,Medium,2,20,18
+11/01/2025,2025,12:30,Monday,VI-A (Mavenida),14.069165,121.271521,Stormy,Seizure,Overdose,High,3,4,24
+15/01/2022,2022,11:36,Thursday,San Nicolas (Mag-ampon),14.035658,121.34619,Foggy,Breathing Difficulty,Allergy,Medium,1,14,22
+30/12/2021,2021,3:18,Saturday,III-C (Labak/De Roma),14.018573,121.290626,Foggy,Other,Overdose,High,1,11,13
+07/08/2020,2020,15:45,Thursday,San Vicente,14.079128,121.324415,Sunny,Allergic Reaction,Chronic Illness,Medium,3,14,25
+23/12/2025,2025,0:07,Thursday,San Mateo (Imok),14.010673,121.335438,Rainy,Seizure,Elderly,Low,3,4,20
+15/11/2021,2021,16:19,Sunday,San Nicolas (Mag-ampon),14.084815,121.302923,Cloudy,Burn,Chronic Illness,Medium,1,3,19
+10/06/2021,2021,22:53,Sunday,II-E (San Anton),14.022634,121.34526,Stormy,Stroke,Allergy,High,2,16,37
+18/02/2021,2021,22:18,Wednesday,I-B (City Sub Riverside),14.063614,121.357317,Stormy,Allergic Reaction,Allergy,Medium,2,14,48
+09/09/2020,2020,4:13,Tuesday,San Mateo (Imok),14.031936,121.295828,Stormy,Breathing Difficulty,Elderly,Low,3,9,58
+12/01/2021,2021,20:35,Monday,San Gabriel (Butucan),14.103943,121.34891,Cloudy,Seizure,Heatstroke,High,2,12,36
+06/01/2024,2024,16:40,Monday,Santo Angel (Ilog),14.099583,121.279798,Sunny,Heart Attack,Allergy,High,3,8,56
+04/03/2025,2025,19:59,Monday,III-E,14.087846,121.336874,Rainy,Poisoning,Other,Medium,1,6,10
+25/06/2021,2021,19:27,Monday,San Mateo (Imok),14.088466,121.306253,Cloudy,Burn,Overdose,Low,1,3,21
+22/10/2025,2025,14:32,Friday,San Gregorio,14.045982,121.326691,Sunny,Fall,Heatstroke,Medium,3,13,10
+02/09/2024,2024,5:35,Thursday,Soledad (Macopa),14.033555,121.282853,Stormy,Seizure,Other,Medium,3,5,19
+12/12/2021,2021,3:38,Monday,V-C,14.01213,121.324466,Sunny,Heart Attack,Accident,High,3,3,18
+07/06/2025,2025,13:55,Tuesday,Santa Maria,14.080594,121.311165,Sunny,Stroke,Overdose,Medium,3,15,48
+18/01/2023,2023,22:46,Monday,III-E,14.073887,121.322526,Stormy,Seizure,Other,High,3,15,47
+15/03/2024,2024,18:28,Saturday,San Marcos (Tikew),14.041614,121.289365,Cloudy,Fall,Child,Low,3,16,16
+13/03/2022,2022,21:39,Sunday,Santiago II (Bulaho),14.032071,121.291799,Stormy,Breathing Difficulty,Allergy,High,2,10,11
+01/03/2023,2023,23:17,Wednesday,II-B (Guadalupe 1),14.012052,121.326792,Rainy,Stroke,Chronic Illness,Low,2,8,27
+11/11/2023,2023,3:08,Tuesday,II-B (Guadalupe 1),14.073941,121.275289,Rainy,Heart Attack,Chronic Illness,Medium,2,5,55
+14/03/2022,2022,10:52,Wednesday,III-C (Labak/De Roma),14.078901,121.367655,Stormy,Allergic Reaction,Elderly,High,3,17,49
+31/05/2024,2024,13:11,Friday,II-C (Unson),14.064035,121.29657,Rainy,Heart Attack,Pregnant,High,1,6,5
+22/02/2024,2024,16:43,Sunday,V-A,14.024305,121.271372,Foggy,Heart Attack,Other,Low,2,6,20
+30/09/2022,2022,18:03,Sunday,San Ignacio,14.020837,121.287934,Cloudy,Burn,Elderly,Medium,3,3,44
+10/02/2021,2021,21:32,Tuesday,III-A (Hermanos Belen),14.081912,121.317697,Foggy,Other,Infection,High,2,18,13
+27/06/2022,2022,9:38,Saturday,San Lucas 2 (Malinaw),14.044795,121.315329,Rainy,Heart Attack,Allergy,Medium,1,16,57
+24/02/2022,2022,15:28,Wednesday,San Mateo (Imok),14.07319,121.35346,Cloudy,Other,Elderly,Low,2,9,18
+04/10/2023,2023,0:45,Tuesday,Santo Niño (Arsum),14.046653,121.325176,Foggy,Breathing Difficulty,Heatstroke,Low,3,17,52
+25/11/2021,2021,14:15,Monday,San Diego (Tiim),14.015484,121.368653,Rainy,Giving Birth,Pregnant,Medium,1,3,60
+12/06/2022,2022,2:08,Friday,Dolores,14.047066,121.280768,Rainy,Poisoning,Infection,Low,3,17,13
+06/04/2020,2020,18:00,Thursday,I-C (Bagong Bayan),14.01406,121.352113,Foggy,Stroke,Pregnant,Low,3,8,39
+14/12/2020,2020,22:37,Friday,I-A (Sambat),14.075375,121.272022,Sunny,Fall,Chronic Illness,High,3,10,20
+16/04/2025,2025,16:23,Friday,San Lucas 1 (Malinaw),14.013774,121.362786,Rainy,Fall,Accident,Low,1,19,22
+15/08/2021,2021,4:51,Monday,VII-E,14.023391,121.312606,Stormy,Allergic Reaction,Overdose,High,1,10,23
+18/03/2025,2025,16:32,Monday,San Crispin (Lumbangan),14.064035,121.299692,Foggy,Other,Infection,Medium,1,9,44
+29/01/2022,2022,1:28,Saturday,Santisimo Rosario (Balagbag),14.107363,121.303532,Rainy,Seizure,Heatstroke,High,2,10,11
+19/08/2021,2021,9:32,Saturday,VI-B (Sabang Mabini),14.103053,121.283288,Stormy,Stroke,Accident,High,2,15,47
+05/09/2022,2022,10:57,Thursday,Santa Maria,14.057524,121.349437,Sunny,Allergic Reaction,Chronic Illness,Low,1,14,29
+08/06/2023,2023,13:31,Thursday,VI-E (YMCA),14.049002,121.303336,Rainy,Heart Attack,Accident,Medium,1,8,31
+02/05/2022,2022,22:50,Sunday,I-A (Sambat),14.063725,121.299748,Sunny,Seizure,Allergy,Medium,1,8,27
+22/06/2024,2024,10:34,Tuesday,Santisimo Rosario (Balagbag),14.088344,121.360069,Rainy,Seizure,Chronic Illness,High,2,15,29
+18/10/2022,2022,7:14,Thursday,Santo Niño (Arsum),14.100995,121.301303,Rainy,Giving Birth,Pregnant,Low,1,19,7
+10/04/2023,2023,12:52,Tuesday,III-E,14.064218,121.299039,Rainy,Fall,Infection,Medium,2,12,33
+27/10/2021,2021,2:14,Wednesday,V-B,14.033746,121.35004,Stormy,Fall,Child,Medium,3,18,33
+28/04/2024,2024,1:05,Saturday,San Joaquin,14.067212,121.290347,Foggy,Stroke,Pregnant,Low,1,8,59
+02/07/2022,2022,12:04,Wednesday,VI-B (Sabang Mabini),14.065047,121.31056,Rainy,Breathing Difficulty,Elderly,High,1,9,22
+22/07/2022,2022,20:26,Saturday,San Nicolas (Mag-ampon),14.041098,121.271006,Sunny,Fall,Accident,Medium,1,11,6
+02/01/2023,2023,0:05,Tuesday,San Lucas 2 (Malinaw),14.077203,121.321114,Foggy,Heart Attack,Child,Medium,2,18,42
+08/04/2024,2024,1:13,Tuesday,III-A (Hermanos Belen),14.059162,121.342328,Rainy,Breathing Difficulty,Allergy,Low,3,4,28
+06/05/2023,2023,8:25,Friday,Santa Veronica (Bae),14.035774,121.31294,Sunny,Seizure,Accident,Medium,3,7,50
+09/02/2022,2022,6:28,Saturday,San Mateo (Imok),14.034793,121.3295,Sunny,Other,Infection,Low,1,17,50
+01/02/2020,2020,0:35,Saturday,Concepcion (Bunot),14.106788,121.297112,Cloudy,Other,Accident,Medium,3,11,30
+30/05/2020,2020,23:26,Sunday,VII-D,14.104109,121.320129,Rainy,Seizure,Allergy,High,1,16,18
+24/04/2021,2021,10:42,Thursday,San Gabriel (Butucan),14.100874,121.330826,Foggy,Breathing Difficulty,Infection,Low,2,5,18
+04/06/2022,2022,21:14,Monday,San Jose (Malamig),14.094113,121.278177,Rainy,Fall,Accident,Low,1,5,45
+12/08/2025,2025,4:07,Tuesday,II-B (Guadalupe 1),14.081419,121.367127,Rainy,Other,Overdose,Low,2,7,31
+25/04/2022,2022,8:20,Sunday,Bautista,14.085616,121.346484,Stormy,Heart Attack,Accident,Medium,3,13,57
+13/04/2022,2022,20:22,Monday,III-E,14.042356,121.299542,Sunny,Other,Heatstroke,Medium,2,17,30
+01/05/2022,2022,9:01,Thursday,San Crispin (Lumbangan),14.016705,121.270912,Foggy,Heart Attack,Elderly,High,3,12,50
+30/07/2021,2021,4:39,Friday,San Nicolas (Mag-ampon),14.0746,121.341506,Stormy,Heart Attack,Elderly,High,1,15,6
+13/07/2024,2024,1:51,Saturday,Santa Ana,14.054763,121.303767,Stormy,Seizure,Elderly,High,1,14,42
+11/06/2022,2022,13:03,Monday,Santa Maria,14.055123,121.273345,Rainy,Poisoning,Other,High,2,20,8
+03/07/2020,2020,14:42,Friday,VI-D (Lakeside),14.056133,121.35323,Rainy,Giving Birth,Pregnant,Low,3,19,44
+13/05/2022,2022,14:20,Tuesday,Del Remedio (Wawa),14.025877,121.27018,Cloudy,Poisoning,Other,Medium,3,6,50
+26/07/2025,2025,9:22,Thursday,Santiago II (Bulaho),14.045579,121.301799,Rainy,Poisoning,Elderly,Low,3,4,23
+02/06/2023,2023,17:32,Friday,Santa Monica,14.102782,121.366075,Stormy,Burn,Accident,High,1,5,7
+15/07/2021,2021,23:19,Saturday,San Rafael (Buluburan),14.075593,121.361652,Foggy,Allergic Reaction,Elderly,Low,3,14,26
+01/08/2024,2024,0:52,Wednesday,VI-C (Bagong Pook),14.06576,121.345269,Foggy,Heart Attack,Elderly,High,3,16,46
+06/04/2024,2024,17:27,Sunday,V-A,14.033368,121.339589,Stormy,Allergic Reaction,Chronic Illness,High,3,18,24
+20/04/2023,2023,14:31,Thursday,VI-C (Bagong Pook),14.086534,121.361995,Sunny,Stroke,Infection,Low,1,12,33
+29/05/2023,2023,1:47,Tuesday,San Gregorio,14.021915,121.353324,Stormy,Stroke,Pregnant,Medium,3,14,55
+03/10/2021,2021,18:05,Friday,II-B (Guadalupe 1),14.024743,121.293748,Rainy,Poisoning,Chronic Illness,Low,2,5,44
+26/12/2022,2022,6:41,Sunday,Santo Angel (Ilog),14.014772,121.348796,Cloudy,Stroke,Other,High,2,19,33
+15/06/2020,2020,7:11,Tuesday,San Joaquin,14.040047,121.30042,Sunny,Allergic Reaction,Child,High,3,11,20
+30/07/2024,2024,6:37,Monday,San Marcos (Tikew),14.015703,121.33764,Sunny,Burn,Allergy,High,1,8,57
+28/04/2020,2020,0:53,Wednesday,Santa Maria,14.082549,121.314912,Stormy,Breathing Difficulty,Allergy,Low,1,4,15
+02/06/2024,2024,14:27,Saturday,San Ignacio,14.074593,121.275714,Stormy,Giving Birth,Pregnant,High,3,6,21
+23/12/2023,2023,15:46,Thursday,San Antonio 1 (Balanga),14.018219,121.302034,Sunny,Stroke,Child,Low,1,12,33
+26/04/2023,2023,5:40,Tuesday,San Lucas 1 (Malinaw),14.018785,121.292919,Sunny,Seizure,Other,Low,3,14,55
+02/11/2023,2023,23:04,Thursday,San Crispin (Lumbangan),14.018836,121.275914,Foggy,Giving Birth,Pregnant,Medium,2,17,56
+04/04/2020,2020,7:07,Saturday,San Cristobal,14.083248,121.337752,Cloudy,Heart Attack,Pregnant,Medium,3,5,23
+28/02/2025,2025,20:35,Friday,San Buenaventura (Palakpakin),14.030729,121.308775,Cloudy,Fall,Elderly,Medium,3,9,21
+09/10/2020,2020,11:05,Wednesday,V-B,14.074535,121.337603,Sunny,Fall,Allergy,Low,3,20,38
+26/11/2025,2025,21:00,Monday,San Isidro (Balagbag),14.068802,121.321415,Sunny,Breathing Difficulty,Other,Medium,3,20,51
+03/05/2022,2022,6:50,Sunday,II-B (Guadalupe 1),14.04075,121.335443,Rainy,Giving Birth,Other,Medium,3,15,33
+29/12/2025,2025,6:15,Thursday,Bautista,14.082486,121.276459,Foggy,Allergic Reaction,Pregnant,High,2,12,56
+07/12/2025,2025,12:27,Friday,San Juan (Putol),14.049197,121.29884,Cloudy,Stroke,Allergy,Medium,2,7,60
+01/12/2023,2023,4:13,Sunday,San Lucas 1 (Malinaw),14.107909,121.358238,Foggy,Poisoning,Heatstroke,High,2,20,41
+29/07/2023,2023,6:00,Wednesday,V-A,14.041142,121.322128,Rainy,Seizure,Allergy,Low,3,18,14
+27/03/2024,2024,14:25,Tuesday,Santa Cruz (Putol),14.087417,121.309065,Foggy,Burn,Other,High,1,7,7
+03/02/2022,2022,4:38,Thursday,San Isidro (Balagbag),14.053992,121.360047,Cloudy,Burn,Heatstroke,High,1,20,12
+13/10/2023,2023,8:51,Tuesday,San Cristobal,14.068219,121.317717,Stormy,Burn,Heatstroke,Low,1,20,39
+09/11/2024,2024,20:59,Wednesday,Bautista,14.029384,121.294156,Rainy,Burn,Heatstroke,High,2,11,46
+09/08/2022,2022,17:19,Friday,Soledad (Macopa),14.069213,121.305318,Rainy,Allergic Reaction,Other,Medium,1,3,12
+28/09/2024,2024,4:37,Saturday,Santo Cristo,14.030921,121.316361,Sunny,Fall,Pregnant,Medium,2,3,45
+23/09/2024,2024,16:38,Monday,Santa Ana,14.031261,121.330039,Rainy,Heart Attack,Chronic Illness,Medium,3,9,30
+03/10/2023,2023,21:05,Friday,San Gabriel (Butucan),14.086403,121.348,Rainy,Fall,Accident,Medium,2,14,45
+04/10/2020,2020,1:55,Saturday,San Buenaventura (Palakpakin),14.094756,121.365052,Foggy,Fall,Elderly,Medium,3,11,49
+17/12/2024,2024,16:36,Saturday,San Joaquin,14.013895,121.343471,Stormy,Seizure,Accident,Low,2,3,24
+29/04/2022,2022,4:46,Sunday,San Pedro,14.075716,121.346285,Rainy,Fall,Heatstroke,High,3,7,43
+30/07/2023,2023,20:47,Sunday,VII-A (P.Alcantara),14.103727,121.365379,Sunny,Stroke,Chronic Illness,Low,1,5,23
+26/03/2023,2023,23:25,Friday,VI-A (Mavenida),14.105413,121.366584,Rainy,Fall,Chronic Illness,Medium,2,18,45
+30/07/2022,2022,20:43,Saturday,I-B (City Sub Riverside),14.084652,121.334063,Rainy,Breathing Difficulty,Elderly,Low,3,20,35
+26/03/2021,2021,3:58,Monday,Del Remedio (Wawa),14.038315,121.307449,Sunny,Seizure,Other,High,1,3,48
+14/08/2023,2023,21:44,Saturday,VI-C (Bagong Pook),14.061499,121.353659,Rainy,Burn,Elderly,Medium,2,14,48
+29/10/2020,2020,2:44,Friday,II-E (San Anton),14.094192,121.359226,Cloudy,Fall,Pregnant,Low,2,14,38
+02/05/2021,2021,20:41,Wednesday,San Crispin (Lumbangan),14.017906,121.302988,Sunny,Other,Infection,Medium,3,11,29
+28/11/2022,2022,18:00,Sunday,San Antonio 2 (Sapa),14.093182,121.281596,Cloudy,Allergic Reaction,Infection,Low,2,17,39
+07/01/2023,2023,8:39,Saturday,II-E (San Anton),14.0875,121.351948,Sunny,Allergic Reaction,Elderly,Low,3,19,22
+08/09/2022,2022,21:05,Saturday,San Isidro (Balagbag),14.083544,121.305637,Stormy,Giving Birth,Pregnant,Low,2,9,7
+03/06/2025,2025,19:05,Wednesday,Santa Veronica (Bae),14.033506,121.307094,Sunny,Breathing Difficulty,Allergy,Medium,1,12,18
+03/03/2024,2024,1:20,Friday,II-C (Unson),14.05874,121.296227,Cloudy,Seizure,Accident,Low,2,12,14
+28/07/2025,2025,6:33,Saturday,San Francisco (Calihan),14.024472,121.341895,Foggy,Giving Birth,Pregnant,Medium,2,15,41
+11/08/2023,2023,4:07,Saturday,I-C (Bagong Bayan),14.068049,121.358134,Cloudy,Giving Birth,Pregnant,High,2,9,44
+12/06/2024,2024,3:18,Friday,San Rafael (Buluburan),14.083285,121.352754,Stormy,Other,Allergy,Medium,2,18,21
+28/02/2024,2024,19:03,Wednesday,I-B (City Sub Riverside),14.097672,121.295123,Rainy,Other,Pregnant,Medium,3,8,37

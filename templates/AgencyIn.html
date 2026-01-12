@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log In Agency</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo/alertnow.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/agenin.css') }}">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: #224380;
+            text-align: center;
+        }
+        .modal-content label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #000;
+        }
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #000;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .modal-content button {
+            background: #66c2ff;
+            color: #000;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            margin-top: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            color: #aaa;
+        }
+        .close:hover { color: #000; }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- LEFT: App Info + Auto-Login Profiles -->
+        <div class="left-panel">
+            <img src="{{ url_for('static', filename='logo/app_icon.png') }}" alt="Alert Logo" class="alert-logo">
+            <h1>Agency Login</h1>
+            <h3>Quick access with saved profiles</h3>
+
+            <div class="auto-login-container">
+                <h3>Saved Accounts</h3>
+                <div class="auto-login-list">
+                    <form action="/auto_role" method="post" id="auto-role-form"></form>
+                    {% if cdrrmo_pnp_bfp_users %}
+                        {% for user in cdrrmo_pnp_bfp_users %}
+                            <div class="role-item" onclick="autoRole('{{ user.role }}', '{{ user.assigned_municipality }}', '{{ user.contact_no }}', '{{ user.password }}', '{{ user.assigned_hospital }}')">
+                                {% if user.role == 'hospital' %}
+                                    <strong>{{ user.assigned_hospital|upper }}</strong><br>
+                                    {{ user.assigned_municipality }}
+                                {% else %}
+                                    <strong>{{ user.role|upper }}</strong><br>
+                                    {{ user.assigned_municipality }}
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="role-item empty">No saved accounts</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Login Form -->
+        <div class="right-panel">
+            <form action="/login_agency" method="post" class="signup-form">
+                <h1>Select Agency To Log In</h1>
+
+                <label>Role:
+                    <select name="role" id="role" required class="select-role">
+                        <option value="cdrrmo">CDRRMO</option>
+                        <option value="pnp">PNP</option>
+                        <option value="bfp">BFP</option>
+                        <option value="health">City Health</option>
+                        <option value="hospital">Hospital</option>
+                        <option value="dilg">DILG</option>
+                    </select>
+                </label>
+
+                <label id="hospital-label" style="display: none;">Assigned Hospital:
+                    <select name="assigned_hospital" id="assigned_hospital" class="dropdown-role">
+                        <option value="SPC District Hospital">SPC District Hospital</option>
+                        <option value="San Pablo Colleges Medical Center">San Pablo Colleges Medical Center</option>
+                        <option value="Community General Hospital">Community General Hospital</option>
+                        <option value="Immaculate Conception Hospital">Immaculate Conception Hospital</option>
+                        <option value="SPC General Hospital">SPC General Hospital</option>
+                        <option value="San Pablo Doctors Hospital">San Pablo Doctors Hospital</option>
+                        <option value="St. Francis and Paul General Hospital">St. Francis and Paul General Hospital</option>
+                    </select>
+                </label>
+
+                <label>Assigned Municipality:
+                    <input type="text" name="municipality" required>
+                </label>
+
+                <label>Contact Number:
+                    <input type="tel" name="contact_no" required>
+                </label>
+
+                <label class="password-label">Password:
+                    <div class="password-wrapper">
+                        <input type="password" name="password" id="password" required>
+                        <span class="toggle-password" onclick="togglePassword()">Show</span>
+                    </div>
+                </label>
+                <a href="/pass_reset" class="forgot-link">Forgot Password? Click Here to Reset</a><br>
+
+                <button type="submit">Log In</button>
+                <button type="button" class="button2" onclick="window.location.href='/signup_muna'">Sign Up</button>
+                <button type="button" class="button3" onclick="window.location.href='/choose_login_type'">Choose Account</button>
+            </form>
+
+            <div id="dilgModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>DILG Login</h2>
+                    <form id="dilgForm" action="/login_dilg" method="post">
+                        <label>Assigned Municipality:</label>
+                        <input type="text" name="municipality" required>
+                        <label>Password:</label>
+                        <input type="password" name="password" id="dilgPassword" required>
+                        <button type="submit">Log In</button>
+                    </form>
+                    <p style="margin-top:10px; font-size:14px; color:#666;">
+                        A login password has been sent to <strong>vncbcstll@gmail.com</strong>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('dilgModal');
+        const roleSelect = document.getElementById('role');
+
+        function autoRole(role, municipality, contact_no, password, assigned_hospital) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/auto_role';
+
+            const inputs = [
+                { name: 'role', value: role },
+                { name: 'municipality', value: municipality },
+                { name: 'contact_no', value: contact_no },
+                { name: 'password', value: password }
+            ];
+
+            if (assigned_hospital) {
+                inputs.push({ name: 'assigned_hospital', value: assigned_hospital });
+            }
+
+            inputs.forEach(i => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = i.name;
+                input.value = i.value;
+                form.appendChild(input);
+            });
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        roleSelect.addEventListener('change', function() {
+            const hospitalLabel = document.getElementById('hospital-label');
+            if (this.value === 'hospital') {
+                hospitalLabel.style.display = 'block';
+            } else {
+                hospitalLabel.style.display = 'none';
+            }
+
+            if (this.value === 'dilg') {
+                generateAndShowDILGPassword();
+                modal.style.display = 'flex';
+            }
+        });
+
+        function closeModal() {
+            modal.style.display = 'none';
+            roleSelect.value = 'cdrrmo';
+        }
+
+        function generateAndShowDILGPassword() {
+            const password = Math.random().toString(36).slice(-8) + 'DILG!';
+            document.getElementById('dilgPassword').value = password;
+
+            fetch('/send_dilg_password', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password: password })
+            }).then(res => res.json())
+              .then(data => console.log("Password sent:", data))
+              .catch(err => console.error("Email failed:", err));
+        }
+
+        function togglePassword() {
+            const input = document.getElementById('password');
+            const toggle = document.querySelector('.toggle-password');
+            if (input.type === 'password') {
+                input.type = 'text';
+                toggle.textContent = 'Hide';
+            } else {
+                input.type = 'password';
+                toggle.textContent = 'Show';
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

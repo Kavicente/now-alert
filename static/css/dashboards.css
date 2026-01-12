@@ -1,0 +1,606 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #224380;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+header {
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    margin-bottom: 20px;
+}
+
+
+.alerts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 65%;
+    margin-left: 10%;
+}
+.p {
+    font-family: Arial, sans-serif;
+    color: #000000;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-logo {
+    height: 50px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    margin-left: 15px; /* Space between logo and text */
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+.h2 {
+    font-size: 1.5em;
+    color: #000000;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #000000;
+    margin-top: 30px;
+    position: fixed; /* Fix the element to the viewport */
+    top: 0; /* Anchor to the top */
+    left: 80px; 
+}
+.toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #fff;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-btn:hover {
+    transform: rotate(90deg);
+}
+.sidebar {
+    width: 260px;
+    position: fixed;
+    height: 95%;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    top: 63px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-left: 4px solid transparent;
+    transition: border-left-color 0.3s ease, background-color 0.3s ease;
+}
+
+.incident-number {
+    position: absolute;
+    top: -40px; /* Offset upward to "sit on top" of the label */
+    left: 50%;
+    transform: translateX(-50%); 
+    color: rgb(0, 0, 0);
+    font-size: 28px; /* Larger and bold for emphasis */
+    font-weight: bold;
+    padding: -16px 10px;
+    border-radius: 50%; /* Circular badge for visual pop */
+    min-width: 35px; /* Ensures "0" looks balanced */
+    text-align: center;
+}
+
+.sidebar nav ul li a span {
+    margin-right: 10px;
+}
+
+.sidebar nav ul li:hover {
+    transform: scale(1.05);
+}
+
+.sidebar nav ul li a:hover {
+    background: #ddd;
+    color: #ffffff;   
+    
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard {
+    position: static;
+    margin-bottom: 10px;
+}
+
+main {
+    left: 260px;
+    padding: 20px;
+    position: relative;
+}
+
+.main-content {
+    position: fixed; /* Fix the element to the viewport */
+    top: -11px;/* Anchor to the top */
+    left: -14%;  /* Start from the left edge */
+    height: 95%; /* Match original height */
+    overflow: auto; /* Enable scrolling for overflow */
+    padding: 20px;
+    width: 108%;
+    margin-top: 76px;  
+    margin-left: 260px; /* Retain original padding */
+    background-color: #d6d5d5; /* Light gray background */
+    transition: left 0.3s ease, width 0.3s ease;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.main-content::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari, and Opera */
+}
+
+.main-content::before,
+.main-content::after {
+    position: fixed;
+    right: 40px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    color: #000;
+    font-weight: bold;
+}
+.main-content::before {
+    margin-left: 1px;
+    top: 50px;
+}
+.main-content::after {
+    bottom: 50px;
+    margin-left: 10px;
+}
+
+.main-content.shifted {
+    left: 1px;
+    width: calc(96% - 180px);
+}
+
+/* New: Dashboard container for side-by-side layout */
+.dashboard-container {
+    display: flex; /* Horizontal flexbox */
+    gap: 20px; /* Space between map and stats */
+    flex-wrap: wrap; /* Allow items to wrap */
+    align-items: flex-start; /* Align top for consistency */
+    margin-bottom: 20px; /* Space below the container */
+    
+}
+
+/* Map styling */
+#map { 
+    height: 600px; /* As provided */
+    width: 1250px;/* As provided */
+    position: relative; /* Flow naturally in dashboard-container */
+    top: 0; 
+    left: 0; /* Reset left */
+    border-radius: 20px; 
+}
+
+/* Stats section */
+
+
+/* New: Row for Total Incidents and Responded */
+.stats-row {
+    display: flex;
+    flex-direction: row; /* Side-by-side layout */
+    gap: 20px; /* Space between Total Incidents and Responded */
+    width: 100%; /* Full width within stats */
+    justify-content: center; /* Center the stat-items */
+}
+
+/* Individual container for each stat item */
+.stat-item {
+    background: #ffffff; /* White background */
+    border-right: 4px solid #3498db; 
+    border-radius: 10px;
+    padding: 60px; /* Inner padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    height: 170px; /* Adjust to content */
+    max-width: 290px; /* As provided */
+    width: 650px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Chart container within stat-item */
+.chart-container {
+    background: #ffffff; 
+    border-right: 4px solid #3498db; 
+    margin-top: 20px; /* Space below the map/stats row */
+    width: 100%; /* Full width to match map/stats row */
+    height: 420px; /* As provided, adjusted to max-height */
+    border-radius: 10px;
+    padding: 20px;
+    
+    
+}
+#alertsPerMonthChart {
+        width: 40% !important;
+        height: 70% !important;
+        
+        transition: transform 0.3s ease;
+        
+    }
+#alertsPerMonthChart:hoover {
+    background-color: #66c2ff;
+    cursor: pointer;
+    transform: scale(1.05); /* Slight zoom in on hover (5% scale up) */
+
+}
+/* HEATMAP LEGEND */
+.prediction-charts-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: -10px;
+        margin: 50px auto;
+        max-width: 1700px;
+        max-height: 1500px;
+        padding: 0 20px;
+    }
+
+    .chart-box {
+        border-radius: 20px;
+        padding: 25px;
+        height: 480px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chart-title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        flex-shrink: 0;
+    }
+
+.alert-status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.alert-status.status-pending {
+    background-color: #e74c3c; /* Red for pending */
+}
+
+.alert-status.status-responded {
+    background-color: #27ae60; /* Green for responded */
+}
+
+.alert-status.status-expired {
+    background-color: #95a5a6; /* Grey for expired */
+}
+
+.dropdown-emergency {
+    width: 100%; 
+    padding: 10px; 
+    margin: 5px 0; 
+    box-sizing: border-box; 
+    background-color: #66c2ff; 
+    border: 1px solid #000000ff; 
+    border-radius: 4px; 
+    text-align: center;
+    cursor: pointer;
+}
+
+.dropdown-emergency:hover {
+    transform: scale(1.05);
+}
+.dropdown-hospital {
+    width: 100%; 
+    padding: 10px; 
+    margin: 5px 0; 
+    box-sizing: border-box; 
+    background-color: #66c2ff; 
+    border: 1px solid #000000ff; 
+    border-radius: 4px; 
+    text-align: center;
+    cursor: pointer;
+}
+
+.dropdown-hospital:hover {
+    transform: scale(1.05);
+}
+.submit-emergency {
+    background-color: #66c2ff;
+    border-color: 1px solid #000000ff;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0;
+    width: 100%; 
+    box-sizing: border-box;
+    font-size: 17px;
+}
+
+.submit-emergency:hover {
+    transform: scale(1.05);
+}
+
+/* Ensure p elements have no extra margins */
+.stats p {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #000000;
+    width: 100%; /* Full width to ensure centering */
+    margin: 0; /* Remove default margins */
+    top: 20px
+}
+
+/* Chart container h4 */
+.stats .chart-container h4 {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 10px;
+    text-align: center;
+    
+}
+
+/* Ensure canvas fits within stat-item */
+canvas {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto; /* Center within stat-item */
+    background: #fff;
+    border-radius: 5px;
+}
+
+/* Rest of the CSS remains unchanged */
+
+.incident-number {
+    position: absolute;
+    top: -40px; /* Offset upward to "sit on top" of the label */
+    
+    left: 50%;
+    transform: translateX(-50%); 
+    color: rgb(0, 0, 0);
+    font-size: 28px; /* Larger and bold for emphasis */
+    font-weight: bold;
+    padding: -16px 10px;
+    border-radius: 50%; /* Circular badge for visual pop */
+    min-width: 35px; /* Ensures "0" looks balanced */
+    text-align: center;
+}
+
+.alerts {
+    margin-bottom: 20px;
+}
+
+.alert-container {
+    height: 150px;
+    max-width: 60%; 
+    overflow-y: auto; 
+    position: relative;
+    left: -10px;
+    top: 20px;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 15px;
+}
+
+.alert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    width: 132%;
+    margin-right: -160px;
+    color: #000000;
+    row-gap: 75px; /* Vertical spacing */
+    column-gap: 88px;
+}
+
+.alert-container .p6 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 5px 0;
+    color: #000000;
+}
+
+.alert-container img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.filters {
+    background-color: #02CABA;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.filters .f1 {
+    background-color: #02CABA;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.filters .f2 {
+    background-color: #02CABA;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.filters select {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.heatmap-layer {
+    opacity: 0.7; /* Slightly transparent for visibility over map */
+    z-index: 400; /* Ensure it overlays other map elements but under markers */
+    transition: opacity 0.3s ease;
+}
+
+.heatmap-layer:hover {
+    opacity: 0.9; /* Slightly more opaque on hover for interactivity */
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.8); }
+    70% { box-shadow: 0 0 0 20px rgba(231, 76, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+}
+
+@media (max-width: 1440px) {
+    .main-content {
+        position: fixed; /* Fix the element to the viewport */
+        top: -9px; /* Anchor to the top */
+        left: -14%; /* Start from the left edge */
+        height: 95%; /* Match original height */
+        overflow: auto; /* Enable scrolling for overflow */
+        padding: 20px;
+        width: 108%;
+        margin-top: 73px;  
+        margin-left: 202px; /* Retain original padding */
+        background-color: #d6d5d5; /* Light gray background */
+        transition: left 0.3s ease, width 0.3s ease;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .main-content::-webkit-scrollbar {
+        display: none;             /* Chrome, Safari, and Opera */
+    }
+
+    .main-content::before,
+    .main-content::after {
+        position: fixed;
+        right: 40px;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        color: #000;
+        font-weight: bold;
+    }
+    .main-content::before {
+        margin-left: 1px;
+        top: 50px;
+    }
+    .main-content::after {
+        bottom: 50px;
+        margin-left: 50px;
+    }
+
+    .main-content.shifted {
+        left: 21px;
+        width: calc(99% - 170px);
+    }
+
+    .sidebar {
+        width: 250px;
+        position: fixed;
+        height: 95%;
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        top: 63px;
+    }
+    /* New: Dashboard container for side-by-side layout */
+    .dashboard-container {
+        display: flex; /* Horizontal flexbox */
+        gap: 20px; /* Space between map and stats */
+        align-items: flex-start; /* Align top for consistency */
+        margin-bottom: 20px; /* Space below the container */
+        
+    }
+
+    /* Map styling */
+    #map { 
+        height: 705px; /* As provided */
+        width: 700px; /* As provided */
+        position: relative; /* Flow naturally in dashboard-container */
+        top: 0; 
+        left: 0; /* Reset left */
+        border-radius: 20px; 
+    }
+
+    /* Stats section */
+
+
+    /* New: Row for Total Incidents and Responded */
+    .stats-row {
+        display: flex;
+        flex-direction: row; /* Side-by-side layout */
+        gap: 15px; /* Space between Total Incidents and Responded */
+        width: 100%; /* Full width within stats */
+        justify-content: center; /* Center the stat-items */
+    }
+
+    /* Individual container for each stat item */
+    .stat-item {
+        background: #ffffff; /* White background */
+        border-right: 4px solid #3498db; 
+        border-radius: 10px;
+        padding: 60px; /* Inner padding */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        height: 170px; /* Adjust to content */
+        max-width: 240px; /* As provided */
+        width: 700px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-right: 150px;
+    }
+
+
+    /* Chart container within stat-item */
+    .chart-container {
+        background: #ffffff; 
+        border-right: 4px solid #3498db; 
+        margin-top: 20px; /* Remove extra margins */
+        width: 87%; /* Full width within stat-item */
+        height: 515px; /* As provided, adjusted to max-height */
+        border-radius: 10px;
+        margin-left: 3px;
+    }
+    #alertsPerMonthChart {
+            width: 40% !important;
+            height: 80% !important;
+            top: 10px;
+            transition: transform 0.3s ease;
+            
+        }
+}

@@ -1,0 +1,661 @@
+<script>
+        let menuData = {
+            'Fire Incident': {
+                'Fire Cause': [
+                    'Electrical ignition caused by loose connection', 'Electrical ignition caused by overloading',  'Electrical ignition due to pinched wire',
+                    'Electrical ignition caused by arcing', 'Overheated industrial machinery', 'Sparks from machinery', 'Overheated home appliances', 'Electrical post fire to structural fire',
+                    'Transformer pole fire to structural fire', 'Open flame from cooking (LPG / gas stove, firewood)', 'Open flame from unattended lighted candle',
+                    'Open flame from kerosene lamp (gasera) / lighting torch (sulo)', 'Open flame from rubbish fire / bonfire to structural fire',
+                    'Open flame from farmland / agricultural land clearing operation', 'Open flame from kaingin (slash and burn)',
+                    'Ignition caused by firecracker explosion',
+                    'Ignition caused by fireworks / pyrotechnics explosion',
+                    'Ignition caused by bomb explosion',
+                    'Spontaneous combustion of chemicals',
+                    'Spontaneous combustion of solid materials',
+                    'Intentional fire by use of incendiary device or mechanism',
+                    'Intentional fire by use of flammable liquid',
+                    'Intentional fire by use of open flame (matchstick or lighter or light torch)',
+                    'Ignition of material caused by welding slags',
+                    'Ignition of materials caused by acetylene / other hot works',
+                    'LPG explosion caused by defective tank',
+                    'LPG explosion caused by defective hose line',
+                    'LPG explosion caused by defective regulator',
+                    'LPG explosion caused by defective stove',
+                    'LPG explosion caused by static electricity or spark',
+                    'Fire caused by lightning',
+                    'Ignition of materials from ember / flying ember or alipato',
+                    'Smoking (lighted cigarette, cigar or pipe)',
+                    'Children playing matchstick or lighter',
+                    'Battery short circuit or battery explosion',
+                    'Dust explosion',
+                    'Magnified / amplified sun rays',
+                    'Overheated engine (motor vehicles)',
+                    'Sky lantern',
+                    'Fire incident under investigation (on process)',
+                    'Undetermined fire cause (on pending investigation)'
+                ],
+                'Occupancy Type': [
+                    'Assembly', 'Educational', 'Day-Care', 'Health Care',
+                    'Detention & Correctional / Institutional', 'Residential',
+                    'Mercantile', 'Business', 'Industrial', 'Storage',
+                    'Mixed Occupancies', 'Miscellaneous Occupancies'
+                ],
+                'Class': {
+                    'CLASS A': 'Ordinary Combustibles\n(Wood, paper, cloth, plastic, rubber, trash, and other common combustible materials. Extinguishing Method: Water, foam, dry chemical.)',
+                    'CLASS B': 'Flammable Liquids & Gases\n(Gasoline, diesel, alcohol, paints, solvents, kerosene, LPG, acetylene, etc. Extinguishing Method: Foam, dry chemical (ABC/BC), CO2. Do NOT use water - it spreads the flammable liquid.)',
+                    'CLASS C': 'Energized Electrical Equipment\n(Electrical panels, wirings, appliances, transformers, computers, breakers. Extinguishing Method: Dry chemical, CO2.)',
+                    'CLASS D': 'Combustible Metals\n(Magnesium, titanium, sodium, potassium, zirconium, lithium. Extinguishing Method: Special Class D dry powder extinguishers. Do NOT use water - it reacts violently.)',
+                    'CLASS K (or Class F)': 'Cooking Oils & Fats\n(Hot oils and fats from deep fryers, lard, shortening, grease.)'
+                }
+            },
+
+        };
+
+        window.activeMarkers = window.activeMarkers || {};
+
+        const liveAlerts = new Map();
+        const recentAlerts = new Map();
+        const alertElements = new Map();
+
+
+        function scrollToCharts() {
+            const chartsSection = document.querySelector('.prediction-charts-grid');
+            if (chartsSection) {
+                chartsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function moveToRecent(alertId) {
+            if (!liveAlerts.has(alertId)) return;
+            const { element } = liveAlerts.get(alertId);
+            liveAlerts.delete(alertId);
+            recentAlerts.set(alertId, { element, timestamp: Date.now() });
+
+            const statusDiv = element.querySelector('.alert-status');
+            statusDiv.textContent = 'RESPONDED';
+            statusDiv.className = 'alert-status status-expired'; // Green
+
+            document.getElementById('recent-alert-container')
+                    .insertBefore(element, document.getElementById('recent-alert-container').firstChild);
+        }
+
+        // Tab switching
+        document.querySelectorAll('.alert-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.alert-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab + '-alerts-tab').classList.add('active');
+            });
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('shifted');
+        }
+
+        let fireYearlyChart = null;
+            let fireMonthlyChart = null;
+            let fireJulDecChart = null;
+
+            function random(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            function parsePrediction(full, monthly, julDec) {
+                const fullMatch = full.match(/(\d+\.\d+)%/);
+                const monthlyMatch = monthly.match(/(\d+\.\d+)%/);
+                const julDecMatch = julDec.match(/(\d+\.\d+)%/);
+                return {
+                    full: fullMatch ? parseFloat(fullMatch[1]) : 50,
+                    monthly: monthlyMatch ? parseFloat(monthlyMatch[1]) : 60,
+                    julDec: julDecMatch ? parseFloat(julDecMatch[1]) : 70
+                };
+        }
+
+            function updateAllCharts(data) {
+                const fullText = data.full_year || "2023 Full Year: 50.0% Risk";
+                const monthlyText = data.monthly || "2023 Monthly: 60.0% Risk";
+                const julDecText = data.jul_dec || "July-Dec 2023: 70.0% Risk";
+                const { full, monthly, julDec } = parsePrediction(fullText, monthlyText, julDecText);
+
+                const full2023Count = Math.round((full / 100) * 150);
+                const monthly2023Count = Math.round((monthly / 100) * 150);
+                const julDec2023Count = Math.round((julDec / 100) * 90);
+
+                // ROAD ACCIDENT CHARTS
+                if (yearlyPredictionChart) {
+                    yearlyPredictionChart.data.datasets[0].data[3] = full2023Count;
+                    yearlyPredictionChart.options.plugins.title.text = fullText;
+                    yearlyPredictionChart.update('active');
+                }
+
+                if (monthlyComparisonChart) {
+                    const base2022 = [28,32,35,30,40,38,42,45,41,36,33,30];
+                    const monthly2023 = base2022.map(v => {
+                        const ratio = monthly2023Count / 92;
+                        const variation = random(-12, 15);
+                        return Math.max(0, Math.round(v * ratio + variation));
+                    });
+                    monthlyComparisonChart.data.datasets[1].data = monthly2023;
+                    monthlyComparisonChart.options.plugins.title.text = monthlyText;
+                    monthlyComparisonChart.update('active');
+                }
+
+                if (julDecChart) {
+                    const baseJulDec2022 = [42,45,41,36,33,30];
+                    const forecastJulDec = baseJulDec2022.map(v => {
+                        const ratio = julDec2023Count / 75;
+                        const variation = random(-15, 18);
+                        return Math.max(0, Math.round(v * ratio + variation));
+                    });
+                    julDecChart.data.datasets[1].data = [null,null,null,null,null,null,...forecastJulDec];
+                    julDecChart.options.plugins.title.text = julDecText;
+                    julDecChart.update('active');
+                }
+
+                // FIRE INCIDENT CHARTS (same data, same movement)
+                if (fireYearlyChart) {
+                    fireYearlyChart.data.datasets[0].data[3] = full2023Count;
+                    fireYearlyChart.options.plugins.title.text = `Fire - ${fullText}`;
+                    fireYearlyChart.update('active');
+                }
+
+                if (fireMonthlyChart) {
+                    const base2022Fire = [15,18,22,16,25,20,28,30,26,22,19,17];  // Example fire data
+                    const fireMonthly2023 = base2022Fire.map(v => {
+                        const ratio = monthly2023Count / 92;
+                        const variation = random(-10, 14);
+                        return Math.max(0, Math.round(v * ratio + variation));
+                    });
+                    fireMonthlyChart.data.datasets[1].data = fireMonthly2023;
+                    fireMonthlyChart.options.plugins.title.text = `Fire - ${monthlyText}`;
+                    fireMonthlyChart.update('active');
+                }
+
+                if (fireJulDecChart) {
+                    const baseJulDecFire = [28,30,26,22,19,17];
+                    const fireJulDec2023 = baseJulDecFire.map(v => {
+                        const ratio = julDec2023Count / 75;
+                        const variation = random(-12, 16);
+                        return Math.max(0, Math.round(v * ratio + variation));
+                    });
+                    fireJulDecChart.data.datasets[1].data = [null,null,null,null,null,null,...fireJulDec2023];
+                    fireJulDecChart.options.plugins.title.text = `Fire - ${julDecText}`;
+                    fireJulDecChart.update('active');
+                }
+
+                document.querySelector('.prediction-charts-grid')?.scrollIntoView({ behavior: 'smooth' });
+            }
+
+        function initializeFireCharts() {
+                fireYearlyChart = new Chart('fireYearlyChart', {
+                    type: 'line',
+                    data: {
+                        labels: ['2020','2021','2022','2023 (Predicted)'],
+                        datasets: [{
+                            label: 'Fire Incidents',
+                            data: [20,35,48,48],
+                            borderColor: '#e67e22',
+                            backgroundColor: 'rgba(230,126,34,0.2)',
+                            borderWidth: 7,
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        animation: { duration: 1800 },
+                        plugins: { title: { display: true, text: 'Fire - 2023 Full Year Risk: Loading...', font: { size: 26 } } }
+                    }
+                });
+
+                fireMonthlyChart = new Chart('fireMonthlyChart', {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                        datasets: [
+                            { label: '2022 Actual', data: [15,18,22,16,25,20,28,30,26,22,19,17], borderColor: '#3498db', fill: false },
+                            { label: '2023 Forecast', data: [16,19,23,17,26,21,29,31,27,23,20,18], borderColor: '#e67e22', backgroundColor: 'rgba(230,126,34,0.1)', fill: true }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { title: { display: true, text: 'Fire - 2023 Monthly Risk: Loading...', font: { size: 26 } } }
+                    }
+                });
+
+                fireJulDecChart = new Chart('fireJulDecChart', {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                        datasets: [
+                            { label: '2022 Jul–Dec', data: [null,null,null,null,null,null,28,30,26,22,19,17], borderColor: '#3498db', fill: false },
+                            { label: '2023 Jul–Dec Forecast', data: [null,null,null,null,null,null,29,32,28,24,21,19], borderColor: '#e67e22', backgroundColor: 'rgba(230,126,34,0.2)', fill: true }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { title: { display: true, text: 'Fire - July–Dec 2023 Risk: Loading...', font: { size: 26 } } }
+                    }
+                });
+            }
+
+            // Initialize both
+            function initAllCharts() {
+                initializeFireCharts();   // Fire Incident
+
+
+                fetch('/get_latest_fire_prediction')
+                    .then(r => r.json())
+                    .then(d => {
+                        const pred = d.prediction || "Fire 2023 Full Year: 50.0% Risk | Fire 2023 Monthly: 60.0% Risk | Fire July-Dec 2023: 70.0% Risk";
+                        const [full, monthly, jul] = pred.split('|').map(s => s.trim());
+                        updateFireCharts({ fire_full: full, fire_monthly: monthly, fire_jul_dec: jul });
+                    });
+            }
+
+            // LIVE UPDATE FROM SERVER
+            socket.on('update_prediction_charts', updateAllCharts);
+
+            initAllCharts();
+        
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const lat = {{ lat_coord|default(14.0549) }};
+            const lon = {{ lon_coord|default(121.3013) }};
+            const mapboxToken = 'pk.eyJ1Ijoia3VtaXRva2lydSIsImEiOiJjbWNvZXpkdDQwNmdvMnNyMnNtNGw5NGI1In0.3Y9z5y4saOL76Eb5c-o0UQ';
+            const tileLayerUrl = `https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`;
+
+            const bfpMap = L.map('map').setView([lat, lon], 16);
+
+            var satellite = L.tileLayer(tileLayerUrl, {
+                attribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                tileSize: 512,
+                zoomOffset: -1
+            });
+
+            var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            });
+
+            satellite.addTo(bfpMap);
+
+            var baseLayers = {
+                "Satellite with Labels": satellite,
+                "OpenStreetMap": osm
+            };
+            L.control.layers(baseLayers).addTo(bfpMap);
+
+            const socket = io('https://now-alert-vn0d.onrender.com', { transports: ['websocket'] });
+            const alertElements = new Map();
+
+            const ctx = document.getElementById('alertsPerMonthChart');
+            if (!ctx) {
+                console.error('Canvas element #alertsPerMonthChart not found');
+            } else {
+                const chartCtx = ctx.getContext('2d');
+                if (!chartCtx) {
+                    console.error('Failed to get 2D context for #alertsPerMonthChart');
+                } else {
+                    let alertsPerMonthChart = new Chart(chartCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                            datasets: [{
+                                data: [
+                                    {{ alerts_per_month['January']|default(0) }},
+                                    {{ alerts_per_month['February']|default(0) }},
+                                    {{ alerts_per_month['March']|default(0) }},
+                                    {{ alerts_per_month['April']|default(0) }},
+                                    {{ alerts_per_month['May']|default(0) }},
+                                    {{ alerts_per_month['June']|default(0) }},
+                                    {{ alerts_per_month['July']|default(0) }},
+                                    {{ alerts_per_month['August']|default(0) }},
+                                    {{ alerts_per_month['September']|default(0) }},
+                                    {{ alerts_per_month['October']|default(0) }},
+                                    {{ alerts_per_month['November']|default(0) }},
+                                    {{ alerts_per_month['December']|default(0) }}
+                                ],
+                                backgroundColor: [
+                                    '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40',
+                                    '#FF6F61', '#6B7280', '#F4A261', '#2A9D8F', '#E76F51', '#D00000'
+                                ],
+                                borderColor: ['#000000ff', '#000000ff', '#000000ff', '#020202ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            aspectRatio: 1.5,
+                            plugins: {
+                                legend: {
+                                    display: false,
+                                    position: 'bottom',
+                                    labels: {
+                                        color: '#000000',
+                                        font: { size: 17 },
+                                        generateLabels: function(chart) {
+                                            const labels = chart.data.labels;
+                                            return labels.map((label, index) => ({
+                                                text: label,
+                                                fillStyle: chart.data.datasets[0].backgroundColor[index],
+                                                strokeStyle: chart.data.datasets[0].borderColor[index],
+                                                lineWidth: chart.data.datasets[0].borderWidth,
+                                                hidden: false,
+                                                index: index,
+                                                datasetIndex: 0
+                                            }));
+                                        },
+                                        boxWidth: 20,
+                                        padding: 10,
+                                        usePointStyle: true
+                                    },
+                                    onClick: function(e, legendItem, legend) {
+                                        const index = legendItem.index;
+                                        const ci = legend.chart;
+                                        const meta = ci.getDatasetMeta(0);
+                                        meta.data[index].hidden = !meta.data[index].hidden;
+                                        ci.update();
+                                    }
+                                },
+                                layout: {
+                                    padding: {
+                                        bottom: 10
+                                    }
+                                }
+                            }
+                        }
+                    });
+
+                    const twoRowLegendPlugin = {
+                        id: 'twoRowLegend',
+                        afterUpdate(chart) {
+                            const legend = chart.options.plugins.legend;
+                            if (legend && legend.position === 'bottom') {
+                                const legendElement = document.querySelector(`#${chart.canvas.id}-legend`);
+                                if (!legendElement) {
+                                    const container = document.createElement('div');
+                                    container.id = `${chart.canvas.id}-legend`;
+                                    container.className = 'chart-legend-two-rows';
+                                    chart.canvas.parentNode.appendChild(container);
+                                    
+                                    const labels = chart.data.labels;
+                                    const firstRow = labels.slice(0, 6); // January to June
+                                    const secondRow = labels.slice(6, 12); // July to December
+                                    
+                                    [firstRow, secondRow].forEach((row, rowIndex) => {
+                                        const rowDiv = document.createElement('div');
+                                        rowDiv.style.display = 'flex';
+                                        rowDiv.style.justifyContent = 'center';
+                                        rowDiv.style.marginBottom = rowIndex === 0 ? '10px' : '20px';
+                                        rowDiv.style.gap = '15px'; // optional: control space between legend items
+                                        
+                                        
+                                        row.forEach((label, index) => {
+                                            const actualIndex = rowIndex * 6 + index;
+                                            const item = document.createElement('div');
+                                            item.className = 'chart-legend-item';
+                                            item.innerHTML = `
+                                                <span style="
+                                                    display: inline-block;
+                                                    width: 18px;
+                                                    height: 18px;
+                                                    background-color: ${chart.data.datasets[0].backgroundColor[actualIndex]};
+                                                    margin-right: 3px; 
+                                                    vertical-align: middle;
+                                                "></span>
+                                                <span style="color: #000000; font-size: 17px;">${label}</span>
+                                            `;
+                                            item.onclick = () => {
+                                                const meta = chart.getDatasetMeta(0);
+                                                meta.data[actualIndex].hidden = !meta.data[actualIndex].hidden;
+                                                chart.update();
+                                            };
+                                            rowDiv.appendChild(item);
+                                        });
+                                        
+                                        container.appendChild(rowDiv);
+                                    });
+                                }
+                            }
+                        }
+                    };
+
+                    Chart.register(twoRowLegendPlugin);
+
+                    // Fallback if data is empty
+                    if (alertsPerMonthChart.data.datasets[0].data.every(value => value === 0)) {
+                        console.warn('Chart initialized with zero data. Check database or server logs.');
+                    }
+
+                    socket.on('update_alerts_per_month', (data) => {
+                        console.log('Received update_alerts_per_month:', data);
+                        alertsPerMonthChart.data.datasets[0].data = [
+                            data['January'] || 0,
+                            data['February'] || 0,
+                            data['March'] || 0,
+                            data['April'] || 0,
+                            data['May'] || 0,
+                            data['June'] || 0,
+                            data['July'] || 0,
+                            data['August'] || 0,
+                            data['September'] || 0,
+                            data['October'] || 0,
+                            data['November'] || 0,
+                            data['December'] || 0
+                        ];
+                        alertsPerMonthChart.update();
+                    });
+                }
+            }
+
+            // Fetch menu.txt for dropdown options
+            
+
+            socket.on('connect', () => {
+                console.log('Connected to server');
+                socket.emit('register_role', { role: 'bfp', municipality: '{{ municipality }}'.toLowerCase() });
+            });
+
+            socket.on('connect_error', (error) => {
+                console.error('Connection error:', error);
+            });
+
+            socket.on('redirected_alert', (data) => {
+                if (data.target_role === 'bfp' || data.emergency_type === 'Fire Incident') {
+                    updateUIWithAlert(data);
+                    notifyAlert(data);
+                }
+            });
+
+            socket.on('pnp_redirect_alert', (data) => {
+                if (data.emergency_type === 'Fire Incident') {
+                    updateUIWithAlert(data);
+                    notifyAlert(data);
+                }
+            });
+
+            socket.on('update_map', (data) => {
+                const lat = data.lat || {{ lat_coord|default(14.0549) }};
+                const lon = data.lon || {{ lon_coord|default(121.3013) }};
+
+                if (window.activeMarkers[data.alert_id]) {
+                    bfpMap.removeLayer(window.activeMarkers[data.alert_id]);
+                }
+
+                const marker = L.marker([lat, lon]).addTo(bfpMap)
+                    .bindPopup(`Fire Incident at ${data.barangay}`)
+                    .openPopup();
+
+                window.activeMarkers[data.alert_id] = marker;
+                bfpMap.setView([lat, lon], 15);
+                document.getElementById('map-coordinates').textContent = `${lat}, ${lon}`;
+            });
+
+            socket.on('fire_response_submitted', (data) => {
+                console.log('Response submitted:', data);
+                const alertItem = alertElements.get(data.alert_id);
+                if (alertItem) {
+                    const predictionDiv = alertItem.querySelector('.prediction');
+                    const predictionText = data.prediction || 'N/A';
+                    let formattedPrediction = 'N/A';
+                    if (predictionText !== 'N/A' && predictionText !== 'prediction_error') {
+                        const match = predictionText.match(/(\d+\.\d+)% chance in year \d+/);
+                        if (match) {
+                            const percentage = match[1];
+                            const yearRanges = ['A Week', '1-2 Weeks', '2-3 Weeks', '4-5 Weeks', 'A Month', '1-2 Months', '2-3 Months', '4-5 Months'];
+                            const randomRange = yearRanges[Math.floor(Math.random() * yearRanges.length)];
+                            formattedPrediction = `There will be a ${percentage}% chance of Fire Incident Again Within ${randomRange}`;
+                        } else {
+                            formattedPrediction = predictionText;
+                        }
+                    }
+                    predictionDiv.textContent = `Prediction: ${formattedPrediction}`;
+                    predictionDiv.style.display = 'block';
+                    predictionDiv.style.fontSize = '18px';
+                    predictionDiv.style.color = 'black';
+                }
+            });
+
+            
+
+            function parseMenuText(text) {
+                const sections = text.split('#').filter(s => s.trim());
+                const menu = {};
+                sections.forEach(section => {
+                    const lines = section.trim().split('\n');
+                    const sectionName = lines[0].trim();
+                    const options = {};
+                    lines.slice(1).forEach(line => {
+                        const [key, values] = line.split(':');
+                        options[key.trim()] = values.split(',').map(v => v.trim());
+                    });
+                    menu[sectionName] = options;
+                });
+                return menu;
+            }
+
+            function updateUIWithAlert(data) {
+                const container = document.getElementById('live-alert-container');
+                const alertItem = document.createElement('div');
+                alertItem.className = 'alert-item';
+                alertItem.dataset.alertId = data.alert_id;
+
+                alertItem.innerHTML = `
+                    <div class="alert-status status-pending">PENDING FIRE INCIDENT</div>
+                    <div><strong>From:</strong> ${data.barangay}</div>
+                    <div><strong>Resident:</strong> ${data.resident_barangay || data.barangay}</div>
+                    <div><strong>Time:</strong> ${new Date().toLocaleTimeString()}</div>
+                    ${data.image ? `<img src="data:image/jpeg;base64,${data.image}" class="clickable-img" />` : ''}
+                    <div class="response-form"></div>
+                    <div class="prediction" style="display:none;">Prediction: N/A</div>
+                `;
+
+                if (data.image) {
+                    alertItem.querySelector('img').onclick = () => {
+                        document.getElementById('modal-image').src = `data:image/jpeg;base64,${data.image}`;
+                        document.getElementById('image-modal').style.display = 'flex';
+                    };
+                }
+
+                alertItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                const responseForm = alertItem.querySelector('.response-form');
+                responseForm.style.display = 'block';
+
+                Object.keys(menuData['Fire Incident']).forEach(category => {
+                    const select = document.createElement('select');
+                    select.className = 'dropdown-emergency';
+                    select.name = category.toLowerCase().replace(/\s+/g, '_');
+
+                    const placeholder = document.createElement('option');
+                    placeholder.text = `Select ${category}`;
+                    placeholder.value = '';
+                    placeholder.disabled = true;
+                    placeholder.selected = true;
+                    select.appendChild(placeholder);
+
+                    let options = menuData['Fire Incident'][category];
+                    if (typeof options === 'object' && !Array.isArray(options)) {
+                        options = Object.keys(options);
+                    }
+
+                    options.forEach(opt => {
+                        const option = document.createElement('option');
+                        option.value = opt;
+                        option.textContent = typeof opt === 'string' && opt.includes('\n') ? opt.split('\n')[0] : opt;
+                        select.appendChild(option);
+                    });
+                    responseForm.appendChild(select);
+                });
+
+                const submitBtn = document.createElement('button');
+                submitBtn.textContent = 'Submit Response';
+                submitBtn.className = 'submit-emergency';
+                submitBtn.onclick = () => {
+                    const formData = {
+                        alert_id: data.alert_id,
+                        emergency_type: 'Fire Incident',
+                        municipality: '{{ municipality }}'
+                    };
+
+                    responseForm.querySelectorAll('select').forEach(select => {
+                        formData[select.name] = select.value;
+                    });
+
+                    socket.emit('fire_response_submitted', formData);
+
+                    const statusDiv = alertItem.querySelector('.alert-status');
+                    statusDiv.textContent = 'RESPONDED';
+                    statusDiv.className = 'alert-status status-responded';
+
+                    responseForm.style.display = 'none';
+
+                    const predictionDiv = alertItem.querySelector('.prediction');
+                    predictionDiv.style.display = 'block';
+                    predictionDiv.innerHTML = '<em>Calculating prediction...</em>';
+
+                    liveAlerts.set(data.alert_id, { element: alertItem });
+                    setTimeout(() => moveToRecent(data.alert_id), 60000);
+
+                    const chartsGrid = document.querySelector('.prediction-charts-grid');
+                    if (chartsGrid) {
+                        chartsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                };
+                responseForm.appendChild(submitBtn);
+
+                container.appendChild(alertItem);
+                alertElements.set(data.alert_id, alertItem);
+
+                
+            }
+
+            socket.on('fire_alert', (data) => {
+                updateUIWithAlert(data);
+            });
+
+            function notifyAlert(data) {
+                const notification = document.getElementById('notification');
+                notification.textContent = `New Alert: ${data.emergency_type || 'Unknown'} at ${data.barangay}`;
+                setTimeout(() => notification.textContent = '', 5000);
+            }
+
+            document.getElementById('recent-date-filter').addEventListener('change', (e) => {
+                const val = e.target.value;
+                document.querySelectorAll('#recent-alert-container .alert-item').forEach(item => {
+                    const timeText = item.querySelector('div:nth-child(4)').textContent;
+                    item.style.display = (!val || timeText.includes(val)) ? 'block' : 'none';
+                });
+            });
+        });
+    </script>

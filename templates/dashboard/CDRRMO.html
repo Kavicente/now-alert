@@ -1,0 +1,615 @@
+<script>
+        window.activeMarkers = window.activeMarkers || {};
+
+        let menuData = {
+            'Road Accident': {
+                'Road Accident Cause': ['Head-on Collision', 'Rear-end Collision', 'Side-impact Collision', 'Single Vehicle Accident', 'Pedestrian Accident'],
+                'Road Accident Type': ['Overspeeding', 'Distracted Driving', 'Drunk Driving', 'Reckless Driving', 'Fatigue', 'Inexperience', 'Mechanical Failure', 'Poor Maintenance', 'Overloading'],
+                'Weather Conditions': ['Sunny', 'Rainy', 'Foggy', 'Cloudy', 'Stormy'],
+                'Road Conditions': ['Dry', 'Wet', 'Icy', 'Potholes', 'Gravel'],
+                'Vehicle Types': ['Car', 'Motorcycle', 'Truck', 'Bus', 'Bicycle', 'Car and Motorcycle', 'Car and Bus', 'Car and Truck', 'Car and Bicycle', 'Motorcycle and Car', 'Motorcycle and Bus', 'Motorcycle and Truck', 'Motorcycle and Bicycle', 'Truck and Car', 'Truck and Motorcycle', 'Truck and Bus', 'Truck and Bicycle', 'Bus and Car', 'Bus and Motorcycle', 'Bus and Truck', 'Bus and Bicycle', 'Bicycle and Car', 'Bicycle and Motorcycle', 'Bicycle and Bus', 'Bicycle and Truck'],
+                'Driver Ages': ['0-17', '18-25', '26-35', '36-45', '46-60', '61+'],
+                'Driver Gender': ['Male', 'Female']
+            },
+        };
+
+        let totalIncidents = 0;  // Start from 0 or load from server if needed
+
+        function updateTotalIncidents() {
+            const counterElement = document.getElementById('total-incidents');
+            if (counterElement) {
+                totalIncidents += 1;
+                counterElement.textContent = totalIncidents;
+            }
+        }
+        document.querySelectorAll('.alert-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.alert-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab + '-alerts-tab').classList.add('active');
+            });
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('shifted');
+        }
+
+        function moveToRecent(alertId) {
+            if (!liveAlerts.has(alertId)) return;
+            const { element } = liveAlerts.get(alertId);
+            liveAlerts.delete(alertId);
+            recentAlerts.set(alertId, { element, timestamp: Date.now() });
+            
+            element.querySelector('div:first-child').textContent = 'EXPIRED ALERT';
+            document.getElementById('recent-alert-container')
+                    .insertBefore(element, document.getElementById('recent-alert-container').firstChild);
+        }
+
+        
+
+        let yearlyPredictionChart = null;
+        let monthlyComparisonChart = null;
+        let julDecChart = null;
+
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        function parsePrediction(full, monthly, julDec) {
+            const fullMatch = full.match(/(\d+\.\d+)%/);
+            const monthlyMatch = monthly.match(/(\d+\.\d+)%/);
+            const julDecMatch = julDec.match(/(\d+\.\d+)%/);
+            return {
+                full: fullMatch ? parseFloat(fullMatch[1]) : 50,
+                monthly: monthlyMatch ? parseFloat(monthlyMatch[1]) : 60,
+                julDec: julDecMatch ? parseFloat(julDecMatch[1]) : 70
+            };
+        }
+
+        function updateAllCharts(data) {
+            const fullText = data.full_year || "2023 Full Year: 50.0% Risk";
+            const monthlyText = data.monthly || "2023 Monthly: 60.0% Risk";
+            const julDecText = data.jul_dec || "July-Dec 2023: 70.0% Risk";
+            const { full, monthly, julDec } = parsePrediction(fullText, monthlyText, julDecText);
+
+            const full2023Count = Math.round((full / 100) * 150);
+            const monthly2023Count = Math.round((monthly / 100) * 150);
+            const julDec2023Count = Math.round((julDec / 100) * 90);
+
+            // Chart 1: Full Year
+            if (yearlyPredictionChart) {
+                yearlyPredictionChart.data.datasets[0].data[3] = full2023Count;
+                yearlyPredictionChart.options.plugins.title.text = fullText;
+                yearlyPredictionChart.update('active');
+            }
+
+            // Chart 2: Monthly
+            if (monthlyComparisonChart) {
+                const base2022 = [28,32,35,30,40,38,42,45,41,36,33,30];
+                const monthly2023 = base2022.map(v => {
+                    const ratio = monthly2023Count / 92;
+                    const variation = random(-12, 15);
+                    return Math.max(0, Math.round(v * ratio + variation));
+                });
+                monthlyComparisonChart.data.datasets[1].data = monthly2023;
+                monthlyComparisonChart.options.plugins.title.text = monthlyText;
+                monthlyComparisonChart.update('active');
+            }
+
+            // Chart 3: July–Dec
+            if (julDecChart) {
+                const baseJulDec2022 = [42,45,41,36,33,30];
+                const forecastJulDec = baseJulDec2022.map(v => {
+                    const ratio = julDec2023Count / 75;
+                    const variation = random(-15, 18);
+                    return Math.max(0, Math.round(v * ratio + variation));
+                });
+                julDecChart.data.datasets[1].data = [null,null,null,null,null,null,...forecastJulDec];
+                julDecChart.options.plugins.title.text = julDecText;
+                julDecChart.update('active');
+            }
+
+            // Auto-scroll to charts
+            document.querySelector('.prediction-charts-grid')?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function initializeCharts() {
+            yearlyPredictionChart = new Chart('yearlyPredictionChart', {
+                type: 'line',
+                data: {
+                    labels: ['2020','2021','2022','2023 (Predicted)'],
+                    datasets: [{
+                        label: 'Road Accidents',
+                        data: [45,68,92,92],
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231,76,60,0.2)',
+                        borderWidth: 7,
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: { duration: 1800 },
+                    plugins: { title: { display: true, text: '2023 Full Year Risk: Loading...', font: { size: 26 } } }
+                }
+            });
+
+            monthlyComparisonChart = new Chart('monthlyComparisonChart', {
+                type: 'line',
+                data: {
+                    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                    datasets: [
+                        { label: '2022 Actual', data: [28,32,35,30,40,38,42,45,41,36,33,30], borderColor: '#3498db', fill: false },
+                        { label: '2023 Forecast', data: [30,28,33,32,38,40,45,48,43,38,35,32], borderColor: '#e74c3c', backgroundColor: 'rgba(231,76,60,0.1)', fill: true }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { title: { display: true, text: '2023 Monthly Risk: Loading...', font: { size: 26 } } }
+                }
+            });
+
+            julDecChart = new Chart('julDecChart', {
+                type: 'line',
+                data: {
+                    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                    datasets: [
+                        { label: '2022 Jul–Dec', data: [null,null,null,null,null,null,42,45,41,36,33,30], borderColor: '#3498db', fill: false },
+                        { label: '2023 Jul–Dec Forecast', data: [null,null,null,null,null,null,45,50,48,42,39,36], borderColor: '#e74c3c', backgroundColor: 'rgba(231,76,60,0.2)', fill: true }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { title: { display: true, text: 'July–Dec 2023 Risk: Loading...', font: { size: 26 } } }
+                }
+            });
+
+            // Initial load
+            fetch('/get_latest_prediction')
+                .then(r => r.json())
+                .then(d => {
+                    const pred = d.prediction || "2023 Full Year: 50.0% Risk | 2023 Monthly: 60.0% Risk | July-Dec 2023: 70.0% Risk";
+                    const [full, monthly, jul] = pred.split('|').map(s => s.trim());
+                    updateAllCharts({ full_year: full, monthly: monthly, jul_dec: jul });
+                });
+        }
+
+        socket.on('update_prediction_charts', updateAllCharts);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeCharts();
+            const lat = {{ lat_coord|default(14.0549) }};
+            const lon = {{ lon_coord|default(121.3013) }};
+            const mapboxToken = 'pk.eyJ1Ijoia3VtaXRva2lydSIsImEiOiJjbWNvZXpkdDQwNmdvMnNyMnNtNGw5NGI1In0.3Y9z5y4saOL76Eb5c-o0UQ';
+            const tileLayerUrl = `https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`;
+
+            const cdrrmoMap = L.map('map').setView([lat, lon], 16);
+
+            var satellite = L.tileLayer(tileLayerUrl, {
+                attribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                tileSize: 512,
+                zoomOffset: -1
+            });
+
+            var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            });
+
+            satellite.addTo(cdrrmoMap);
+
+            var baseLayers = {
+                "Satellite with Labels": satellite,
+                "OpenStreetMap": osm
+            };
+            L.control.layers(baseLayers).addTo(cdrrmoMap);
+
+
+            const socket = io('https://now-alert-vn0d.onrender.com', { transports: ['websocket'] });
+            const alertElements = new Map();
+
+            const ctx = document.getElementById('alertsPerMonthChart');
+            if (!ctx) {
+                console.error('Canvas element #alertsPerMonthChart not found');
+            } else {
+                const chartCtx = ctx.getContext('2d');
+                if (!chartCtx) {
+                    console.error('Failed to get 2D context for #alertsPerMonthChart');
+                } else {
+                    let alertsPerMonthChart = new Chart(chartCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                            datasets: [{
+                                label: 'Alerts Per Month',
+                                data: [
+                                    {{ alerts_per_month['January']|default(0) }},
+                                    {{ alerts_per_month['February']|default(0) }},
+                                    {{ alerts_per_month['March']|default(0) }},
+                                    {{ alerts_per_month['April']|default(0) }},
+                                    {{ alerts_per_month['May']|default(0) }},
+                                    {{ alerts_per_month['June']|default(0) }},
+                                    {{ alerts_per_month['July']|default(0) }},
+                                    {{ alerts_per_month['August']|default(0) }},
+                                    {{ alerts_per_month['September']|default(0) }},
+                                    {{ alerts_per_month['October']|default(0) }},
+                                    {{ alerts_per_month['November']|default(0) }},
+                                    {{ alerts_per_month['December']|default(0) }}
+                                ],
+                                backgroundColor: [
+                                    '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40',
+                                    '#FF6F61', '#6B7280', '#F4A261', '#2A9D8F', '#E76F51', '#D00000'
+                                ],
+                                borderColor: ['#080808ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff', '#000000ff'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            aspectRatio: 1.5,
+                            plugins: {
+                                legend: {
+                                    display: false, // Removed vertical legend display
+                                    position: 'bottom',
+                                    labels: {
+                                        color: '#000000',
+                                        font: { size: 17 },
+                                        generateLabels: function(chart) {
+                                            const labels = chart.data.labels;
+                                            return labels.map((label, index) => ({
+                                                text: label,
+                                                fillStyle: chart.data.datasets[0].backgroundColor[index],
+                                                strokeStyle: chart.data.datasets[0].borderColor[index],
+                                                lineWidth: chart.data.datasets[0].borderWidth,
+                                                hidden: false,
+                                                index: index,
+                                                datasetIndex: 0
+                                            }));
+                                        },
+                                        boxWidth: 20,
+                                        padding: 10,
+                                        usePointStyle: true
+                                    },
+                                    onClick: function(e, legendItem, legend) {
+                                        const index = legendItem.index;
+                                        const ci = legend.chart;
+                                        const meta = ci.getDatasetMeta(0);
+                                        meta.data[index].hidden = !meta.data[index].hidden;
+                                        ci.update();
+                                    }
+                                },
+                                layout: {
+                                    padding: {
+                                        bottom: 20
+                                    }
+                                }
+                            }
+                        }
+                    });
+
+                    const twoRowLegendPlugin = {
+                        id: 'twoRowLegend',
+                        afterUpdate(chart) {
+                            const legend = chart.options.plugins.legend;
+                            if (legend && legend.position === 'bottom') {
+                                const legendElement = document.querySelector(`#${chart.canvas.id}-legend`);
+                                if (!legendElement) {
+                                    const container = document.createElement('div');
+                                    container.id = `${chart.canvas.id}-legend`;
+                                    container.className = 'chart-legend-two-rows';
+                                    chart.canvas.parentNode.appendChild(container);
+                                    
+                                    const labels = chart.data.labels;
+                                    const firstRow = labels.slice(0, 6); // January to June
+                                    const secondRow = labels.slice(6, 12); // July to December
+                                    
+                                    [firstRow, secondRow].forEach((row, rowIndex) => {
+                                        const rowDiv = document.createElement('div');
+                                        rowDiv.style.display = 'flex';
+                                        rowDiv.style.justifyContent = 'center';
+                                        rowDiv.style.marginBottom = rowIndex === 0 ? '10px' : '20px';
+                                        rowDiv.style.gap = '15px'; 
+                                        
+                                        row.forEach((label, index) => {
+                                            const actualIndex = rowIndex * 6 + index;
+                                            const item = document.createElement('div');
+                                            item.className = 'chart-legend-item';
+                                            item.innerHTML = `
+                                                <span style="display: inline-block; width: 20px; height: 20px; background-color: ${chart.data.datasets[0].backgroundColor[actualIndex]}; margin-right: 5px; vertical-align: middle;"></span>
+                                                <span style="color: #000000; font-size: 17px;">${label}</span>
+                                            `;
+                                            item.onclick = () => {
+                                                const meta = chart.getDatasetMeta(0);
+                                                meta.data[actualIndex].hidden = !meta.data[actualIndex].hidden;
+                                                chart.update();
+                                            };
+                                            rowDiv.appendChild(item);
+                                        });
+                                        
+                                        container.appendChild(rowDiv);
+                                    });
+                                }
+                            }
+                        }
+                    };
+
+                    Chart.register(twoRowLegendPlugin);
+
+                    // Fallback if data is empty
+                    if (alertsPerMonthChart.data.datasets[0].data.every(value => value === 0)) {
+                        console.warn('Chart initialized with zero data. Check database or server logs.');
+                    }
+
+                    socket.on('update_alerts_per_month', (data) => {
+                        console.log('Received update_alerts_per_month:', data);
+                        alertsPerMonthChart.data.datasets[0].data = [
+                            data['January'] || 0,
+                            data['February'] || 0,
+                            data['March'] || 0,
+                            data['April'] || 0,
+                            data['May'] || 0,
+                            data['June'] || 0,
+                            data['July'] || 0,
+                            data['August'] || 0,
+                            data['September'] || 0,
+                            data['October'] || 0,
+                            data['November'] || 0,
+                            data['December'] || 0
+                        ];
+                        alertsPerMonthChart.update();
+                    });
+                }
+            }
+
+
+            socket.on('connect', () => {
+                console.log('Connected to server');
+                socket.emit('register_role', { role: 'cdrrmo', municipality: '{{ municipality }}'.toLowerCase() });
+            });
+
+            socket.on('connect_error', (error) => {
+                console.error('Connection error:', error);
+            });
+
+            socket.on('redirected_alert', (data) => {
+                console.log('Redirected alert received:', data);
+                if (data.target_role === 'cdrrmo') {
+                    updateUIWithAlert(data);
+                    notifyAlert(data);
+
+                    const lat = data.lat || {{ lat_coord|default(14.0549) }};
+                    const lon = data.lon || {{ lon_coord|default(121.3013) }};
+
+                    if (window.activeMarkers[data.alert_id]) {
+                        cdrrmoMap.removeLayer(window.activeMarkers[data.alert_id]);
+                    }
+
+                    const marker = L.marker([lat, lon]).addTo(cdrrmoMap)
+                        .bindPopup(`Road Accident at ${data.barangay}`)
+                        .openPopup();
+
+                    window.activeMarkers[data.alert_id] = marker;
+                    cdrrmoMap.setView([lat, lon], 16);
+                    document.getElementById('map-coordinates').textContent = `${lat}, ${lon}`;
+                }
+            });
+
+            
+
+            socket.on('update_map', (data) => {
+                console.log('Update map received:', data);
+                const lat = data.lat || {{ lat_coord|default(14.0549) }};
+                const lon = data.lon || {{ lon_coord|default(121.3013) }};
+                cdrrmoMap.setView([lat, lon], 16);
+                L.marker([lat, lon]).addTo(cdrrmoMap).bindPopup(
+                    `${data.emergency_type || 'Alert'} at ${data.barangay || 'Unknown'}`
+                ).openPopup();
+                document.getElementById('map-coordinates').textContent = `${lat}, ${lon}`;
+            });
+
+            function parseMenuText(text) {
+                const sections = text.split('#').filter(s => s.trim());
+                const menu = {};
+                sections.forEach(section => {
+                    const lines = section.trim().split('\n');
+                    const sectionName = lines[0].trim();
+                    const options = {};
+                    lines.slice(1).forEach(line => {
+                        const [key, values] = line.split(':');
+                        options[key.trim()] = values.split(',').map(v => v.trim());
+                    });
+                    menu[sectionName] = options;
+                });
+                return menu;
+            }
+
+            const liveAlerts = new Map();
+
+            function updateUIWithAlert(data) {
+                const isLive = data.expired !== true;
+                const container = isLive
+                    ? document.getElementById('live-alert-container')
+                    : document.getElementById('recent-alert-container');
+
+                const alertItem = document.createElement('div');
+                alertItem.className = 'alert-item';
+                alertItem.dataset.alertId = data.alert_id;
+                alertItem.innerHTML = `
+                    <div class="alert-status status-pending">PENDING ROAD ACCIDENT</div>
+                    <div><strong>From:</strong> ${data.barangay}</div>
+                    <div><strong>Resident:</strong> ${data.resident_barangay || data.barangay}</div>
+                    <div><strong>Time:</strong> ${new Date().toLocaleTimeString()}</div>
+                    ${data.image ? `<img src="data:image/jpeg;base64,${data.image}" class="clickable-img" style="max-width:100%;height:auto;" />` : ''}
+                    <div class="response-form"></div>
+                    <div class="prediction" style="display:none;">Prediction: N/A</div>
+                `;
+
+                if (data.image) {
+                    alertItem.querySelector('img').addEventListener('click', () => {
+                        document.getElementById('modal-image').src = `data:image/jpeg;base64,${data.image}`;
+                        document.getElementById('image-modal').style.display = 'flex';
+                    });
+                }
+
+                // === DIRECTLY SHOW DROPDOWN (NO RESPOND/DECLINE) ===
+                const responseForm = alertItem.querySelector('.response-form');
+                responseForm.style.display = 'block';
+
+                Object.keys(menuData['Road Accident']).forEach(key => {
+                    const select = document.createElement('select');
+                    select.className = 'dropdown-emergency';
+                    select.name = key.toLowerCase().replace(/\s+/g, '_');
+
+                    const placeholder = document.createElement('option');
+                    placeholder.text = `Select ${key}`;
+                    placeholder.value = '';
+                    placeholder.disabled = true;
+                    placeholder.selected = true;
+                    select.appendChild(placeholder);
+
+                    menuData['Road Accident'][key].forEach(opt => {
+                        const option = document.createElement('option');
+                        option.value = opt;
+                        option.textContent = opt;
+                        select.appendChild(option);
+                    });
+
+                    responseForm.appendChild(select);
+                });
+
+                const submitBtn = document.createElement('button');
+                    submitBtn.textContent = 'Submit Response';
+                    submitBtn.className = 'submit-emergency';
+                    submitBtn.onclick = () => {
+                        const responseData = {
+                            alert_id: data.alert_id,
+                            role: 'cdrrmo',
+                            lat: data.lat,
+                            lon: data.lon,
+                            barangay: data.barangay,
+                            emergency_type: 'Road Accident',
+                            municipality: '{{ municipality }}'.toLowerCase()
+                        };
+
+                        responseForm.querySelectorAll('select').forEach(s => {
+                            responseData[s.name] = s.value;
+                        });
+
+                        socket.emit('cdrrmo_response', responseData);
+
+                        // Change status + hide dropdown + show prediction
+                        const statusDiv = alertItem.querySelector('.alert-status');
+                        statusDiv.textContent = 'RESPONDED';
+                        statusDiv.className = 'alert-status status-responded';
+                        responseForm.style.display = 'none';
+
+                        const predictionDiv = alertItem.querySelector('.prediction');
+                        predictionDiv.style.display = 'block';
+                        predictionDiv.innerHTML = '<em>Calculating prediction...</em>';
+
+                        // Start 60-second timer
+                        const timer = setTimeout(() => moveToRecent(data.alert_id), 60000);
+                        liveAlerts.set(data.alert_id, { element: alertItem, timer });
+
+                        // === AUTO-SCROLL TO CHARTS AFTER SUBMISSION ===
+                        const chartsGrid = document.querySelector('.prediction-charts-grid');
+                        if (chartsGrid) {
+                            chartsGrid.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'start' 
+                            });
+                        }
+                    };
+
+                    responseForm.appendChild(submitBtn);
+
+                    container.appendChild(alertItem);
+                    alertElements.set(data.alert_id, alertItem);
+
+                    updateTotalIncidents();
+
+                    // Auto-scroll to new alert
+                    alertItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    const timer = setTimeout(() => moveToRecent(data.alert_id), 60000);
+                    liveAlerts.set(data.alert_id, { element: alertItem, timer });
+            }
+
+            // Listen for alerts redirected from Barangay
+            socket.on('cdrrmo_alert', (data) => {
+                console.log('New alert received for CDRRMO:', data);
+                updateUIWithAlert(data);
+            });
+
+            // === PREDICTION RESPONSE ===
+            socket.on('cdrrmo_response', (data) => {
+                console.log('Response submitted:', data);
+                const alertItem = alertElements.get(data.alert_id);
+                if (alertItem) {
+                    const predictionDiv = alertItem.querySelector('.prediction');
+                    const predictionText = data.prediction || 'N/A';
+                    let formattedPrediction = 'N/A';
+                    if (predictionText !== 'N/A' && predictionText !== 'prediction_error') {
+                        const match = predictionText.match(/(\d+\.\d+)% chance in year \d+/);
+                        if (match) {
+                            const percentage = match[1];
+                            const yearRanges = ['A Week', '1-2 Weeks', '2-3 Weeks', '4-5 Weeks', 'A Month', '1-2 Months', '2-3 Months', '4-5 Months'];
+                            const randomRange = yearRanges[Math.floor(Math.random() * yearRanges.length)];
+                            formattedPrediction = `There will be a ${percentage}% chance of Road Accident Again Within ${randomRange}`;
+                        } else {
+                            formattedPrediction = predictionText;
+                        }
+                    }
+                    predictionDiv.textContent = `Prediction: ${formattedPrediction}`;
+                    predictionDiv.style.display = 'none';
+                    predictionDiv.style.fontSize = '18px';
+                    predictionDiv.style.color = 'black';
+                }
+            });
+
+            function parseMenuText(text) {
+                const sections = text.split('#').filter(section => section.trim());
+                const menuData = {};
+                sections.forEach(section => {
+                    const lines = section.trim().split('\n');
+                    const sectionName = lines[0].trim();
+                    const sectionData = {};
+                    lines.slice(1).forEach(line => {
+                        const [key, values] = line.split(':');
+                        sectionData[key.trim()] = values.split(',').map(v => v.trim());
+                    });
+                    menuData[sectionName] = sectionData;
+                });
+                return menuData;
+            }
+
+            function notifyAlert(data) {
+                const n = document.getElementById('notification');
+                n.textContent = `New Road Accident Alert at ${data.barangay}`;
+                setTimeout(() => n.textContent = '', 6000);
+            }
+
+            // Close modal
+            document.querySelector('.close-btn').addEventListener('click', () => {
+                document.getElementById('image-modal').style.display = 'none';
+            });
+
+            // Date filter
+            document.getElementById('recent-date-filter').addEventListener('change', (e) => {
+                const val = e.target.value;
+                document.querySelectorAll('#recent-alert-container .alert-item').forEach(item => {
+                    const timeText = item.querySelector('div:nth-child(4)').textContent;
+                    item.style.display = (!val || timeText.includes(val)) ? 'block' : 'none';
+                });
+            });
+        });
+    </script>

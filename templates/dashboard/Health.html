@@ -1,0 +1,395 @@
+<script>
+        window.activeMarkers = window.activeMarkers || {};
+
+        let menuData = {
+
+            'Health Emergency': {
+                'Health Emergency Types': ['Heart Attack', 'Stroke', 'Fall', 'Breathing Difficulty', 'Giving Birth', 'Seizure', 'Burn', 'Poisoning', 'Allergic Reaction'],
+                'Health Causes': ['Pregnant', 'Chronic Illness', 'Accident', 'Allergy', 'Infection', 'Overdose', 'Heatstroke'],
+                'Patient Gender': ['Male', 'Female'],
+                'Patient Age': ['0-17', '18-25', '26-35', '36-45', '46-60', '61+']
+            }
+
+        };
+        const hospitalOptions = [
+            "San Pablo City District Hospital",
+            "San Pablo Colleges Medical Center",
+            "Community General Hospital of San Pablo",
+            "Immaculate Conception Hospital",
+            "San Pablo City Medical Center",
+            "San Pablo Doctors Hospital"
+        ];
+
+        const liveAlerts = new Map();
+        const recentAlerts = new Map();
+        const alertElements = new Map();
+
+        function moveToRecent(alertId) {
+            if (!liveAlerts.has(alertId)) return;
+            const { element } = liveAlerts.get(alertId);
+            liveAlerts.delete(alertId);
+            recentAlerts.set(alertId, { element, timestamp: Date.now() });
+
+            const statusDiv = element.querySelector('.alert-status');
+            statusDiv.textContent = 'EXPIRED ALERT';
+            statusDiv.className = 'alert-status status-expired';
+
+            document.getElementById('recent-alert-container')
+                    .insertBefore(element, document.getElementById('recent-alert-container').firstChild);
+        }
+
+        document.querySelectorAll('.alert-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.alert-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab + '-alerts-tab').classList.add('active');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const lat = {{ lat_coord|default(14.0549) }};
+            const lon = {{ lon_coord|default(121.3013) }};
+            const mapboxToken = 'pk.eyJ1Ijoia3VtaXRva2lydSIsImEiOiJjbWNvZXpkdDQwNmdvMnNyMnNtNGw5NGI1In0.3Y9z5y4saOL76Eb5c-o0UQ';
+            const tileLayerUrl = `https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`;
+
+            const healthMap = L.map('map').setView([lat, lon], 16);
+
+            var satellite = L.tileLayer(tileLayerUrl, {
+                attribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                tileSize: 512,
+                zoomOffset: -1
+            });
+
+            var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            });
+
+            satellite.addTo(healthMap);
+
+            var baseLayers = {
+                "Satellite with Labels": satellite,
+                "OpenStreetMap": osm
+            };
+            L.control.layers(baseLayers).addTo(healthMap);
+
+            const socket = io('https://now-alert-vn0d.onrender.com', { transports: ['websocket'] });
+            const alertElements = new Map();
+
+
+            socket.on('connect', () => {
+                console.log('Connected to server');
+                socket.emit('register_role', { role: 'health', municipality: '{{ municipality }}'.toLowerCase() });
+            });
+
+            socket.on('connect_error', (error) => {
+                console.error('Connection error:', error);
+            });
+
+            socket.on('update_map', (data) => {
+                console.log('Update map received:', data);
+                const lat = data.lat || {{ lat_coord|default(14.0549) }};
+                const lon = data.lon || {{ lon_coord|default(121.3013) }};
+                healthMap.setView([lat, lon], 16);
+                L.marker([lat, lon]).addTo(healthMap).bindPopup(
+                    `${`Alert: ${data.emergency_type || 'Health Emergency'} at ${data.barangay}`}`
+                ).openPopup();
+                document.getElementById('map-coordinates').textContent = `${lat}, ${lon}`;
+            });
+
+            socket.on('health_redirected_alert', (data) => {
+                console.log('Health redirected alert received:', data);
+                updateUIWithAlert(data);
+                notifyAlert(data);
+            
+            
+                const alertItem = alertElements.get(data.alert_id);
+                if (alertItem) {
+                    const responseForm = alertItem.querySelector('.response-form');
+                    const emergencyType = data.emergency_type || 'Health Emergency';
+                    const dropdownData = menuData['Health Emergency'] || {};
+                    responseForm.className = 'response-form';
+                    responseForm.innerHTML = '';
+
+                    // Health Emergency Type dropdown
+                    const healthTypeSelect = document.createElement('select');
+                    healthTypeSelect.name = 'health_type';
+                    healthTypeSelect.className = 'dropdown-emergency';
+                    (dropdownData['Health Emergency Types'] || []).forEach(option => {
+                        const opt = document.createElement('option');
+                        opt.value = option;
+                        opt.textContent = option;
+                        healthTypeSelect.appendChild(opt);
+                    });
+                    responseForm.appendChild(healthTypeSelect);
+
+                    // Health Cause dropdown
+                    const healthCauseSelect = document.createElement('select');
+                    healthCauseSelect.name = 'health_cause';
+                    healthCauseSelect.className = 'dropdown-emergency';
+                    (dropdownData['Health Causes'] || []).forEach(option => {
+                        const opt = document.createElement('option');
+                        opt.value = option;
+                        opt.textContent = option;
+                        healthCauseSelect.appendChild(opt);
+                    });
+                    responseForm.appendChild(healthCauseSelect);
+
+                    // Patient Gender dropdown
+                    const patientGenderSelect = document.createElement('select');
+                    patientGenderSelect.name = 'patient_gender';
+                    patientGenderSelect.className = 'dropdown-emergency';
+                    (dropdownData['Patient Gender'] || []).forEach(option => {
+                        const opt = document.createElement('option');
+                        opt.value = option;
+                        opt.textContent = option;
+                        patientGenderSelect.appendChild(opt);
+                    });
+                    responseForm.appendChild(patientGenderSelect);
+
+                    // Patient Age dropdown
+                    const patientAgeSelect = document.createElement('select');
+                    patientAgeSelect.name = 'patient_age';
+                    patientAgeSelect.className = 'dropdown-emergency';
+                    (dropdownData['Patient Age'] || []).forEach(option => {
+                        const opt = document.createElement('option');
+                        opt.value = option;
+                        opt.textContent = option;
+                        patientAgeSelect.appendChild(opt);
+                    });
+                    responseForm.appendChild(patientAgeSelect);
+
+                    // Submit button for health response
+                    const submitButton = document.createElement('button');
+                    submitButton.textContent = 'Submit';
+                    submitButton.className = 'submit-emergency';
+                    submitButton.addEventListener('click', () => {
+                        const formData = {
+                            alert_id: data.alert_id,
+                            health_type: healthTypeSelect.value,
+                            health_cause: healthCauseSelect.value,
+                            patient_gender: patientGenderSelect.value,
+                            patient_age: patientAgeSelect.value,
+                            emergency_type: emergencyType,
+                            barangay: '{{ barangay }}',
+                            municipality: '{{ municipality }}',
+                            lat: data.lat,
+                            lon: data.lon,
+                            resident_barangay: data.resident_barangay || data.barangay,
+                            image: data.image
+                        };
+                        socket.emit('health_response', formData);
+                        responseForm.style.display = 'none';
+                        const statusDiv = alertItem.querySelector('div:nth-child(1)');
+                        statusDiv.textContent = 'RESPONDED';
+                        const hospitalForm = alertItem.querySelector('.hospital-form');
+                        hospitalForm.style.display = 'block';
+                    });
+                    responseForm.appendChild(submitButton);
+                    responseForm.style.display = 'block';
+
+                    // Hospital dropdown
+                    const hospitalForm = alertItem.querySelector('.hospital-form');
+                    hospitalForm.innerHTML = '';
+                    const hospitalSelect = document.createElement('select');
+                    hospitalSelect.name = 'hospital_name';
+                    hospitalSelect.className = 'dropdown-hospital';
+                    hospitalOptions.forEach(hospital => {
+                        const opt = document.createElement('option');
+                        opt.value = hospital;
+                        opt.textContent = hospital;
+                        hospitalSelect.appendChild(opt);
+                    });
+                    hospitalForm.appendChild(hospitalSelect);
+
+                    // Submit button for hospital selection
+                    const hospitalSubmitButton = document.createElement('button');
+                    hospitalSubmitButton.textContent = 'Send to Hospital';
+                    hospitalSubmitButton.className = 'submit-emergency';
+                    hospitalSubmitButton.addEventListener('click', () => {
+                        const hospitalData = {
+                            alert_id: data.alert_id,
+                            health_type: healthTypeSelect.value,
+                            health_cause: healthCauseSelect.value,
+                            patient_gender: patientGenderSelect.value,
+                            patient_age: patientAgeSelect.value,
+                            emergency_type: emergencyType,
+                            barangay: '{{ barangay }}',
+                            municipality: '{{ municipality }}',
+                            lat: data.lat,
+                            lon: data.lon,
+                            resident_barangay: data.resident_barangay || data.barangay,
+                            hospital_name: hospitalSelect.value,
+                            timestamp: new Date().toLocaleString('en-PH', { timeZone: 'Asia/Manila' }),
+                            image: data.image
+                        };
+                        socket.emit('hospital_alert', hospitalData);
+                        socket.emit('hospital_alert_barangay', hospitalData);
+                        // Do not hide hospital dropdown or submit button to ensure persistence
+                    });
+                    hospitalForm.appendChild(hospitalSubmitButton);
+                    hospitalForm.style.display = 'none';
+                }
+            });
+
+            socket.on('health_response', (data) => {
+                console.log('Health response received:', data);
+                const alertItem = alertElements.get(data.alert_id);
+                if (alertItem) {
+                    const predictionDiv = alertItem.querySelector('.prediction');
+                    const predictionText = data.prediction || 'N/A';
+                    let formattedPrediction = 'N/A';
+                    if (predictionText !== 'N/A' && predictionText !== 'prediction_error') {
+                        const match = predictionText.match(/(\d+\.\d+)% chance in year \d+/);
+                        if (match) {
+                            const percentage = match[1];
+                            const yearRanges = ['A Week', '1-2 Weeks', '2-3 Weeks', '4-5 Weeks', 'A Month', '1-2 Months', '2-3 Months', '4-5 Months'];
+                            const randomRange = yearRanges[Math.floor(Math.random() * yearRanges.length)];
+                            formattedPrediction = `There will be a ${percentage}% chance of ${data.emergency_type || 'Health Emergency'} Again Within ${randomRange}`;
+                        } else {
+                            formattedPrediction = predictionText;
+                        }
+                    }
+                    predictionDiv.textContent = `Prediction: ${formattedPrediction}`;
+                    predictionDiv.style.display = 'block';
+                    const hospitalForm = alertItem.querySelector('.hospital-form');
+                    hospitalForm.style.display = 'block'; // Ensure hospital dropdown persists
+                }
+            });
+
+            function updateUIWithAlert(data) {
+                const container = document.getElementById('live-alert-container');
+                const alertItem = document.createElement('div');
+                alertItem.className = 'alert-item';
+                alertItem.dataset.alertId = data.alert_id;
+
+                alertItem.innerHTML = `
+                    <div class="alert-status status-pending">PENDING HEALTH EMERGENCY</div>
+                    <div><strong>From:</strong> ${data.barangay}</div>
+                    <div><strong>Resident:</strong> ${data.resident_barangay || data.barangay}</div>
+                    <div><strong>Time:</strong> ${new Date().toLocaleTimeString()}</div>
+                    ${data.image ? `<img src="data:image/jpeg;base64,${data.image}" class="clickable-img" />` : ''}
+                    <div class="response-form"></div>
+                    <div class="prediction" style="display:none;">Prediction: N/A</div>
+                `;
+
+                if (data.image) {
+                    alertItem.querySelector('img').onclick = () => {
+                        document.getElementById('modal-image').src = `data:image/jpeg;base64,${data.image}`;
+                        document.getElementById('image-modal').style.display = 'flex';
+                    };
+                }
+
+                const responseForm = alertItem.querySelector('.response-form');
+                responseForm.style.display = 'block';
+
+                // Health dropdowns
+                Object.keys(menuData['Health Emergency']).forEach(key => {
+                    const select = document.createElement('select');
+                    select.className = 'dropdown-emergency';
+                    select.name = key.toLowerCase().replace(/\s+/g, '_');
+
+                    const placeholder = document.createElement('option');
+                    placeholder.text = `Select ${key}`;
+                    placeholder.value = '';
+                    placeholder.disabled = true;
+                    placeholder.selected = true;
+                    select.appendChild(placeholder);
+
+                    menuData['Health Emergency'][key].forEach(opt => {
+                        const option = document.createElement('option');
+                        option.value = opt;
+                        option.textContent = opt;
+                        select.appendChild(option);
+                    });
+                    responseForm.appendChild(select);
+                });
+
+                // Hospital selector
+                const hospitalSelect = document.createElement('select');
+                hospitalSelect.className = 'dropdown-hospital';
+                hospitalSelect.name = 'assigned_hospital';
+
+                const hospitalPlaceholder = document.createElement('option');
+                hospitalPlaceholder.text = 'Assign Hospital';
+                hospitalPlaceholder.value = '';
+                hospitalPlaceholder.disabled = true;
+                hospitalPlaceholder.selected = true;
+                hospitalSelect.appendChild(hospitalPlaceholder);
+
+                hospitalOptions.forEach(hospital => {
+                    const option = document.createElement('option');
+                    option.value = hospital;
+                    option.textContent = hospital;
+                    hospitalSelect.appendChild(option);
+                });
+                responseForm.appendChild(hospitalSelect);
+
+                const submitBtn = document.createElement('button');
+                submitBtn.textContent = 'Submit Response';
+                submitBtn.className = 'submit-emergency';
+                submitBtn.onclick = () => {
+                    const formData = {
+                        alert_id: data.alert_id,
+                        emergency_type: 'Health Emergency',
+                        municipality: '{{ municipality }}'.toLowerCase(),
+                        barangay: data.barangay,
+                        lat: data.lat,
+                        lon: data.lon,
+                        assigned_hospital: hospitalSelect.value
+                    };
+
+                    responseForm.querySelectorAll('select').forEach(s => {
+                        if (s.name !== 'assigned_hospital') {
+                            formData[s.name] = s.value;
+                        }
+                    });
+
+                    socket.emit('health_response_submitted', formData);
+
+                    const statusDiv = alertItem.querySelector('.alert-status');
+                    statusDiv.textContent = 'RESPONDED';
+                    statusDiv.className = 'alert-status status-responded';
+
+                    responseForm.style.display = 'none';
+
+                    const predictionDiv = alertItem.querySelector('.prediction');
+                    predictionDiv.style.display = 'block';
+                    predictionDiv.innerHTML = '<em>Calculating prediction...</em>';
+
+                    liveAlerts.set(data.alert_id, { element: alertItem });
+                    setTimeout(() => moveToRecent(data.alert_id), 60000);
+                };
+                responseForm.appendChild(submitBtn);
+
+                container.appendChild(alertItem);
+                alertElements.set(data.alert_id, alertItem);
+            }
+
+            function notifyAlert(data) {
+                const notificationDiv = document.getElementById('notification');
+                notificationDiv.innerHTML = `<p>New alert received for ${data.barangay}</p>`;
+                setTimeout(() => {
+                    notificationDiv.innerHTML = '';
+                }, 5000);
+            }
+
+            function parseMenuText(text) {
+                const menuData = {};
+                const sections = text.split('\n\n');
+                sections.forEach(section => {
+                    const lines = section.split('\n').filter(line => line.trim());
+                    if (lines.length === 0) return;
+                    const sectionName = lines[0].replace(/^# /, '').trim();
+                    const sectionData = {};
+                    lines.slice(1).forEach(line => {
+                        const [key, values] = line.split(':');
+                        sectionData[key.trim()] = values.split(',').map(v => v.trim());
+                    });
+                    menuData[sectionName] = sectionData;
+                });
+                return menuData;
+            }
+        });
+    </script>

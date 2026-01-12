@@ -1,0 +1,36 @@
+Occupancy_Type,Barangay,Date,Year,Time,Fire_Cause,Response_Time,Fire_Duration
+Post Fire,San Lucas I,14/01/2018,2018,6:45 am,Electrical Short Circuit,7:30 pm,45
+Grass Fire,San Rafael,19/01/2018,2018,9:25 am,N/A,10:10 am,45
+Residential Fire,Del Remedio,23/03/2018,2018,1:38 pm,N/A,2:14 pm,79
+Grass Fire,San Rafael,07/04/2018,2018,2:10 pm,N/A,2:52 pm,42
+Vehicullar Fire,San Gabriel,10/04/2018,2018,10:08 pm,N/A,N/A,N/A
+Residential Fire,V-D,21/04/2018,2018,7:15 pm,N/A,7:24 pm,8
+Residential Fire,Santa Felomina,02/05/2018,2018,1:25 pm,Unattended Candle,N/A,N/A
+Residential Fire,San Vicente,30/05/2018,2018,4:34 pm,N/A,5:04 pm,69
+Residential Fire,San Jose,01/06/2018,2018,3:31 pm,Electrical Short Circuit,3:37 pm,53
+Residential Fire,Santo Angel,04/06/2018,2018,12:30 am,Electrical Short Circuit,12:45 pm,60
+Residential Fire,Calihan,13/06/2018,2018,9:23 pm,N/A,9:54 pm,39
+Residential Fire,San Cristobal,27/06/2018,2018,3:28 pm,N/A,3:35 pm,48
+Residential Fire,Santo Nino,14/07/2018,2018,10:55 am,N/A,11:30 am,35
+Post Fire,San Lucas I,25/07/2018,2018,4:10 pm,Line Circuit,N/A,N/A
+Vehicullar Fire,IV-C,02/08/2018,2018,10:40 am,Not Specified,N/A,N/A
+Vehicullar Fire,VII-C,05/10/2018,2018,10:13 am,N/A,10:13 am,2
+Residential Fire,V-D,04/11/2018,2018,8:08 am,N/A,N/A,N/A
+Residential Fire,Conception,04/12/2018,2018,8:11 am,N/A,N/A,N/A
+Rubbish Fire,Barangay VII,13/05/2020,2020,N/A,N/A,N/A,N/A
+Unknown Fire,N/A,07/01/2021,2021,N/A,N/A,9:00 am,N/A
+Vehicular Accident,Barangay San Roque,17/01/2021,2021,N/A,N/A,8:55 pm,N/A
+Vehicular Accident,N/A,18/06/2021,2021,N/A,N/A,4:10 am,N/A
+Residential Fire,N/A,20/06/2021,2021,12:20 am,N/A,12:34 am,21
+Residential Fire,N/A,01/07/2021,2021,10:05 pm,N/A,10:05 pm,25
+Residential Fire,Brgy. Del Remedio,11/07/2021,2021,6:35 pm,N/A,N/A,N/A
+Residential Fire,"Brgy. San Juan, SPC",12/07/2021,2021,N/A,N/A,N/A,N/A
+Gas Stove Fire,Brgy. Bagong Bayan,15/08/2021,2021,1:00 pm,N/A,N/A,N/A
+Residential Fire,Brgy. V-C,20/02/2022,2022,N/A,N/A,N/A,N/A
+Residential Fire,"Brgy. 1-B, San Pablo City",26/05/2022,2022,N/A,N/A,10:54 am,N/A
+Structural Fire (Business),"Brgy. VI-E, San Pablo City",25/06/2022,2022,N/A,N/A,2:30 am,84
+Structural Fire ( business ),Brgy. P-0,14/07/2022,2022,N/A,N/A,N/A,N/A
+Residential Fire,Brgy. San Buenaventura,02/11/2022,2022,4:20 pm,N/A,4:25 pm,N/A
+Residential Fire,Brgy. III-D,08/11/2022,2022,10:30 am,N/A,10:40 am,5
+Residential Fire,N/A,17/03/2024,2024,5:44 am,N/A,N/A,N/A
+Rubbish Fire,N/A,17/05/2024,2024,N/A,N/A,N/A,N/A
