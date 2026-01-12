@@ -100,32 +100,38 @@ def handle_barangay_fire_submitted(data):
     # === 2. Generate FIRE Predictions with Random Variation ===
     predictions = {
         'arima': {'full_year': "ARIMA 2023 Full Year: Forecast unavailable",
-                'monthly': "ARIMA 2023 Monthly: Forecast unavailable",
-                'jul_dec': "ARIMA July-Dec 2023: Forecast unavailable"},
+                  'monthly': "ARIMA 2023 Monthly: Forecast unavailable",
+                  'jul_dec': "ARIMA July-Dec 2023: Forecast unavailable"},
         'arimax': {'full_year': "ARIMAX 2023 Full Year: Forecast unavailable",
-                'monthly': "ARIMAX 2023 Monthly: Forecast unavailable",
-                'jul_dec': "ARIMAX July-Dec 2023: Forecast unavailable"},
+                   'monthly': "ARIMAX 2023 Monthly: Forecast unavailable",
+                   'jul_dec': "ARIMAX July-Dec 2023: Forecast unavailable"},
         'sarima': {'full_year': "SARIMA 2023 Full Year: Forecast unavailable",
-                'monthly': "SARIMA 2023 Monthly: Forecast unavailable",
-                'jul_dec': "SARIMA July-Dec 2023: Forecast unavailable"},
+                   'monthly': "SARIMA 2023 Monthly: Forecast unavailable",
+                   'jul_dec': "SARIMA July-Dec 2023: Forecast unavailable"},
         'sarimax': {'full_year': "SARIMAX 2023 Full Year: Forecast unavailable",
                     'monthly': "SARIMAX 2023 Monthly: Forecast unavailable",
                     'jul_dec': "SARIMAX July-Dec 2023: Forecast unavailable"}
     }
 
     try:
-        # Helper to safely get latest prediction value from any loaded object
+        # IMPROVED HELPER: safely handles fitted model, Series, or ndarray
         def get_latest_forecast(obj):
             if obj is None:
                 return None
-            if hasattr(obj, 'predict'):  # fitted statsmodels model
-                return float(obj.predict(n_periods=1).iloc[0])
-            elif isinstance(obj, pd.Series):  # pandas Series (forecast/residuals)
-                return float(obj.iloc[-1])
-            elif isinstance(obj, np.ndarray):  # NumPy array (most common mistake)
-                return float(obj[-1]) if obj.size > 0 else None
-            else:
-                logger.warning(f"Unknown model type: {type(obj)}")
+            try:
+                if hasattr(obj, 'predict'):
+                    # Fitted statsmodels model
+                    forecast = obj.predict(n_periods=1)
+                    return float(forecast[0] if isinstance(forecast, np.ndarray) else forecast.iloc[0])
+                elif isinstance(obj, (pd.Series, pd.DataFrame)):
+                    return float(obj.iloc[-1])
+                elif isinstance(obj, np.ndarray):
+                    return float(obj[-1]) if obj.size > 0 else None
+                else:
+                    logger.warning(f"Unknown object type for forecast: {type(obj)}")
+                    return None
+            except Exception as inner_e:
+                logger.warning(f"Error extracting forecast from object: {inner_e}")
                 return None
 
         # ────────────────────────────────────────────────
