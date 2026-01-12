@@ -837,7 +837,12 @@
                     // Choose correct emit event
                     const eventMap = {
                         'Road Accident': 'barangay_response',
-                        'Fire Incident': 'barangay_fire_submitted',
+                        'Fire Incident': [                     // ← changed to array for "AND"
+                            'barangay_fire_submitted',
+                            'barangay_fire_arimax',
+                            'barangay_fire_sarima',
+                            'barangay_fire_sarimax'
+                        ],
                         'Crime Incident': 'barangay_crime_submitted',
                         'Health Emergency': 'barangay_health_response'
                     };
