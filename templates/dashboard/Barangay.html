@@ -302,22 +302,22 @@
                 const sarimax = parsePrediction(sarimaxFull, sarimaxMonthly, sarimaxJulDec);
 
                 // Base counts + INDEPENDENT RANDOM OFFSET FOR EACH MODEL (prevents stuck % and movement)
-                const arimaFullCount = Math.round((arima.full / 100) * 150) + Math.round(random(-10, 12));
-                const arimaxFullCount = Math.round((arimax.full / 100) * 150) + Math.round(random(-10, 12));
-                const sarimaFullCount = Math.round((sarima.full / 100) * 150) + Math.round(random(-10, 12));
-                const sarimaxFullCount = Math.round((sarimax.full / 100) * 150) + Math.round(random(-10, 12));
+                let arimaFullCount = Math.round((arima.full / 100) * 150) + Math.round(random(-10, 12));
+                let arimaxFullCount = Math.round((arimax.full / 100) * 150) + Math.round(random(-10, 12));
+                let sarimaFullCount = Math.round((sarima.full / 100) * 150) + Math.round(random(-10, 12));
+                let sarimaxFullCount = Math.round((sarimax.full / 100) * 150) + Math.round(random(-10, 12));
 
-                const arimaMonthlyCount = Math.round((arima.monthly / 100) * 150) + Math.round(random(-12, 15));
-                const arimaxMonthlyCount = Math.round((arimax.monthly / 100) * 150) + Math.round(random(-12, 15));
-                const sarimaMonthlyCount = Math.round((sarima.monthly / 100) * 150) + Math.round(random(-12, 15));
-                const sarimaxMonthlyCount = Math.round((sarimax.monthly / 100) * 150) + Math.round(random(-12, 15));
+                let arimaMonthlyCount = Math.round((arima.monthly / 100) * 150) + Math.round(random(-12, 15));
+                let arimaxMonthlyCount = Math.round((arimax.monthly / 100) * 150) + Math.round(random(-12, 15));
+                let sarimaMonthlyCount = Math.round((sarima.monthly / 100) * 150) + Math.round(random(-12, 15));
+                let sarimaxMonthlyCount = Math.round((sarimax.monthly / 100) * 150) + Math.round(random(-12, 15));
 
-                const arimaJulDecCount = Math.round((arima.julDec / 100) * 90) + Math.round(random(-15, 18));
-                const arimaxJulDecCount = Math.round((arimax.julDec / 100) * 90) + Math.round(random(-15, 18));
-                const sarimaJulDecCount = Math.round((sarima.julDec / 100) * 90) + Math.round(random(-15, 18));
-                const sarimaxJulDecCount = Math.round((sarimax.julDec / 100) * 90) + Math.round(random(-15, 18));
+                let arimaJulDecCount = Math.round((arima.julDec / 100) * 90) + Math.round(random(-15, 18));
+                let arimaxJulDecCount = Math.round((arimax.julDec / 100) * 90) + Math.round(random(-15, 18));
+                let sarimaJulDecCount = Math.round((sarima.julDec / 100) * 90) + Math.round(random(-15, 18));
+                let sarimaxJulDecCount = Math.round((sarimax.julDec / 100) * 90) + Math.round(random(-15, 18));
 
-                // Clamp to reasonable range
+                // Clamp to reasonable range (prevents extreme outliers)
                 const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
 
                 // fireYearlyChart - FOUR LINES (ARIMA, ARIMAX, SARIMA, SARIMAX)
@@ -330,7 +330,7 @@
                     fireYearlyChart.update('active');
                 }
 
-                // fireMonthlyChart - FOUR LINES + 2022 Actual
+                // fireMonthlyChart - FOUR LINES + 2022 Actual (fixed)
                 if (fireMonthlyChart) {
                     const base2022Fire = [15,18,22,16,25,20,28,30,26,22,19,17];
 
@@ -362,16 +362,16 @@
                         return Math.max(0, Math.round(v * ratio + variation));
                     });
 
-                    fireMonthlyChart.data.datasets[0].data = base2022Fire;  // 2022 Actual - fixed
-                    fireMonthlyChart.data.datasets[1].data = arimaMonthly2023;
-                    fireMonthlyChart.data.datasets[2].data = arimaxMonthly2023;
-                    fireMonthlyChart.data.datasets[3].data = sarimaMonthly2023;
-                    fireMonthlyChart.data.datasets[4].data = sarimaxMonthly2023;
+                    fireMonthlyChart.data.datasets[0].data = base2022Fire;               // 2022 Actual - fixed
+                    fireMonthlyChart.data.datasets[1].data = arimaMonthly2023;           // ARIMA
+                    fireMonthlyChart.data.datasets[2].data = arimaxMonthly2023;          // ARIMAX
+                    fireMonthlyChart.data.datasets[3].data = sarimaMonthly2023;          // SARIMA
+                    fireMonthlyChart.data.datasets[4].data = sarimaxMonthly2023;         // SARIMAX
                     fireMonthlyChart.options.plugins.title.text = `Fire Monthly - ARIMA: ${arima.monthly.toFixed(1)}% | ARIMAX: ${arimax.monthly.toFixed(1)}% | SARIMA: ${sarima.monthly.toFixed(1)}% | SARIMAX: ${sarimax.monthly.toFixed(1)}%`;
                     fireMonthlyChart.update('active');
                 }
 
-                // fireJulDecChart - FOUR LINES + 2022 Actual
+                // fireJulDecChart - FOUR LINES + 2022 Actual (fixed)
                 if (fireJulDecChart) {
                     const baseJulDecFire = [28,30,26,22,19,17];
 
