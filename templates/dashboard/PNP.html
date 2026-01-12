@@ -375,7 +375,7 @@
             const pnpMap = L.map('map').setView([lat, lon], 16);
             L.tileLayer(tileLayerUrl, { attribution: '© Mapbox © OpenStreetMap', maxZoom: 18, tileSize: 512, zoomOffset: -1 }).addTo(pnpMap);
 
-            const socket = io('https://now-alert-vn0d.onrender.com', { transports: ['websocket'] });
+            const socket = io('https://now-alert-o6l9.onrender.com', { transports: ['websocket'] });
 
             // Chart setup (your full code preserved)
             const ctx = document.getElementById('alertsPerMonthChart');
