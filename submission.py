@@ -100,103 +100,147 @@ def handle_barangay_fire_submitted(data):
     # === 2. Generate FIRE Predictions with Random Variation ===
     predictions = {
         'arima': {'full_year': "ARIMA 2023 Full Year: Forecast unavailable",
-                  'monthly': "ARIMA 2023 Monthly: Forecast unavailable",
-                  'jul_dec': "ARIMA July-Dec 2023: Forecast unavailable"},
+                'monthly': "ARIMA 2023 Monthly: Forecast unavailable",
+                'jul_dec': "ARIMA July-Dec 2023: Forecast unavailable"},
         'arimax': {'full_year': "ARIMAX 2023 Full Year: Forecast unavailable",
-                   'monthly': "ARIMAX 2023 Monthly: Forecast unavailable",
-                   'jul_dec': "ARIMAX July-Dec 2023: Forecast unavailable"},
+                'monthly': "ARIMAX 2023 Monthly: Forecast unavailable",
+                'jul_dec': "ARIMAX July-Dec 2023: Forecast unavailable"},
         'sarima': {'full_year': "SARIMA 2023 Full Year: Forecast unavailable",
-                   'monthly': "SARIMA 2023 Monthly: Forecast unavailable",
-                   'jul_dec': "SARIMA July-Dec 2023: Forecast unavailable"},
+                'monthly': "SARIMA 2023 Monthly: Forecast unavailable",
+                'jul_dec': "SARIMA July-Dec 2023: Forecast unavailable"},
         'sarimax': {'full_year': "SARIMAX 2023 Full Year: Forecast unavailable",
                     'monthly': "SARIMAX 2023 Monthly: Forecast unavailable",
                     'jul_dec': "SARIMAX July-Dec 2023: Forecast unavailable"}
     }
 
     try:
-        # ARIMA
+        # ────────────────────────────────────────────────
+        # ARIMA models
+        # ────────────────────────────────────────────────
         if f_arima_pred is not None:
-            forecast = f_arima_pred.predict(n_periods=1)
+            if hasattr(f_arima_pred, 'predict'):
+                forecast = f_arima_pred.predict(n_periods=1)
+            else:  # fallback if it's already a forecast Series
+                forecast = f_arima_pred.iloc[-1:] if isinstance(f_arima_pred, pd.Series) else f_arima_pred
             predicted = float(forecast.iloc[0])
             prob = (predicted / 100) * 100 + random.uniform(-15.0, 18.0)
             prob = max(20, min(95, prob))
             predictions['arima']['full_year'] = f"ARIMA 2023 Full Year: {prob:.1f}% Risk"
 
         if f_arima_m is not None:
-            forecast = f_arima_m.predict(n_periods=1)
+            if hasattr(f_arima_m, 'predict'):
+                forecast = f_arima_m.predict(n_periods=1)
+            else:
+                forecast = f_arima_m.iloc[-1:] if isinstance(f_arima_m, pd.Series) else f_arima_m
             predicted = float(forecast.iloc[0])
             prob = (predicted / 100) * 100 + random.uniform(-18.0, 20.0)
             prob = max(25, min(94, prob))
             predictions['arima']['monthly'] = f"ARIMA 2023 Monthly: {prob:.1f}% Risk"
 
         if f_arima_22 is not None:
-            forecast = f_arima_22.predict(n_periods=1)
+            if hasattr(f_arima_22, 'predict'):
+                forecast = f_arima_22.predict(n_periods=1)
+            else:
+                forecast = f_arima_22.iloc[-1:] if isinstance(f_arima_22, pd.Series) else f_arima_22
             predicted = float(forecast.iloc[0])
             prob = (predicted / 60) * 100 + random.uniform(-20.0, 22.0)
             prob = max(30, min(92, prob))
             predictions['arima']['jul_dec'] = f"ARIMA July-Dec 2023: {prob:.1f}% Risk"
 
-        # ARIMAX
+        # ────────────────────────────────────────────────
+        # ARIMAX models
+        # ────────────────────────────────────────────────
         if f_arimax_pred is not None:
-            forecast = f_arimax_pred.predict(n_periods=1)
+            if hasattr(f_arimax_pred, 'predict'):
+                forecast = f_arimax_pred.predict(n_periods=1)
+            else:
+                forecast = f_arimax_pred.iloc[-1:] if isinstance(f_arimax_pred, pd.Series) else f_arimax_pred
             predicted = float(forecast.iloc[0])
             prob = (predicted / 100) * 100 + random.uniform(-15.0, 18.0)
             prob = max(20, min(95, prob))
             predictions['arimax']['full_year'] = f"ARIMAX 2023 Full Year: {prob:.1f}% Risk"
 
         if f_arimax_m is not None:
-            forecast = f_arimax_m.predict(n_periods=1)
+            if hasattr(f_arimax_m, 'predict'):
+                forecast = f_arimax_m.predict(n_periods=1)
+            else:
+                forecast = f_arimax_m.iloc[-1:] if isinstance(f_arimax_m, pd.Series) else f_arimax_m
             predicted = float(forecast.iloc[0])
             prob = (predicted / 100) * 100 + random.uniform(-18.0, 20.0)
             prob = max(25, min(94, prob))
             predictions['arimax']['monthly'] = f"ARIMAX 2023 Monthly: {prob:.1f}% Risk"
 
         if f_arimax_22 is not None:
-            forecast = f_arimax_22.predict(n_periods=1)
+            if hasattr(f_arimax_22, 'predict'):
+                forecast = f_arimax_22.predict(n_periods=1)
+            else:
+                forecast = f_arimax_22.iloc[-1:] if isinstance(f_arimax_22, pd.Series) else f_arimax_22
             predicted = float(forecast.iloc[0])
             prob = (predicted / 60) * 100 + random.uniform(-20.0, 22.0)
             prob = max(30, min(92, prob))
             predictions['arimax']['jul_dec'] = f"ARIMAX July-Dec 2023: {prob:.1f}% Risk"
 
-        # SARIMA
+        # ────────────────────────────────────────────────
+        # SARIMA models
+        # ────────────────────────────────────────────────
         if f_sarima_pred is not None:
-            forecast = f_sarima_pred.predict(n_periods=1)
+            if hasattr(f_sarima_pred, 'predict'):
+                forecast = f_sarima_pred.predict(n_periods=1)
+            else:
+                forecast = f_sarima_pred.iloc[-1:] if isinstance(f_sarima_pred, pd.Series) else f_sarima_pred
             predicted = float(forecast.iloc[0])
             prob = (predicted / 100) * 100 + random.uniform(-15.0, 18.0)
             prob = max(20, min(95, prob))
             predictions['sarima']['full_year'] = f"SARIMA 2023 Full Year: {prob:.1f}% Risk"
 
         if f_sarima_m is not None:
-            forecast = f_sarima_m.predict(n_periods=1)
+            if hasattr(f_sarima_m, 'predict'):
+                forecast = f_sarima_m.predict(n_periods=1)
+            else:
+                forecast = f_sarima_m.iloc[-1:] if isinstance(f_sarima_m, pd.Series) else f_sarima_m
             predicted = float(forecast.iloc[0])
             prob = (predicted / 100) * 100 + random.uniform(-18.0, 20.0)
             prob = max(25, min(94, prob))
             predictions['sarima']['monthly'] = f"SARIMA 2023 Monthly: {prob:.1f}% Risk"
 
         if f_sarima_22 is not None:
-            forecast = f_sarima_22.predict(n_periods=1)
+            if hasattr(f_sarima_22, 'predict'):
+                forecast = f_sarima_22.predict(n_periods=1)
+            else:
+                forecast = f_sarima_22.iloc[-1:] if isinstance(f_sarima_22, pd.Series) else f_sarima_22
             predicted = float(forecast.iloc[0])
             prob = (predicted / 60) * 100 + random.uniform(-20.0, 22.0)
             prob = max(30, min(92, prob))
             predictions['sarima']['jul_dec'] = f"SARIMA July-Dec 2023: {prob:.1f}% Risk"
 
-        # SARIMAX
+        # ────────────────────────────────────────────────
+        # SARIMAX models
+        # ────────────────────────────────────────────────
         if f_sarimax_pred is not None:
-            forecast = f_sarimax_pred.predict(n_periods=1)
+            if hasattr(f_sarimax_pred, 'predict'):
+                forecast = f_sarimax_pred.predict(n_periods=1)
+            else:
+                forecast = f_sarimax_pred.iloc[-1:] if isinstance(f_sarimax_pred, pd.Series) else f_sarimax_pred
             predicted = float(forecast.iloc[0])
             prob = (predicted / 100) * 100 + random.uniform(-15.0, 18.0)
             prob = max(20, min(95, prob))
             predictions['sarimax']['full_year'] = f"SARIMAX 2023 Full Year: {prob:.1f}% Risk"
 
         if f_sarimax_m is not None:
-            forecast = f_sarimax_m.predict(n_periods=1)
+            if hasattr(f_sarimax_m, 'predict'):
+                forecast = f_sarimax_m.predict(n_periods=1)
+            else:
+                forecast = f_sarimax_m.iloc[-1:] if isinstance(f_sarimax_m, pd.Series) else f_sarimax_m
             predicted = float(forecast.iloc[0])
             prob = (predicted / 100) * 100 + random.uniform(-18.0, 20.0)
             prob = max(25, min(94, prob))
             predictions['sarimax']['monthly'] = f"SARIMAX 2023 Monthly: {prob:.1f}% Risk"
 
         if f_sarimax_22 is not None:
-            forecast = f_sarimax_22.predict(n_periods=1)
+            if hasattr(f_sarimax_22, 'predict'):
+                forecast = f_sarimax_22.predict(n_periods=1)
+            else:
+                forecast = f_sarimax_22.iloc[-1:] if isinstance(f_sarimax_22, pd.Series) else f_sarimax_22
             predicted = float(forecast.iloc[0])
             prob = (predicted / 60) * 100 + random.uniform(-20.0, 22.0)
             prob = max(30, min(92, prob))
@@ -207,7 +251,7 @@ def handle_barangay_fire_submitted(data):
 
     # === COMBINE ALL FOUR INTO JSON FOR DB ===
     predictions_json = json.dumps(predictions)
-    extracted_data['predictions_json'] = predictions_json  # New column
+    extracted_data['prediction'] = predictions_json
 
     # === 3. Save to DB (add predictions_json column) ===
     try:
@@ -215,7 +259,7 @@ def handle_barangay_fire_submitted(data):
         conn.execute('''
             INSERT INTO barangay_fire_response (
                 alert_id, fire_cause, occupancy_type, fire_class,
-                lat, lon, barangay, timestamp, responded, predictions_json
+                lat, lon, barangay, timestamp, responded, prediction
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             extracted_data['alert_id'],
