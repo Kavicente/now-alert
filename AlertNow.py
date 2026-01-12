@@ -33,12 +33,12 @@ import uuid
 
 import random
 
-
+'''
 from road_models import (arima_pred, arima_22, arima_m,
                          arimax_pred, arimax_22, arimax_m,
                          sarima_pred, sarima_22, sarima_m,
                          sarimax_pred, sarimax_22, sarimax_m)
-
+'''
 from fire_models import(f_arima_22, f_arima_m, f_arima_pred,
                 f_arimax_22, f_arimax_m, f_arimax_pred,
                 f_sarima_22, f_sarima_m, f_sarima_pred,
@@ -103,8 +103,7 @@ from DILGDashboard import (dilg_dashboard, dilg_data, dilg_accounts, dilg_update
                            dilg_delete_all, dilg_warn_account, dilg_barangays, dilg_barangay_report, dilg_cdrrmo_report,
                            dilg_bfp_report, dilg_health_report, dilg_pnp_report)
 
-from submission import (handle_barangay_response_submitted, handle_barangay_arimax_submitted, handle_barangay_sarima_submitted,
-                        handle_barangay_sarimax_submitted, handle_barangay_fire_submitted, handle_barangay_fire_arimax, handle_barangay_fire_sarima,
+from submission import (handle_barangay_fire_submitted, handle_barangay_fire_arimax, handle_barangay_fire_sarima,
                         handle_barangay_fire_sarimax, handle_barangay_crime_submitted, handle_barangay_health_response,
                         handle_cdrrmo_response_submitted, handle_pnp_response_submitted, handle_pnp_fire_submitted,
                         handle_pnp_crime_submitted, handle_fire_response_submitted, handle_health_response, handle_hospital_response)
@@ -1106,7 +1105,7 @@ def get_latest_fire_prediction():
     conn.close()
     return jsonify({'prediction': result[0] if result else 'No fire prediction available'})
 
-
+'''
 @socketio.on('barangay_response')
 def barangay_arima_handler(data):
     handle_barangay_response_submitted(data) 
@@ -1123,7 +1122,7 @@ def barangay_sarima_handler(data):
 @socketio.on('barangay_sarimax_submitted')
 def barangay_sarimax_handler(data):
     handle_barangay_sarimax_submitted(data)
-      
+'''      
     
 @socketio.on('barangay_fire_submitted')
 def barangay_fire_handler(data):

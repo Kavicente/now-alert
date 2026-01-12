@@ -4,7 +4,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-
+'''
 #ARIMA MODEL
 
 arima_m = None
@@ -133,3 +133,5 @@ except FileNotFoundError:
     logger.error("sarimax80_20.pkl not found.")
 except Exception as e:
     logger.error(f"Error loading sarimax80_20.pkl: {e}")
+    
+'''
