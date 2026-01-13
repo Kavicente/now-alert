@@ -585,29 +585,11 @@
             });
 
             // === PREDICTION RESPONSE ===
-            socket.on('cdrrmo_response', (data) => {
-                console.log('Response submitted:', data);
-                const alertItem = alertElements.get(data.alert_id);
-                if (alertItem) {
-                    const predictionDiv = alertItem.querySelector('.prediction');
-                    const predictionText = data.prediction || 'N/A';
-                    let formattedPrediction = 'N/A';
-                    if (predictionText !== 'N/A' && predictionText !== 'prediction_error') {
-                        const match = predictionText.match(/(\d+\.\d+)% chance in year \d+/);
-                        if (match) {
-                            const percentage = match[1];
-                            const yearRanges = ['A Week', '1-2 Weeks', '2-3 Weeks', '4-5 Weeks', 'A Month', '1-2 Months', '2-3 Months', '4-5 Months'];
-                            const randomRange = yearRanges[Math.floor(Math.random() * yearRanges.length)];
-                            formattedPrediction = `There will be a ${percentage}% chance of Road Accident Again Within ${randomRange}`;
-                        } else {
-                            formattedPrediction = predictionText;
-                        }
-                    }
-                    predictionDiv.textContent = `Prediction: ${formattedPrediction}`;
-                    predictionDiv.style.display = 'none';
-                    predictionDiv.style.fontSize = '18px';
-                    predictionDiv.style.color = 'black';
-                }
+            socket.on('cdrrmo_response', () => {
+                fetch('/get_latest_prediction')
+                    .then(r => r.json())
+                    .then(data => updateChartsFromPrediction(data.prediction));
+                scrollToCharts();
             });
 
             function parseMenuText(text) {

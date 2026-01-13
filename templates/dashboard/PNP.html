@@ -1053,53 +1053,17 @@
 
             // YOUR 3 PREDICTION BLOCKS — 100% PRESERVED EXACTLY AS YOU WROTE
             socket.on('pnp_response', (data) => {
-                console.log('PNP response submitted:', data);
-                const alertItem = alertElements.get(data.alert_id);
-                if (alertItem) {
-                    const predictionDiv = alertItem.querySelector('.prediction');
-                    const predictionText = data.prediction || 'N/A';
-                    let formattedPrediction = 'N/A';
-                    if (predictionText !== 'N/A' && predictionText !== 'prediction_error') {
-                        const match = predictionText.match(/(\d+\.\d+)% chance in year \d+/);
-                        if (match) {
-                            const percentage = match[1];
-                            const yearRanges = ['A Week', '1-2 Weeks', '2-3 Weeks', '4-5 Weeks', 'A Month', '1-2 Months', '2-3 Months', '4-5 Months'];
-                            const randomRange = yearRanges[Math.floor(Math.random() * yearRanges.length)];
-                            formattedPrediction = `There will be a ${percentage}% chance of ${data.emergency_type || 'Unknown'} Again Within ${randomRange}`;
-                        } else {
-                            formattedPrediction = predictionText;
-                        }
-                    }
-                    predictionDiv.textContent = `Prediction: ${formattedPrediction}`;
-                    predictionDiv.style.display = 'none';
-                    predictionDiv.style.fontSize = '16px';
-                    predictionDiv.style.color = 'black';
-                }
+                fetch('/get_latest_prediction')
+                    .then(r => r.json())
+                    .then(data => updateChartsFromPrediction(data.prediction));
+                scrollToCharts();
             });
 
             socket.on('pnp_fire_submitted', (data) => {
-                console.log('PNP fire response submitted:', data);
-                const alertItem = alertElements.get(data.alert_id);
-                if (alertItem) {
-                    const predictionDiv = alertItem.querySelector('.prediction');
-                    const predictionText = data.prediction || 'N/A';
-                    let formattedPrediction = 'N/A';
-                    if (predictionText !== 'N/A' && predictionText !== 'prediction_error') {
-                        const match = predictionText.match(/(\d+\.\d+)% chance in year \d+/);
-                        if (match) {
-                            const percentage = match[1];
-                            const yearRanges = ['A Week', '1-2 Weeks', '2-3 Weeks', '4-5 Weeks', 'A Month', '1-2 Months', '2-3 Months', '4-5 Months'];
-                            const randomRange = yearRanges[Math.floor(Math.random() * yearRanges.length)];
-                            formattedPrediction = `There will be a ${percentage}% chance of ${data.emergency_type || 'Unknown'} Again Within ${randomRange}`;
-                        } else {
-                            formattedPrediction = predictionText;
-                        }
-                    }
-                    predictionDiv.textContent = `Prediction: ${formattedPrediction}`;
-                    predictionDiv.style.display = 'block';
-                    predictionDiv.style.fontSize = '16px';
-                    predictionDiv.style.color = 'black';
-                }
+                fetch('/get_latest_fire_prediction')
+                    .then(r => r.json())
+                    .then(data => updateChartsFromPrediction(data.prediction));
+                scrollToCharts();
             });
 
             socket.on('pnp_crime_submitted', (data) => {
